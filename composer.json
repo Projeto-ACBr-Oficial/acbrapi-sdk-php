@@ -1,0 +1,40 @@
+{
+    "name": "projeto-acbr-oficial/acbrapi-sdk-php",
+    "version": "2.57.5",
+    "description": "API para automação comercial e documentos fiscais.",
+    "keywords": [
+        "openapitools",
+        "openapi-generator",
+        "openapi",
+        "php",
+        "sdk",
+        "rest",
+        "api"
+    ],
+    "homepage": "https://www.acbrapi.com.br",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "ACBr API",
+            "homepage": "https://www.acbrapi.com.br"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^7.3",
+        "guzzlehttp/psr7": "^1.7 || ^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "friendsofphp/php-cs-fixer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": { "ACBrAPI\\" : "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "ACBrAPI\\Test\\" : "test/" }
+    }
+}
