@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -364,7 +364,7 @@ class NfseCancelamento implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id ID único do cancelamento gerado automaticamente pela Nuvem Fiscal.
+     * @param string|null $id ID único do cancelamento gerado automaticamente pela API.
      *
      * @return self
      */

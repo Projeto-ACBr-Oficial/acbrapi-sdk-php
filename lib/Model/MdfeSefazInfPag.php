@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -34,7 +34,7 @@ use \ACBrAPI\ObjectSerializer;
  * MdfeSefazInfPag Class Doc Comment
  *
  * @category Class
- * @description Informações do Pagamento do Frete.
+ * @description Informações do Pagamento do Contrato.
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

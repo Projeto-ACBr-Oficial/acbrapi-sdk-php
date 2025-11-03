@@ -10,7 +10,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -174,7 +174,7 @@ class NfseApi
      *
      * Baixar PDF do DANFSE
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfNfse'] to see the possible values for this operation
@@ -194,7 +194,7 @@ class NfseApi
      *
      * Baixar PDF do DANFSE
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfNfse'] to see the possible values for this operation
@@ -320,7 +320,7 @@ class NfseApi
      *
      * Baixar PDF do DANFSE
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfNfse'] to see the possible values for this operation
@@ -343,7 +343,7 @@ class NfseApi
      *
      * Baixar PDF do DANFSE
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfNfse'] to see the possible values for this operation
@@ -395,7 +395,7 @@ class NfseApi
     /**
      * Create request for operation 'baixarPdfNfse'
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfNfse'] to see the possible values for this operation
@@ -523,7 +523,7 @@ class NfseApi
      *
      * Baixar XML do evento de cancelamento
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfse'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -541,7 +541,7 @@ class NfseApi
      *
      * Baixar XML do evento de cancelamento
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfse'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -665,7 +665,7 @@ class NfseApi
      *
      * Baixar XML do evento de cancelamento
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -686,7 +686,7 @@ class NfseApi
      *
      * Baixar XML do evento de cancelamento
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -736,7 +736,7 @@ class NfseApi
     /**
      * Create request for operation 'baixarXmlCancelamentoNfse'
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -839,7 +839,7 @@ class NfseApi
      *
      * Baixar XML da DPS
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDps'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -857,7 +857,7 @@ class NfseApi
      *
      * Baixar XML da DPS
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDps'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -981,7 +981,7 @@ class NfseApi
      *
      * Baixar XML da DPS
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDps'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1002,7 +1002,7 @@ class NfseApi
      *
      * Baixar XML da DPS
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDps'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1052,7 +1052,7 @@ class NfseApi
     /**
      * Create request for operation 'baixarXmlDps'
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDps'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1155,7 +1155,7 @@ class NfseApi
      *
      * Baixar XML da NFS-e processada
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfse'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1173,7 +1173,7 @@ class NfseApi
      *
      * Baixar XML da NFS-e processada
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfse'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1297,7 +1297,7 @@ class NfseApi
      *
      * Baixar XML da NFS-e processada
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1318,7 +1318,7 @@ class NfseApi
      *
      * Baixar XML da NFS-e processada
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1368,7 +1368,7 @@ class NfseApi
     /**
      * Create request for operation 'baixarXmlNfse'
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1471,7 +1471,7 @@ class NfseApi
      *
      * Cancelar uma NFS-e autorizada
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfsePedidoCancelamento $body body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfse'] to see the possible values for this operation
      *
@@ -1490,7 +1490,7 @@ class NfseApi
      *
      * Cancelar uma NFS-e autorizada
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfsePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfse'] to see the possible values for this operation
      *
@@ -1615,7 +1615,7 @@ class NfseApi
      *
      * Cancelar uma NFS-e autorizada
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfsePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfse'] to see the possible values for this operation
      *
@@ -1637,7 +1637,7 @@ class NfseApi
      *
      * Cancelar uma NFS-e autorizada
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfsePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfse'] to see the possible values for this operation
      *
@@ -1688,7 +1688,7 @@ class NfseApi
     /**
      * Create request for operation 'cancelarNfse'
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfsePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfse'] to see the possible values for this operation
      *
@@ -2096,7 +2096,7 @@ class NfseApi
      *
      * Consultar o cancelamento da NFS-e
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfse'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2114,7 +2114,7 @@ class NfseApi
      *
      * Consultar o cancelamento da NFS-e
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfse'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2238,7 +2238,7 @@ class NfseApi
      *
      * Consultar o cancelamento da NFS-e
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2259,7 +2259,7 @@ class NfseApi
      *
      * Consultar o cancelamento da NFS-e
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2309,7 +2309,7 @@ class NfseApi
     /**
      * Create request for operation 'consultarCancelamentoNfse'
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2412,7 +2412,7 @@ class NfseApi
      *
      * Consultar lote de NFS-e
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteNfse'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2430,7 +2430,7 @@ class NfseApi
      *
      * Consultar lote de NFS-e
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteNfse'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2554,7 +2554,7 @@ class NfseApi
      *
      * Consultar lote de NFS-e
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2575,7 +2575,7 @@ class NfseApi
      *
      * Consultar lote de NFS-e
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2625,7 +2625,7 @@ class NfseApi
     /**
      * Create request for operation 'consultarLoteNfse'
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3044,7 +3044,7 @@ class NfseApi
      *
      * Consultar NFS-e
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfse'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3062,7 +3062,7 @@ class NfseApi
      *
      * Consultar NFS-e
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfse'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3186,7 +3186,7 @@ class NfseApi
      *
      * Consultar NFS-e
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3207,7 +3207,7 @@ class NfseApi
      *
      * Consultar NFS-e
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3257,7 +3257,7 @@ class NfseApi
     /**
      * Create request for operation 'consultarNfse'
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfse'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5456,7 +5456,7 @@ class NfseApi
      *
      * Sincroniza dados na NFS-e a partir da Prefeitura
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfsePedidoSincronizacao $body body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarNfse'] to see the possible values for this operation
      *
@@ -5475,7 +5475,7 @@ class NfseApi
      *
      * Sincroniza dados na NFS-e a partir da Prefeitura
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfsePedidoSincronizacao $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarNfse'] to see the possible values for this operation
      *
@@ -5600,7 +5600,7 @@ class NfseApi
      *
      * Sincroniza dados na NFS-e a partir da Prefeitura
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfsePedidoSincronizacao $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarNfse'] to see the possible values for this operation
      *
@@ -5622,7 +5622,7 @@ class NfseApi
      *
      * Sincroniza dados na NFS-e a partir da Prefeitura
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfsePedidoSincronizacao $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarNfse'] to see the possible values for this operation
      *
@@ -5673,7 +5673,7 @@ class NfseApi
     /**
      * Create request for operation 'sincronizarNfse'
      *
-     * @param  string $id ID único da NFS-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfsePedidoSincronizacao $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarNfse'] to see the possible values for this operation
      *

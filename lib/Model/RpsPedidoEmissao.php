@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -412,7 +412,7 @@ class RpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_emissao
      *
-     * @param \DateTime|null $data_emissao Data e Hora de Emissão do RPS, no formato AAAA-MM-DDTHH:MM:SSTZD.  Caso não informado, será considerada a data/hora da requisição à API da Nuvem Fiscal.
+     * @param \DateTime|null $data_emissao Data e Hora de Emissão do RPS, no formato AAAA-MM-DDTHH:MM:SSTZD.  Caso não informado, será considerada a data/hora da requisição à API.
      *
      * @return self
      */
@@ -439,7 +439,7 @@ class RpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets competencia
      *
-     * @param \DateTime|null $competencia Competência do RPS, no formato AAAA-MM-DD.  Caso não informado, será considerada a data da requisição à API da Nuvem Fiscal.
+     * @param \DateTime|null $competencia Competência do RPS, no formato AAAA-MM-DD.  Caso não informado, será considerada a data da requisição à API.
      *
      * @return self
      */

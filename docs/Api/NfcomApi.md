@@ -1,6 +1,6 @@
 # ACBrAPI\NfcomApi
 
-Todas as URIs relativas a https://api.nuvemfiscal.com.br, exceto se a operação definir outra URI base.
+Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação definir outra URI base.
 
 | Método | Endpoint | Descrição |
 | ------------- | ------------- | ------------- |
@@ -47,7 +47,7 @@ $apiInstance = new ACBrAPI\Api\NfcomApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFCom gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFCom gerado pela API.
 $logotipo = false; // bool | Imprime o documento com logotipo, desde que esteja cadastrado na empresa.
 
 try {
@@ -62,7 +62,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFCom gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFCom gerado pela API. | |
 | **logotipo** | **bool**| Imprime o documento com logotipo, desde que esteja cadastrado na empresa. | [optional] [default to false] |
 
 ### Tipo do retorno
@@ -112,7 +112,7 @@ $apiInstance = new ACBrAPI\Api\NfcomApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFCom gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFCom gerada pela API.
 
 try {
     $result = $apiInstance->baixarXmlCancelamentoNfcom($id);
@@ -126,7 +126,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFCom gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFCom gerada pela API. | |
 
 ### Tipo do retorno
 
@@ -177,7 +177,7 @@ $apiInstance = new ACBrAPI\Api\NfcomApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFCom gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFCom gerada pela API.
 
 try {
     $result = $apiInstance->baixarXmlNfcom($id);
@@ -191,7 +191,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFCom gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFCom gerada pela API. | |
 
 ### Tipo do retorno
 
@@ -242,7 +242,7 @@ $apiInstance = new ACBrAPI\Api\NfcomApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFCom gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFCom gerada pela API.
 
 try {
     $result = $apiInstance->baixarXmlNfcomNota($id);
@@ -256,7 +256,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFCom gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFCom gerada pela API. | |
 
 ### Tipo do retorno
 
@@ -305,7 +305,7 @@ $apiInstance = new ACBrAPI\Api\NfcomApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFCom gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFCom gerada pela API.
 
 try {
     $result = $apiInstance->baixarXmlNfcomProtocolo($id);
@@ -319,7 +319,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFCom gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFCom gerada pela API. | |
 
 ### Tipo do retorno
 
@@ -370,7 +370,7 @@ $apiInstance = new ACBrAPI\Api\NfcomApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFCom gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFCom gerada pela API.
 $body = new \ACBrAPI\Model\NfcomPedidoCancelamento(); // \ACBrAPI\Model\NfcomPedidoCancelamento
 
 try {
@@ -385,7 +385,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFCom gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFCom gerada pela API. | |
 | **body** | [**\ACBrAPI\Model\NfcomPedidoCancelamento**](../Model/NfcomPedidoCancelamento.md)|  | [optional] |
 
 ### Tipo do retorno
@@ -435,7 +435,7 @@ $apiInstance = new ACBrAPI\Api\NfcomApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFCom gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFCom gerada pela API.
 
 try {
     $result = $apiInstance->consultarCancelamentoNfcom($id);
@@ -449,7 +449,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFCom gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFCom gerada pela API. | |
 
 ### Tipo do retorno
 
@@ -476,7 +476,7 @@ consultarNfcom($id): \ACBrAPI\Model\Dfe
 
 Consultar NFCom
 
-Consulta os detalhes de uma NFCom já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de NFCom e a Nuvem Fiscal irá retornar as informações da NFCom correspondente.
+Consulta os detalhes de uma NFCom já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de NFCom e a API irá retornar as informações da NFCom correspondente.
 
 ### Exemplo
 
@@ -500,7 +500,7 @@ $apiInstance = new ACBrAPI\Api\NfcomApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFCom gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFCom gerada pela API.
 
 try {
     $result = $apiInstance->consultarNfcom($id);
@@ -514,7 +514,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFCom gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFCom gerada pela API. | |
 
 ### Tipo do retorno
 
@@ -541,7 +541,7 @@ consultarStatusSefazNfcom($cpf_cnpj, $autorizador): \ACBrAPI\Model\DfeSefazStatu
 
 Consulta do Status do Serviço na SEFAZ Autorizadora
 
-Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ.
+Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ.
 
 ### Exemplo
 

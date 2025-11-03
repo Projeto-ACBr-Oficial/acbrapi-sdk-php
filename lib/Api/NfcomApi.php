@@ -10,7 +10,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -156,7 +156,7 @@ class NfcomApi
      *
      * Baixar PDF do DANFE-COM
      *
-     * @param  string $id ID único da NFCom gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfNfcom'] to see the possible values for this operation
      *
@@ -175,7 +175,7 @@ class NfcomApi
      *
      * Baixar PDF do DANFE-COM
      *
-     * @param  string $id ID único da NFCom gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfNfcom'] to see the possible values for this operation
      *
@@ -300,7 +300,7 @@ class NfcomApi
      *
      * Baixar PDF do DANFE-COM
      *
-     * @param  string $id ID único da NFCom gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfNfcom'] to see the possible values for this operation
      *
@@ -322,7 +322,7 @@ class NfcomApi
      *
      * Baixar PDF do DANFE-COM
      *
-     * @param  string $id ID único da NFCom gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfNfcom'] to see the possible values for this operation
      *
@@ -373,7 +373,7 @@ class NfcomApi
     /**
      * Create request for operation 'baixarPdfNfcom'
      *
-     * @param  string $id ID único da NFCom gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfNfcom'] to see the possible values for this operation
      *
@@ -487,7 +487,7 @@ class NfcomApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfcom'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -505,7 +505,7 @@ class NfcomApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfcom'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -629,7 +629,7 @@ class NfcomApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfcom'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -650,7 +650,7 @@ class NfcomApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfcom'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -700,7 +700,7 @@ class NfcomApi
     /**
      * Create request for operation 'baixarXmlCancelamentoNfcom'
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfcom'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -803,7 +803,7 @@ class NfcomApi
      *
      * Baixar XML da NFCom processada
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcom'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -821,7 +821,7 @@ class NfcomApi
      *
      * Baixar XML da NFCom processada
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcom'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -945,7 +945,7 @@ class NfcomApi
      *
      * Baixar XML da NFCom processada
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcom'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -966,7 +966,7 @@ class NfcomApi
      *
      * Baixar XML da NFCom processada
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcom'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1016,7 +1016,7 @@ class NfcomApi
     /**
      * Create request for operation 'baixarXmlNfcom'
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcom'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1119,7 +1119,7 @@ class NfcomApi
      *
      * Baixar XML da NFCom
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcomNota'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1137,7 +1137,7 @@ class NfcomApi
      *
      * Baixar XML da NFCom
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcomNota'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1261,7 +1261,7 @@ class NfcomApi
      *
      * Baixar XML da NFCom
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcomNota'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1282,7 +1282,7 @@ class NfcomApi
      *
      * Baixar XML da NFCom
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcomNota'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1332,7 +1332,7 @@ class NfcomApi
     /**
      * Create request for operation 'baixarXmlNfcomNota'
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcomNota'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1435,7 +1435,7 @@ class NfcomApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcomProtocolo'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1453,7 +1453,7 @@ class NfcomApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcomProtocolo'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1577,7 +1577,7 @@ class NfcomApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcomProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1598,7 +1598,7 @@ class NfcomApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcomProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1648,7 +1648,7 @@ class NfcomApi
     /**
      * Create request for operation 'baixarXmlNfcomProtocolo'
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfcomProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1751,7 +1751,7 @@ class NfcomApi
      *
      * Cancelar uma NFCom autorizada
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  \ACBrAPI\Model\NfcomPedidoCancelamento $body body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfcom'] to see the possible values for this operation
      *
@@ -1770,7 +1770,7 @@ class NfcomApi
      *
      * Cancelar uma NFCom autorizada
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  \ACBrAPI\Model\NfcomPedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfcom'] to see the possible values for this operation
      *
@@ -1895,7 +1895,7 @@ class NfcomApi
      *
      * Cancelar uma NFCom autorizada
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  \ACBrAPI\Model\NfcomPedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfcom'] to see the possible values for this operation
      *
@@ -1917,7 +1917,7 @@ class NfcomApi
      *
      * Cancelar uma NFCom autorizada
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  \ACBrAPI\Model\NfcomPedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfcom'] to see the possible values for this operation
      *
@@ -1968,7 +1968,7 @@ class NfcomApi
     /**
      * Create request for operation 'cancelarNfcom'
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  \ACBrAPI\Model\NfcomPedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfcom'] to see the possible values for this operation
      *
@@ -2080,7 +2080,7 @@ class NfcomApi
      *
      * Consultar o cancelamento da NFCom
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfcom'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2098,7 +2098,7 @@ class NfcomApi
      *
      * Consultar o cancelamento da NFCom
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfcom'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2222,7 +2222,7 @@ class NfcomApi
      *
      * Consultar o cancelamento da NFCom
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfcom'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2243,7 +2243,7 @@ class NfcomApi
      *
      * Consultar o cancelamento da NFCom
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfcom'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2293,7 +2293,7 @@ class NfcomApi
     /**
      * Create request for operation 'consultarCancelamentoNfcom'
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfcom'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2396,7 +2396,7 @@ class NfcomApi
      *
      * Consultar NFCom
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfcom'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2414,7 +2414,7 @@ class NfcomApi
      *
      * Consultar NFCom
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfcom'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2538,7 +2538,7 @@ class NfcomApi
      *
      * Consultar NFCom
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfcom'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2559,7 +2559,7 @@ class NfcomApi
      *
      * Consultar NFCom
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfcom'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2609,7 +2609,7 @@ class NfcomApi
     /**
      * Create request for operation 'consultarNfcom'
      *
-     * @param  string $id ID único da NFCom gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NFCom gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfcom'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

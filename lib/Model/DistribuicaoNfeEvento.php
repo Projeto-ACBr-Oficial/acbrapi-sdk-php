@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -444,7 +444,7 @@ class DistribuicaoNfeEvento implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets id
      *
-     * @param string|null $id ID único gerado pela Nuvem Fiscal para este evento.
+     * @param string|null $id ID único gerado pela API para este evento.
      *
      * @return self
      */
@@ -471,7 +471,7 @@ class DistribuicaoNfeEvento implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Data/hora em que o evento foi criado na Nuvem Fiscal. Representado no formato <a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"blank\">`ISO 8601`</a>.
+     * @param \DateTime|null $created_at Data/hora em que o evento foi criado na API. Representado no formato <a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"blank\">`ISO 8601`</a>.
      *
      * @return self
      */

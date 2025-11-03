@@ -1,6 +1,6 @@
 # ACBrAPI\DebugApi
 
-Todas as URIs relativas a https://api.nuvemfiscal.com.br, exceto se a operação definir outra URI base.
+Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação definir outra URI base.
 
 | Método | Endpoint | Descrição |
 | ------------- | ------------- | ------------- |
@@ -18,7 +18,7 @@ debugDfe($id): \ACBrAPI\Model\DfeDebug
 
 Debug de DF-e
 
-Este endpoint retorna informações detalhadas de debug sobre o processamento de um documento fiscal eletrônico (DFe),  como NF-e, NFC-e, MDF-e, CT-e, NFS-e, dentre outros. Ele permite inspecionar o conteúdo original enviado à Nuvem Fiscal e analisar  todas as interações realizadas com os serviços autorizadores (SEFAZ ou prefeituras) durante o fluxo de emissão.    **Informações retornadas**:  - JSON original recebido no momento da criação do documento.  - Histórico das etapas de envio e consulta.  - Status e mensagens retornadas pelo autorizador.    **Cenários de uso**:  - Diagnóstico de falhas no processamento do documento.  - Verificação da resposta da SEFAZ ou prefeitura.  - Apoio ao suporte técnico e análise de integração.
+Este endpoint retorna informações detalhadas de debug sobre o processamento de um documento fiscal eletrônico (DFe),  como NF-e, NFC-e, MDF-e, CT-e, NFS-e, dentre outros. Ele permite inspecionar o conteúdo original enviado à API e analisar  todas as interações realizadas com os serviços autorizadores (SEFAZ ou prefeituras) durante o fluxo de emissão.    **Informações retornadas**:  - JSON original recebido no momento da criação do documento.  - Histórico das etapas de envio e consulta.  - Status e mensagens retornadas pelo autorizador.    **Cenários de uso**:  - Diagnóstico de falhas no processamento do documento.  - Verificação da resposta da SEFAZ ou prefeitura.  - Apoio ao suporte técnico e análise de integração.
 
 ### Exemplo
 
@@ -42,7 +42,7 @@ $apiInstance = new ACBrAPI\Api\DebugApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do documento fiscal gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do documento fiscal gerado pela API.
 
 try {
     $result = $apiInstance->debugDfe($id);
@@ -56,7 +56,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do documento fiscal gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do documento fiscal gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -83,7 +83,7 @@ debugDfeOriginalPayload($id): \SplFileObject
 
 Payload original recebido
 
-Este endpoint retorna o conteúdo original recebido pela Nuvem Fiscal no momento da criação do documento fiscal.    **Cenários de uso**:  - Inspeção detalhada dos dados enviados à API.  - Verificação de divergências entre o payload fornecido e o processado.  - Encaminhamento do conteúdo original ao suporte da Nuvem Fiscal.
+Este endpoint retorna o conteúdo original recebido pela API no momento da criação do documento fiscal.    **Cenários de uso**:  - Inspeção detalhada dos dados enviados à API.  - Verificação de divergências entre o payload fornecido e o processado.  - Encaminhamento do conteúdo original ao suporte da API.
 
 ### Exemplo
 
@@ -107,7 +107,7 @@ $apiInstance = new ACBrAPI\Api\DebugApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID do documento fiscal gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID do documento fiscal gerado pela API.
 
 try {
     $result = $apiInstance->debugDfeOriginalPayload($id);
@@ -121,7 +121,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID do documento fiscal gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID do documento fiscal gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -148,7 +148,7 @@ debugHttpRequestContent($id): \SplFileObject
 
 Corpo da requisição HTTP
 
-Este endpoint retorna apenas o corpo da requisição HTTP enviada ao autorizador,  preservando o conteúdo exatamente como foi armazenado pela Nuvem Fiscal.    **Informações retornadas**:  - Envelope SOAP da requisição, possivelmente compactado.    **Cenários de uso**:  - Verificação do XML ou SOAP efetivamente enviado.  - Encaminhamento ao suporte da SEFAZ ou prefeitura para análise.  - Diagnóstico técnico do conteúdo de envio.
+Este endpoint retorna apenas o corpo da requisição HTTP enviada ao autorizador,  preservando o conteúdo exatamente como foi armazenado pela API.    **Informações retornadas**:  - Envelope SOAP da requisição, possivelmente compactado.    **Cenários de uso**:  - Verificação do XML ou SOAP efetivamente enviado.  - Encaminhamento ao suporte da SEFAZ ou prefeitura para análise.  - Diagnóstico técnico do conteúdo de envio.
 
 ### Exemplo
 

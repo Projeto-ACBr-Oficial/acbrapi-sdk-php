@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -357,7 +357,7 @@ class EmpresaConfigDistribuicaoNfe implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets distribuicao_automatica
      *
-     * @param bool|null $distribuicao_automatica Indica se a distribuição automática está habilitada.    Quando ativada, a API da Nuvem Fiscal realizará automaticamente pedidos de  distribuição de notas fiscais eletrônicas (NF-e) utilizando o último NSU.    A frequência dessas distribuições é controlada pelo campo `distribuicao_intervalo_horas`,  cujo valor padrão é 24 horas (uma vez ao dia).
+     * @param bool|null $distribuicao_automatica Indica se a distribuição automática está habilitada.    Quando ativada, a API realizará automaticamente pedidos de  distribuição de notas fiscais eletrônicas (NF-e) utilizando o último NSU.    A frequência dessas distribuições é controlada pelo campo `distribuicao_intervalo_horas`,  cujo valor padrão é 24 horas (uma vez ao dia).
      *
      * @return self
      */
@@ -391,7 +391,7 @@ class EmpresaConfigDistribuicaoNfe implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets distribuicao_intervalo_horas
      *
-     * @param int|null $distribuicao_intervalo_horas Define o intervalo mínimo, em horas, entre distribuições automáticas de documentos.    Esse valor determina com que frequência a API da Nuvem Fiscal executará novas  requisições automáticas de distribuição de notas fiscais eletrônicas (NF-e).    Deve ser um valor entre 1 e 24. Por exemplo, se configurado como 4, uma nova  tentativa de distribuição só será feita se pelo menos 4 horas tiverem se passado  desde a última requisição.    Esse campo só é relevante quando `distribuicao_automatica` estiver habilitado.
+     * @param int|null $distribuicao_intervalo_horas Define o intervalo mínimo, em horas, entre distribuições automáticas de documentos.    Esse valor determina com que frequência a API executará novas  requisições automáticas de distribuição de notas fiscais eletrônicas (NF-e).    Deve ser um valor entre 1 e 24. Por exemplo, se configurado como 4, uma nova  tentativa de distribuição só será feita se pelo menos 4 horas tiverem se passado  desde a última requisição.    Esse campo só é relevante quando `distribuicao_automatica` estiver habilitado.
      *
      * @return self
      */

@@ -1,6 +1,6 @@
 # ACBrAPI\ContaApi
 
-Todas as URIs relativas a https://api.nuvemfiscal.com.br, exceto se a operação definir outra URI base.
+Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação definir outra URI base.
 
 | Método | Endpoint | Descrição |
 | ------------- | ------------- | ------------- |

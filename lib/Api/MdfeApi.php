@@ -10,7 +10,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -201,7 +201,7 @@ class MdfeApi
      *
      * Baixar PDF do cancelamento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -219,7 +219,7 @@ class MdfeApi
      *
      * Baixar PDF do cancelamento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -343,7 +343,7 @@ class MdfeApi
      *
      * Baixar PDF do cancelamento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -364,7 +364,7 @@ class MdfeApi
      *
      * Baixar PDF do cancelamento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -414,7 +414,7 @@ class MdfeApi
     /**
      * Create request for operation 'baixarPdfCancelamentoMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -517,7 +517,7 @@ class MdfeApi
      *
      * Baixar PDF do encerramento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -535,7 +535,7 @@ class MdfeApi
      *
      * Baixar PDF do encerramento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -659,7 +659,7 @@ class MdfeApi
      *
      * Baixar PDF do encerramento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -680,7 +680,7 @@ class MdfeApi
      *
      * Baixar PDF do encerramento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -730,7 +730,7 @@ class MdfeApi
     /**
      * Create request for operation 'baixarPdfEncerramentoMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -833,7 +833,7 @@ class MdfeApi
      *
      * Baixar PDF do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -851,7 +851,7 @@ class MdfeApi
      *
      * Baixar PDF do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -975,7 +975,7 @@ class MdfeApi
      *
      * Baixar PDF do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -996,7 +996,7 @@ class MdfeApi
      *
      * Baixar PDF do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1046,7 +1046,7 @@ class MdfeApi
     /**
      * Create request for operation 'baixarPdfEventoMdfe'
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1149,7 +1149,7 @@ class MdfeApi
      *
      * Baixar PDF do DAMDFE
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfMdfe'] to see the possible values for this operation
      *
@@ -1168,7 +1168,7 @@ class MdfeApi
      *
      * Baixar PDF do DAMDFE
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfMdfe'] to see the possible values for this operation
      *
@@ -1293,7 +1293,7 @@ class MdfeApi
      *
      * Baixar PDF do DAMDFE
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfMdfe'] to see the possible values for this operation
      *
@@ -1315,7 +1315,7 @@ class MdfeApi
      *
      * Baixar PDF do DAMDFE
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfMdfe'] to see the possible values for this operation
      *
@@ -1366,7 +1366,7 @@ class MdfeApi
     /**
      * Create request for operation 'baixarPdfMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfMdfe'] to see the possible values for this operation
      *
@@ -1480,7 +1480,7 @@ class MdfeApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1498,7 +1498,7 @@ class MdfeApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1622,7 +1622,7 @@ class MdfeApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1643,7 +1643,7 @@ class MdfeApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1693,7 +1693,7 @@ class MdfeApi
     /**
      * Create request for operation 'baixarXmlCancelamentoMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1796,7 +1796,7 @@ class MdfeApi
      *
      * Baixar XML do encerramento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1814,7 +1814,7 @@ class MdfeApi
      *
      * Baixar XML do encerramento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1938,7 +1938,7 @@ class MdfeApi
      *
      * Baixar XML do encerramento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1959,7 +1959,7 @@ class MdfeApi
      *
      * Baixar XML do encerramento
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2009,7 +2009,7 @@ class MdfeApi
     /**
      * Create request for operation 'baixarXmlEncerramentoMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2112,7 +2112,7 @@ class MdfeApi
      *
      * Baixar XML do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2130,7 +2130,7 @@ class MdfeApi
      *
      * Baixar XML do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2254,7 +2254,7 @@ class MdfeApi
      *
      * Baixar XML do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2275,7 +2275,7 @@ class MdfeApi
      *
      * Baixar XML do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2325,7 +2325,7 @@ class MdfeApi
     /**
      * Create request for operation 'baixarXmlEventoMdfe'
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2428,7 +2428,7 @@ class MdfeApi
      *
      * Baixar XML do MDF-e processado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2446,7 +2446,7 @@ class MdfeApi
      *
      * Baixar XML do MDF-e processado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2570,7 +2570,7 @@ class MdfeApi
      *
      * Baixar XML do MDF-e processado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2591,7 +2591,7 @@ class MdfeApi
      *
      * Baixar XML do MDF-e processado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2641,7 +2641,7 @@ class MdfeApi
     /**
      * Create request for operation 'baixarXmlMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2744,7 +2744,7 @@ class MdfeApi
      *
      * Baixar XML do MDF-e
      *
-     * @param  string $id ID único da MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfeManifesto'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2762,7 +2762,7 @@ class MdfeApi
      *
      * Baixar XML do MDF-e
      *
-     * @param  string $id ID único da MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfeManifesto'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2886,7 +2886,7 @@ class MdfeApi
      *
      * Baixar XML do MDF-e
      *
-     * @param  string $id ID único da MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfeManifesto'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2907,7 +2907,7 @@ class MdfeApi
      *
      * Baixar XML do MDF-e
      *
-     * @param  string $id ID único da MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfeManifesto'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2957,7 +2957,7 @@ class MdfeApi
     /**
      * Create request for operation 'baixarXmlMdfeManifesto'
      *
-     * @param  string $id ID único da MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfeManifesto'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3060,7 +3060,7 @@ class MdfeApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfeProtocolo'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3078,7 +3078,7 @@ class MdfeApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfeProtocolo'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3202,7 +3202,7 @@ class MdfeApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfeProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3223,7 +3223,7 @@ class MdfeApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfeProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3273,7 +3273,7 @@ class MdfeApi
     /**
      * Create request for operation 'baixarXmlMdfeProtocolo'
      *
-     * @param  string $id ID único da MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlMdfeProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3376,7 +3376,7 @@ class MdfeApi
      *
      * Cancelar um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoCancelamento $body Dados do cancelamento. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarMdfe'] to see the possible values for this operation
      *
@@ -3395,7 +3395,7 @@ class MdfeApi
      *
      * Cancelar um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoCancelamento $body Dados do cancelamento. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarMdfe'] to see the possible values for this operation
      *
@@ -3520,7 +3520,7 @@ class MdfeApi
      *
      * Cancelar um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoCancelamento $body Dados do cancelamento. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarMdfe'] to see the possible values for this operation
      *
@@ -3542,7 +3542,7 @@ class MdfeApi
      *
      * Cancelar um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoCancelamento $body Dados do cancelamento. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarMdfe'] to see the possible values for this operation
      *
@@ -3593,7 +3593,7 @@ class MdfeApi
     /**
      * Create request for operation 'cancelarMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoCancelamento $body Dados do cancelamento. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarMdfe'] to see the possible values for this operation
      *
@@ -3705,7 +3705,7 @@ class MdfeApi
      *
      * Consultar o cancelamento do MDF-e
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3723,7 +3723,7 @@ class MdfeApi
      *
      * Consultar o cancelamento do MDF-e
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3847,7 +3847,7 @@ class MdfeApi
      *
      * Consultar o cancelamento do MDF-e
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3868,7 +3868,7 @@ class MdfeApi
      *
      * Consultar o cancelamento do MDF-e
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3918,7 +3918,7 @@ class MdfeApi
     /**
      * Create request for operation 'consultarCancelamentoMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4021,7 +4021,7 @@ class MdfeApi
      *
      * Consultar encerramento do MDF-e
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4039,7 +4039,7 @@ class MdfeApi
      *
      * Consultar encerramento do MDF-e
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4163,7 +4163,7 @@ class MdfeApi
      *
      * Consultar encerramento do MDF-e
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4184,7 +4184,7 @@ class MdfeApi
      *
      * Consultar encerramento do MDF-e
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4234,7 +4234,7 @@ class MdfeApi
     /**
      * Create request for operation 'consultarEncerramentoMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEncerramentoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4337,7 +4337,7 @@ class MdfeApi
      *
      * Consultar evento do MDF-e
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4355,7 +4355,7 @@ class MdfeApi
      *
      * Consultar evento do MDF-e
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4479,7 +4479,7 @@ class MdfeApi
      *
      * Consultar evento do MDF-e
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4500,7 +4500,7 @@ class MdfeApi
      *
      * Consultar evento do MDF-e
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4550,7 +4550,7 @@ class MdfeApi
     /**
      * Create request for operation 'consultarEventoMdfe'
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4653,7 +4653,7 @@ class MdfeApi
      *
      * Consultar lote de MDF-e
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4671,7 +4671,7 @@ class MdfeApi
      *
      * Consultar lote de MDF-e
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4795,7 +4795,7 @@ class MdfeApi
      *
      * Consultar lote de MDF-e
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4816,7 +4816,7 @@ class MdfeApi
      *
      * Consultar lote de MDF-e
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4866,7 +4866,7 @@ class MdfeApi
     /**
      * Create request for operation 'consultarLoteMdfe'
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4969,7 +4969,7 @@ class MdfeApi
      *
      * Consultar manifesto
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4987,7 +4987,7 @@ class MdfeApi
      *
      * Consultar manifesto
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5111,7 +5111,7 @@ class MdfeApi
      *
      * Consultar manifesto
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5132,7 +5132,7 @@ class MdfeApi
      *
      * Consultar manifesto
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5182,7 +5182,7 @@ class MdfeApi
     /**
      * Create request for operation 'consultarMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6564,7 +6564,7 @@ class MdfeApi
      *
      * Encerrar um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoEncerramento $body body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['encerrarMdfe'] to see the possible values for this operation
      *
@@ -6583,7 +6583,7 @@ class MdfeApi
      *
      * Encerrar um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoEncerramento $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['encerrarMdfe'] to see the possible values for this operation
      *
@@ -6708,7 +6708,7 @@ class MdfeApi
      *
      * Encerrar um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoEncerramento $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['encerrarMdfe'] to see the possible values for this operation
      *
@@ -6730,7 +6730,7 @@ class MdfeApi
      *
      * Encerrar um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoEncerramento $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['encerrarMdfe'] to see the possible values for this operation
      *
@@ -6781,7 +6781,7 @@ class MdfeApi
     /**
      * Create request for operation 'encerrarMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoEncerramento $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['encerrarMdfe'] to see the possible values for this operation
      *
@@ -6899,7 +6899,7 @@ class MdfeApi
      *
      * Incluir um condutor em um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoInclusaoCondutor $body body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['incluirCondutorMdfe'] to see the possible values for this operation
      *
@@ -6918,7 +6918,7 @@ class MdfeApi
      *
      * Incluir um condutor em um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoInclusaoCondutor $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['incluirCondutorMdfe'] to see the possible values for this operation
      *
@@ -7043,7 +7043,7 @@ class MdfeApi
      *
      * Incluir um condutor em um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoInclusaoCondutor $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['incluirCondutorMdfe'] to see the possible values for this operation
      *
@@ -7065,7 +7065,7 @@ class MdfeApi
      *
      * Incluir um condutor em um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoInclusaoCondutor $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['incluirCondutorMdfe'] to see the possible values for this operation
      *
@@ -7116,7 +7116,7 @@ class MdfeApi
     /**
      * Create request for operation 'incluirCondutorMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoInclusaoCondutor $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['incluirCondutorMdfe'] to see the possible values for this operation
      *
@@ -7234,7 +7234,7 @@ class MdfeApi
      *
      * Incluir um DF-e em um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoInclusaoDfe $body body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['incluirDfeMdfe'] to see the possible values for this operation
      *
@@ -7253,7 +7253,7 @@ class MdfeApi
      *
      * Incluir um DF-e em um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoInclusaoDfe $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['incluirDfeMdfe'] to see the possible values for this operation
      *
@@ -7378,7 +7378,7 @@ class MdfeApi
      *
      * Incluir um DF-e em um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoInclusaoDfe $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['incluirDfeMdfe'] to see the possible values for this operation
      *
@@ -7400,7 +7400,7 @@ class MdfeApi
      *
      * Incluir um DF-e em um MDF-e autorizado
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoInclusaoDfe $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['incluirDfeMdfe'] to see the possible values for this operation
      *
@@ -7451,7 +7451,7 @@ class MdfeApi
     /**
      * Create request for operation 'incluirDfeMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\MdfePedidoInclusaoDfe $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['incluirDfeMdfe'] to see the possible values for this operation
      *
@@ -8395,7 +8395,7 @@ class MdfeApi
      *
      * Sincroniza dados no MDF-e a partir da SEFAZ
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -8413,7 +8413,7 @@ class MdfeApi
      *
      * Sincroniza dados no MDF-e a partir da SEFAZ
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarMdfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -8537,7 +8537,7 @@ class MdfeApi
      *
      * Sincroniza dados no MDF-e a partir da SEFAZ
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8558,7 +8558,7 @@ class MdfeApi
      *
      * Sincroniza dados no MDF-e a partir da SEFAZ
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -8608,7 +8608,7 @@ class MdfeApi
     /**
      * Create request for operation 'sincronizarMdfe'
      *
-     * @param  string $id ID único do MDF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do MDF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarMdfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

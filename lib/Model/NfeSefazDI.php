@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -34,7 +34,7 @@ use \ACBrAPI\ObjectSerializer;
  * NfeSefazDI Class Doc Comment
  *
  * @category Class
- * @description Delcaração de Importação  (NT 2011/004).
+ * @description Declaração de Importação (NT 2011/004).
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

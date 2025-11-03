@@ -1,6 +1,6 @@
 # ACBrAPI\DceApi
 
-Todas as URIs relativas a https://api.nuvemfiscal.com.br, exceto se a operação definir outra URI base.
+Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação definir outra URI base.
 
 | Método | Endpoint | Descrição |
 | ------------- | ------------- | ------------- |
@@ -47,7 +47,7 @@ $apiInstance = new ACBrAPI\Api\DceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da DC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da DC-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarPdfDce($id);
@@ -61,7 +61,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da DC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da DC-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -110,7 +110,7 @@ $apiInstance = new ACBrAPI\Api\DceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da DC-e gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da DC-e gerada pela API.
 
 try {
     $result = $apiInstance->baixarXmlCancelamentoDce($id);
@@ -124,7 +124,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da DC-e gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da DC-e gerada pela API. | |
 
 ### Tipo do retorno
 
@@ -175,7 +175,7 @@ $apiInstance = new ACBrAPI\Api\DceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da DC-e gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da DC-e gerada pela API.
 
 try {
     $result = $apiInstance->baixarXmlDce($id);
@@ -189,7 +189,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da DC-e gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da DC-e gerada pela API. | |
 
 ### Tipo do retorno
 
@@ -240,7 +240,7 @@ $apiInstance = new ACBrAPI\Api\DceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da DC-e gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da DC-e gerada pela API.
 
 try {
     $result = $apiInstance->baixarXmlDceDeclaracao($id);
@@ -254,7 +254,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da DC-e gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da DC-e gerada pela API. | |
 
 ### Tipo do retorno
 
@@ -303,7 +303,7 @@ $apiInstance = new ACBrAPI\Api\DceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da DC-e gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da DC-e gerada pela API.
 
 try {
     $result = $apiInstance->baixarXmlDceProtocolo($id);
@@ -317,7 +317,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da DC-e gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da DC-e gerada pela API. | |
 
 ### Tipo do retorno
 
@@ -368,7 +368,7 @@ $apiInstance = new ACBrAPI\Api\DceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da DC-e gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da DC-e gerada pela API.
 $body = new \ACBrAPI\Model\DcePedidoCancelamento(); // \ACBrAPI\Model\DcePedidoCancelamento
 
 try {
@@ -383,7 +383,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da DC-e gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da DC-e gerada pela API. | |
 | **body** | [**\ACBrAPI\Model\DcePedidoCancelamento**](../Model/DcePedidoCancelamento.md)|  | [optional] |
 
 ### Tipo do retorno
@@ -433,7 +433,7 @@ $apiInstance = new ACBrAPI\Api\DceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da DC-e gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da DC-e gerada pela API.
 
 try {
     $result = $apiInstance->consultarCancelamentoDce($id);
@@ -447,7 +447,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da DC-e gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da DC-e gerada pela API. | |
 
 ### Tipo do retorno
 
@@ -474,7 +474,7 @@ consultarDce($id): \ACBrAPI\Model\Dfe
 
 Consultar DC-e
 
-Consulta os detalhes de uma DC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de DC-e e a Nuvem Fiscal irá retornar as informações da DC-e correspondente.
+Consulta os detalhes de uma DC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de DC-e e a API irá retornar as informações da DC-e correspondente.
 
 ### Exemplo
 
@@ -498,7 +498,7 @@ $apiInstance = new ACBrAPI\Api\DceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da DC-e gerada pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da DC-e gerada pela API.
 
 try {
     $result = $apiInstance->consultarDce($id);
@@ -512,7 +512,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da DC-e gerada pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da DC-e gerada pela API. | |
 
 ### Tipo do retorno
 
@@ -539,7 +539,7 @@ consultarStatusSefazDce($cpf_cnpj, $autorizador): \ACBrAPI\Model\DfeSefazStatus
 
 Consulta do Status do Serviço na SEFAZ Autorizadora
 
-Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ.
+Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ.
 
 ### Exemplo
 

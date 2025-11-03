@@ -1,6 +1,6 @@
 # ACBrAPI\CteOsApi
 
-Todas as URIs relativas a https://api.nuvemfiscal.com.br, exceto se a operação definir outra URI base.
+Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação definir outra URI base.
 
 | Método | Endpoint | Descrição |
 | ------------- | ------------- | ------------- |
@@ -56,7 +56,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
 
 try {
     $result = $apiInstance->baixarPdfCancelamentoCteOs($id);
@@ -70,7 +70,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -119,7 +119,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
 
 try {
     $result = $apiInstance->baixarPdfCartaCorrecaoCteOs($id);
@@ -133,7 +133,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -182,7 +182,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
 $logotipo = false; // bool | Imprime o documento com logotipo, desde que esteja cadastrado na empresa.
 
 try {
@@ -197,7 +197,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
 | **logotipo** | **bool**| Imprime o documento com logotipo, desde que esteja cadastrado na empresa. | [optional] [default to false] |
 
 ### Tipo do retorno
@@ -247,7 +247,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do evento gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do evento gerado pela API.
 
 try {
     $result = $apiInstance->baixarPdfEventoCteOs($id);
@@ -261,7 +261,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do evento gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -310,7 +310,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlCancelamentoCteOs($id);
@@ -324,7 +324,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -373,7 +373,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlCartaCorrecaoCteOs($id);
@@ -387,7 +387,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -438,7 +438,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlCteOs($id);
@@ -452,7 +452,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -503,7 +503,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da CT-e OS gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlCteOsConhecimento($id);
@@ -517,7 +517,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da CT-e OS gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -566,7 +566,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da CT-e OS gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlCteOsProtocolo($id);
@@ -580,7 +580,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da CT-e OS gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -629,7 +629,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do evento gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do evento gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlEventoCteOs($id);
@@ -643,7 +643,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do evento gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -694,7 +694,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
 $body = new \ACBrAPI\Model\CteOsPedidoCancelamento(); // \ACBrAPI\Model\CteOsPedidoCancelamento
 
 try {
@@ -709,7 +709,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
 | **body** | [**\ACBrAPI\Model\CteOsPedidoCancelamento**](../Model/CteOsPedidoCancelamento.md)|  | [optional] |
 
 ### Tipo do retorno
@@ -759,7 +759,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
 
 try {
     $result = $apiInstance->consultarCancelamentoCteOs($id);
@@ -773,7 +773,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -822,7 +822,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
 
 try {
     $result = $apiInstance->consultarCartaCorrecaoCteOs($id);
@@ -836,7 +836,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -863,7 +863,7 @@ consultarCteOs($id): \ACBrAPI\Model\Dfe
 
 Consultar CT-e OS
 
-Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a Nuvem Fiscal irá retornar as informações do CT-e OS correspondente.
+Consulta os detalhes de um CT-e OS já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de CT-e OS e a API irá retornar as informações do CT-e OS correspondente.
 
 ### Exemplo
 
@@ -887,7 +887,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
 
 try {
     $result = $apiInstance->consultarCteOs($id);
@@ -901,7 +901,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -950,7 +950,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do evento gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do evento gerado pela API.
 
 try {
     $result = $apiInstance->consultarEventoCteOs($id);
@@ -964,7 +964,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do evento gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -991,7 +991,7 @@ consultarStatusSefazCteOs($cpf_cnpj, $autorizador): \ACBrAPI\Model\DfeSefazStatu
 
 Consulta do Status do Serviço na SEFAZ Autorizadora
 
-Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
 
 ### Exemplo
 
@@ -1082,7 +1082,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
 $body = new \ACBrAPI\Model\CteOsPedidoCartaCorrecao(); // \ACBrAPI\Model\CteOsPedidoCartaCorrecao
 
 try {
@@ -1097,7 +1097,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
 | **body** | [**\ACBrAPI\Model\CteOsPedidoCartaCorrecao**](../Model/CteOsPedidoCartaCorrecao.md)|  | |
 
 ### Tipo do retorno
@@ -1269,7 +1269,7 @@ sincronizarCteOs($id): \ACBrAPI\Model\DfeSincronizacao
 
 Sincroniza dados no CT-e OS a partir da SEFAZ
 
-Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status `erro` na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status `autorizado`na Nuvem Fiscal, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
+Realiza a sincronização dos dados a partir da consulta da situação atual do CT-e OS na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um CT-e OS que se encontra com o status `erro` na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um CT-e OS que se encontra com o status `autorizado`na API, mas está cancelado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento e Carta de Correção de um CT-e OS que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
 
 ### Exemplo
 
@@ -1293,7 +1293,7 @@ $apiInstance = new ACBrAPI\Api\CteOsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do CT-e OS gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
 
 try {
     $result = $apiInstance->sincronizarCteOs($id);
@@ -1307,7 +1307,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do CT-e OS gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
 
 ### Tipo do retorno
 

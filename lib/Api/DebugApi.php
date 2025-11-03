@@ -10,7 +10,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -135,7 +135,7 @@ class DebugApi
      *
      * Debug de DF-e
      *
-     * @param  string $id ID único do documento fiscal gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do documento fiscal gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['debugDfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -153,7 +153,7 @@ class DebugApi
      *
      * Debug de DF-e
      *
-     * @param  string $id ID único do documento fiscal gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do documento fiscal gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['debugDfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -277,7 +277,7 @@ class DebugApi
      *
      * Debug de DF-e
      *
-     * @param  string $id ID único do documento fiscal gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do documento fiscal gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['debugDfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -298,7 +298,7 @@ class DebugApi
      *
      * Debug de DF-e
      *
-     * @param  string $id ID único do documento fiscal gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do documento fiscal gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['debugDfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -348,7 +348,7 @@ class DebugApi
     /**
      * Create request for operation 'debugDfe'
      *
-     * @param  string $id ID único do documento fiscal gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do documento fiscal gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['debugDfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -451,7 +451,7 @@ class DebugApi
      *
      * Payload original recebido
      *
-     * @param  string $id ID do documento fiscal gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID do documento fiscal gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['debugDfeOriginalPayload'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -469,7 +469,7 @@ class DebugApi
      *
      * Payload original recebido
      *
-     * @param  string $id ID do documento fiscal gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID do documento fiscal gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['debugDfeOriginalPayload'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -593,7 +593,7 @@ class DebugApi
      *
      * Payload original recebido
      *
-     * @param  string $id ID do documento fiscal gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID do documento fiscal gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['debugDfeOriginalPayload'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -614,7 +614,7 @@ class DebugApi
      *
      * Payload original recebido
      *
-     * @param  string $id ID do documento fiscal gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID do documento fiscal gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['debugDfeOriginalPayload'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -664,7 +664,7 @@ class DebugApi
     /**
      * Create request for operation 'debugDfeOriginalPayload'
      *
-     * @param  string $id ID do documento fiscal gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID do documento fiscal gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['debugDfeOriginalPayload'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

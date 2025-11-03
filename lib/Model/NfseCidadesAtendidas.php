@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -308,7 +308,7 @@ class NfseCidadesAtendidas implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets at_count
      *
-     * @param int|null $at_count Quantidade de cidades atendidas pela Nuvem Fiscal.
+     * @param int|null $at_count Quantidade de cidades atendidas pela API.
      *
      * @return self
      */
@@ -335,7 +335,7 @@ class NfseCidadesAtendidas implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets data
      *
-     * @param string[]|null $data Lista com os códigos IBGE das cidades atendidas pela Nuvem Fiscal.
+     * @param string[]|null $data Lista com os códigos IBGE das cidades atendidas pela API.
      *
      * @return self
      */

@@ -10,7 +10,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -155,6 +155,9 @@ class EmpresaApi
             'application/json',
         ],
         'excluirLogotipoEmpresa' => [
+            'application/json',
+        ],
+        'listarCertificados' => [
             'application/json',
         ],
         'listarEmpresas' => [
@@ -9298,6 +9301,380 @@ class EmpresaApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'DELETE',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listarCertificados
+     *
+     * Listar certificados
+     *
+     * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
+     * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
+     * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
+     * @param  int $expires_in Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)
+     * @param  bool $include_expired Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarCertificados'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \ACBrAPI\Model\EmpresaCertificadoListagem
+     */
+    public function listarCertificados($top = 10, $skip = 0, $inlinecount = false, $expires_in = null, $include_expired = true, string $contentType = self::contentTypes['listarCertificados'][0])
+    {
+        list($response) = $this->listarCertificadosWithHttpInfo($top, $skip, $inlinecount, $expires_in, $include_expired, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation listarCertificadosWithHttpInfo
+     *
+     * Listar certificados
+     *
+     * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
+     * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
+     * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
+     * @param  int $expires_in Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)
+     * @param  bool $include_expired Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarCertificados'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \ACBrAPI\Model\EmpresaCertificadoListagem, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listarCertificadosWithHttpInfo($top = 10, $skip = 0, $inlinecount = false, $expires_in = null, $include_expired = true, string $contentType = self::contentTypes['listarCertificados'][0])
+    {
+        $request = $this->listarCertificadosRequest($top, $skip, $inlinecount, $expires_in, $include_expired, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\ACBrAPI\Model\EmpresaCertificadoListagem' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ACBrAPI\Model\EmpresaCertificadoListagem' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ACBrAPI\Model\EmpresaCertificadoListagem', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\ACBrAPI\Model\EmpresaCertificadoListagem';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ACBrAPI\Model\EmpresaCertificadoListagem',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listarCertificadosAsync
+     *
+     * Listar certificados
+     *
+     * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
+     * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
+     * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
+     * @param  int $expires_in Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)
+     * @param  bool $include_expired Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarCertificados'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listarCertificadosAsync($top = 10, $skip = 0, $inlinecount = false, $expires_in = null, $include_expired = true, string $contentType = self::contentTypes['listarCertificados'][0])
+    {
+        return $this->listarCertificadosAsyncWithHttpInfo($top, $skip, $inlinecount, $expires_in, $include_expired, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listarCertificadosAsyncWithHttpInfo
+     *
+     * Listar certificados
+     *
+     * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
+     * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
+     * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
+     * @param  int $expires_in Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)
+     * @param  bool $include_expired Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarCertificados'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listarCertificadosAsyncWithHttpInfo($top = 10, $skip = 0, $inlinecount = false, $expires_in = null, $include_expired = true, string $contentType = self::contentTypes['listarCertificados'][0])
+    {
+        $returnType = '\ACBrAPI\Model\EmpresaCertificadoListagem';
+        $request = $this->listarCertificadosRequest($top, $skip, $inlinecount, $expires_in, $include_expired, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listarCertificados'
+     *
+     * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
+     * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
+     * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
+     * @param  int $expires_in Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. (optional)
+     * @param  bool $include_expired Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. (optional, default to true)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarCertificados'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listarCertificadosRequest($top = 10, $skip = 0, $inlinecount = false, $expires_in = null, $include_expired = true, string $contentType = self::contentTypes['listarCertificados'][0])
+    {
+
+
+
+
+        if ($expires_in !== null && $expires_in <= 0) {
+            throw new \InvalidArgumentException('invalid value for "$expires_in" when calling EmpresaApi.listarCertificados, must be bigger than 0.');
+        }
+        
+
+
+        $resourcePath = '/empresas/certificados';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $top,
+            '$top', // param base name
+            'integer', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $skip,
+            '$skip', // param base name
+            'integer', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $inlinecount,
+            '$inlinecount', // param base name
+            'boolean', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $expires_in,
+            'expires_in', // param base name
+            'integer', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $include_expired,
+            'include_expired', // param base name
+            'boolean', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

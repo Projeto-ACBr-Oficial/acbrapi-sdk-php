@@ -10,7 +10,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -156,7 +156,7 @@ class DceApi
      *
      * Baixar PDF do DACE
      *
-     * @param  string $id ID único da DC-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfDce'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -174,7 +174,7 @@ class DceApi
      *
      * Baixar PDF do DACE
      *
-     * @param  string $id ID único da DC-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfDce'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -298,7 +298,7 @@ class DceApi
      *
      * Baixar PDF do DACE
      *
-     * @param  string $id ID único da DC-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -319,7 +319,7 @@ class DceApi
      *
      * Baixar PDF do DACE
      *
-     * @param  string $id ID único da DC-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -369,7 +369,7 @@ class DceApi
     /**
      * Create request for operation 'baixarPdfDce'
      *
-     * @param  string $id ID único da DC-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -472,7 +472,7 @@ class DceApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoDce'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -490,7 +490,7 @@ class DceApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoDce'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -614,7 +614,7 @@ class DceApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -635,7 +635,7 @@ class DceApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -685,7 +685,7 @@ class DceApi
     /**
      * Create request for operation 'baixarXmlCancelamentoDce'
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -788,7 +788,7 @@ class DceApi
      *
      * Baixar XML da DC-e processada
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDce'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -806,7 +806,7 @@ class DceApi
      *
      * Baixar XML da DC-e processada
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDce'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -930,7 +930,7 @@ class DceApi
      *
      * Baixar XML da DC-e processada
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -951,7 +951,7 @@ class DceApi
      *
      * Baixar XML da DC-e processada
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1001,7 +1001,7 @@ class DceApi
     /**
      * Create request for operation 'baixarXmlDce'
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1104,7 +1104,7 @@ class DceApi
      *
      * Baixar XML da DC-e
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDceDeclaracao'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1122,7 +1122,7 @@ class DceApi
      *
      * Baixar XML da DC-e
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDceDeclaracao'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1246,7 +1246,7 @@ class DceApi
      *
      * Baixar XML da DC-e
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDceDeclaracao'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1267,7 +1267,7 @@ class DceApi
      *
      * Baixar XML da DC-e
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDceDeclaracao'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1317,7 +1317,7 @@ class DceApi
     /**
      * Create request for operation 'baixarXmlDceDeclaracao'
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDceDeclaracao'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1420,7 +1420,7 @@ class DceApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDceProtocolo'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1438,7 +1438,7 @@ class DceApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDceProtocolo'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1562,7 +1562,7 @@ class DceApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDceProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1583,7 +1583,7 @@ class DceApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDceProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1633,7 +1633,7 @@ class DceApi
     /**
      * Create request for operation 'baixarXmlDceProtocolo'
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlDceProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1736,7 +1736,7 @@ class DceApi
      *
      * Cancelar uma DC-e autorizada
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  \ACBrAPI\Model\DcePedidoCancelamento $body body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarDce'] to see the possible values for this operation
      *
@@ -1755,7 +1755,7 @@ class DceApi
      *
      * Cancelar uma DC-e autorizada
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  \ACBrAPI\Model\DcePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarDce'] to see the possible values for this operation
      *
@@ -1880,7 +1880,7 @@ class DceApi
      *
      * Cancelar uma DC-e autorizada
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  \ACBrAPI\Model\DcePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarDce'] to see the possible values for this operation
      *
@@ -1902,7 +1902,7 @@ class DceApi
      *
      * Cancelar uma DC-e autorizada
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  \ACBrAPI\Model\DcePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarDce'] to see the possible values for this operation
      *
@@ -1953,7 +1953,7 @@ class DceApi
     /**
      * Create request for operation 'cancelarDce'
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  \ACBrAPI\Model\DcePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarDce'] to see the possible values for this operation
      *
@@ -2065,7 +2065,7 @@ class DceApi
      *
      * Consultar o cancelamento da DC-e
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoDce'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2083,7 +2083,7 @@ class DceApi
      *
      * Consultar o cancelamento da DC-e
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoDce'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2207,7 +2207,7 @@ class DceApi
      *
      * Consultar o cancelamento da DC-e
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2228,7 +2228,7 @@ class DceApi
      *
      * Consultar o cancelamento da DC-e
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2278,7 +2278,7 @@ class DceApi
     /**
      * Create request for operation 'consultarCancelamentoDce'
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2381,7 +2381,7 @@ class DceApi
      *
      * Consultar DC-e
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarDce'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2399,7 +2399,7 @@ class DceApi
      *
      * Consultar DC-e
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarDce'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2523,7 +2523,7 @@ class DceApi
      *
      * Consultar DC-e
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2544,7 +2544,7 @@ class DceApi
      *
      * Consultar DC-e
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2594,7 +2594,7 @@ class DceApi
     /**
      * Create request for operation 'consultarDce'
      *
-     * @param  string $id ID único da DC-e gerada pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da DC-e gerada pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarDce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

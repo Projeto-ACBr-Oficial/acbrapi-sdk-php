@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -56,6 +56,8 @@ class EmpresaCertificado implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'string',
+        'created_at' => '\DateTime',
         'serial_number' => 'string',
         'issuer_name' => 'string',
         'not_valid_before' => '\DateTime',
@@ -74,6 +76,8 @@ class EmpresaCertificado implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => null,
+        'created_at' => 'date-time',
         'serial_number' => null,
         'issuer_name' => null,
         'not_valid_before' => 'date-time',
@@ -90,6 +94,8 @@ class EmpresaCertificado implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'id' => false,
+        'created_at' => false,
         'serial_number' => false,
         'issuer_name' => false,
         'not_valid_before' => false,
@@ -186,6 +192,8 @@ class EmpresaCertificado implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'created_at' => 'created_at',
         'serial_number' => 'serial_number',
         'issuer_name' => 'issuer_name',
         'not_valid_before' => 'not_valid_before',
@@ -202,6 +210,8 @@ class EmpresaCertificado implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'created_at' => 'setCreatedAt',
         'serial_number' => 'setSerialNumber',
         'issuer_name' => 'setIssuerName',
         'not_valid_before' => 'setNotValidBefore',
@@ -218,6 +228,8 @@ class EmpresaCertificado implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'created_at' => 'getCreatedAt',
         'serial_number' => 'getSerialNumber',
         'issuer_name' => 'getIssuerName',
         'not_valid_before' => 'getNotValidBefore',
@@ -285,6 +297,8 @@ class EmpresaCertificado implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('serial_number', $data ?? [], null);
         $this->setIfExists('issuer_name', $data ?? [], null);
         $this->setIfExists('not_valid_before', $data ?? [], null);
@@ -336,6 +350,60 @@ class EmpresaCertificado implements ModelInterface, ArrayAccess, \JsonSerializab
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        }
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime|null $created_at created_at
+     *
+     * @return self
+     */
+    public function setCreatedAt($created_at)
+    {
+        if (is_null($created_at)) {
+            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+        }
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
 
     /**
      * Gets serial_number

@@ -1,6 +1,6 @@
 # ACBrAPI\NfceApi
 
-Todas as URIs relativas a https://api.nuvemfiscal.com.br, exceto se a operação definir outra URI base.
+Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação definir outra URI base.
 
 | Método | Endpoint | Descrição |
 | ------------- | ------------- | ------------- |
@@ -66,7 +66,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
 $modelo = 1; // int | Modelo da impressora:  * `0` - Texto  * `1` - Epson  * `2` - Bematech  * `3` - Daruma  * `4` - Vox  * `5` - Diebold  * `6` - Epson P2  * `7` - CustomPos  * `8` - Star  * `9` - Zjiang  * `10` - GPrinter  * `11` - Datecs  * `12` - Sunmi  * `13` - Externo
 $colunas = 48; // int | Define o máximo de caracteres, em uma linha, usando a fonte normal.    Ex: 40, 42, 48, 58, 80.
 $qrcode_lateral = false; // bool | Imprime o QRCode na lateral do DANFCe.    OBS: não suportado por alguns modelos de impressora.
@@ -83,7 +83,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
 | **modelo** | **int**| Modelo da impressora:  * &#x60;0&#x60; - Texto  * &#x60;1&#x60; - Epson  * &#x60;2&#x60; - Bematech  * &#x60;3&#x60; - Daruma  * &#x60;4&#x60; - Vox  * &#x60;5&#x60; - Diebold  * &#x60;6&#x60; - Epson P2  * &#x60;7&#x60; - CustomPos  * &#x60;8&#x60; - Star  * &#x60;9&#x60; - Zjiang  * &#x60;10&#x60; - GPrinter  * &#x60;11&#x60; - Datecs  * &#x60;12&#x60; - Sunmi  * &#x60;13&#x60; - Externo | [optional] [default to 1] |
 | **colunas** | **int**| Define o máximo de caracteres, em uma linha, usando a fonte normal.    Ex: 40, 42, 48, 58, 80. | [optional] [default to 48] |
 | **qrcode_lateral** | **bool**| Imprime o QRCode na lateral do DANFCe.    OBS: não suportado por alguns modelos de impressora. | [optional] [default to false] |
@@ -135,7 +135,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarPdfCancelamentoNfce($id);
@@ -149,7 +149,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -198,7 +198,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do evento gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do evento gerado pela API.
 
 try {
     $result = $apiInstance->baixarPdfEventoNfce($id);
@@ -212,7 +212,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do evento gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -261,7 +261,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do evento gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do evento gerado pela API.
 
 try {
     $result = $apiInstance->baixarPdfInutilizacaoNfce($id);
@@ -275,7 +275,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do evento gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -324,7 +324,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
 $logotipo = false; // bool | Imprime o documento com logotipo, desde que esteja cadastrado na empresa.
 $nome_fantasia = false; // bool | Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota.
 $mensagem_rodape = 'mensagem_rodape_example'; // string | Imprime mensagem no rodapé do documento.    O caractere `|` (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * `\"esquerda\"`  * `\"esquerda|centro\"`  * `\"esquerda|centro|direita\"`  * `\"|centro\"`, `\"|centro|\"`  * `\"|centro|direita\"`  * `\"||direita\"`  * `\"esquerda||direita\"`
@@ -345,7 +345,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
 | **logotipo** | **bool**| Imprime o documento com logotipo, desde que esteja cadastrado na empresa. | [optional] [default to false] |
 | **nome_fantasia** | **bool**| Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. | [optional] [default to false] |
 | **mensagem_rodape** | **string**| Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; | [optional] |
@@ -545,7 +545,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlCancelamentoNfce($id);
@@ -559,7 +559,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -608,7 +608,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do evento gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do evento gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlEventoNfce($id);
@@ -622,7 +622,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do evento gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -671,7 +671,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do evento gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do evento gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlInutilizacaoNfce($id);
@@ -685,7 +685,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do evento gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -736,7 +736,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlNfce($id);
@@ -750,7 +750,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -801,7 +801,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlNfceNota($id);
@@ -815,7 +815,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -864,7 +864,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlNfceProtocolo($id);
@@ -878,7 +878,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -929,7 +929,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
 $body = new \ACBrAPI\Model\NfePedidoCancelamento(); // \ACBrAPI\Model\NfePedidoCancelamento
 
 try {
@@ -944,7 +944,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
 | **body** | [**\ACBrAPI\Model\NfePedidoCancelamento**](../Model/NfePedidoCancelamento.md)|  | [optional] |
 
 ### Tipo do retorno
@@ -994,7 +994,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
 
 try {
     $result = $apiInstance->consultarCancelamentoNfce($id);
@@ -1008,7 +1008,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -1057,7 +1057,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do evento gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do evento gerado pela API.
 
 try {
     $result = $apiInstance->consultarEventoNfce($id);
@@ -1071,7 +1071,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do evento gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -1120,7 +1120,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do evento gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do evento gerado pela API.
 
 try {
     $result = $apiInstance->consultarInutilizacaoNfce($id);
@@ -1134,7 +1134,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do evento gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -1161,7 +1161,7 @@ consultarLoteNfce($id): \ACBrAPI\Model\DfeLote
 
 Consultar lote de NFC-e
 
-Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
 
 ### Exemplo
 
@@ -1185,7 +1185,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do lote gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do lote gerado pela API.
 
 try {
     $result = $apiInstance->consultarLoteNfce($id);
@@ -1199,7 +1199,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do lote gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do lote gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -1226,7 +1226,7 @@ consultarNfce($id): \ACBrAPI\Model\Dfe
 
 Consultar NFC-e
 
-Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a Nuvem Fiscal irá retornar as informações da nota correspondente.
+Consulta os detalhes de uma NFC-e já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de notas e a API irá retornar as informações da nota correspondente.
 
 ### Exemplo
 
@@ -1250,7 +1250,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
 
 try {
     $result = $apiInstance->consultarNfce($id);
@@ -1264,7 +1264,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -1291,7 +1291,7 @@ consultarStatusSefazNfce($cpf_cnpj, $autorizador): \ACBrAPI\Model\DfeSefazStatus
 
 Consulta do Status do Serviço na SEFAZ Autorizadora
 
-Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 7.0, item 5.5.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
 
 ### Exemplo
 
@@ -1512,7 +1512,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
 $body = new \ACBrAPI\Model\DfePedidoEnvioEmail(); // \ACBrAPI\Model\DfePedidoEnvioEmail
 
 try {
@@ -1527,7 +1527,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
 | **body** | [**\ACBrAPI\Model\DfePedidoEnvioEmail**](../Model/DfePedidoEnvioEmail.md)|  | [optional] |
 
 ### Tipo do retorno
@@ -1644,7 +1644,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$dfe_id = 'dfe_id_example'; // string | ID único gerado pela Nuvem Fiscal para o documento fiscal.
+$dfe_id = 'dfe_id_example'; // string | ID único gerado pela API para o documento fiscal.
 $top = 10; // int | Limite no número de objetos a serem retornados pela API, entre 1 e 100.
 $skip = 0; // int | Quantidade de objetos que serão ignorados antes da lista começar a ser retornada.
 $inlinecount = false; // bool | Inclui no JSON de resposta, na propriedade `@count`, o número total de registros que o filtro retornaria, independente dos filtros de paginação.
@@ -1661,7 +1661,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **dfe_id** | **string**| ID único gerado pela Nuvem Fiscal para o documento fiscal. | |
+| **dfe_id** | **string**| ID único gerado pela API para o documento fiscal. | |
 | **top** | **int**| Limite no número de objetos a serem retornados pela API, entre 1 e 100. | [optional] [default to 10] |
 | **skip** | **int**| Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. | [optional] [default to 0] |
 | **inlinecount** | **bool**| Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. | [optional] [default to false] |
@@ -1845,7 +1845,7 @@ sincronizarNfce($id): \ACBrAPI\Model\DfeSincronizacao
 
 Sincroniza dados na NFC-e a partir da SEFAZ
 
-Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status `erro` na Nuvem Fiscal, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status `autorizado`na Nuvem Fiscal, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
+Realiza a sincronização dos dados a partir da consulta da situação atual da NFC-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status `erro` na API, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status `autorizado`na API, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
 
 ### Exemplo
 
@@ -1869,7 +1869,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da NFC-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
 
 try {
     $result = $apiInstance->sincronizarNfce($id);
@@ -1883,7 +1883,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da NFC-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
 
 ### Tipo do retorno
 

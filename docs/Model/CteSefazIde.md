@@ -38,5 +38,6 @@ Nome | Tipo | Descrição | Comentários
 **toma4** | [**\ACBrAPI\Model\CteSefazToma4**](CteSefazToma4.md) |  | [optional]
 **dh_cont** | **\DateTime** | Data e Hora da entrada em contingência.  Informar a data e hora no formato AAAA-MM-DDTHH:MM:SS. | [optional]
 **x_just** | **string** | Justificativa da entrada em contingência. | [optional]
+**g_compra_gov** | [**\ACBrAPI\Model\CteSefazCompraGovReduzido**](CteSefazCompraGovReduzido.md) |  | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

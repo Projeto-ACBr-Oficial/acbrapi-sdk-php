@@ -10,7 +10,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -186,7 +186,7 @@ class CteApi
      *
      * Baixar PDF do cancelamento
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -204,7 +204,7 @@ class CteApi
      *
      * Baixar PDF do cancelamento
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -328,7 +328,7 @@ class CteApi
      *
      * Baixar PDF do cancelamento
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -349,7 +349,7 @@ class CteApi
      *
      * Baixar PDF do cancelamento
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -399,7 +399,7 @@ class CteApi
     /**
      * Create request for operation 'baixarPdfCancelamentoCte'
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -502,7 +502,7 @@ class CteApi
      *
      * Baixar PDF da carta de correção
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -520,7 +520,7 @@ class CteApi
      *
      * Baixar PDF da carta de correção
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -644,7 +644,7 @@ class CteApi
      *
      * Baixar PDF da carta de correção
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -665,7 +665,7 @@ class CteApi
      *
      * Baixar PDF da carta de correção
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -715,7 +715,7 @@ class CteApi
     /**
      * Create request for operation 'baixarPdfCartaCorrecaoCte'
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -818,7 +818,7 @@ class CteApi
      *
      * Baixar PDF do DACTE
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCte'] to see the possible values for this operation
      *
@@ -837,7 +837,7 @@ class CteApi
      *
      * Baixar PDF do DACTE
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCte'] to see the possible values for this operation
      *
@@ -962,7 +962,7 @@ class CteApi
      *
      * Baixar PDF do DACTE
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCte'] to see the possible values for this operation
      *
@@ -984,7 +984,7 @@ class CteApi
      *
      * Baixar PDF do DACTE
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCte'] to see the possible values for this operation
      *
@@ -1035,7 +1035,7 @@ class CteApi
     /**
      * Create request for operation 'baixarPdfCte'
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCte'] to see the possible values for this operation
      *
@@ -1149,7 +1149,7 @@ class CteApi
      *
      * Baixar PDF do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1167,7 +1167,7 @@ class CteApi
      *
      * Baixar PDF do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1291,7 +1291,7 @@ class CteApi
      *
      * Baixar PDF do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1312,7 +1312,7 @@ class CteApi
      *
      * Baixar PDF do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1362,7 +1362,7 @@ class CteApi
     /**
      * Create request for operation 'baixarPdfEventoCte'
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1465,7 +1465,7 @@ class CteApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1483,7 +1483,7 @@ class CteApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1607,7 +1607,7 @@ class CteApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1628,7 +1628,7 @@ class CteApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1678,7 +1678,7 @@ class CteApi
     /**
      * Create request for operation 'baixarXmlCancelamentoCte'
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1781,7 +1781,7 @@ class CteApi
      *
      * Baixar XML da carta de correção
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1799,7 +1799,7 @@ class CteApi
      *
      * Baixar XML da carta de correção
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1923,7 +1923,7 @@ class CteApi
      *
      * Baixar XML da carta de correção
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1944,7 +1944,7 @@ class CteApi
      *
      * Baixar XML da carta de correção
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1994,7 +1994,7 @@ class CteApi
     /**
      * Create request for operation 'baixarXmlCartaCorrecaoCte'
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2097,7 +2097,7 @@ class CteApi
      *
      * Baixar XML do CT-e processado
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2115,7 +2115,7 @@ class CteApi
      *
      * Baixar XML do CT-e processado
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2239,7 +2239,7 @@ class CteApi
      *
      * Baixar XML do CT-e processado
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2260,7 +2260,7 @@ class CteApi
      *
      * Baixar XML do CT-e processado
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2310,7 +2310,7 @@ class CteApi
     /**
      * Create request for operation 'baixarXmlCte'
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2413,7 +2413,7 @@ class CteApi
      *
      * Baixar XML do CT-e
      *
-     * @param  string $id ID único da CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCteConhecimento'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2431,7 +2431,7 @@ class CteApi
      *
      * Baixar XML do CT-e
      *
-     * @param  string $id ID único da CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCteConhecimento'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2555,7 +2555,7 @@ class CteApi
      *
      * Baixar XML do CT-e
      *
-     * @param  string $id ID único da CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCteConhecimento'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2576,7 +2576,7 @@ class CteApi
      *
      * Baixar XML do CT-e
      *
-     * @param  string $id ID único da CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCteConhecimento'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2626,7 +2626,7 @@ class CteApi
     /**
      * Create request for operation 'baixarXmlCteConhecimento'
      *
-     * @param  string $id ID único da CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCteConhecimento'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2729,7 +2729,7 @@ class CteApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCteProtocolo'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2747,7 +2747,7 @@ class CteApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCteProtocolo'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2871,7 +2871,7 @@ class CteApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCteProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2892,7 +2892,7 @@ class CteApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCteProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2942,7 +2942,7 @@ class CteApi
     /**
      * Create request for operation 'baixarXmlCteProtocolo'
      *
-     * @param  string $id ID único da CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCteProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3045,7 +3045,7 @@ class CteApi
      *
      * Baixar XML do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3063,7 +3063,7 @@ class CteApi
      *
      * Baixar XML do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3187,7 +3187,7 @@ class CteApi
      *
      * Baixar XML do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3208,7 +3208,7 @@ class CteApi
      *
      * Baixar XML do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3258,7 +3258,7 @@ class CteApi
     /**
      * Create request for operation 'baixarXmlEventoCte'
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3361,7 +3361,7 @@ class CteApi
      *
      * Cancelar um CT-e autorizado
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\CtePedidoCancelamento $body body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarCte'] to see the possible values for this operation
      *
@@ -3380,7 +3380,7 @@ class CteApi
      *
      * Cancelar um CT-e autorizado
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\CtePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarCte'] to see the possible values for this operation
      *
@@ -3505,7 +3505,7 @@ class CteApi
      *
      * Cancelar um CT-e autorizado
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\CtePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarCte'] to see the possible values for this operation
      *
@@ -3527,7 +3527,7 @@ class CteApi
      *
      * Cancelar um CT-e autorizado
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\CtePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarCte'] to see the possible values for this operation
      *
@@ -3578,7 +3578,7 @@ class CteApi
     /**
      * Create request for operation 'cancelarCte'
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\CtePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarCte'] to see the possible values for this operation
      *
@@ -3690,7 +3690,7 @@ class CteApi
      *
      * Consultar o cancelamento do CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3708,7 +3708,7 @@ class CteApi
      *
      * Consultar o cancelamento do CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3832,7 +3832,7 @@ class CteApi
      *
      * Consultar o cancelamento do CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3853,7 +3853,7 @@ class CteApi
      *
      * Consultar o cancelamento do CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3903,7 +3903,7 @@ class CteApi
     /**
      * Create request for operation 'consultarCancelamentoCte'
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4006,7 +4006,7 @@ class CteApi
      *
      * Consultar a solicitação de correção do CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4024,7 +4024,7 @@ class CteApi
      *
      * Consultar a solicitação de correção do CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4148,7 +4148,7 @@ class CteApi
      *
      * Consultar a solicitação de correção do CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4169,7 +4169,7 @@ class CteApi
      *
      * Consultar a solicitação de correção do CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4219,7 +4219,7 @@ class CteApi
     /**
      * Create request for operation 'consultarCartaCorrecaoCte'
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCartaCorrecaoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4322,7 +4322,7 @@ class CteApi
      *
      * Consultar CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4340,7 +4340,7 @@ class CteApi
      *
      * Consultar CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4464,7 +4464,7 @@ class CteApi
      *
      * Consultar CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4485,7 +4485,7 @@ class CteApi
      *
      * Consultar CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4535,7 +4535,7 @@ class CteApi
     /**
      * Create request for operation 'consultarCte'
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4638,7 +4638,7 @@ class CteApi
      *
      * Consultar evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4656,7 +4656,7 @@ class CteApi
      *
      * Consultar evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4780,7 +4780,7 @@ class CteApi
      *
      * Consultar evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4801,7 +4801,7 @@ class CteApi
      *
      * Consultar evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4851,7 +4851,7 @@ class CteApi
     /**
      * Create request for operation 'consultarEventoCte'
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5286,7 +5286,7 @@ class CteApi
      *
      * Solicitar correção do CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\CtePedidoCartaCorrecao $body body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarCartaCorrecaoCte'] to see the possible values for this operation
      *
@@ -5305,7 +5305,7 @@ class CteApi
      *
      * Solicitar correção do CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\CtePedidoCartaCorrecao $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarCartaCorrecaoCte'] to see the possible values for this operation
      *
@@ -5430,7 +5430,7 @@ class CteApi
      *
      * Solicitar correção do CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\CtePedidoCartaCorrecao $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarCartaCorrecaoCte'] to see the possible values for this operation
      *
@@ -5452,7 +5452,7 @@ class CteApi
      *
      * Solicitar correção do CT-e
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\CtePedidoCartaCorrecao $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarCartaCorrecaoCte'] to see the possible values for this operation
      *
@@ -5503,7 +5503,7 @@ class CteApi
     /**
      * Create request for operation 'criarCartaCorrecaoCte'
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\CtePedidoCartaCorrecao $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarCartaCorrecaoCte'] to see the possible values for this operation
      *
@@ -6679,7 +6679,7 @@ class CteApi
      *
      * Sincroniza dados no CT-e a partir da SEFAZ
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6697,7 +6697,7 @@ class CteApi
      *
      * Sincroniza dados no CT-e a partir da SEFAZ
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarCte'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6821,7 +6821,7 @@ class CteApi
      *
      * Sincroniza dados no CT-e a partir da SEFAZ
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6842,7 +6842,7 @@ class CteApi
      *
      * Sincroniza dados no CT-e a partir da SEFAZ
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6892,7 +6892,7 @@ class CteApi
     /**
      * Create request for operation 'sincronizarCte'
      *
-     * @param  string $id ID único do CT-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do CT-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarCte'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

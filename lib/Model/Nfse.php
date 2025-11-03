@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -441,7 +441,7 @@ class Nfse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id ID único da nota gerado automaticamente pela Nuvem Fiscal.
+     * @param string|null $id ID único da nota gerado automaticamente pela API.
      *
      * @return self
      */

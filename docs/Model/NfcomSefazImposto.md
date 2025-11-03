@@ -17,5 +17,6 @@ Nome | Tipo | Descrição | Comentários
 **fust** | [**\ACBrAPI\Model\NfcomSefazFUST**](NfcomSefazFUST.md) |  | [optional]
 **funttel** | [**\ACBrAPI\Model\NfcomSefazFUNTTEL**](NfcomSefazFUNTTEL.md) |  | [optional]
 **ret_trib** | [**\ACBrAPI\Model\NfcomSefazRetTrib**](NfcomSefazRetTrib.md) |  | [optional]
+**ibscbs** | [**\ACBrAPI\Model\NfcomSefazTribNFCom**](NfcomSefazTribNFCom.md) |  | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

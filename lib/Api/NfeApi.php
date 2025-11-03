@@ -10,7 +10,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -219,7 +219,7 @@ class NfeApi
      *
      * Baixar PDF do cancelamento
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -237,7 +237,7 @@ class NfeApi
      *
      * Baixar PDF do cancelamento
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -361,7 +361,7 @@ class NfeApi
      *
      * Baixar PDF do cancelamento
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -382,7 +382,7 @@ class NfeApi
      *
      * Baixar PDF do cancelamento
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -432,7 +432,7 @@ class NfeApi
     /**
      * Create request for operation 'baixarPdfCancelamentoNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -535,7 +535,7 @@ class NfeApi
      *
      * Baixar PDF da carta de correção
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -553,7 +553,7 @@ class NfeApi
      *
      * Baixar PDF da carta de correção
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -677,7 +677,7 @@ class NfeApi
      *
      * Baixar PDF da carta de correção
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -698,7 +698,7 @@ class NfeApi
      *
      * Baixar PDF da carta de correção
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -748,7 +748,7 @@ class NfeApi
     /**
      * Create request for operation 'baixarPdfCartaCorrecaoNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -851,7 +851,7 @@ class NfeApi
      *
      * Baixar PDF do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -869,7 +869,7 @@ class NfeApi
      *
      * Baixar PDF do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -993,7 +993,7 @@ class NfeApi
      *
      * Baixar PDF do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1014,7 +1014,7 @@ class NfeApi
      *
      * Baixar PDF do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1064,7 +1064,7 @@ class NfeApi
     /**
      * Create request for operation 'baixarPdfEventoNfe'
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfEventoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1167,7 +1167,7 @@ class NfeApi
      *
      * Baixar PDF da inutilização
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1185,7 +1185,7 @@ class NfeApi
      *
      * Baixar PDF da inutilização
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1309,7 +1309,7 @@ class NfeApi
      *
      * Baixar PDF da inutilização
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1330,7 +1330,7 @@ class NfeApi
      *
      * Baixar PDF da inutilização
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1380,7 +1380,7 @@ class NfeApi
     /**
      * Create request for operation 'baixarPdfInutilizacaoNfe'
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarPdfInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1483,7 +1483,7 @@ class NfeApi
      *
      * Baixar PDF do DANFE
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
      * @param  string $formato Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to 'padrao')
@@ -1506,7 +1506,7 @@ class NfeApi
      *
      * Baixar PDF do DANFE
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
      * @param  string $formato Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to 'padrao')
@@ -1635,7 +1635,7 @@ class NfeApi
      *
      * Baixar PDF do DANFE
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
      * @param  string $formato Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to 'padrao')
@@ -1661,7 +1661,7 @@ class NfeApi
      *
      * Baixar PDF do DANFE
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
      * @param  string $formato Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to 'padrao')
@@ -1716,7 +1716,7 @@ class NfeApi
     /**
      * Create request for operation 'baixarPdfNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
      * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
      * @param  string $formato Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to 'padrao')
@@ -2585,7 +2585,7 @@ class NfeApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2603,7 +2603,7 @@ class NfeApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2727,7 +2727,7 @@ class NfeApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2748,7 +2748,7 @@ class NfeApi
      *
      * Baixar XML do cancelamento
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2798,7 +2798,7 @@ class NfeApi
     /**
      * Create request for operation 'baixarXmlCancelamentoNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2901,7 +2901,7 @@ class NfeApi
      *
      * Baixar XML da carta de correção
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2919,7 +2919,7 @@ class NfeApi
      *
      * Baixar XML da carta de correção
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3043,7 +3043,7 @@ class NfeApi
      *
      * Baixar XML da carta de correção
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3064,7 +3064,7 @@ class NfeApi
      *
      * Baixar XML da carta de correção
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3114,7 +3114,7 @@ class NfeApi
     /**
      * Create request for operation 'baixarXmlCartaCorrecaoNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3217,7 +3217,7 @@ class NfeApi
      *
      * Baixar XML do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3235,7 +3235,7 @@ class NfeApi
      *
      * Baixar XML do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3359,7 +3359,7 @@ class NfeApi
      *
      * Baixar XML do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3380,7 +3380,7 @@ class NfeApi
      *
      * Baixar XML do evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3430,7 +3430,7 @@ class NfeApi
     /**
      * Create request for operation 'baixarXmlEventoNfe'
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3533,7 +3533,7 @@ class NfeApi
      *
      * Baixar XML da inutilização
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3551,7 +3551,7 @@ class NfeApi
      *
      * Baixar XML da inutilização
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3675,7 +3675,7 @@ class NfeApi
      *
      * Baixar XML da inutilização
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3696,7 +3696,7 @@ class NfeApi
      *
      * Baixar XML da inutilização
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3746,7 +3746,7 @@ class NfeApi
     /**
      * Create request for operation 'baixarXmlInutilizacaoNfe'
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3849,7 +3849,7 @@ class NfeApi
      *
      * Baixar XML da NF-e processada
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3867,7 +3867,7 @@ class NfeApi
      *
      * Baixar XML da NF-e processada
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -3991,7 +3991,7 @@ class NfeApi
      *
      * Baixar XML da NF-e processada
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4012,7 +4012,7 @@ class NfeApi
      *
      * Baixar XML da NF-e processada
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4062,7 +4062,7 @@ class NfeApi
     /**
      * Create request for operation 'baixarXmlNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4165,7 +4165,7 @@ class NfeApi
      *
      * Baixar XML da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfeNota'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4183,7 +4183,7 @@ class NfeApi
      *
      * Baixar XML da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfeNota'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4307,7 +4307,7 @@ class NfeApi
      *
      * Baixar XML da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfeNota'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4328,7 +4328,7 @@ class NfeApi
      *
      * Baixar XML da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfeNota'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4378,7 +4378,7 @@ class NfeApi
     /**
      * Create request for operation 'baixarXmlNfeNota'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfeNota'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4481,7 +4481,7 @@ class NfeApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfeProtocolo'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4499,7 +4499,7 @@ class NfeApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfeProtocolo'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -4623,7 +4623,7 @@ class NfeApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfeProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4644,7 +4644,7 @@ class NfeApi
      *
      * Baixar XML do Protocolo da SEFAZ
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfeProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4694,7 +4694,7 @@ class NfeApi
     /**
      * Create request for operation 'baixarXmlNfeProtocolo'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlNfeProtocolo'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4797,7 +4797,7 @@ class NfeApi
      *
      * Cancelar uma NF-e autorizada
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfePedidoCancelamento $body body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfe'] to see the possible values for this operation
      *
@@ -4816,7 +4816,7 @@ class NfeApi
      *
      * Cancelar uma NF-e autorizada
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfe'] to see the possible values for this operation
      *
@@ -4941,7 +4941,7 @@ class NfeApi
      *
      * Cancelar uma NF-e autorizada
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfe'] to see the possible values for this operation
      *
@@ -4963,7 +4963,7 @@ class NfeApi
      *
      * Cancelar uma NF-e autorizada
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfe'] to see the possible values for this operation
      *
@@ -5014,7 +5014,7 @@ class NfeApi
     /**
      * Create request for operation 'cancelarNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfe'] to see the possible values for this operation
      *
@@ -5126,7 +5126,7 @@ class NfeApi
      *
      * Consultar o cancelamento da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5144,7 +5144,7 @@ class NfeApi
      *
      * Consultar o cancelamento da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5268,7 +5268,7 @@ class NfeApi
      *
      * Consultar o cancelamento da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5289,7 +5289,7 @@ class NfeApi
      *
      * Consultar o cancelamento da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5339,7 +5339,7 @@ class NfeApi
     /**
      * Create request for operation 'consultarCancelamentoNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCancelamentoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5442,7 +5442,7 @@ class NfeApi
      *
      * Consultar a solicitação de correção da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5460,7 +5460,7 @@ class NfeApi
      *
      * Consultar a solicitação de correção da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -5584,7 +5584,7 @@ class NfeApi
      *
      * Consultar a solicitação de correção da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5605,7 +5605,7 @@ class NfeApi
      *
      * Consultar a solicitação de correção da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -5655,7 +5655,7 @@ class NfeApi
     /**
      * Create request for operation 'consultarCartaCorrecaoNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarCartaCorrecaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6132,7 +6132,7 @@ class NfeApi
      *
      * Consultar evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6150,7 +6150,7 @@ class NfeApi
      *
      * Consultar evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6274,7 +6274,7 @@ class NfeApi
      *
      * Consultar evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6295,7 +6295,7 @@ class NfeApi
      *
      * Consultar evento
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6345,7 +6345,7 @@ class NfeApi
     /**
      * Create request for operation 'consultarEventoNfe'
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6448,7 +6448,7 @@ class NfeApi
      *
      * Consultar a inutilização de sequência de numeração
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6466,7 +6466,7 @@ class NfeApi
      *
      * Consultar a inutilização de sequência de numeração
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6590,7 +6590,7 @@ class NfeApi
      *
      * Consultar a inutilização de sequência de numeração
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6611,7 +6611,7 @@ class NfeApi
      *
      * Consultar a inutilização de sequência de numeração
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6661,7 +6661,7 @@ class NfeApi
     /**
      * Create request for operation 'consultarInutilizacaoNfe'
      *
-     * @param  string $id ID único do evento gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do evento gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarInutilizacaoNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6764,7 +6764,7 @@ class NfeApi
      *
      * Consultar lote de NF-e
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6782,7 +6782,7 @@ class NfeApi
      *
      * Consultar lote de NF-e
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -6906,7 +6906,7 @@ class NfeApi
      *
      * Consultar lote de NF-e
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6927,7 +6927,7 @@ class NfeApi
      *
      * Consultar lote de NF-e
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -6977,7 +6977,7 @@ class NfeApi
     /**
      * Create request for operation 'consultarLoteNfe'
      *
-     * @param  string $id ID único do lote gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único do lote gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarLoteNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7080,7 +7080,7 @@ class NfeApi
      *
      * Consultar NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -7098,7 +7098,7 @@ class NfeApi
      *
      * Consultar NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -7222,7 +7222,7 @@ class NfeApi
      *
      * Consultar NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7243,7 +7243,7 @@ class NfeApi
      *
      * Consultar NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7293,7 +7293,7 @@ class NfeApi
     /**
      * Create request for operation 'consultarNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -7728,7 +7728,7 @@ class NfeApi
      *
      * Solicitar correção da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfePedidoCartaCorrecao $body Contém os dados do pedido para carta de correção. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarCartaCorrecaoNfe'] to see the possible values for this operation
      *
@@ -7747,7 +7747,7 @@ class NfeApi
      *
      * Solicitar correção da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfePedidoCartaCorrecao $body Contém os dados do pedido para carta de correção. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarCartaCorrecaoNfe'] to see the possible values for this operation
      *
@@ -7872,7 +7872,7 @@ class NfeApi
      *
      * Solicitar correção da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfePedidoCartaCorrecao $body Contém os dados do pedido para carta de correção. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarCartaCorrecaoNfe'] to see the possible values for this operation
      *
@@ -7894,7 +7894,7 @@ class NfeApi
      *
      * Solicitar correção da NF-e
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfePedidoCartaCorrecao $body Contém os dados do pedido para carta de correção. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarCartaCorrecaoNfe'] to see the possible values for this operation
      *
@@ -7945,7 +7945,7 @@ class NfeApi
     /**
      * Create request for operation 'criarCartaCorrecaoNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\NfePedidoCartaCorrecao $body Contém os dados do pedido para carta de correção. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarCartaCorrecaoNfe'] to see the possible values for this operation
      *
@@ -8693,7 +8693,7 @@ class NfeApi
      *
      * Enviar e-mail
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfe'] to see the possible values for this operation
      *
@@ -8712,7 +8712,7 @@ class NfeApi
      *
      * Enviar e-mail
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfe'] to see the possible values for this operation
      *
@@ -8837,7 +8837,7 @@ class NfeApi
      *
      * Enviar e-mail
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfe'] to see the possible values for this operation
      *
@@ -8859,7 +8859,7 @@ class NfeApi
      *
      * Enviar e-mail
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfe'] to see the possible values for this operation
      *
@@ -8910,7 +8910,7 @@ class NfeApi
     /**
      * Create request for operation 'enviarEmailNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfe'] to see the possible values for this operation
      *
@@ -9337,7 +9337,7 @@ class NfeApi
      *
      * Listar eventos
      *
-     * @param  string $dfe_id ID único gerado pela Nuvem Fiscal para o documento fiscal. (required)
+     * @param  string $dfe_id ID único gerado pela API para o documento fiscal. (required)
      * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
      * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
      * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
@@ -9358,7 +9358,7 @@ class NfeApi
      *
      * Listar eventos
      *
-     * @param  string $dfe_id ID único gerado pela Nuvem Fiscal para o documento fiscal. (required)
+     * @param  string $dfe_id ID único gerado pela API para o documento fiscal. (required)
      * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
      * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
      * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
@@ -9485,7 +9485,7 @@ class NfeApi
      *
      * Listar eventos
      *
-     * @param  string $dfe_id ID único gerado pela Nuvem Fiscal para o documento fiscal. (required)
+     * @param  string $dfe_id ID único gerado pela API para o documento fiscal. (required)
      * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
      * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
      * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
@@ -9509,7 +9509,7 @@ class NfeApi
      *
      * Listar eventos
      *
-     * @param  string $dfe_id ID único gerado pela Nuvem Fiscal para o documento fiscal. (required)
+     * @param  string $dfe_id ID único gerado pela API para o documento fiscal. (required)
      * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
      * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
      * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
@@ -9562,7 +9562,7 @@ class NfeApi
     /**
      * Create request for operation 'listarEventosNfe'
      *
-     * @param  string $dfe_id ID único gerado pela Nuvem Fiscal para o documento fiscal. (required)
+     * @param  string $dfe_id ID único gerado pela API para o documento fiscal. (required)
      * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
      * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
      * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
@@ -10525,7 +10525,7 @@ class NfeApi
      *
      * Sincroniza dados na NF-e a partir da SEFAZ
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -10543,7 +10543,7 @@ class NfeApi
      *
      * Sincroniza dados na NF-e a partir da SEFAZ
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarNfe'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response or if the response body is not in the expected format
@@ -10667,7 +10667,7 @@ class NfeApi
      *
      * Sincroniza dados na NF-e a partir da SEFAZ
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10688,7 +10688,7 @@ class NfeApi
      *
      * Sincroniza dados na NF-e a partir da SEFAZ
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -10738,7 +10738,7 @@ class NfeApi
     /**
      * Create request for operation 'sincronizarNfe'
      *
-     * @param  string $id ID único da NF-e gerado pela Nuvem Fiscal. (required)
+     * @param  string $id ID único da NF-e gerado pela API. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['sincronizarNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

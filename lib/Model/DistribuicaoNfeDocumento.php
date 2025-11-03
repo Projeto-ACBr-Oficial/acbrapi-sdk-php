@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -450,7 +450,7 @@ class DistribuicaoNfeDocumento implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets id
      *
-     * @param string $id ID único gerado pela Nuvem Fiscal para identificar o documento.
+     * @param string $id ID único gerado pela API para identificar o documento.
      *
      * @return self
      */
@@ -477,7 +477,7 @@ class DistribuicaoNfeDocumento implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Data/hora em que o documento foi criado na Nuvem Fiscal. Representado no formato <a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"blank\">`ISO 8601`</a>.
+     * @param \DateTime|null $created_at Data/hora em que o documento foi criado na API. Representado no formato <a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"blank\">`ISO 8601`</a>.
      *
      * @return self
      */

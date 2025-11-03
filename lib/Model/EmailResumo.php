@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -372,7 +372,7 @@ class EmailResumo implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string $id ID único gerado pela Nuvem Fiscal para este email.    Utilize-o no endpoint de <a href=\"#tag/Email/operation/ConsultarEmail\">consulta de email</a>  para obter informações detalhadas sobre o envio do email e  rastrear todos os eventos relacionados, como envio, entrega, falhas e outros  eventos relevantes.
+     * @param string $id ID único gerado pela API para este email.    Utilize-o no endpoint de <a href=\"#tag/Email/operation/ConsultarEmail\">consulta de email</a>  para obter informações detalhadas sobre o envio do email e  rastrear todos os eventos relacionados, como envio, entrega, falhas e outros  eventos relevantes.
      *
      * @return self
      */

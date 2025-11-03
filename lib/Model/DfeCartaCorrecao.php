@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -478,7 +478,7 @@ class DfeCartaCorrecao implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id ID único gerado pela Nuvem Fiscal para este evento.
+     * @param string|null $id ID único gerado pela API para este evento.
      *
      * @return self
      */

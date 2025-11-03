@@ -1,6 +1,6 @@
 # ACBrAPI\EmpresaApi
 
-Todas as URIs relativas a https://api.nuvemfiscal.com.br, exceto se a operação definir outra URI base.
+Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação definir outra URI base.
 
 | Método | Endpoint | Descrição |
 | ------------- | ------------- | ------------- |
@@ -33,6 +33,7 @@ Todas as URIs relativas a https://api.nuvemfiscal.com.br, exceto se a operação
 | [**excluirCertificadoEmpresa()**](EmpresaApi.md#excluirCertificadoEmpresa) | **DELETE** /empresas/{cpf_cnpj}/certificado | Deletar certificado |
 | [**excluirEmpresa()**](EmpresaApi.md#excluirEmpresa) | **DELETE** /empresas/{cpf_cnpj} | Deletar empresa |
 | [**excluirLogotipoEmpresa()**](EmpresaApi.md#excluirLogotipoEmpresa) | **DELETE** /empresas/{cpf_cnpj}/logotipo | Deletar logotipo |
+| [**listarCertificados()**](EmpresaApi.md#listarCertificados) | **GET** /empresas/certificados | Listar certificados |
 | [**listarEmpresas()**](EmpresaApi.md#listarEmpresas) | **GET** /empresas | Listar empresas |
 
 
@@ -1890,6 +1891,79 @@ void (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
+## `listarCertificados()`
+
+```php
+listarCertificados($top, $skip, $inlinecount, $expires_in, $include_expired): \ACBrAPI\Model\EmpresaCertificadoListagem
+```
+
+Listar certificados
+
+Retorna a lista dos certificados associadas à sua conta. Os certificados são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar authorização via API key: jwt
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\EmpresaApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$top = 10; // int | Limite no número de objetos a serem retornados pela API, entre 1 e 100.
+$skip = 0; // int | Quantidade de objetos que serão ignorados antes da lista começar a ser retornada.
+$inlinecount = false; // bool | Inclui no JSON de resposta, na propriedade `@count`, o número total de registros que o filtro retornaria, independente dos filtros de paginação.
+$expires_in = 56; // int | Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in=30 -&gt; certificados que vencem nos próximos 30 dias.   - expires_in=7  -&gt; certificados que vencem nos próximos 7 dias.
+$include_expired = true; // bool | Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - `true`: incluir certificados vencidos.   - `false`: exibir apenas certificados válidos.
+
+try {
+    $result = $apiInstance->listarCertificados($top, $skip, $inlinecount, $expires_in, $include_expired);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling EmpresaApi->listarCertificados: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **top** | **int**| Limite no número de objetos a serem retornados pela API, entre 1 e 100. | [optional] [default to 10] |
+| **skip** | **int**| Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. | [optional] [default to 0] |
+| **inlinecount** | **bool**| Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. | [optional] [default to false] |
+| **expires_in** | **int**| Filtrar certificados que expiram dentro de X dias.    Informe um número inteiro correspondente à quantidade de dias até o vencimento.  Exemplos:   - expires_in&#x3D;30 -&amp;gt; certificados que vencem nos próximos 30 dias.   - expires_in&#x3D;7  -&amp;gt; certificados que vencem nos próximos 7 dias. | [optional] |
+| **include_expired** | **bool**| Indicar se os certificados já vencidos devem ser incluídos no resultado.    Valores aceitos:   - &#x60;true&#x60;: incluir certificados vencidos.   - &#x60;false&#x60;: exibir apenas certificados válidos. | [optional] [default to true] |
+
+### Tipo do retorno
+
+[**\ACBrAPI\Model\EmpresaCertificadoListagem**](../Model/EmpresaCertificadoListagem.md)
+
+### Autorização
+
+[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
 [[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
 [[Voltar à lista de DTOs]](../../README.md#models)

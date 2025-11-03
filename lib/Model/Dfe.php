@@ -11,7 +11,7 @@
  */
 
 /**
- * API Nuvem Fiscal
+ * ACBr API
  *
  * API para automação comercial e documentos fiscais.
  *
@@ -443,7 +443,7 @@ class Dfe implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id ID único gerado pela Nuvem Fiscal para este documento.
+     * @param string|null $id ID único gerado pela API para este documento.
      *
      * @return self
      */
@@ -507,7 +507,7 @@ class Dfe implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Data/hora em que o documento foi criado na Nuvem Fiscal. Representado no formato <a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"blank\">`ISO 8601`</a>.
+     * @param \DateTime|null $created_at Data/hora em que o documento foi criado na API. Representado no formato <a href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"blank\">`ISO 8601`</a>.
      *
      * @return self
      */
@@ -534,7 +534,7 @@ class Dfe implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets status
      *
-     * @param string|null $status * `pendente`: o pedido de emissão do documento foi recebido pela Nuvem Fiscal e está na fila de processamento.  * `autorizado`, `rejeitado` ou `denegado`: o documento foi transmitido para a SEFAZ, que retornou um desses status.  * `cancelado`: um evento de cancelamento foi homologado pela SEFAZ e associado ao documento.  * `encerrado`: um evento de encerramento foi homologado pela SEFAZ e associado a um MDF-e.  * `erro`: status próprio da Nuvem Fiscal que significa, na maioria das vezes, que houve algum erro que impediu a transmissão do documento para a SEFAZ (erros de validação, erros interno do servidor, timeouts, etc).
+     * @param string|null $status * `pendente`: o pedido de emissão do documento foi recebido pela API e está na fila de processamento.  * `autorizado`, `rejeitado` ou `denegado`: o documento foi transmitido para a SEFAZ, que retornou um desses status.  * `cancelado`: um evento de cancelamento foi homologado pela SEFAZ e associado ao documento.  * `encerrado`: um evento de encerramento foi homologado pela SEFAZ e associado a um MDF-e.  * `erro`: status próprio da API que significa, na maioria das vezes, que houve algum erro que impediu a transmissão do documento para a SEFAZ (erros de validação, erros interno do servidor, timeouts, etc).
      *
      * @return self
      */

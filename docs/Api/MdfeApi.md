@@ -1,6 +1,6 @@
 # ACBrAPI\MdfeApi
 
-Todas as URIs relativas a https://api.nuvemfiscal.com.br, exceto se a operação definir outra URI base.
+Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação definir outra URI base.
 
 | Método | Endpoint | Descrição |
 | ------------- | ------------- | ------------- |
@@ -62,7 +62,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarPdfCancelamentoMdfe($id);
@@ -76,7 +76,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -125,7 +125,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarPdfEncerramentoMdfe($id);
@@ -139,7 +139,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -188,7 +188,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do evento gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do evento gerado pela API.
 
 try {
     $result = $apiInstance->baixarPdfEventoMdfe($id);
@@ -202,7 +202,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do evento gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -251,7 +251,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 $logotipo = false; // bool | Imprime o documento com logotipo, desde que esteja cadastrado na empresa.
 
 try {
@@ -266,7 +266,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 | **logotipo** | **bool**| Imprime o documento com logotipo, desde que esteja cadastrado na empresa. | [optional] [default to false] |
 
 ### Tipo do retorno
@@ -316,7 +316,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlCancelamentoMdfe($id);
@@ -330,7 +330,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -379,7 +379,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlEncerramentoMdfe($id);
@@ -393,7 +393,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -442,7 +442,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do evento gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do evento gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlEventoMdfe($id);
@@ -456,7 +456,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do evento gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -507,7 +507,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlMdfe($id);
@@ -521,7 +521,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -572,7 +572,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da MDF-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlMdfeManifesto($id);
@@ -586,7 +586,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da MDF-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -635,7 +635,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único da MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único da MDF-e gerado pela API.
 
 try {
     $result = $apiInstance->baixarXmlMdfeProtocolo($id);
@@ -649,7 +649,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único da MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único da MDF-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -700,7 +700,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 $body = new \ACBrAPI\Model\MdfePedidoCancelamento(); // \ACBrAPI\Model\MdfePedidoCancelamento | Dados do cancelamento.
 
 try {
@@ -715,7 +715,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 | **body** | [**\ACBrAPI\Model\MdfePedidoCancelamento**](../Model/MdfePedidoCancelamento.md)| Dados do cancelamento. | [optional] |
 
 ### Tipo do retorno
@@ -765,7 +765,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 
 try {
     $result = $apiInstance->consultarCancelamentoMdfe($id);
@@ -779,7 +779,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -828,7 +828,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 
 try {
     $result = $apiInstance->consultarEncerramentoMdfe($id);
@@ -842,7 +842,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -891,7 +891,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do evento gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do evento gerado pela API.
 
 try {
     $result = $apiInstance->consultarEventoMdfe($id);
@@ -905,7 +905,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do evento gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -932,7 +932,7 @@ consultarLoteMdfe($id): \ACBrAPI\Model\DfeLote
 
 Consultar lote de MDF-e
 
-Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a Nuvem Fiscal irá retornar as informações do lote correspondente.
+Consulta os detalhes de um lote já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de lotes e a API irá retornar as informações do lote correspondente.
 
 ### Exemplo
 
@@ -956,7 +956,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do lote gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do lote gerado pela API.
 
 try {
     $result = $apiInstance->consultarLoteMdfe($id);
@@ -970,7 +970,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do lote gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do lote gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -997,7 +997,7 @@ consultarMdfe($id): \ACBrAPI\Model\Dfe
 
 Consultar manifesto
 
-Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a Nuvem Fiscal irá retornar as informações do manifesto correspondente.
+Consulta os detalhes de um manifesto já existente. Forneça o ID único obtido de uma requisição de emissão ou de listagem de manifestos e a API irá retornar as informações do manifesto correspondente.
 
 ### Exemplo
 
@@ -1021,7 +1021,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 
 try {
     $result = $apiInstance->consultarMdfe($id);
@@ -1035,7 +1035,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -1125,7 +1125,7 @@ consultarStatusSefazMdfe($cpf_cnpj, $autorizador): \ACBrAPI\Model\DfeSefazStatus
 
 Consulta do Status do Serviço na SEFAZ Autorizadora
 
-Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A Nuvem Fiscal mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
+Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Estadual.    A API mantém a última consulta em cache por 5 minutos, evitando sobrecarregar desnecessariamente os servidores da SEFAZ (conforme orientação do MOC - versão 3.0.0a, item 4.6.3). Dessa forma, você poderá chamar esse endpoint quantas vezes quiser, sem preocupar-se em ter o seu CNPJ bloqueado por consumo indevido (Rejeição 656).
 
 ### Exemplo
 
@@ -1346,7 +1346,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 $body = new \ACBrAPI\Model\MdfePedidoEncerramento(); // \ACBrAPI\Model\MdfePedidoEncerramento
 
 try {
@@ -1361,7 +1361,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 | **body** | [**\ACBrAPI\Model\MdfePedidoEncerramento**](../Model/MdfePedidoEncerramento.md)|  | |
 
 ### Tipo do retorno
@@ -1413,7 +1413,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 $body = new \ACBrAPI\Model\MdfePedidoInclusaoCondutor(); // \ACBrAPI\Model\MdfePedidoInclusaoCondutor
 
 try {
@@ -1428,7 +1428,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 | **body** | [**\ACBrAPI\Model\MdfePedidoInclusaoCondutor**](../Model/MdfePedidoInclusaoCondutor.md)|  | |
 
 ### Tipo do retorno
@@ -1480,7 +1480,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 $body = new \ACBrAPI\Model\MdfePedidoInclusaoDfe(); // \ACBrAPI\Model\MdfePedidoInclusaoDfe
 
 try {
@@ -1495,7 +1495,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 | **body** | [**\ACBrAPI\Model\MdfePedidoInclusaoDfe**](../Model/MdfePedidoInclusaoDfe.md)|  | |
 
 ### Tipo do retorno
@@ -1677,7 +1677,7 @@ sincronizarMdfe($id): \ACBrAPI\Model\DfeSincronizacao
 
 Sincroniza dados no MDF-e a partir da SEFAZ
 
-Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status `erro` na Nuvem Fiscal, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status `autorizado`na Nuvem Fiscal, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da Nuvem Fiscal.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
+Realiza a sincronização dos dados a partir da consulta da situação atual da MDF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar um manifesto que se encontra com o status `erro` na API, mas está autorizado na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar um manifesto que se encontra com o status `autorizado`na API, mas está cancelado ou encerrado na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Encerramento, Inclusão de condutor e Inclusão de DF-e de um manifesto que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
 
 ### Exemplo
 
@@ -1701,7 +1701,7 @@ $apiInstance = new ACBrAPI\Api\MdfeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 'id_example'; // string | ID único do MDF-e gerado pela Nuvem Fiscal.
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
 
 try {
     $result = $apiInstance->sincronizarMdfe($id);
@@ -1715,7 +1715,7 @@ try {
 
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **string**| ID único do MDF-e gerado pela Nuvem Fiscal. | |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
 
 ### Tipo do retorno
 

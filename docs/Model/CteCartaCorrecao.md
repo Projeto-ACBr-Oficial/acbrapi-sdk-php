@@ -5,7 +5,7 @@
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
 **correcoes** | [**\ACBrAPI\Model\CteInfCorrecao[]**](CteInfCorrecao.md) | Grupo de Informações de Correção. |
-**id** | **string** | ID único gerado pela Nuvem Fiscal para este evento. | [optional]
+**id** | **string** | ID único gerado pela API para este evento. | [optional]
 **ambiente** | **string** | Identificação do ambiente. | [optional]
 **status** | **string** | Status do Evento. | [optional]
 **autor** | [**\ACBrAPI\Model\DfeAutorEvento**](DfeAutorEvento.md) |  | [optional]
