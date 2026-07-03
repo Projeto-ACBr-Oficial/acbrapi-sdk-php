@@ -53,11 +53,6 @@ Baixar PDF do cancelamento
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
 
@@ -90,7 +85,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -115,11 +110,6 @@ Baixar PDF da carta de correção
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -153,7 +143,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -178,11 +168,6 @@ Baixar PDF do evento
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -216,7 +201,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -241,11 +226,6 @@ Baixar PDF da inutilização
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -279,7 +259,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -304,11 +284,6 @@ Baixar PDF do DANFE
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -352,7 +327,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -371,7 +346,7 @@ baixarPreviaPdfNfe($body, $logotipo, $nome_fantasia, $formato, $mensagem_rodape,
 
 Prévia do PDF do DANFE
 
-Através desse endpoint, é possível enviar os dados de uma NF-e e gerar uma prévia do DANFE.    Os dados de entrada são os mesmos do endpoint de emissão de NF-e (`POST /nfe`).    **Atenção**: O DANFE gerado por este endpoint é apenas para fins de visualização e não possui valor fiscal. Para a emissão de uma NF-e com valor fiscal, utilize o processo de emissão padrão descrito na documentação.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+Através desse endpoint, é possível enviar os dados de uma NF-e e gerar uma prévia do DANFE.    Os dados de entrada são os mesmos do endpoint de emissão de NF-e (`POST /nfe`).    **Atenção**: O DANFE gerado por este endpoint é apenas para fins de visualização e não possui valor fiscal. Para a emissão de uma NF-e com valor fiscal, utilize o processo de emissão padrão descrito na documentação.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -379,11 +354,6 @@ Através desse endpoint, é possível enviar os dados de uma NF-e e gerar uma pr
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -427,7 +397,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -446,7 +416,7 @@ baixarPreviaXmlNfe($body): \SplFileObject
 
 Prévia do XML da NF-e
 
-Através desse endpoint, é possível enviar os dados de uma NF-e e gerar uma prévia do XML, sem a assinatura digital.    Os dados de entrada são os mesmos do endpoint de emissão de NF-e (`POST /nfe`).    **Atenção**: O XML gerado por este endpoint é apenas para fins de visualização e não possui valor fiscal. Para a emissão de uma NF-e com valor fiscal, utilize o processo de emissão padrão descrito na documentação.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+Através desse endpoint, é possível enviar os dados de uma NF-e e gerar uma prévia do XML, sem a assinatura digital.    Os dados de entrada são os mesmos do endpoint de emissão de NF-e (`POST /nfe`).    **Atenção**: O XML gerado por este endpoint é apenas para fins de visualização e não possui valor fiscal. Para a emissão de uma NF-e com valor fiscal, utilize o processo de emissão padrão descrito na documentação.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -454,11 +424,6 @@ Através desse endpoint, é possível enviar os dados de uma NF-e e gerar uma pr
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -492,7 +457,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -511,17 +476,14 @@ baixarXmlCancelamentoNfe($id): \SplFileObject
 
 Baixar XML do cancelamento
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -555,7 +517,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -574,17 +536,14 @@ baixarXmlCartaCorrecaoNfe($id): \SplFileObject
 
 Baixar XML da carta de correção
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -618,7 +577,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -637,17 +596,14 @@ baixarXmlEventoNfe($id): \SplFileObject
 
 Baixar XML do evento
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -681,7 +637,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -700,17 +656,14 @@ baixarXmlInutilizacaoNfe($id): \SplFileObject
 
 Baixar XML da inutilização
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -744,7 +697,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -763,7 +716,7 @@ baixarXmlNfe($id): \SplFileObject
 
 Baixar XML da NF-e processada
 
-Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz `nfeProc`).    O XML só estará disponível nesse endpoint caso a nota tenha sido autorizada ou denegada pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint `GET /nfe/{id}/xml/nota`.
+Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ, complementado com a informação do protocolo de autorização ou denegação de uso (TAG raiz `nfeProc`).    O XML só estará disponível nesse endpoint caso a nota tenha sido autorizada ou denegada pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint `GET /nfe/{id}/xml/nota`.    **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
 
 ### Exemplo
 
@@ -771,11 +724,6 @@ Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ, complementa
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -809,7 +757,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -828,7 +776,7 @@ baixarXmlNfeNota($id): \SplFileObject
 
 Baixar XML da NF-e
 
-Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que a nota tenha sido rejeitada.
+Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que a nota tenha sido rejeitada.    **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
 
 ### Exemplo
 
@@ -836,11 +784,6 @@ Utilize esse endpoint para obter o XML da nota enviado para a SEFAZ.    O XML es
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -874,7 +817,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -893,17 +836,14 @@ baixarXmlNfeProtocolo($id): \SplFileObject
 
 Baixar XML do Protocolo da SEFAZ
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -937,7 +877,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -956,7 +896,7 @@ cancelarNfe($id, $body): \ACBrAPI\Model\DfeCancelamento
 
 Cancelar uma NF-e autorizada
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+**Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -964,11 +904,6 @@ Cancelar uma NF-e autorizada
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1004,7 +939,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1029,11 +964,6 @@ Consultar o cancelamento da NF-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1067,7 +997,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1092,11 +1022,6 @@ Consultar a solicitação de correção da NF-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1130,7 +1055,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1149,7 +1074,7 @@ consultarContribuinteNfe($cpf_cnpj, $argumento, $documento, $uf): \ACBrAPI\Model
 
 Consultar contribuinte
 
-Consulta o Cadastro Centralizado de Contribuintes (CCC) do ICMS da unidade federada.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+Consulta o Cadastro Centralizado de Contribuintes (CCC) do ICMS da unidade federada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -1157,11 +1082,6 @@ Consulta o Cadastro Centralizado de Contribuintes (CCC) do ICMS da unidade feder
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1201,7 +1121,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1226,11 +1146,6 @@ Consultar evento
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1264,7 +1179,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1289,11 +1204,6 @@ Consultar a inutilização de sequência de numeração
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1327,7 +1237,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1354,11 +1264,6 @@ Consulta os detalhes de um lote já existente. Forneça o ID único obtido de um
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1392,7 +1297,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1419,11 +1324,6 @@ Consulta os detalhes de uma NF-e já existente. Forneça o ID único obtido de u
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1457,7 +1357,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1484,11 +1384,6 @@ Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Est
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1524,7 +1419,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1543,7 +1438,7 @@ criarCartaCorrecaoNfe($id, $body): \ACBrAPI\Model\DfeCartaCorrecao
 
 Solicitar correção da NF-e
 
-É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+É possível enviar até 20 correções diferentes, sendo que será válido sempre a última correção enviada.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -1551,11 +1446,6 @@ Solicitar correção da NF-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1591,7 +1481,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1610,7 +1500,7 @@ emitirLoteNfe($body): \ACBrAPI\Model\DfeLote
 
 Emitir lote de NF-e
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por NF-e.
+**Informações adicionais**:  - Consumo: 1 unidade por NF-e.
 
 ### Exemplo
 
@@ -1618,11 +1508,6 @@ Emitir lote de NF-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1656,7 +1541,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1675,7 +1560,7 @@ emitirNfe($body): \ACBrAPI\Model\Dfe
 
 Emitir NF-e
 
-Este endpoint permite a emissão de Notas Fiscais Eletrônicas (NF-e).  A solicitação deve ser feita enviando os dados necessários para a  emissão de uma NF-e.     A estrutura do JSON utilizado na solicitação segue a hierarquia e  nomenclatura de campos definidos no <a href=\"https://www.nfe.fazenda.gov.br/portal/principal.aspx\" target=\"_blank\">  Manual de Orientação ao Contribuinte (MOC)</a>.  Esta conformidade visa facilitar a integração de novos usuários que já  possuem familiaridade com o padrão, além de permitir a resolução de  dúvidas diretamente no MOC, com um profissional de contabilidade  habilitado ou em outras fontes confiáveis que tratam do mesmo assunto.    **Comportamento Assíncrono**    A resposta desse endpoint inclui a propriedade *status* no JSON.  Caso o valor retornado seja *pendente*, significa que a solicitação está  sendo realizada de forma assíncrona pela API. Nesse caso, o usuário deverá  adotar um fluxo que consiste em requisitar periodicamente o endpoint  <a href=\"#tag/Nfe/operation/ConsultarNfe\">Consultar NF-e</a> até que  seja retornado um status indicando o fim da emissão.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+Este endpoint permite a emissão de Notas Fiscais Eletrônicas (NF-e).  A solicitação deve ser feita enviando os dados necessários para a  emissão de uma NF-e.     A estrutura do JSON utilizado na solicitação segue a hierarquia e  nomenclatura de campos definidos no <a href=\"https://www.nfe.fazenda.gov.br/portal/principal.aspx\" target=\"_blank\">  Manual de Orientação ao Contribuinte (MOC)</a>.  Esta conformidade visa facilitar a integração de novos usuários que já  possuem familiaridade com o padrão, além de permitir a resolução de  dúvidas diretamente no MOC, com um profissional de contabilidade  habilitado ou em outras fontes confiáveis que tratam do mesmo assunto.    **Comportamento Assíncrono**    A resposta desse endpoint inclui a propriedade *status* no JSON.  Caso o valor retornado seja *pendente*, significa que a solicitação está  sendo realizada de forma assíncrona pela API. Nesse caso, o usuário deverá  adotar um fluxo que consiste em requisitar periodicamente o endpoint  <a href=\"#tag/Nfe/operation/ConsultarNfe\">Consultar NF-e</a> até que  seja retornado um status indicando o fim da emissão.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -1683,11 +1568,6 @@ Este endpoint permite a emissão de Notas Fiscais Eletrônicas (NF-e).  A solici
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1721,7 +1601,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1740,7 +1620,7 @@ enviarEmailNfe($id, $body): \ACBrAPI\Model\EmailStatusResponse
 
 Enviar e-mail
 
-Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -1748,11 +1628,6 @@ Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Cota: <
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1788,7 +1663,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1807,7 +1682,7 @@ inutilizarNumeracaoNfe($body): \ACBrAPI\Model\DfeInutilizacao
 
 Inutilizar uma sequência de numeração de NF-e
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+**Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -1815,11 +1690,6 @@ Inutilizar uma sequência de numeração de NF-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1853,7 +1723,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1880,11 +1750,6 @@ Retorna a lista de eventos vinculados a um documento fiscal de acordo com os cri
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1924,7 +1789,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1951,11 +1816,6 @@ Retorna a lista dos lotes de acordo com os critérios de busca utilizados. Os lo
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1999,7 +1859,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -2026,11 +1886,6 @@ Retorna a lista de notas de acordo com os critérios de busca utilizados. As not
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -2078,7 +1933,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -2097,7 +1952,7 @@ sincronizarNfe($id): \ACBrAPI\Model\DfeSincronizacao
 
 Sincroniza dados na NF-e a partir da SEFAZ
 
-Realiza a sincronização dos dados a partir da consulta da situação atual da NF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status `erro` na API, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status `autorizado`na API, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
+Realiza a sincronização dos dados a partir da consulta da situação atual da NF-e na Base de Dados do Portal da Secretaria de Fazenda Estadual.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status `erro` na API, mas está autorizada na SEFAZ (útil em casos de erros de transmissão com a SEFAZ, como instabilidades e timeouts).  * Sincronizar uma nota que se encontra com o status `autorizado`na API, mas está cancelada na SEFAZ.  * Sincronizar todos os eventos de Cancelamento, Carta de Correção e EPEC de uma nota que porventura não tenham sido feitos a partir da API.    **Informações adicionais**:  - Consumo: 1 unidade por evento sincronizado ou requisição.
 
 ### Exemplo
 
@@ -2105,11 +1960,6 @@ Realiza a sincronização dos dados a partir da consulta da situação atual da 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -2143,7 +1993,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 

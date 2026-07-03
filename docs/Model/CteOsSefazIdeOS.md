@@ -17,7 +17,7 @@ Nome | Tipo | Descrição | Comentários
 **c_dv** | **int** | Digito Verificador da chave de acesso do CT-e.  Informar o dígito  de controle da chave de acesso do CT-e, que deve ser calculado com a aplicação do algoritmo módulo 11 (base 2,9) da chave de acesso.    *Geramos automaticamente quando nenhum valor é informado.* | [optional]
 **tp_amb** | **int** | Tipo do Ambiente:  * 1 - Produção  * 2 - Homologação | [optional]
 **tp_cte** | **int** | Tipo do CT-e OS.  Preencher com:  * 0 - CT-e Normal  * 1 - CT-e Complementar  * 3 - CT-e de Substituição |
-**proc_emi** | **int** | Identificador do processo de emissão do CT-e OS.  Preencher com:  * 0 - emissão de CT-e com aplicativo do contribuinte  * 3 - emissão CT-e pelo contribuinte com aplicativo fornecido pelo Fisco |
+**proc_emi** | **int** | Identificador do processo de emissão do CTe OS.  Preencher com:         0 - emissão de CTe com aplicativo do contribuinte  * 3 - emissão CTe pelo contribuinte com aplicativo fornecido pelo Fisco |
 **ver_proc** | **string** | Versão do processo de emissão.  Iinformar a versão do aplicativo emissor de CT-e. |
 **c_mun_env** | **string** | Código do Município de envio do CT-e (de onde o documento foi transmitido).  Utilizar a tabela do IBGE. Informar 9999999 para as operações com o exterior. |
 **x_mun_env** | **string** | Nome do Município de envio do CT-e (de onde o documento foi transmitido).  Informar PAIS/Municipio para as operações com o exterior. |

@@ -24,5 +24,6 @@ Nome | Tipo | Descrição | Comentários
 **dh_cont** | **\DateTime** | Data e Hora da entrada em contingência.  Informar a data e hora no formato AAAA-MM-DDTHH:MM:SS. | [optional]
 **x_just** | **string** | Justificativa da entrada em contingência. | [optional]
 **g_compra_gov** | [**\ACBrAPI\Model\NfcomSefazCompraGovReduzido**](NfcomSefazCompraGovReduzido.md) |  | [optional]
+**tp_pag_ant** | **int** | Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado de Serviços Não Continuados  * 2 - Pagamento de serviços continuados (antes da prestação)  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado em notas de pagamento que ocorre antes da prestação do serviço e na nota de fornecimento associada a esses pagamentos, Notas Normais que retratam a prestação de serviço continuado mensal da nota fatura (contendo ou não itens de serviço não continuado) em que o pagamento não foi antecipado NÃO DEVEM INFORMAR ESSE CAMPO.  A tabela cClass terá uma flag que sinaliza se o tipo de item é de prestação continuada ou não continuada. | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

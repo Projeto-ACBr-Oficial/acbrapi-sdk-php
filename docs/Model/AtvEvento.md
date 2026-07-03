@@ -4,7 +4,7 @@
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**x_nome** | **string** | Nome do evento Artístico, Cultural, Esportivo, etc. | [optional]
+**x_nome** | **string** | Descrição do evento Artístico, Cultural, Esportivo, etc. | [optional]
 **desc** | **string** | &#x60;Deprecated&#x60;    **Propriedade depreciada**.    *Utilize &#x60;xNome&#x60;*. | [optional]
 **dt_ini** | **\DateTime** | Data de início da atividade de evento. Ano, Mês e Dia (AAAA-MM-DD). |
 **dt_fim** | **\DateTime** | Data de fim da atividade de evento. Ano, Mês e Dia (AAAA-MM-DD). |

@@ -1,7 +1,7 @@
-# ACBr API: SDK para PHP
+﻿# ACBr API: SDK para PHP
 
-Biblioteca para uso da [ACBr API](https://www.acbrapi.com.br) com [PHP](https://www.php.net). 
-Consultar também a [documentação oficial da ACBr API](https://dev.acbrapi.com.br/docs).
+Biblioteca para uso da [ACBr API](https://www.acbr.api.br) com [PHP](https://www.php.net).
+Consultar também a [documentação oficial da ACBr API](https://dev.acbr.api.br/docs).
 
 ## Instalação e uso
 
@@ -48,7 +48,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Obter token a partir das credenciais
 $token = get_oauth2_token(
-    'https://auth.acbrapi.com.br/oauth/token', 
+    'https://auth.acbr.api.br/oauth/token',
     getenv('ACBRAPI_CLIENTID'),
     getenv('ACBRAPI_CLIENTSECRET'),
     'cep cnpj' // defina o scope a ser usado
@@ -118,7 +118,9 @@ Classe | Método | Endpoint | Descrição
 *CnpjApi* | [**consultarCnpj**](docs/Api/CnpjApi.md#consultarcnpj) | **GET** /cnpj/{Cnpj} | Consultar dados do CNPJ
 *CnpjApi* | [**listarCnpj**](docs/Api/CnpjApi.md#listarcnpj) | **GET** /cnpj | Listar estabelecimentos ativos a partir da base de CNPJ
 *ContaApi* | [**consultarCotaConta**](docs/Api/ContaApi.md#consultarcotaconta) | **GET** /conta/cotas/{nome} | Consultar o limite de uso e o consumo de uma cota específica.
-*ContaApi* | [**listarCotasConta**](docs/Api/ContaApi.md#listarcotasconta) | **GET** /conta/cotas | Consultar os limites de uso e consumo de todas as cotas existentes.
+*ContaApi* | [**consultarCotaPrePago**](docs/Api/ContaApi.md#consultarcotaprepago) | **GET** /conta/cotas/prepago | Consultar o resumo da cota de créditos pré-pagos.
+*ContaApi* | [**listarCotasConta**](docs/Api/ContaApi.md#listarcotasconta) | **GET** /conta/cotas | Consultar os limites de uso e consumo das cotas disponíveis, exceto a cota de créditos pré-pagos.
+*ContaApi* | [**listarExtratoCreditosConta**](docs/Api/ContaApi.md#listarextratocreditosconta) | **GET** /conta/extrato | Consultar o extrato de movimentação de créditos do tenant atual.
 *CteApi* | [**baixarPdfCancelamentoCte**](docs/Api/CteApi.md#baixarpdfcancelamentocte) | **GET** /cte/{id}/cancelamento/pdf | Baixar PDF do cancelamento
 *CteApi* | [**baixarPdfCartaCorrecaoCte**](docs/Api/CteApi.md#baixarpdfcartacorrecaocte) | **GET** /cte/{id}/carta-correcao/pdf | Baixar PDF da carta de correção
 *CteApi* | [**baixarPdfCte**](docs/Api/CteApi.md#baixarpdfcte) | **GET** /cte/{id}/pdf | Baixar PDF do DACTE
@@ -363,6 +365,9 @@ Classe | Método | Endpoint | Descrição
 - [ComExterior](docs/Model/ComExterior.md)
 - [ContaCota](docs/Model/ContaCota.md)
 - [ContaCotaListagem](docs/Model/ContaCotaListagem.md)
+- [ContaCotaPrePago](docs/Model/ContaCotaPrePago.md)
+- [ContaExtratoCredito](docs/Model/ContaExtratoCredito.md)
+- [ContaExtratoCreditoListagem](docs/Model/ContaExtratoCreditoListagem.md)
 - [CteCartaCorrecao](docs/Model/CteCartaCorrecao.md)
 - [CteInfCorrecao](docs/Model/CteInfCorrecao.md)
 - [CteOsCartaCorrecao](docs/Model/CteOsCartaCorrecao.md)
@@ -370,23 +375,25 @@ Classe | Método | Endpoint | Descrição
 - [CteOsPedidoCancelamento](docs/Model/CteOsPedidoCancelamento.md)
 - [CteOsPedidoCartaCorrecao](docs/Model/CteOsPedidoCartaCorrecao.md)
 - [CteOsPedidoEmissao](docs/Model/CteOsPedidoEmissao.md)
+- [CteOsSefazALCZFMCBSOS](docs/Model/CteOsSefazALCZFMCBSOS.md)
 - [CteOsSefazAutXMLOS](docs/Model/CteOsSefazAutXMLOS.md)
 - [CteOsSefazCIBSOS](docs/Model/CteOsSefazCIBSOS.md)
 - [CteOsSefazCobrOS](docs/Model/CteOsSefazCobrOS.md)
 - [CteOsSefazCompOS](docs/Model/CteOsSefazCompOS.md)
 - [CteOsSefazComplOS](docs/Model/CteOsSefazComplOS.md)
 - [CteOsSefazCompraGovReduzidoOS](docs/Model/CteOsSefazCompraGovReduzidoOS.md)
-- [CteOsSefazCredPresOS](docs/Model/CteOsSefazCredPresOS.md)
 - [CteOsSefazDevTribOS](docs/Model/CteOsSefazDevTribOS.md)
 - [CteOsSefazDifOS](docs/Model/CteOsSefazDifOS.md)
 - [CteOsSefazDupOS](docs/Model/CteOsSefazDupOS.md)
 - [CteOsSefazEmitOS](docs/Model/CteOsSefazEmitOS.md)
 - [CteOsSefazEndeEmiOS](docs/Model/CteOsSefazEndeEmiOS.md)
 - [CteOsSefazEnderecoOS](docs/Model/CteOsSefazEnderecoOS.md)
+- [CteOsSefazEstornoCredOS](docs/Model/CteOsSefazEstornoCredOS.md)
 - [CteOsSefazFatOS](docs/Model/CteOsSefazFatOS.md)
 - [CteOsSefazGCBSOS](docs/Model/CteOsSefazGCBSOS.md)
 - [CteOsSefazGIBSMunOS](docs/Model/CteOsSefazGIBSMunOS.md)
 - [CteOsSefazGIBSUFOS](docs/Model/CteOsSefazGIBSUFOS.md)
+- [CteOsSefazGPagAntecipadoOS](docs/Model/CteOsSefazGPagAntecipadoOS.md)
 - [CteOsSefazICMS00OS](docs/Model/CteOsSefazICMS00OS.md)
 - [CteOsSefazICMS20OS](docs/Model/CteOsSefazICMS20OS.md)
 - [CteOsSefazICMS45OS](docs/Model/CteOsSefazICMS45OS.md)
@@ -413,6 +420,8 @@ Classe | Método | Endpoint | Descrição
 - [CteOsSefazInfTribFedOS](docs/Model/CteOsSefazInfTribFedOS.md)
 - [CteOsSefazObsContOS](docs/Model/CteOsSefazObsContOS.md)
 - [CteOsSefazObsFiscoOS](docs/Model/CteOsSefazObsFiscoOS.md)
+- [CteOsSefazPagamentoRTCOS](docs/Model/CteOsSefazPagamentoRTCOS.md)
+- [CteOsSefazPgtoVincOS](docs/Model/CteOsSefazPgtoVincOS.md)
 - [CteOsSefazPropOS](docs/Model/CteOsSefazPropOS.md)
 - [CteOsSefazRedOS](docs/Model/CteOsSefazRedOS.md)
 - [CteOsSefazRespTecOS](docs/Model/CteOsSefazRespTecOS.md)
@@ -427,6 +436,7 @@ Classe | Método | Endpoint | Descrição
 - [CtePedidoCancelamento](docs/Model/CtePedidoCancelamento.md)
 - [CtePedidoCartaCorrecao](docs/Model/CtePedidoCartaCorrecao.md)
 - [CtePedidoEmissao](docs/Model/CtePedidoEmissao.md)
+- [CteSefazALCZFMCBS](docs/Model/CteSefazALCZFMCBS.md)
 - [CteSefazAereo](docs/Model/CteSefazAereo.md)
 - [CteSefazAquav](docs/Model/CteSefazAquav.md)
 - [CteSefazAutXML](docs/Model/CteSefazAutXML.md)
@@ -438,7 +448,6 @@ Classe | Método | Endpoint | Descrição
 - [CteSefazComp](docs/Model/CteSefazComp.md)
 - [CteSefazCompl](docs/Model/CteSefazCompl.md)
 - [CteSefazCompraGovReduzido](docs/Model/CteSefazCompraGovReduzido.md)
-- [CteSefazCredPres](docs/Model/CteSefazCredPres.md)
 - [CteSefazDest](docs/Model/CteSefazDest.md)
 - [CteSefazDetCont](docs/Model/CteSefazDetCont.md)
 - [CteSefazDetContInfDoc](docs/Model/CteSefazDetContInfDoc.md)
@@ -456,6 +465,7 @@ Classe | Método | Endpoint | Descrição
 - [CteSefazEnderFer](docs/Model/CteSefazEnderFer.md)
 - [CteSefazEndereco](docs/Model/CteSefazEndereco.md)
 - [CteSefazEntrega](docs/Model/CteSefazEntrega.md)
+- [CteSefazEstornoCred](docs/Model/CteSefazEstornoCred.md)
 - [CteSefazExped](docs/Model/CteSefazExped.md)
 - [CteSefazFat](docs/Model/CteSefazFat.md)
 - [CteSefazFerroEnv](docs/Model/CteSefazFerroEnv.md)
@@ -464,6 +474,7 @@ Classe | Método | Endpoint | Descrição
 - [CteSefazGCBS](docs/Model/CteSefazGCBS.md)
 - [CteSefazGIBSMun](docs/Model/CteSefazGIBSMun.md)
 - [CteSefazGIBSUF](docs/Model/CteSefazGIBSUF.md)
+- [CteSefazGPagAntecipado](docs/Model/CteSefazGPagAntecipado.md)
 - [CteSefazICMS00](docs/Model/CteSefazICMS00.md)
 - [CteSefazICMS20](docs/Model/CteSefazICMS20.md)
 - [CteSefazICMS45](docs/Model/CteSefazICMS45.md)
@@ -507,8 +518,10 @@ Classe | Método | Endpoint | Descrição
 - [CteSefazObsCont](docs/Model/CteSefazObsCont.md)
 - [CteSefazObsFisco](docs/Model/CteSefazObsFisco.md)
 - [CteSefazOcc](docs/Model/CteSefazOcc.md)
+- [CteSefazPagamentoRTC](docs/Model/CteSefazPagamentoRTC.md)
 - [CteSefazPass](docs/Model/CteSefazPass.md)
 - [CteSefazPeri](docs/Model/CteSefazPeri.md)
+- [CteSefazPgtoVinc](docs/Model/CteSefazPgtoVinc.md)
 - [CteSefazReceb](docs/Model/CteSefazReceb.md)
 - [CteSefazRed](docs/Model/CteSefazRed.md)
 - [CteSefazRem](docs/Model/CteSefazRem.md)
@@ -529,6 +542,7 @@ Classe | Método | Endpoint | Descrição
 - [CteSefazVPrest](docs/Model/CteSefazVPrest.md)
 - [CteSefazVeicNovos](docs/Model/CteSefazVeicNovos.md)
 - [CteSimpPedidoEmissao](docs/Model/CteSimpPedidoEmissao.md)
+- [CteSimpSefazALCZFMCBSSimp](docs/Model/CteSimpSefazALCZFMCBSSimp.md)
 - [CteSimpSefazAereoSimp](docs/Model/CteSimpSefazAereoSimp.md)
 - [CteSimpSefazAquavSimp](docs/Model/CteSimpSefazAquavSimp.md)
 - [CteSimpSefazAutXMLSimp](docs/Model/CteSimpSefazAutXMLSimp.md)
@@ -538,7 +552,6 @@ Classe | Método | Endpoint | Descrição
 - [CteSimpSefazCompSimp](docs/Model/CteSimpSefazCompSimp.md)
 - [CteSimpSefazComplSimp](docs/Model/CteSimpSefazComplSimp.md)
 - [CteSimpSefazCompraGovReduzidoSimp](docs/Model/CteSimpSefazCompraGovReduzidoSimp.md)
-- [CteSimpSefazCredPresSimp](docs/Model/CteSimpSefazCredPresSimp.md)
 - [CteSimpSefazDetContSimp](docs/Model/CteSimpSefazDetContSimp.md)
 - [CteSimpSefazDetSimp](docs/Model/CteSimpSefazDetSimp.md)
 - [CteSimpSefazDevTribSimp](docs/Model/CteSimpSefazDevTribSimp.md)
@@ -550,6 +563,7 @@ Classe | Método | Endpoint | Descrição
 - [CteSimpSefazEndeEmiSimp](docs/Model/CteSimpSefazEndeEmiSimp.md)
 - [CteSimpSefazEnderFerSimp](docs/Model/CteSimpSefazEnderFerSimp.md)
 - [CteSimpSefazEnderecoSimp](docs/Model/CteSimpSefazEnderecoSimp.md)
+- [CteSimpSefazEstornoCredSimp](docs/Model/CteSimpSefazEstornoCredSimp.md)
 - [CteSimpSefazFatSimp](docs/Model/CteSimpSefazFatSimp.md)
 - [CteSimpSefazFerroEnvSimp](docs/Model/CteSimpSefazFerroEnvSimp.md)
 - [CteSimpSefazFerrovSimp](docs/Model/CteSimpSefazFerrovSimp.md)
@@ -557,6 +571,7 @@ Classe | Método | Endpoint | Descrição
 - [CteSimpSefazGCBSSimp](docs/Model/CteSimpSefazGCBSSimp.md)
 - [CteSimpSefazGIBSMunSimp](docs/Model/CteSimpSefazGIBSMunSimp.md)
 - [CteSimpSefazGIBSUFSimp](docs/Model/CteSimpSefazGIBSUFSimp.md)
+- [CteSimpSefazGPagAntecipadoSimp](docs/Model/CteSimpSefazGPagAntecipadoSimp.md)
 - [CteSimpSefazICMS00Simp](docs/Model/CteSimpSefazICMS00Simp.md)
 - [CteSimpSefazICMS20Simp](docs/Model/CteSimpSefazICMS20Simp.md)
 - [CteSimpSefazICMS45Simp](docs/Model/CteSimpSefazICMS45Simp.md)
@@ -591,8 +606,10 @@ Classe | Método | Endpoint | Descrição
 - [CteSimpSefazObsContSimp](docs/Model/CteSimpSefazObsContSimp.md)
 - [CteSimpSefazObsFiscoSimp](docs/Model/CteSimpSefazObsFiscoSimp.md)
 - [CteSimpSefazOccSimp](docs/Model/CteSimpSefazOccSimp.md)
+- [CteSimpSefazPagamentoRTCSimp](docs/Model/CteSimpSefazPagamentoRTCSimp.md)
 - [CteSimpSefazPassSimp](docs/Model/CteSimpSefazPassSimp.md)
 - [CteSimpSefazPeriSimp](docs/Model/CteSimpSefazPeriSimp.md)
+- [CteSimpSefazPgtoVincSimp](docs/Model/CteSimpSefazPgtoVincSimp.md)
 - [CteSimpSefazRedSimp](docs/Model/CteSimpSefazRedSimp.md)
 - [CteSimpSefazRespTecSimp](docs/Model/CteSimpSefazRespTecSimp.md)
 - [CteSimpSefazRodoSimp](docs/Model/CteSimpSefazRodoSimp.md)
@@ -692,25 +709,26 @@ Classe | Método | Endpoint | Descrição
 - [EnderExt](docs/Model/EnderExt.md)
 - [EnderExtSimples](docs/Model/EnderExtSimples.md)
 - [EnderNac](docs/Model/EnderNac.md)
+- [EnderObraEvento](docs/Model/EnderObraEvento.md)
 - [Endereco](docs/Model/Endereco.md)
 - [EnderecoEmail](docs/Model/EnderecoEmail.md)
 - [EnderecoSimples](docs/Model/EnderecoSimples.md)
 - [ExigSuspensa](docs/Model/ExigSuspensa.md)
-- [ExploracaoRodoviaria](docs/Model/ExploracaoRodoviaria.md)
 - [HttpRequestDebug](docs/Model/HttpRequestDebug.md)
 - [InfDPS](docs/Model/InfDPS.md)
 - [InfoCompl](docs/Model/InfoCompl.md)
 - [InfoDedRed](docs/Model/InfoDedRed.md)
 - [InfoFornecDocDedRed](docs/Model/InfoFornecDocDedRed.md)
 - [InfoIntermediario](docs/Model/InfoIntermediario.md)
+- [InfoItemPed](docs/Model/InfoItemPed.md)
 - [InfoObra](docs/Model/InfoObra.md)
 - [InfoPrestador](docs/Model/InfoPrestador.md)
+- [InfoRefNFSe](docs/Model/InfoRefNFSe.md)
 - [InfoTomador](docs/Model/InfoTomador.md)
 - [InfoTributacao](docs/Model/InfoTributacao.md)
 - [InfoValores](docs/Model/InfoValores.md)
 - [ListaDocDedRed](docs/Model/ListaDocDedRed.md)
 - [LocPrest](docs/Model/LocPrest.md)
-- [LocacaoSublocacao](docs/Model/LocacaoSublocacao.md)
 - [ManifestacaoNfeListagem](docs/Model/ManifestacaoNfeListagem.md)
 - [MdfeDocumentoVinculado](docs/Model/MdfeDocumentoVinculado.md)
 - [MdfeEncerramento](docs/Model/MdfeEncerramento.md)
@@ -788,12 +806,12 @@ Classe | Método | Endpoint | Descrição
 - [MdfeSefazVeicTracao](docs/Model/MdfeSefazVeicTracao.md)
 - [NfcomPedidoCancelamento](docs/Model/NfcomPedidoCancelamento.md)
 - [NfcomPedidoEmissao](docs/Model/NfcomPedidoEmissao.md)
+- [NfcomSefazALCZFMCBS](docs/Model/NfcomSefazALCZFMCBS.md)
 - [NfcomSefazAssinante](docs/Model/NfcomSefazAssinante.md)
 - [NfcomSefazAutXML](docs/Model/NfcomSefazAutXML.md)
 - [NfcomSefazCIBS](docs/Model/NfcomSefazCIBS.md)
 - [NfcomSefazCOFINS](docs/Model/NfcomSefazCOFINS.md)
 - [NfcomSefazCompraGovReduzido](docs/Model/NfcomSefazCompraGovReduzido.md)
-- [NfcomSefazCredPres](docs/Model/NfcomSefazCredPres.md)
 - [NfcomSefazDest](docs/Model/NfcomSefazDest.md)
 - [NfcomSefazDet](docs/Model/NfcomSefazDet.md)
 - [NfcomSefazDevTrib](docs/Model/NfcomSefazDevTrib.md)
@@ -801,11 +819,13 @@ Classe | Método | Endpoint | Descrição
 - [NfcomSefazEmit](docs/Model/NfcomSefazEmit.md)
 - [NfcomSefazEndeDest](docs/Model/NfcomSefazEndeDest.md)
 - [NfcomSefazEndeEmi](docs/Model/NfcomSefazEndeEmi.md)
+- [NfcomSefazEstornoCred](docs/Model/NfcomSefazEstornoCred.md)
 - [NfcomSefazFUNTTEL](docs/Model/NfcomSefazFUNTTEL.md)
 - [NfcomSefazFUST](docs/Model/NfcomSefazFUST.md)
 - [NfcomSefazGCBS](docs/Model/NfcomSefazGCBS.md)
 - [NfcomSefazGCofat](docs/Model/NfcomSefazGCofat.md)
 - [NfcomSefazGCofatGNF](docs/Model/NfcomSefazGCofatGNF.md)
+- [NfcomSefazGEstornoCred](docs/Model/NfcomSefazGEstornoCred.md)
 - [NfcomSefazGFat](docs/Model/NfcomSefazGFat.md)
 - [NfcomSefazGFatCentral](docs/Model/NfcomSefazGFatCentral.md)
 - [NfcomSefazGFidelidade](docs/Model/NfcomSefazGFidelidade.md)
@@ -816,6 +836,7 @@ Classe | Método | Endpoint | Descrição
 - [NfcomSefazGIBSUF](docs/Model/NfcomSefazGIBSUF.md)
 - [NfcomSefazGNF](docs/Model/NfcomSefazGNF.md)
 - [NfcomSefazGPIX](docs/Model/NfcomSefazGPIX.md)
+- [NfcomSefazGPagAntecipado](docs/Model/NfcomSefazGPagAntecipado.md)
 - [NfcomSefazGProc](docs/Model/NfcomSefazGProc.md)
 - [NfcomSefazGProcRef](docs/Model/NfcomSefazGProcRef.md)
 - [NfcomSefazGRessarc](docs/Model/NfcomSefazGRessarc.md)
@@ -835,6 +856,8 @@ Classe | Método | Endpoint | Descrição
 - [NfcomSefazInfAdic](docs/Model/NfcomSefazInfAdic.md)
 - [NfcomSefazInfNFCom](docs/Model/NfcomSefazInfNFCom.md)
 - [NfcomSefazPIS](docs/Model/NfcomSefazPIS.md)
+- [NfcomSefazPagamentoRTC](docs/Model/NfcomSefazPagamentoRTC.md)
+- [NfcomSefazPgtoVinc](docs/Model/NfcomSefazPgtoVinc.md)
 - [NfcomSefazProd](docs/Model/NfcomSefazProd.md)
 - [NfcomSefazRed](docs/Model/NfcomSefazRed.md)
 - [NfcomSefazRespTec](docs/Model/NfcomSefazRespTec.md)
@@ -850,6 +873,7 @@ Classe | Método | Endpoint | Descrição
 - [NfePedidoEmissaoLote](docs/Model/NfePedidoEmissaoLote.md)
 - [NfeSefazAdi](docs/Model/NfeSefazAdi.md)
 - [NfeSefazAgropecuario](docs/Model/NfeSefazAgropecuario.md)
+- [NfeSefazAjusteCompet](docs/Model/NfeSefazAjusteCompet.md)
 - [NfeSefazArma](docs/Model/NfeSefazArma.md)
 - [NfeSefazAutXML](docs/Model/NfeSefazAutXML.md)
 - [NfeSefazAvulsa](docs/Model/NfeSefazAvulsa.md)
@@ -869,6 +893,7 @@ Classe | Método | Endpoint | Descrição
 - [NfeSefazCompraGov](docs/Model/NfeSefazCompraGov.md)
 - [NfeSefazCredPres](docs/Model/NfeSefazCredPres.md)
 - [NfeSefazCredPresIBSZFM](docs/Model/NfeSefazCredPresIBSZFM.md)
+- [NfeSefazCredPresOper](docs/Model/NfeSefazCredPresOper.md)
 - [NfeSefazDFeReferenciado](docs/Model/NfeSefazDFeReferenciado.md)
 - [NfeSefazDI](docs/Model/NfeSefazDI.md)
 - [NfeSefazDeduc](docs/Model/NfeSefazDeduc.md)
@@ -884,12 +909,14 @@ Classe | Método | Endpoint | Descrição
 - [NfeSefazEncerrante](docs/Model/NfeSefazEncerrante.md)
 - [NfeSefazEnderEmi](docs/Model/NfeSefazEnderEmi.md)
 - [NfeSefazEndereco](docs/Model/NfeSefazEndereco.md)
+- [NfeSefazEstornoCred](docs/Model/NfeSefazEstornoCred.md)
 - [NfeSefazExportInd](docs/Model/NfeSefazExportInd.md)
 - [NfeSefazExporta](docs/Model/NfeSefazExporta.md)
 - [NfeSefazFat](docs/Model/NfeSefazFat.md)
 - [NfeSefazForDia](docs/Model/NfeSefazForDia.md)
 - [NfeSefazGCBS](docs/Model/NfeSefazGCBS.md)
 - [NfeSefazGCred](docs/Model/NfeSefazGCred.md)
+- [NfeSefazGEstornoCred](docs/Model/NfeSefazGEstornoCred.md)
 - [NfeSefazGIBS](docs/Model/NfeSefazGIBS.md)
 - [NfeSefazGIBSGIBSMun](docs/Model/NfeSefazGIBSGIBSMun.md)
 - [NfeSefazGIBSGIBSUF](docs/Model/NfeSefazGIBSGIBSUF.md)
@@ -945,6 +972,7 @@ Classe | Método | Endpoint | Descrição
 - [NfeSefazInfIntermed](docs/Model/NfeSefazInfIntermed.md)
 - [NfeSefazInfNFe](docs/Model/NfeSefazInfNFe.md)
 - [NfeSefazInfNFeSupl](docs/Model/NfeSefazInfNFeSupl.md)
+- [NfeSefazInfPAA](docs/Model/NfeSefazInfPAA.md)
 - [NfeSefazInfProdEmb](docs/Model/NfeSefazInfProdEmb.md)
 - [NfeSefazInfProdNFF](docs/Model/NfeSefazInfProdNFF.md)
 - [NfeSefazInfRespTec](docs/Model/NfeSefazInfRespTec.md)
@@ -959,6 +987,7 @@ Classe | Método | Endpoint | Descrição
 - [NfeSefazObsFisco](docs/Model/NfeSefazObsFisco.md)
 - [NfeSefazObsItem](docs/Model/NfeSefazObsItem.md)
 - [NfeSefazOrigComb](docs/Model/NfeSefazOrigComb.md)
+- [NfeSefazPAASignature](docs/Model/NfeSefazPAASignature.md)
 - [NfeSefazPIS](docs/Model/NfeSefazPIS.md)
 - [NfeSefazPISAliq](docs/Model/NfeSefazPISAliq.md)
 - [NfeSefazPISNT](docs/Model/NfeSefazPISNT.md)
@@ -968,6 +997,7 @@ Classe | Método | Endpoint | Descrição
 - [NfeSefazPag](docs/Model/NfeSefazPag.md)
 - [NfeSefazProcRef](docs/Model/NfeSefazProcRef.md)
 - [NfeSefazProd](docs/Model/NfeSefazProd.md)
+- [NfeSefazRSAKeyValueType](docs/Model/NfeSefazRSAKeyValueType.md)
 - [NfeSefazRastro](docs/Model/NfeSefazRastro.md)
 - [NfeSefazRed](docs/Model/NfeSefazRed.md)
 - [NfeSefazRefECF](docs/Model/NfeSefazRefECF.md)
@@ -997,6 +1027,20 @@ Classe | Método | Endpoint | Descrição
 - [NfsePedidoEmissao](docs/Model/NfsePedidoEmissao.md)
 - [NfsePedidoSincronizacao](docs/Model/NfsePedidoSincronizacao.md)
 - [NfseSincronizacao](docs/Model/NfseSincronizacao.md)
+- [RTCInfoDest](docs/Model/RTCInfoDest.md)
+- [RTCInfoIBSCBS](docs/Model/RTCInfoIBSCBS.md)
+- [RTCInfoImovel](docs/Model/RTCInfoImovel.md)
+- [RTCInfoReeRepRes](docs/Model/RTCInfoReeRepRes.md)
+- [RTCInfoTributosDif](docs/Model/RTCInfoTributosDif.md)
+- [RTCInfoTributosIBSCBS](docs/Model/RTCInfoTributosIBSCBS.md)
+- [RTCInfoTributosSitClas](docs/Model/RTCInfoTributosSitClas.md)
+- [RTCInfoTributosTribRegular](docs/Model/RTCInfoTributosTribRegular.md)
+- [RTCInfoValoresIBSCBS](docs/Model/RTCInfoValoresIBSCBS.md)
+- [RTCListaDoc](docs/Model/RTCListaDoc.md)
+- [RTCListaDocDFe](docs/Model/RTCListaDocDFe.md)
+- [RTCListaDocFiscalOutro](docs/Model/RTCListaDocFiscalOutro.md)
+- [RTCListaDocFornec](docs/Model/RTCListaDocFornec.md)
+- [RTCListaDocOutro](docs/Model/RTCListaDocOutro.md)
 - [RegTrib](docs/Model/RegTrib.md)
 - [Rps](docs/Model/Rps.md)
 - [RpsDados](docs/Model/RpsDados.md)
@@ -1026,19 +1070,11 @@ Classe | Método | Endpoint | Descrição
 
 ## Autorização
 
-### jwt
-
-- **Type**: API key
-- **API key parameter name**: Authorization
-- **Location**: HTTP header
-
-
-
 ### oauth2
 
 - **Tipo**: `OAuth`
 - **Flow**: `application`
-- **URL de autorização**: `https://auth.acbrapi.com.br/oauth/token`
+- **URL de autorização**: `https://auth.acbr.api.br/oauth/token`
 - **Scopes**: 
     - **conta**: 
     - **empresa**: 
@@ -1052,6 +1088,6 @@ Classe | Método | Endpoint | Descrição
 
 ## Sobre este package
 
-- Versão da API: `2.61.0`
-    - Versão do package: `2.61.0`
+- Versão da API: `3.1.5`
+    - Versão do package: `3.1.5`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

@@ -13,6 +13,7 @@ Nome | Tipo | Descrição | Comentários
 **g_sub** | [**\ACBrAPI\Model\NfcomSefazGSub**](NfcomSefazGSub.md) |  | [optional]
 **g_cofat** | [**\ACBrAPI\Model\NfcomSefazGCofat**](NfcomSefazGCofat.md) |  | [optional]
 **det** | [**\ACBrAPI\Model\NfcomSefazDet[]**](NfcomSefazDet.md) |  |
+**pgto_vinc** | [**\ACBrAPI\Model\NfcomSefazPgtoVinc**](NfcomSefazPgtoVinc.md) |  | [optional]
 **total** | [**\ACBrAPI\Model\NfcomSefazTotal**](NfcomSefazTotal.md) |  |
 **g_fidelidade** | [**\ACBrAPI\Model\NfcomSefazGFidelidade**](NfcomSefazGFidelidade.md) |  | [optional]
 **g_fat** | [**\ACBrAPI\Model\NfcomSefazGFat**](NfcomSefazGFat.md) |  | [optional]

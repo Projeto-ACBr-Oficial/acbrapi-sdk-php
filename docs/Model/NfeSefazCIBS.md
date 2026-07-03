@@ -10,8 +10,6 @@ Nome | Tipo | Descrição | Comentários
 **v_ibs** | **float** | Valor do IBS. |
 **g_cbs** | [**\ACBrAPI\Model\NfeSefazGCBS**](NfeSefazGCBS.md) |  |
 **g_trib_regular** | [**\ACBrAPI\Model\NfeSefazTribRegular**](NfeSefazTribRegular.md) |  | [optional]
-**g_ibs_cred_pres** | [**\ACBrAPI\Model\NfeSefazCredPres**](NfeSefazCredPres.md) |  | [optional]
-**g_cbs_cred_pres** | [**\ACBrAPI\Model\NfeSefazCredPres**](NfeSefazCredPres.md) |  | [optional]
 **g_trib_compra_gov** | [**\ACBrAPI\Model\NfeSefazTribCompraGov**](NfeSefazTribCompraGov.md) |  | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

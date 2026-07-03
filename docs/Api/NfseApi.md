@@ -38,11 +38,6 @@ Baixar PDF do DANFSE
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
 
@@ -79,7 +74,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -98,17 +93,14 @@ baixarXmlCancelamentoNfse($id): \SplFileObject
 
 Baixar XML do evento de cancelamento
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -142,7 +134,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -161,17 +153,14 @@ baixarXmlDps($id): \SplFileObject
 
 Baixar XML da DPS
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -205,7 +194,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -224,17 +213,14 @@ baixarXmlNfse($id): \SplFileObject
 
 Baixar XML da NFS-e processada
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -268,7 +254,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -287,7 +273,7 @@ cancelarNfse($id, $body): \ACBrAPI\Model\NfseCancelamento
 
 Cancelar uma NFS-e autorizada
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+**Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -295,11 +281,6 @@ Cancelar uma NFS-e autorizada
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -335,7 +316,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -362,11 +343,6 @@ Fornece uma relação completa de todos os municípios atendidos pela API.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -397,7 +373,7 @@ Este endpoint não usa parâmetros.
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -422,11 +398,6 @@ Consultar o cancelamento da NFS-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -460,7 +431,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -487,11 +458,6 @@ Consulta os detalhes de um lote já existente. Forneça o ID único obtido de um
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -525,7 +491,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -552,11 +518,6 @@ Consulta a disponibilidade de emissão e alguns metadados de um município.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -590,7 +551,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -617,11 +578,6 @@ Consulta os detalhes de uma NFS-e já existente. Forneça o ID único obtido de 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -655,7 +611,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -674,7 +630,7 @@ emitirLoteNfse($body): \ACBrAPI\Model\RpsLote
 
 Emitir lote de NFS-e
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por NFS-e.
+**Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
 
 ### Exemplo
 
@@ -682,11 +638,6 @@ Emitir lote de NFS-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -720,7 +671,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -739,7 +690,7 @@ emitirLoteNfseDps($body): \ACBrAPI\Model\RpsLote
 
 Emitir lote de NFS-e
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por NFS-e.
+**Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
 
 ### Exemplo
 
@@ -747,11 +698,6 @@ Emitir lote de NFS-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -785,7 +731,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -804,7 +750,7 @@ emitirNfse($body): \ACBrAPI\Model\Nfse
 
 Emitir NFS-e
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+**Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -812,11 +758,6 @@ Emitir NFS-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -850,7 +791,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -869,7 +810,7 @@ emitirNfseDps($body): \ACBrAPI\Model\Nfse
 
 Emitir NFS-e
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+**Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -877,11 +818,6 @@ Emitir NFS-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -915,7 +851,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -942,11 +878,6 @@ Retorna a lista dos lotes de acordo com os critérios de busca utilizados. Os lo
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -990,7 +921,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1017,11 +948,6 @@ Retorna a lista de notas de acordo com os critérios de busca utilizados. As not
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1069,7 +995,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -1088,7 +1014,7 @@ sincronizarNfse($id, $body): \ACBrAPI\Model\NfseSincronizacao
 
 Sincroniza dados na NFS-e a partir da Prefeitura
 
-Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status `processando` na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status `erro` na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status `autorizada`na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por evento sincronizado ou requisição.
+Realiza a sincronização dos dados a partir da consulta da situação atual da NFS-e na prefeitura.    **Cenários de uso**:  * Sincronizar uma nota que se encontra com o status `processando` na API, mas está autorizada na prefeitura;  * Sincronizar uma nota que se encontra com o status `erro` na API, mas está autorizada na prefeitura (útil em casos de erros de transmissão, como instabilidades e timeouts);  * Sincronizar uma nota que se encontra com o status `autorizada`na API, mas está cancelada na prefeitura.    **Informações adicionais**:  - Consumo: 1 unidade por evento sincronizado ou requisição.
 
 ### Exemplo
 
@@ -1096,11 +1022,6 @@ Realiza a sincronização dos dados a partir da consulta da situação atual da 
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -1136,7 +1057,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 

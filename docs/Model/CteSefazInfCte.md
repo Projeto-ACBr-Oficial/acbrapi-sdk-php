@@ -15,6 +15,7 @@ Nome | Tipo | Descrição | Comentários
 **dest** | [**\ACBrAPI\Model\CteSefazDest**](CteSefazDest.md) |  | [optional]
 **v_prest** | [**\ACBrAPI\Model\CteSefazVPrest**](CteSefazVPrest.md) |  |
 **imp** | [**\ACBrAPI\Model\CteSefazInfCteImp**](CteSefazInfCteImp.md) |  |
+**pgto_vinc** | [**\ACBrAPI\Model\CteSefazPgtoVinc**](CteSefazPgtoVinc.md) |  | [optional]
 **inf_cte_norm** | [**\ACBrAPI\Model\CteSefazInfCTeNorm**](CteSefazInfCTeNorm.md) |  | [optional]
 **inf_cte_comp** | [**\ACBrAPI\Model\CteSefazInfCteComp[]**](CteSefazInfCteComp.md) |  | [optional]
 **aut_xml** | [**\ACBrAPI\Model\CteSefazAutXML[]**](CteSefazAutXML.md) |  | [optional]

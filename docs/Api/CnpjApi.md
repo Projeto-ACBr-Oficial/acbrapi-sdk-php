@@ -16,7 +16,7 @@ consultarCnpj($cnpj): \ACBrAPI\Model\CnpjEmpresa
 
 Consultar dados do CNPJ
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#cnpj-consultas\">cnpj-consultas</a>  - Consumo: 1 unidade por requisição.
+**Informações adicionais**:  - Consumo: 0,1 unidade por requisição.  - Em sandbox, a consulta é permitida somente para os seguintes CNPJ:    `18760540000139`    `00038166000105`    `00394460000141`    `29979036000140`
 
 ### Exemplo
 
@@ -24,11 +24,6 @@ Consultar dados do CNPJ
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -62,7 +57,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -81,7 +76,7 @@ listarCnpj($cnae_principal, $municipio, $natureza_juridica, $top, $skip, $inline
 
 Listar estabelecimentos ativos a partir da base de CNPJ
 
-Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \"Ativa\".    **Informações adicionais**:  - Cota: <a href=\"/docs/limites#cnpj-listagem\">cnpj-listagem</a>  - Consumo: 1 unidade por estabelecimento listado ou requisição.
+Retorna uma lista de estabelecimentos de acordo com os critérios de busca utilizados.  Somente serão retornados estabelecimentos com situação cadastral \"Ativa\".    **Informações adicionais**:  - Consumo: 0,1 unidade por estabelecimento listado ou requisição.  - Em sandbox, a consulta de listagem de CNPJ não é permitida.
 
 ### Exemplo
 
@@ -89,11 +84,6 @@ Retorna uma lista de estabelecimentos de acordo com os critérios de busca utili
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -137,7 +127,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 

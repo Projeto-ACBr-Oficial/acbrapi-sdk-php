@@ -32,11 +32,6 @@ Baixar PDF do DACE
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
 
@@ -69,7 +64,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -88,17 +83,14 @@ baixarXmlCancelamentoDce($id): \SplFileObject
 
 Baixar XML do cancelamento
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -132,7 +124,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -151,7 +143,7 @@ baixarXmlDce($id): \SplFileObject
 
 Baixar XML da DC-e processada
 
-Utilize esse endpoint para obter o XML da DC-e enviada para a SEFAZ, complementado com a informação do protocolo de autorização de uso (TAG raiz `dceProc`).    O XML só estará disponível nesse endpoint caso a DC-e tenha sido autorizada pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint `GET /dce/{id}/xml/declaracao`.
+Utilize esse endpoint para obter o XML da DC-e enviada para a SEFAZ, complementado com a informação do protocolo de autorização de uso (TAG raiz `dceProc`).    O XML só estará disponível nesse endpoint caso a DC-e tenha sido autorizada pela SEFAZ. Para obter o XML nos demais casos, utilize o endpoint `GET /dce/{id}/xml/declaracao`.    **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
 
 ### Exemplo
 
@@ -159,11 +151,6 @@ Utilize esse endpoint para obter o XML da DC-e enviada para a SEFAZ, complementa
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -197,7 +184,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -216,7 +203,7 @@ baixarXmlDceDeclaracao($id): \SplFileObject
 
 Baixar XML da DC-e
 
-Utilize esse endpoint para obter o XML da DC-e enviada para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que a declaração tenha sido rejeitada.
+Utilize esse endpoint para obter o XML da DC-e enviada para a SEFAZ.    O XML estará disponível nesse endpoint mesmo em casos que a declaração tenha sido rejeitada.    **Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
 
 ### Exemplo
 
@@ -224,11 +211,6 @@ Utilize esse endpoint para obter o XML da DC-e enviada para a SEFAZ.    O XML es
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -262,7 +244,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -281,17 +263,14 @@ baixarXmlDceProtocolo($id): \SplFileObject
 
 Baixar XML do Protocolo da SEFAZ
 
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
 ### Exemplo
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -325,7 +304,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -344,7 +323,7 @@ cancelarDce($id, $body): \ACBrAPI\Model\DfeCancelamento
 
 Cancelar uma DC-e autorizada
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+**Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -352,11 +331,6 @@ Cancelar uma DC-e autorizada
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -392,7 +366,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -417,11 +391,6 @@ Consultar o cancelamento da DC-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -455,7 +424,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -482,11 +451,6 @@ Consulta os detalhes de uma DC-e já existente. Forneça o ID único obtido de u
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -520,7 +484,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -547,11 +511,6 @@ Consulta do status do serviço prestado pelo Portal da Secretaria de Fazenda Est
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -587,7 +546,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -606,7 +565,7 @@ emitirDce($body): \ACBrAPI\Model\Dfe
 
 Emitir DC-e
 
-**Informações adicionais**:  - Cota: <a href=\"/docs/limites#dfe-eventos\">dfe-eventos</a>  - Consumo: 1 unidade por requisição.
+**Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 
@@ -614,11 +573,6 @@ Emitir DC-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -652,7 +606,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 
@@ -679,11 +633,6 @@ Retorna a lista de DC-e de acordo com os critérios de busca utilizados. As DC-e
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-// Configurar authorização via API key: jwt
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ACBrAPI\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 // Configurar access token OAuth2 para autorização: oauth2
 $config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
@@ -731,7 +680,7 @@ try {
 
 ### Autorização
 
-[jwt](../../README.md#jwt), [oauth2](../../README.md#oauth2)
+[oauth2](../../README.md#oauth2)
 
 ### Headers HTTP da requisição
 

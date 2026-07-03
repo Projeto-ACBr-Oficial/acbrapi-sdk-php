@@ -16,7 +16,7 @@ Nome | Tipo | Descrição | Comentários
 **modal** | **int** | Modalidade de transporte.  * 1 - Rodoviário  * 2 - Aéreo  * 3 - Aquaviário  * 4 - Ferroviário |
 **dh_emi** | **\DateTime** | Data e hora de emissão do Manifesto.  Formato AAAA-MM-DDTHH:MM:DD TZD. |
 **tp_emis** | **int** | Forma de emissão do Manifesto.  * 1 - Normal  * 2 - Contingência  * 3 - Regime Especial NFF |
-**proc_emi** | **string** | Identificação do processo de emissão do Manifesto.  * 0 - emissão de MDF-e com aplicativo do contribuinte |
+**proc_emi** | **string** | Identificação do processo de emissão do Manifesto.  * 0 - emissão de MDFe com aplicativo do contribuinte  * 4 - emissão de MDFe por Provedor de Assinatura e Autorização - PAA |
 **ver_proc** | **string** | Versão do processo de emissão.  Informar a versão do aplicativo emissor de MDF-e. |
 **uf_ini** | **string** | Sigla da UF do Carregamento.  Utilizar a Tabela do IBGE de código de unidades da federação.  Informar &#39;EX&#39; para operações com o exterior. |
 **uf_fim** | **string** | Sigla da UF do Descarregamento.  Utilizar a Tabela do IBGE de código de unidades da federação.  Informar &#39;EX&#39; para operações com o exterior. |

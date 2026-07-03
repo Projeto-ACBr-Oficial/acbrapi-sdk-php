@@ -8,5 +8,6 @@ Nome | Tipo | Descrição | Comentários
 **g_ibs** | [**\ACBrAPI\Model\NfeSefazGIBS**](NfeSefazGIBS.md) |  | [optional]
 **g_cbs** | [**\ACBrAPI\Model\NfeSefazIBSCBSMonoTotGCBS**](NfeSefazIBSCBSMonoTotGCBS.md) |  | [optional]
 **g_mono** | [**\ACBrAPI\Model\NfeSefazGMono**](NfeSefazGMono.md) |  | [optional]
+**g_estorno_cred** | [**\ACBrAPI\Model\NfeSefazGEstornoCred**](NfeSefazGEstornoCred.md) |  | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

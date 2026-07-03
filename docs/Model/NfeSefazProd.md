@@ -15,6 +15,7 @@ Nome | Tipo | Descrição | Comentários
 **cnpj_fab** | **string** | CNPJ do Fabricante da Mercadoria, obrigatório para produto em escala NÃO relevante. | [optional]
 **c_benef** | **string** |  | [optional]
 **g_cred** | [**\ACBrAPI\Model\NfeSefazGCred[]**](NfeSefazGCred.md) |  | [optional]
+**tp_cred_pres_ibszfm** | **int** | Classificação para subapuração do IBS na ZFM. | [optional]
 **extipi** | **string** | Código EX TIPI (3 posições). | [optional]
 **cfop** | **string** | Cfop. |
 **u_com** | **string** | Unidade comercial. |

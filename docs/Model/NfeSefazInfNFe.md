@@ -26,5 +26,6 @@ Nome | Tipo | Descrição | Comentários
 **inf_resp_tec** | [**\ACBrAPI\Model\NfeSefazInfRespTec**](NfeSefazInfRespTec.md) |  | [optional]
 **inf_solic_nff** | [**\ACBrAPI\Model\NfeSefazInfSolicNFF**](NfeSefazInfSolicNFF.md) |  | [optional]
 **agropecuario** | [**\ACBrAPI\Model\NfeSefazAgropecuario**](NfeSefazAgropecuario.md) |  | [optional]
+**inf_paa** | [**\ACBrAPI\Model\NfeSefazInfPAA**](NfeSefazInfPAA.md) |  | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

@@ -17,5 +17,7 @@ Nome | Tipo | Descrição | Comentários
 **v_prod** | **float** | Valor total do item. |
 **d_expiracao** | **\DateTime** | Data de expiração de crédito.  Formato AAAA-MM-DD. | [optional]
 **ind_devolucao** | **int** | Indicador de devolução do valor do item.  * 1 - Devolução do valor do item | [optional]
+**cnpj_cobr_terc** | **string** | CNPJ de cobrança de terceiro.  Informar quando cClass do grupo 110 - Cobrança de terceiros. | [optional]
+**g_pag_antecipado** | [**\ACBrAPI\Model\NfcomSefazGPagAntecipado**](NfcomSefazGPagAntecipado.md) |  | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

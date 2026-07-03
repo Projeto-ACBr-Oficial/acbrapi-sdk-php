@@ -7,7 +7,5 @@ Nome | Tipo | Descrição | Comentários
 **g_ibsuf** | [**\ACBrAPI\Model\NfcomSefazGIBSGIBSUF**](NfcomSefazGIBSGIBSUF.md) |  |
 **g_ibs_mun** | [**\ACBrAPI\Model\NfcomSefazGIBSGIBSMun**](NfcomSefazGIBSGIBSMun.md) |  |
 **v_ibs** | **float** | Valor total do IBS. |
-**v_cred_pres** | **float** | Total do Crédito Presumido. |
-**v_cred_pres_cond_sus** | **float** | Total do Crédito Presumido Condição Suspensiva. |
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

@@ -5,7 +5,7 @@
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
 **cnpj** | **string** | Número do CNPJ do emitente.    ***Obrigatório caso o emitente seja pessoa jurídica***. | [optional]
-**cpf** | **string** | Número do CPF do emitente.    ***Obrigatorio caso o emitente seja pessoa física***. | [optional]
+**cpf** | **string** | Número do CPF do emitente.    ***Obrigatório caso o emitente seja pessoa física***. | [optional]
 **x_nome** | **string** | Razão Social ou Nome do emitente.    *Caso não seja informado, será utilizado o do cadastro da empresa.* | [optional]
 **x_fant** | **string** | Nome fantasia.    *Caso não seja informado, será utilizado o do cadastro da empresa.* | [optional]
 **ender_emit** | [**\ACBrAPI\Model\NfeSefazEnderEmi**](NfeSefazEnderEmi.md) |  | [optional]

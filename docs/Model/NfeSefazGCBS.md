@@ -4,7 +4,7 @@
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**p_cbs** | **float** | Aliquota da CBS. |
+**p_cbs** | **float** | Aliquota da CBS (em percentual). |
 **g_dif** | [**\ACBrAPI\Model\NfeSefazDif**](NfeSefazDif.md) |  | [optional]
 **g_dev_trib** | [**\ACBrAPI\Model\NfeSefazDevTrib**](NfeSefazDevTrib.md) |  | [optional]
 **g_red** | [**\ACBrAPI\Model\NfeSefazRed**](NfeSefazRed.md) |  | [optional]

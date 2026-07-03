@@ -16,6 +16,7 @@ Nome | Tipo | Descrição | Comentários
 **cobr** | [**\ACBrAPI\Model\CteSimpSefazCobrSimp**](CteSimpSefazCobrSimp.md) |  | [optional]
 **inf_cte_sub** | [**\ACBrAPI\Model\CteSimpSefazInfCteSubSimp**](CteSimpSefazInfCteSubSimp.md) |  | [optional]
 **imp** | [**\ACBrAPI\Model\CteSimpSefazInfCteImpSimp**](CteSimpSefazInfCteImpSimp.md) |  |
+**pgto_vinc** | [**\ACBrAPI\Model\CteSimpSefazPgtoVincSimp**](CteSimpSefazPgtoVincSimp.md) |  | [optional]
 **total** | [**\ACBrAPI\Model\CteSimpSefazTotalSimp**](CteSimpSefazTotalSimp.md) |  |
 **aut_xml** | [**\ACBrAPI\Model\CteSimpSefazAutXMLSimp[]**](CteSimpSefazAutXMLSimp.md) |  | [optional]
 **inf_resp_tec** | [**\ACBrAPI\Model\CteSimpSefazRespTecSimp**](CteSimpSefazRespTecSimp.md) |  | [optional]
