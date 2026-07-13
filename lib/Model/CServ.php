@@ -63,7 +63,8 @@ class CServ implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_desc_serv' => 'string',
         'c_nbs' => 'string',
         'c_nat_op' => 'string',
-        'c_sit_trib' => 'string'
+        'c_sit_trib' => 'string',
+        'c_int_contrib' => 'string'
     ];
 
     /**
@@ -80,7 +81,8 @@ class CServ implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_desc_serv' => null,
         'c_nbs' => null,
         'c_nat_op' => null,
-        'c_sit_trib' => null
+        'c_sit_trib' => null,
+        'c_int_contrib' => null
     ];
 
     /**
@@ -95,7 +97,8 @@ class CServ implements ModelInterface, ArrayAccess, \JsonSerializable
 		'x_desc_serv' => true,
 		'c_nbs' => true,
 		'c_nat_op' => true,
-		'c_sit_trib' => true
+		'c_sit_trib' => true,
+		'c_int_contrib' => true
     ];
 
     /**
@@ -190,7 +193,8 @@ class CServ implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_desc_serv' => 'xDescServ',
         'c_nbs' => 'cNBS',
         'c_nat_op' => 'cNatOp',
-        'c_sit_trib' => 'cSitTrib'
+        'c_sit_trib' => 'cSitTrib',
+        'c_int_contrib' => 'cIntContrib'
     ];
 
     /**
@@ -205,7 +209,8 @@ class CServ implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_desc_serv' => 'setXDescServ',
         'c_nbs' => 'setCNbs',
         'c_nat_op' => 'setCNatOp',
-        'c_sit_trib' => 'setCSitTrib'
+        'c_sit_trib' => 'setCSitTrib',
+        'c_int_contrib' => 'setCIntContrib'
     ];
 
     /**
@@ -220,7 +225,8 @@ class CServ implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_desc_serv' => 'getXDescServ',
         'c_nbs' => 'getCNbs',
         'c_nat_op' => 'getCNatOp',
-        'c_sit_trib' => 'getCSitTrib'
+        'c_sit_trib' => 'getCSitTrib',
+        'c_int_contrib' => 'getCIntContrib'
     ];
 
     /**
@@ -287,6 +293,7 @@ class CServ implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('c_nbs', $data ?? [], null);
         $this->setIfExists('c_nat_op', $data ?? [], null);
         $this->setIfExists('c_sit_trib', $data ?? [], null);
+        $this->setIfExists('c_int_contrib', $data ?? [], null);
     }
 
     /**
@@ -328,6 +335,14 @@ class CServ implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if ((mb_strlen($this->container['x_desc_serv']) < 1)) {
             $invalidProperties[] = "invalid value for 'x_desc_serv', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['c_int_contrib']) && (mb_strlen($this->container['c_int_contrib']) > 20)) {
+            $invalidProperties[] = "invalid value for 'c_int_contrib', the character length must be smaller than or equal to 20.";
+        }
+
+        if (!is_null($this->container['c_int_contrib']) && (mb_strlen($this->container['c_int_contrib']) < 1)) {
+            $invalidProperties[] = "invalid value for 'c_int_contrib', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -586,6 +601,47 @@ class CServ implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['c_sit_trib'] = $c_sit_trib;
+
+        return $this;
+    }
+
+    /**
+     * Gets c_int_contrib
+     *
+     * @return string|null
+     */
+    public function getCIntContrib()
+    {
+        return $this->container['c_int_contrib'];
+    }
+
+    /**
+     * Sets c_int_contrib
+     *
+     * @param string|null $c_int_contrib Código interno do contribuinte.
+     *
+     * @return self
+     */
+    public function setCIntContrib($c_int_contrib)
+    {
+        if (is_null($c_int_contrib)) {
+            array_push($this->openAPINullablesSetToNull, 'c_int_contrib');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('c_int_contrib', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($c_int_contrib) && (mb_strlen($c_int_contrib) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $c_int_contrib when calling CServ., must be smaller than or equal to 20.');
+        }
+        if (!is_null($c_int_contrib) && (mb_strlen($c_int_contrib) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $c_int_contrib when calling CServ., must be bigger than or equal to 1.');
+        }
+
+        $this->container['c_int_contrib'] = $c_int_contrib;
 
         return $this;
     }

@@ -1615,7 +1615,7 @@ try {
 ## `enviarEmailNfe()`
 
 ```php
-enviarEmailNfe($id, $body): \ACBrAPI\Model\EmailStatusResponse
+enviarEmailNfe($id, $logotipo, $nome_fantasia, $formato, $mensagem_rodape, $canhoto, $body): \ACBrAPI\Model\EmailStatusResponse
 ```
 
 Enviar e-mail
@@ -1640,10 +1640,15 @@ $apiInstance = new ACBrAPI\Api\NfeApi(
     $config
 );
 $id = 'id_example'; // string | ID único da NF-e gerado pela API.
+$logotipo = false; // bool | Imprime o documento com logotipo, desde que esteja cadastrado na empresa.
+$nome_fantasia = false; // bool | Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota.
+$formato = 'padrao'; // string | Formato de impressão do DANFE.    Valores disponíveis:  - `padrao`: será utilizado o formato definido no XML da NF-e (tag \"tpImp\");  - `retrato`: tamanho A4 em modo retrato;  - `paisagem`: tamanho A4 em modo paisagem;  - `simplificado`: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - `etiqueta`: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004).
+$mensagem_rodape = 'mensagem_rodape_example'; // string | Imprime mensagem no rodapé do documento.    O caractere `|` (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * `\"esquerda\"`  * `\"esquerda|centro\"`  * `\"esquerda|centro|direita\"`  * `\"|centro\"`, `\"|centro|\"`  * `\"|centro|direita\"`  * `\"||direita\"`  * `\"esquerda||direita\"`
+$canhoto = true; // bool | Imprime o documento com o bloco de canhoto.
 $body = new \ACBrAPI\Model\DfePedidoEnvioEmail(); // \ACBrAPI\Model\DfePedidoEnvioEmail
 
 try {
-    $result = $apiInstance->enviarEmailNfe($id, $body);
+    $result = $apiInstance->enviarEmailNfe($id, $logotipo, $nome_fantasia, $formato, $mensagem_rodape, $canhoto, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NfeApi->enviarEmailNfe: ', $e->getMessage(), PHP_EOL;
@@ -1655,6 +1660,11 @@ try {
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| ID único da NF-e gerado pela API. | |
+| **logotipo** | **bool**| Imprime o documento com logotipo, desde que esteja cadastrado na empresa. | [optional] [default to false] |
+| **nome_fantasia** | **bool**| Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. | [optional] [default to false] |
+| **formato** | **string**| Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). | [optional] [default to &#39;padrao&#39;] |
+| **mensagem_rodape** | **string**| Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; | [optional] |
+| **canhoto** | **bool**| Imprime o documento com o bloco de canhoto. | [optional] [default to true] |
 | **body** | [**\ACBrAPI\Model\DfePedidoEnvioEmail**](../Model/DfePedidoEnvioEmail.md)|  | [optional] |
 
 ### Tipo do retorno

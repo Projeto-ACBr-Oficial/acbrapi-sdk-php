@@ -11,5 +11,6 @@ Nome | Tipo | Descrição | Comentários
 **c_nbs** | **string** | Código NBS correspondente ao serviço prestado, seguindo a versão 2.0, conforme Anexo B. | [optional]
 **c_nat_op** | **string** | Código de natureza da operação.    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado. | [optional]
 **c_sit_trib** | **string** | Código de situação tributária.    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado. | [optional]
+**c_int_contrib** | **string** | Código interno do contribuinte. | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

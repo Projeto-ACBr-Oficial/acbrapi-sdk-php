@@ -6826,6 +6826,13 @@ class NfceApi
      * Enviar e-mail
      *
      * @param  string $id ID único da NFC-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)
+     * @param  bool $resumido Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)
+     * @param  bool $qrcode_lateral Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)
+     * @param  int $largura Largura do DANFE NFC-e (em milímetros). (optional, default to 80)
+     * @param  string $margem Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to '2')
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfce'] to see the possible values for this operation
      *
@@ -6833,9 +6840,9 @@ class NfceApi
      * @throws \InvalidArgumentException
      * @return \ACBrAPI\Model\EmailStatusResponse
      */
-    public function enviarEmailNfce($id, $body = null, string $contentType = self::contentTypes['enviarEmailNfce'][0])
+    public function enviarEmailNfce($id, $logotipo = false, $nome_fantasia = false, $mensagem_rodape = null, $resumido = false, $qrcode_lateral = false, $largura = 80, $margem = '2', $body = null, string $contentType = self::contentTypes['enviarEmailNfce'][0])
     {
-        list($response) = $this->enviarEmailNfceWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->enviarEmailNfceWithHttpInfo($id, $logotipo, $nome_fantasia, $mensagem_rodape, $resumido, $qrcode_lateral, $largura, $margem, $body, $contentType);
         return $response;
     }
 
@@ -6845,6 +6852,13 @@ class NfceApi
      * Enviar e-mail
      *
      * @param  string $id ID único da NFC-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)
+     * @param  bool $resumido Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)
+     * @param  bool $qrcode_lateral Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)
+     * @param  int $largura Largura do DANFE NFC-e (em milímetros). (optional, default to 80)
+     * @param  string $margem Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to '2')
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfce'] to see the possible values for this operation
      *
@@ -6852,9 +6866,9 @@ class NfceApi
      * @throws \InvalidArgumentException
      * @return array of \ACBrAPI\Model\EmailStatusResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function enviarEmailNfceWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['enviarEmailNfce'][0])
+    public function enviarEmailNfceWithHttpInfo($id, $logotipo = false, $nome_fantasia = false, $mensagem_rodape = null, $resumido = false, $qrcode_lateral = false, $largura = 80, $margem = '2', $body = null, string $contentType = self::contentTypes['enviarEmailNfce'][0])
     {
-        $request = $this->enviarEmailNfceRequest($id, $body, $contentType);
+        $request = $this->enviarEmailNfceRequest($id, $logotipo, $nome_fantasia, $mensagem_rodape, $resumido, $qrcode_lateral, $largura, $margem, $body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6946,15 +6960,22 @@ class NfceApi
      * Enviar e-mail
      *
      * @param  string $id ID único da NFC-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)
+     * @param  bool $resumido Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)
+     * @param  bool $qrcode_lateral Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)
+     * @param  int $largura Largura do DANFE NFC-e (em milímetros). (optional, default to 80)
+     * @param  string $margem Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to '2')
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enviarEmailNfceAsync($id, $body = null, string $contentType = self::contentTypes['enviarEmailNfce'][0])
+    public function enviarEmailNfceAsync($id, $logotipo = false, $nome_fantasia = false, $mensagem_rodape = null, $resumido = false, $qrcode_lateral = false, $largura = 80, $margem = '2', $body = null, string $contentType = self::contentTypes['enviarEmailNfce'][0])
     {
-        return $this->enviarEmailNfceAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->enviarEmailNfceAsyncWithHttpInfo($id, $logotipo, $nome_fantasia, $mensagem_rodape, $resumido, $qrcode_lateral, $largura, $margem, $body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6968,16 +6989,23 @@ class NfceApi
      * Enviar e-mail
      *
      * @param  string $id ID único da NFC-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)
+     * @param  bool $resumido Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)
+     * @param  bool $qrcode_lateral Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)
+     * @param  int $largura Largura do DANFE NFC-e (em milímetros). (optional, default to 80)
+     * @param  string $margem Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to '2')
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enviarEmailNfceAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['enviarEmailNfce'][0])
+    public function enviarEmailNfceAsyncWithHttpInfo($id, $logotipo = false, $nome_fantasia = false, $mensagem_rodape = null, $resumido = false, $qrcode_lateral = false, $largura = 80, $margem = '2', $body = null, string $contentType = self::contentTypes['enviarEmailNfce'][0])
     {
         $returnType = '\ACBrAPI\Model\EmailStatusResponse';
-        $request = $this->enviarEmailNfceRequest($id, $body, $contentType);
+        $request = $this->enviarEmailNfceRequest($id, $logotipo, $nome_fantasia, $mensagem_rodape, $resumido, $qrcode_lateral, $largura, $margem, $body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7019,13 +7047,20 @@ class NfceApi
      * Create request for operation 'enviarEmailNfce'
      *
      * @param  string $id ID único da NFC-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)
+     * @param  bool $resumido Poderá ser impresso apenas o DANFE NFC-e resumido ou ecológico, sem o detalhamento dos itens da venda, desde que a Unidade Federada permita esta opção em sua legislação e o consumidor assim o solicite. (optional, default to false)
+     * @param  bool $qrcode_lateral Imprime o QRCode na lateral do DANFE NFC-e.    *Disponível apenas para DANFE com 80 milímetros de largura*. (optional, default to false)
+     * @param  int $largura Largura do DANFE NFC-e (em milímetros). (optional, default to 80)
+     * @param  string $margem Define as margens do DANFE NFC-e (em milímetros).    Essa propriedade pode ser especificada usando um, dois, três ou quatro valores (separados por vírgulas). Cada valor deve ser um número entre &#x60;0&#x60; e &#x60;9&#x60;.  * Quando **um** valor é especificado, a mesma margem é aplicada para **todos os quatro lados**.  * Quando **dois** valores são especificados, a primeira margem é aplicada aos **lados esquerdo e direito**, e a segunda aos **lados superior e inferior**.  * Quando **três** valores são especificados, a primeira margem é aplicada ao **lado esquerdo**, a segunda aos **lados superior e inferior**, e a terceira ao **lado direito**.  * Quando **quatro** valores são especificados, as margens são aplicadas aos lados **esquerdo**, **superior**, **direito** e **inferior**, nesta ordem (sentido horário).    **Exemplos de uso**:  * &#x60;margem&#x3D;1&#x60;    - Margem esquerda: 1mm    - Margem superior: 1mm    - Margem direita: 1mm    - Margem inferior: 1mm  * &#x60;margem&#x3D;1,2&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 1mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 2mm  * &#x60;margem&#x3D;1,2,3,4&#x60;    - Margem esquerda: 1mm    - Margem superior: 2mm    - Margem direita: 3mm    - Margem inferior: 4mm (optional, default to '2')
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function enviarEmailNfceRequest($id, $body = null, string $contentType = self::contentTypes['enviarEmailNfce'][0])
+    public function enviarEmailNfceRequest($id, $logotipo = false, $nome_fantasia = false, $mensagem_rodape = null, $resumido = false, $qrcode_lateral = false, $largura = 80, $margem = '2', $body = null, string $contentType = self::contentTypes['enviarEmailNfce'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -7037,6 +7072,22 @@ class NfceApi
 
 
 
+        if ($mensagem_rodape !== null && strlen($mensagem_rodape) > 120) {
+            throw new \InvalidArgumentException('invalid length for "$mensagem_rodape" when calling NfceApi.enviarEmailNfce, must be smaller than or equal to 120.');
+        }
+        
+
+
+        if ($largura !== null && $largura > 80) {
+            throw new \InvalidArgumentException('invalid value for "$largura" when calling NfceApi.enviarEmailNfce, must be smaller than or equal to 80.');
+        }
+        if ($largura !== null && $largura < 40) {
+            throw new \InvalidArgumentException('invalid value for "$largura" when calling NfceApi.enviarEmailNfce, must be bigger than or equal to 40.');
+        }
+        
+
+
+
         $resourcePath = '/nfce/{id}/email';
         $formParams = [];
         $queryParams = [];
@@ -7044,6 +7095,69 @@ class NfceApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $logotipo,
+            'logotipo', // param base name
+            'boolean', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $nome_fantasia,
+            'nome_fantasia', // param base name
+            'boolean', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $mensagem_rodape,
+            'mensagem_rodape', // param base name
+            'string', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $resumido,
+            'resumido', // param base name
+            'boolean', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $qrcode_lateral,
+            'qrcode_lateral', // param base name
+            'boolean', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $largura,
+            'largura', // param base name
+            'integer', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $margem,
+            'margem', // param base name
+            'string', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
 
 
         // path params

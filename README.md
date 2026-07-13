@@ -1088,6 +1088,6 @@ Classe | Método | Endpoint | Descrição
 
 ## Sobre este package
 
-- Versão da API: `3.1.5`
-    - Versão do package: `3.1.5`
+- Versão da API: `3.1.7`
+    - Versão do package: `3.1.7`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

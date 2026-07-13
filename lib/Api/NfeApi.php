@@ -7940,6 +7940,11 @@ class NfeApi
      * Enviar e-mail
      *
      * @param  string $id ID único da NF-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
+     * @param  string $formato Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to 'padrao')
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)
+     * @param  bool $canhoto Imprime o documento com o bloco de canhoto. (optional, default to true)
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfe'] to see the possible values for this operation
      *
@@ -7947,9 +7952,9 @@ class NfeApi
      * @throws \InvalidArgumentException
      * @return \ACBrAPI\Model\EmailStatusResponse
      */
-    public function enviarEmailNfe($id, $body = null, string $contentType = self::contentTypes['enviarEmailNfe'][0])
+    public function enviarEmailNfe($id, $logotipo = false, $nome_fantasia = false, $formato = 'padrao', $mensagem_rodape = null, $canhoto = true, $body = null, string $contentType = self::contentTypes['enviarEmailNfe'][0])
     {
-        list($response) = $this->enviarEmailNfeWithHttpInfo($id, $body, $contentType);
+        list($response) = $this->enviarEmailNfeWithHttpInfo($id, $logotipo, $nome_fantasia, $formato, $mensagem_rodape, $canhoto, $body, $contentType);
         return $response;
     }
 
@@ -7959,6 +7964,11 @@ class NfeApi
      * Enviar e-mail
      *
      * @param  string $id ID único da NF-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
+     * @param  string $formato Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to 'padrao')
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)
+     * @param  bool $canhoto Imprime o documento com o bloco de canhoto. (optional, default to true)
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfe'] to see the possible values for this operation
      *
@@ -7966,9 +7976,9 @@ class NfeApi
      * @throws \InvalidArgumentException
      * @return array of \ACBrAPI\Model\EmailStatusResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function enviarEmailNfeWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['enviarEmailNfe'][0])
+    public function enviarEmailNfeWithHttpInfo($id, $logotipo = false, $nome_fantasia = false, $formato = 'padrao', $mensagem_rodape = null, $canhoto = true, $body = null, string $contentType = self::contentTypes['enviarEmailNfe'][0])
     {
-        $request = $this->enviarEmailNfeRequest($id, $body, $contentType);
+        $request = $this->enviarEmailNfeRequest($id, $logotipo, $nome_fantasia, $formato, $mensagem_rodape, $canhoto, $body, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8060,15 +8070,20 @@ class NfeApi
      * Enviar e-mail
      *
      * @param  string $id ID único da NF-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
+     * @param  string $formato Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to 'padrao')
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)
+     * @param  bool $canhoto Imprime o documento com o bloco de canhoto. (optional, default to true)
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enviarEmailNfeAsync($id, $body = null, string $contentType = self::contentTypes['enviarEmailNfe'][0])
+    public function enviarEmailNfeAsync($id, $logotipo = false, $nome_fantasia = false, $formato = 'padrao', $mensagem_rodape = null, $canhoto = true, $body = null, string $contentType = self::contentTypes['enviarEmailNfe'][0])
     {
-        return $this->enviarEmailNfeAsyncWithHttpInfo($id, $body, $contentType)
+        return $this->enviarEmailNfeAsyncWithHttpInfo($id, $logotipo, $nome_fantasia, $formato, $mensagem_rodape, $canhoto, $body, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8082,16 +8097,21 @@ class NfeApi
      * Enviar e-mail
      *
      * @param  string $id ID único da NF-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
+     * @param  string $formato Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to 'padrao')
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)
+     * @param  bool $canhoto Imprime o documento com o bloco de canhoto. (optional, default to true)
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function enviarEmailNfeAsyncWithHttpInfo($id, $body = null, string $contentType = self::contentTypes['enviarEmailNfe'][0])
+    public function enviarEmailNfeAsyncWithHttpInfo($id, $logotipo = false, $nome_fantasia = false, $formato = 'padrao', $mensagem_rodape = null, $canhoto = true, $body = null, string $contentType = self::contentTypes['enviarEmailNfe'][0])
     {
         $returnType = '\ACBrAPI\Model\EmailStatusResponse';
-        $request = $this->enviarEmailNfeRequest($id, $body, $contentType);
+        $request = $this->enviarEmailNfeRequest($id, $logotipo, $nome_fantasia, $formato, $mensagem_rodape, $canhoto, $body, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8133,13 +8153,18 @@ class NfeApi
      * Create request for operation 'enviarEmailNfe'
      *
      * @param  string $id ID único da NF-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  bool $nome_fantasia Exibe o nome fantasia do emitente, desde que esteja presente no XML da nota. (optional, default to false)
+     * @param  string $formato Formato de impressão do DANFE.    Valores disponíveis:  - &#x60;padrao&#x60;: será utilizado o formato definido no XML da NF-e (tag \&quot;tpImp\&quot;);  - &#x60;retrato&#x60;: tamanho A4 em modo retrato;  - &#x60;paisagem&#x60;: tamanho A4 em modo paisagem;  - &#x60;simplificado&#x60;: formato simplificado utilizado nas operações realizadas fora do estabelecimento (Anexo II do MOC, item 3.11);  - &#x60;etiqueta&#x60;: formato simplificado utilizado nas operações em comércio eletrônico (Anexo II do MOC, item 3.12 e NT 2020.004). (optional, default to 'padrao')
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60; (optional)
+     * @param  bool $canhoto Imprime o documento com o bloco de canhoto. (optional, default to true)
      * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfe'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function enviarEmailNfeRequest($id, $body = null, string $contentType = self::contentTypes['enviarEmailNfe'][0])
+    public function enviarEmailNfeRequest($id, $logotipo = false, $nome_fantasia = false, $formato = 'padrao', $mensagem_rodape = null, $canhoto = true, $body = null, string $contentType = self::contentTypes['enviarEmailNfe'][0])
     {
 
         // verify the required parameter 'id' is set
@@ -8151,6 +8176,14 @@ class NfeApi
 
 
 
+
+        if ($mensagem_rodape !== null && strlen($mensagem_rodape) > 120) {
+            throw new \InvalidArgumentException('invalid length for "$mensagem_rodape" when calling NfeApi.enviarEmailNfe, must be smaller than or equal to 120.');
+        }
+        
+
+
+
         $resourcePath = '/nfe/{id}/email';
         $formParams = [];
         $queryParams = [];
@@ -8158,6 +8191,51 @@ class NfeApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $logotipo,
+            'logotipo', // param base name
+            'boolean', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $nome_fantasia,
+            'nome_fantasia', // param base name
+            'boolean', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $formato,
+            'formato', // param base name
+            'string', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $mensagem_rodape,
+            'mensagem_rodape', // param base name
+            'string', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $canhoto,
+            'canhoto', // param base name
+            'boolean', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
 
 
         // path params
