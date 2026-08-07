@@ -1,4 +1,4 @@
-# # CteSimpSefazDutoSimp
+# CteSimpSefazDutoSimp
 
 ## Propriedades
 

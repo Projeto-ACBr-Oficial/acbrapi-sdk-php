@@ -1,4 +1,4 @@
-# # CteOsSefazEmitOS
+# CteOsSefazEmitOS
 
 ## Propriedades
 

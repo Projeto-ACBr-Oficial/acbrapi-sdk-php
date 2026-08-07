@@ -1,4 +1,4 @@
-# # MdfeSefazInfBanc
+# MdfeSefazInfBanc
 
 ## Propriedades
 

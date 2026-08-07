@@ -1,4 +1,4 @@
-# # CteOsSefazGIBSUFOS
+# CteOsSefazGIBSUFOS
 
 ## Propriedades
 

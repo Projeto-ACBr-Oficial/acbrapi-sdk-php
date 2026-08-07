@@ -1,4 +1,4 @@
-# # InfoTomador
+# InfoTomador
 
 ## Propriedades
 

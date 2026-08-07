@@ -1,4 +1,4 @@
-# # TribTotalPercent
+# TribTotalPercent
 
 ## Propriedades
 

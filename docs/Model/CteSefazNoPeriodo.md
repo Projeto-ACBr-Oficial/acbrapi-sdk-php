@@ -1,4 +1,4 @@
-# # CteSefazNoPeriodo
+# CteSefazNoPeriodo
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # CteOsSefazDifOS
+# CteOsSefazDifOS
 
 ## Propriedades
 

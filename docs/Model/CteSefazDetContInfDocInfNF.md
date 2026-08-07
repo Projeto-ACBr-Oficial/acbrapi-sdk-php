@@ -1,4 +1,4 @@
-# # CteSefazDetContInfDocInfNF
+# CteSefazDetContInfDocInfNF
 
 ## Propriedades
 

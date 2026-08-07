@@ -1,4 +1,4 @@
-# # MdfeSefazInfLocalCarrega
+# MdfeSefazInfLocalCarrega
 
 ## Propriedades
 

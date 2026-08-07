@@ -1,4 +1,4 @@
-# # MdfeSefazInfPercurso
+# MdfeSefazInfPercurso
 
 ## Propriedades
 

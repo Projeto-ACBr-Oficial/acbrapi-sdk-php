@@ -1,4 +1,4 @@
-# # CteSefazDup
+# CteSefazDup
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # NfeSefazCana
+# NfeSefazCana
 
 ## Propriedades
 

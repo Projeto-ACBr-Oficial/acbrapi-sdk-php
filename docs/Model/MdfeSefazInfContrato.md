@@ -1,4 +1,4 @@
-# # MdfeSefazInfContrato
+# MdfeSefazInfContrato
 
 ## Propriedades
 

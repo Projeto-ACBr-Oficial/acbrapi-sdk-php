@@ -1,4 +1,4 @@
-# # DceSefazObsECT
+# DceSefazObsECT
 
 ## Propriedades
 

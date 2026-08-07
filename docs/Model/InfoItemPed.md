@@ -1,4 +1,4 @@
-# # InfoItemPed
+# InfoItemPed
 
 ## Propriedades
 

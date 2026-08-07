@@ -1,4 +1,4 @@
-# # MdfeDocumentoVinculado
+# MdfeDocumentoVinculado
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # NfeSefazCIBS
+# NfeSefazCIBS
 
 ## Propriedades
 

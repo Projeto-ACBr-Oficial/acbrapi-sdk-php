@@ -1,4 +1,4 @@
-# # CteSefazInfCarga
+# CteSefazInfCarga
 
 ## Propriedades
 

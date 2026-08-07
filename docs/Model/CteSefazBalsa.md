@@ -1,4 +1,4 @@
-# # CteSefazBalsa
+# CteSefazBalsa
 
 ## Propriedades
 

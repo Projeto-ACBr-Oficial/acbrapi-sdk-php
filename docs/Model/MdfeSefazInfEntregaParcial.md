@@ -1,4 +1,4 @@
-# # MdfeSefazInfEntregaParcial
+# MdfeSefazInfEntregaParcial
 
 ## Propriedades
 

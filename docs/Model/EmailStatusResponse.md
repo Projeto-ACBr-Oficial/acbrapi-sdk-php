@@ -1,4 +1,4 @@
-# # EmailStatusResponse
+# EmailStatusResponse
 
 ## Propriedades
 

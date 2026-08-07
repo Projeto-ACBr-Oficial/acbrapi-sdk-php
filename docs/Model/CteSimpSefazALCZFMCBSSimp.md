@@ -1,4 +1,4 @@
-# # CteSimpSefazALCZFMCBSSimp
+# CteSimpSefazALCZFMCBSSimp
 
 ## Propriedades
 

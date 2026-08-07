@@ -1,4 +1,4 @@
-# # DfeSincronizacao
+# DfeSincronizacao
 
 ## Propriedades
 

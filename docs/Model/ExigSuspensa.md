@@ -1,4 +1,4 @@
-# # ExigSuspensa
+# ExigSuspensa
 
 ## Propriedades
 

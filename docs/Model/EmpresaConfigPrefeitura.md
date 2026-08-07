@@ -1,4 +1,4 @@
-# # EmpresaConfigPrefeitura
+# EmpresaConfigPrefeitura
 
 ## Propriedades
 

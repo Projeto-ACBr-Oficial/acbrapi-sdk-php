@@ -1,4 +1,4 @@
-# # CteSefazGPagAntecipado
+# CteSefazGPagAntecipado
 
 ## Propriedades
 

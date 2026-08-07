@@ -1,4 +1,4 @@
-# # CteOsSefazInfCteSubOS
+# CteOsSefazInfCteSubOS
 
 ## Propriedades
 

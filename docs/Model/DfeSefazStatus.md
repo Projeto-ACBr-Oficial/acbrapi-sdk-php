@@ -1,4 +1,4 @@
-# # DfeSefazStatus
+# DfeSefazStatus
 
 ## Propriedades
 

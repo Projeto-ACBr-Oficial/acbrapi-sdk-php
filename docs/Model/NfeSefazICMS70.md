@@ -1,4 +1,4 @@
-# # NfeSefazICMS70
+# NfeSefazICMS70
 
 ## Propriedades
 

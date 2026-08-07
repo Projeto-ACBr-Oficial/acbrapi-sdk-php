@@ -1,4 +1,4 @@
-# # CteSefazVeicNovos
+# CteSefazVeicNovos
 
 ## Propriedades
 

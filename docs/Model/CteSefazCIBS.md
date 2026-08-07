@@ -1,4 +1,4 @@
-# # CteSefazCIBS
+# CteSefazCIBS
 
 ## Propriedades
 

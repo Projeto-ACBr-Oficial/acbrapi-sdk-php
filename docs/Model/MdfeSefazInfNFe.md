@@ -1,4 +1,4 @@
-# # MdfeSefazInfNFe
+# MdfeSefazInfNFe
 
 ## Propriedades
 

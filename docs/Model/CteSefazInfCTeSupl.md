@@ -1,4 +1,4 @@
-# # CteSefazInfCTeSupl
+# CteSefazInfCTeSupl
 
 ## Propriedades
 

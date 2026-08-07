@@ -1,4 +1,4 @@
-# # MdfeSefazVeicReboqueProp
+# MdfeSefazVeicReboqueProp
 
 ## Propriedades
 

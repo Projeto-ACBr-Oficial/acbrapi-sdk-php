@@ -1,4 +1,4 @@
-# # CteSefazICMSSN
+# CteSefazICMSSN
 
 ## Propriedades
 

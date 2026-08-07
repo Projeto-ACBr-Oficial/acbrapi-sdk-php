@@ -1,4 +1,4 @@
-# # EmpresaConfigNfceSefaz
+# EmpresaConfigNfceSefaz
 
 ## Propriedades
 

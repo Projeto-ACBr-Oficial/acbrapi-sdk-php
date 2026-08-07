@@ -1,4 +1,4 @@
-# # NfeSefazPISST
+# NfeSefazPISST
 
 ## Propriedades
 

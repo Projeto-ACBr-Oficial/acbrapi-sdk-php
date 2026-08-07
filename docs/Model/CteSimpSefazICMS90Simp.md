@@ -1,4 +1,4 @@
-# # CteSimpSefazICMS90Simp
+# CteSimpSefazICMS90Simp
 
 ## Propriedades
 

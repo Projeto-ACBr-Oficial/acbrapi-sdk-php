@@ -1,4 +1,4 @@
-# # CteSefazICMS90
+# CteSefazICMS90
 
 ## Propriedades
 

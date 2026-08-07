@@ -1,4 +1,4 @@
-# # DceSefazInfDec
+# DceSefazInfDec
 
 ## Propriedades
 

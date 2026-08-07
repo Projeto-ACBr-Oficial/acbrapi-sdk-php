@@ -1,4 +1,4 @@
-# # MdfeSefazEmit
+# MdfeSefazEmit
 
 ## Propriedades
 

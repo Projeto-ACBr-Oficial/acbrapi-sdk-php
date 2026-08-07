@@ -1,4 +1,4 @@
-# # NfeSefazTribRegular
+# NfeSefazTribRegular
 
 ## Propriedades
 

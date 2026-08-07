@@ -1,4 +1,4 @@
-# # CteSefazPgtoVinc
+# CteSefazPgtoVinc
 
 ## Propriedades
 

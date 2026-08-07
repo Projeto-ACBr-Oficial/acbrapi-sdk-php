@@ -1,4 +1,4 @@
-# # EmpresaConfigDce
+# EmpresaConfigDce
 
 ## Propriedades
 

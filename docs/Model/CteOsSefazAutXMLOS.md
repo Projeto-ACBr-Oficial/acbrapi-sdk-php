@@ -1,4 +1,4 @@
-# # CteOsSefazAutXMLOS
+# CteOsSefazAutXMLOS
 
 ## Propriedades
 

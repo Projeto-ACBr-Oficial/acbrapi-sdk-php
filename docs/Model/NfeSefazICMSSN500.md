@@ -1,4 +1,4 @@
-# # NfeSefazICMSSN500
+# NfeSefazICMSSN500
 
 ## Propriedades
 

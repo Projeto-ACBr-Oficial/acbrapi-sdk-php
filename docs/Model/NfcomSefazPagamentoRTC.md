@@ -1,4 +1,4 @@
-# # NfcomSefazPagamentoRTC
+# NfcomSefazPagamentoRTC
 
 ## Propriedades
 

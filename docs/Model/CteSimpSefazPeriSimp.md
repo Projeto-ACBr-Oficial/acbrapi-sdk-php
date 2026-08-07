@@ -1,4 +1,4 @@
-# # CteSimpSefazPeriSimp
+# CteSimpSefazPeriSimp
 
 ## Propriedades
 

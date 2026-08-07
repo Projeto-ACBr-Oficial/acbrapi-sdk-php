@@ -1,4 +1,4 @@
-# # MdfeSefazComp
+# MdfeSefazComp
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # CteSimpSefazGPagAntecipadoSimp
+# CteSimpSefazGPagAntecipadoSimp
 
 ## Propriedades
 

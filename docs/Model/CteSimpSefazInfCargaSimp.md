@@ -1,4 +1,4 @@
-# # CteSimpSefazInfCargaSimp
+# CteSimpSefazInfCargaSimp
 
 ## Propriedades
 

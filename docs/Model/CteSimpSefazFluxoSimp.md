@@ -1,4 +1,4 @@
-# # CteSimpSefazFluxoSimp
+# CteSimpSefazFluxoSimp
 
 ## Propriedades
 

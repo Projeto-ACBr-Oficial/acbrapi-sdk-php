@@ -1,4 +1,4 @@
-# # CteSefazICMS45
+# CteSefazICMS45
 
 ## Propriedades
 

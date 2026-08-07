@@ -1,4 +1,4 @@
-# # CteSimpSefazTribCompraGovSimp
+# CteSimpSefazTribCompraGovSimp
 
 ## Propriedades
 

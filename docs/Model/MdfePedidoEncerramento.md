@@ -1,4 +1,4 @@
-# # MdfePedidoEncerramento
+# MdfePedidoEncerramento
 
 ## Propriedades
 

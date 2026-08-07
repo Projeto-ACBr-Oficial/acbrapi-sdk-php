@@ -1,4 +1,4 @@
-# # CteSimpSefazDetContSimp
+# CteSimpSefazDetContSimp
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # NfeSefazCOFINSAliq
+# NfeSefazCOFINSAliq
 
 ## Propriedades
 

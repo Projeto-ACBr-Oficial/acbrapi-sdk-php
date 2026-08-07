@@ -1,4 +1,4 @@
-# # CteOsSefazPagamentoRTCOS
+# CteOsSefazPagamentoRTCOS
 
 ## Propriedades
 

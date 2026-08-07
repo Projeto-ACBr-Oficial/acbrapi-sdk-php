@@ -1,4 +1,4 @@
-# # EmailEvent
+# EmailEvent
 
 ## Propriedades
 

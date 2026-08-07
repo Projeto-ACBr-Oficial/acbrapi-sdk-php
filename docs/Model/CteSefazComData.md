@@ -1,4 +1,4 @@
-# # CteSefazComData
+# CteSefazComData
 
 ## Propriedades
 

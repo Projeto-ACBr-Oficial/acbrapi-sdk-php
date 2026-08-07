@@ -1,4 +1,4 @@
-# # NfeSefazGMono
+# NfeSefazGMono
 
 ## Propriedades
 

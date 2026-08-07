@@ -1,4 +1,4 @@
-# # RTCInfoTributosTribRegular
+# RTCInfoTributosTribRegular
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # CnpjNaturezaJuridica
+# CnpjNaturezaJuridica
 
 ## Propriedades
 

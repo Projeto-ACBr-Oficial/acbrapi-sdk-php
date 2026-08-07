@@ -1,4 +1,4 @@
-# # NfeSefazEmit
+# NfeSefazEmit
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # MdfeSefazInfModal
+# MdfeSefazInfModal
 
 ## Propriedades
 

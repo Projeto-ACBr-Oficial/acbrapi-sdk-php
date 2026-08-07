@@ -1,4 +1,4 @@
-# # MdfeSefazInfUnidTranspVazia
+# MdfeSefazInfUnidTranspVazia
 
 ## Propriedades
 

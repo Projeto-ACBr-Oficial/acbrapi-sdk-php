@@ -1,4 +1,4 @@
-# # InfoDedRed
+# InfoDedRed
 
 ## Propriedades
 

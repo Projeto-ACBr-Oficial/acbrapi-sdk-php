@@ -1,4 +1,4 @@
-# # CteOsSefazObsFiscoOS
+# CteOsSefazObsFiscoOS
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # CteOsSefazICMS45OS
+# CteOsSefazICMS45OS
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # CteSefazEmit
+# CteSefazEmit
 
 ## Propriedades
 

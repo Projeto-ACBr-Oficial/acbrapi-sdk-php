@@ -1,4 +1,4 @@
-# # CteSefazDuto
+# CteSefazDuto
 
 ## Propriedades
 

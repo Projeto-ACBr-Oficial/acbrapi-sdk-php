@@ -1,4 +1,4 @@
-# # CnpjMotivoSituacaoCadastral
+# CnpjMotivoSituacaoCadastral
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # RTCListaDocOutro
+# RTCListaDocOutro
 
 ## Propriedades
 

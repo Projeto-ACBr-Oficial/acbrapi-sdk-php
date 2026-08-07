@@ -1,4 +1,4 @@
-# # CteSefazObsFisco
+# CteSefazObsFisco
 
 ## Propriedades
 

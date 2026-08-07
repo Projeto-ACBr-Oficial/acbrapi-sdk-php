@@ -1,4 +1,4 @@
-# # CteSefazCompraGovReduzido
+# CteSefazCompraGovReduzido
 
 ## Propriedades
 

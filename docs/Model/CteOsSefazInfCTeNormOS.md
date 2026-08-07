@@ -1,4 +1,4 @@
-# # CteOsSefazInfCTeNormOS
+# CteOsSefazInfCTeNormOS
 
 ## Propriedades
 

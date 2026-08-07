@@ -1,4 +1,4 @@
-# # NfeSefazICMSTot
+# NfeSefazICMSTot
 
 ## Propriedades
 

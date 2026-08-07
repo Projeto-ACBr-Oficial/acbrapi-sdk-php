@@ -1,4 +1,4 @@
-# # DfeRecibo
+# DfeRecibo
 
 ## Propriedades
 

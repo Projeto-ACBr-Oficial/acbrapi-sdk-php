@@ -1,4 +1,4 @@
-# # CteOsSefazRespTecOS
+# CteOsSefazRespTecOS
 
 ## Propriedades
 

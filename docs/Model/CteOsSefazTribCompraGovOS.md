@@ -1,4 +1,4 @@
-# # CteOsSefazTribCompraGovOS
+# CteOsSefazTribCompraGovOS
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # CteSimpSefazUnidadeTranspSimp
+# CteSimpSefazUnidadeTranspSimp
 
 ## Propriedades
 

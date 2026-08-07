@@ -1,4 +1,4 @@
-# # MdfeSefazInfPag
+# MdfeSefazInfPag
 
 ## Propriedades
 

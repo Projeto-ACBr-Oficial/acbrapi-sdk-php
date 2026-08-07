@@ -1,4 +1,4 @@
-# # MdfeSefazVag
+# MdfeSefazVag
 
 ## Propriedades
 

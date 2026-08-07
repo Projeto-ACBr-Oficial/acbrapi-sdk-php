@@ -1,4 +1,4 @@
-# # CteOsSefazRedOS
+# CteOsSefazRedOS
 
 ## Propriedades
 

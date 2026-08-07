@@ -1,4 +1,4 @@
-# # CteSefazNoInter
+# CteSefazNoInter
 
 ## Propriedades
 

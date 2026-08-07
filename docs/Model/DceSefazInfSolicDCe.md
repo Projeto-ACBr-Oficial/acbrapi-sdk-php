@@ -1,4 +1,4 @@
-# # DceSefazInfSolicDCe
+# DceSefazInfSolicDCe
 
 ## Propriedades
 

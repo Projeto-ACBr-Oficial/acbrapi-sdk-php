@@ -1,4 +1,4 @@
-# # CteSimpSefazEmiOccSimp
+# CteSimpSefazEmiOccSimp
 
 ## Propriedades
 

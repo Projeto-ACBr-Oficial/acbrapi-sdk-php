@@ -1,4 +1,4 @@
-# # CteSefazLacUnidCarga
+# CteSefazLacUnidCarga
 
 ## Propriedades
 

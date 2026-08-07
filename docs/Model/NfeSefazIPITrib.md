@@ -1,4 +1,4 @@
-# # NfeSefazIPITrib
+# NfeSefazIPITrib
 
 ## Propriedades
 

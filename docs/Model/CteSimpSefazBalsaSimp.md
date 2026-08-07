@@ -1,4 +1,4 @@
-# # CteSimpSefazBalsaSimp
+# CteSimpSefazBalsaSimp
 
 ## Propriedades
 

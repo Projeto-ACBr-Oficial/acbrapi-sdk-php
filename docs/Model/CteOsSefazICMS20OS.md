@@ -1,4 +1,4 @@
-# # CteOsSefazICMS20OS
+# CteOsSefazICMS20OS
 
 ## Propriedades
 

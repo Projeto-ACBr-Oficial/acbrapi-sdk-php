@@ -1,4 +1,4 @@
-# # CteSimpSefazRedSimp
+# CteSimpSefazRedSimp
 
 ## Propriedades
 

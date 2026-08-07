@@ -1,4 +1,4 @@
-# # CteSefazInfGlobalizado
+# CteSefazInfGlobalizado
 
 ## Propriedades
 

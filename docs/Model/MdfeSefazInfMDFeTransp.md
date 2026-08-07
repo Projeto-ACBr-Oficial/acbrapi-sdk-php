@@ -1,4 +1,4 @@
-# # MdfeSefazInfMDFeTransp
+# MdfeSefazInfMDFeTransp
 
 ## Propriedades
 

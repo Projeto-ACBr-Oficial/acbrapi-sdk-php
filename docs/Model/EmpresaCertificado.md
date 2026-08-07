@@ -1,4 +1,4 @@
-# # EmpresaCertificado
+# EmpresaCertificado
 
 ## Propriedades
 

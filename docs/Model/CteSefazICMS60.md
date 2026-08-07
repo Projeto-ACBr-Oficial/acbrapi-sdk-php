@@ -1,4 +1,4 @@
-# # CteSefazICMS60
+# CteSefazICMS60
 
 ## Propriedades
 

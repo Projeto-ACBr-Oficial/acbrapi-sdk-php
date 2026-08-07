@@ -1,4 +1,4 @@
-# # NfcomSefazGPagAntecipado
+# NfcomSefazGPagAntecipado
 
 ## Propriedades
 

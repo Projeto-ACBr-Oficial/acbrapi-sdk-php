@@ -1,4 +1,4 @@
-# # CteSefazPagamentoRTC
+# CteSefazPagamentoRTC
 
 ## Propriedades
 

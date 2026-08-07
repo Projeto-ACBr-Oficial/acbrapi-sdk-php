@@ -1,4 +1,4 @@
-# # CteSimpSefazInfModalSimp
+# CteSimpSefazInfModalSimp
 
 ## Propriedades
 

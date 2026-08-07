@@ -1,4 +1,4 @@
-# # NfeSefazGCBS
+# NfeSefazGCBS
 
 ## Propriedades
 

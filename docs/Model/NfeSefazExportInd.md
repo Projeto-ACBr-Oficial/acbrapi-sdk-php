@@ -1,4 +1,4 @@
-# # NfeSefazExportInd
+# NfeSefazExportInd
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # CteOsSefazRodoOS
+# CteOsSefazRodoOS
 
 ## Propriedades
 

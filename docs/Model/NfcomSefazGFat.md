@@ -1,4 +1,4 @@
-# # NfcomSefazGFat
+# NfcomSefazGFat
 
 ## Propriedades
 

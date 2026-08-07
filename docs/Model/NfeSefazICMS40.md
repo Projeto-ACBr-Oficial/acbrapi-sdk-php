@@ -1,4 +1,4 @@
-# # NfeSefazICMS40
+# NfeSefazICMS40
 
 ## Propriedades
 

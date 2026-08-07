@@ -1,4 +1,4 @@
-# # NfeSefazICMS60
+# NfeSefazICMS60
 
 ## Propriedades
 

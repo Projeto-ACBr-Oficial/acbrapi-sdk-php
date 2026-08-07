@@ -1,4 +1,4 @@
-# # RTCInfoTributosIBSCBS
+# RTCInfoTributosIBSCBS
 
 ## Propriedades
 

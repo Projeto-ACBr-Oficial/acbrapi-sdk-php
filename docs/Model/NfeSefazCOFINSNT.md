@@ -1,4 +1,4 @@
-# # NfeSefazCOFINSNT
+# NfeSefazCOFINSNT
 
 ## Propriedades
 

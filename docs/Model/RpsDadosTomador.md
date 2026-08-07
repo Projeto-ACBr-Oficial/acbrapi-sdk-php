@@ -1,4 +1,4 @@
-# # RpsDadosTomador
+# RpsDadosTomador
 
 ## Propriedades
 

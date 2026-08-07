@@ -1,4 +1,4 @@
-# # EmpresaConfigDistribuicaoNfe
+# EmpresaConfigDistribuicaoNfe
 
 ## Propriedades
 

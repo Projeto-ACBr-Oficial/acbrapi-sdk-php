@@ -1,4 +1,4 @@
-# # CteSefazICMSUFFim
+# CteSefazICMSUFFim
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # NfeSefazObsItem
+# NfeSefazObsItem
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # CteSefazReceb
+# CteSefazReceb
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # CteOsSefazICMSOutraUFOS
+# CteOsSefazICMSOutraUFOS
 
 ## Propriedades
 

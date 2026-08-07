@@ -1,4 +1,4 @@
-# # NfeSefazICMSST
+# NfeSefazICMSST
 
 ## Propriedades
 

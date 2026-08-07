@@ -1,4 +1,4 @@
-# # MdfeSefazInfTermDescarreg
+# MdfeSefazInfTermDescarreg
 
 ## Propriedades
 

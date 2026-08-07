@@ -1,4 +1,4 @@
-# # NfeSefazEncerrante
+# NfeSefazEncerrante
 
 ## Propriedades
 

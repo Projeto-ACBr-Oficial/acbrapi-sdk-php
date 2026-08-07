@@ -1,4 +1,4 @@
-# # MdfeEncerramento
+# MdfeEncerramento
 
 ## Propriedades
 

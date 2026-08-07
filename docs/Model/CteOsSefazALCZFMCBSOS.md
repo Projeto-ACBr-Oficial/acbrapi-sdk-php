@@ -1,4 +1,4 @@
-# # CteOsSefazALCZFMCBSOS
+# CteOsSefazALCZFMCBSOS
 
 ## Propriedades
 

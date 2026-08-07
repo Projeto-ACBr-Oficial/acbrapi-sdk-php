@@ -1,4 +1,4 @@
-# # MdfeSefazInfLotacao
+# MdfeSefazInfLotacao
 
 ## Propriedades
 

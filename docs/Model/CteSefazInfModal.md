@@ -1,4 +1,4 @@
-# # CteSefazInfModal
+# CteSefazInfModal
 
 ## Propriedades
 

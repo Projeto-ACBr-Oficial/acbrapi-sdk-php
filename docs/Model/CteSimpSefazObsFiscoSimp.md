@@ -1,4 +1,4 @@
-# # CteSimpSefazObsFiscoSimp
+# CteSimpSefazObsFiscoSimp
 
 ## Propriedades
 

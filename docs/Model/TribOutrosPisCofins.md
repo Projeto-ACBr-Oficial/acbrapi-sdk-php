@@ -1,4 +1,4 @@
-# # TribOutrosPisCofins
+# TribOutrosPisCofins
 
 ## Propriedades
 

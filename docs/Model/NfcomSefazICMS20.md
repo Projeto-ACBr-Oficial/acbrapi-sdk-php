@@ -1,4 +1,4 @@
-# # NfcomSefazICMS20
+# NfcomSefazICMS20
 
 ## Propriedades
 

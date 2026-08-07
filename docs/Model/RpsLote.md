@@ -1,4 +1,4 @@
-# # RpsLote
+# RpsLote
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # TribTotal
+# TribTotal
 
 ## Propriedades
 

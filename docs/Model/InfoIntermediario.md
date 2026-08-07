@@ -1,4 +1,4 @@
-# # InfoIntermediario
+# InfoIntermediario
 
 ## Propriedades
 

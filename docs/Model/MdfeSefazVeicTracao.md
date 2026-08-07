@@ -1,4 +1,4 @@
-# # MdfeSefazVeicTracao
+# MdfeSefazVeicTracao
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # CteSefazTribCTe
+# CteSefazTribCTe
 
 ## Propriedades
 

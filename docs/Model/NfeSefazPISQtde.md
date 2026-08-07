@@ -1,4 +1,4 @@
-# # NfeSefazPISQtde
+# NfeSefazPISQtde
 
 ## Propriedades
 

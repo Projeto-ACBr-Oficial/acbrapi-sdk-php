@@ -1,4 +1,4 @@
-# # CteOsSefazIdeOS
+# CteOsSefazIdeOS
 
 ## Propriedades
 

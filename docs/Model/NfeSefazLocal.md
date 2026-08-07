@@ -1,4 +1,4 @@
-# # NfeSefazLocal
+# NfeSefazLocal
 
 ## Propriedades
 

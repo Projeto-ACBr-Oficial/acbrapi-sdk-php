@@ -1,4 +1,4 @@
-# # NfeSefazInfAdicObsFisco
+# NfeSefazInfAdicObsFisco
 
 ## Propriedades
 

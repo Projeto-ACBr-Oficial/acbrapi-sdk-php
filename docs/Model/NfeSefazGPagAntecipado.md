@@ -1,4 +1,4 @@
-# # NfeSefazGPagAntecipado
+# NfeSefazGPagAntecipado
 
 ## Propriedades
 

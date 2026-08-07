@@ -1,4 +1,4 @@
-# # RTCInfoImovel
+# RTCInfoImovel
 
 ## Propriedades
 

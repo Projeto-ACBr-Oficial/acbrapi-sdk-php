@@ -1,4 +1,4 @@
-# # EmpresaConfigNfse
+# EmpresaConfigNfse
 
 ## Propriedades
 

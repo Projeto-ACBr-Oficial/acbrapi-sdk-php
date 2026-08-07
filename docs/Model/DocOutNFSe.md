@@ -1,4 +1,4 @@
-# # DocOutNFSe
+# DocOutNFSe
 
 ## Propriedades
 

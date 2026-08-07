@@ -1,4 +1,4 @@
-# # DistribuicaoNfeEvento
+# DistribuicaoNfeEvento
 
 ## Propriedades
 

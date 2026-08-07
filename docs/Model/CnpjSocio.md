@@ -1,4 +1,4 @@
-# # CnpjSocio
+# CnpjSocio
 
 ## Propriedades
 

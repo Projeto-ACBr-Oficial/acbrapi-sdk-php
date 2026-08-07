@@ -1,4 +1,4 @@
-# # CteOsSefazInfCteCompOS
+# CteOsSefazInfCteCompOS
 
 ## Propriedades
 

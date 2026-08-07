@@ -1,4 +1,4 @@
-# # CnpjCnaeSecundario
+# CnpjCnaeSecundario
 
 ## Propriedades
 

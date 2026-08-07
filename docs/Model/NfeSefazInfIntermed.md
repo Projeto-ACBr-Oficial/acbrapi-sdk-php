@@ -1,4 +1,4 @@
-# # NfeSefazInfIntermed
+# NfeSefazInfIntermed
 
 ## Propriedades
 

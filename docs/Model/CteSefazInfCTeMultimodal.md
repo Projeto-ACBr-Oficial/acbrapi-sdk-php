@@ -1,4 +1,4 @@
-# # CteSefazInfCTeMultimodal
+# CteSefazInfCTeMultimodal
 
 ## Propriedades
 

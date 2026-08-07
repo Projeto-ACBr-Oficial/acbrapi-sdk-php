@@ -1,4 +1,4 @@
-# # NfcomSefazGSub
+# NfcomSefazGSub
 
 ## Propriedades
 

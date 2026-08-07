@@ -1,4 +1,4 @@
-# # EmpresaConfigRps
+# EmpresaConfigRps
 
 ## Propriedades
 

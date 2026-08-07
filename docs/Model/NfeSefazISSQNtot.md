@@ -1,4 +1,4 @@
-# # NfeSefazISSQNtot
+# NfeSefazISSQNtot
 
 ## Propriedades
 

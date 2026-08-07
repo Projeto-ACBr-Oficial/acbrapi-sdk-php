@@ -1,4 +1,4 @@
-# # MdfeSefazLacres
+# MdfeSefazLacres
 
 ## Propriedades
 

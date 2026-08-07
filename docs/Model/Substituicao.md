@@ -1,4 +1,4 @@
-# # Substituicao
+# Substituicao
 
 ## Propriedades
 

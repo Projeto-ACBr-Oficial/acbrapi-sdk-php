@@ -1,4 +1,4 @@
-# # CteSefazDevTrib
+# CteSefazDevTrib
 
 ## Propriedades
 

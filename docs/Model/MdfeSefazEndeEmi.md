@@ -1,4 +1,4 @@
-# # MdfeSefazEndeEmi
+# MdfeSefazEndeEmi
 
 ## Propriedades
 

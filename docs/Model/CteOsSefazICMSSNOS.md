@@ -1,4 +1,4 @@
-# # CteOsSefazICMSSNOS
+# CteOsSefazICMSSNOS
 
 ## Propriedades
 

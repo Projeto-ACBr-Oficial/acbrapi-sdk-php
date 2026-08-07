@@ -1,4 +1,4 @@
-# # CteSefazGIBSUF
+# CteSefazGIBSUF
 
 ## Propriedades
 

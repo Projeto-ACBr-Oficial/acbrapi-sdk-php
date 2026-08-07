@@ -1,4 +1,4 @@
-# # DistribuicaoNfeNota
+# DistribuicaoNfeNota
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # MdfeSefazInfLocalDescarrega
+# MdfeSefazInfLocalDescarrega
 
 ## Propriedades
 

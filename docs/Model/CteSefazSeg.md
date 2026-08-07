@@ -1,4 +1,4 @@
-# # CteSefazSeg
+# CteSefazSeg
 
 ## Propriedades
 

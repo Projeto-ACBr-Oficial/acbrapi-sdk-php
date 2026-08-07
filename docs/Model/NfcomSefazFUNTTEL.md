@@ -1,4 +1,4 @@
-# # NfcomSefazFUNTTEL
+# NfcomSefazFUNTTEL
 
 ## Propriedades
 

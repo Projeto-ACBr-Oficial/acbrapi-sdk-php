@@ -1,4 +1,4 @@
-# # ContaCota
+# ContaCota
 
 ## Propriedades
 

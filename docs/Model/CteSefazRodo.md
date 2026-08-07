@@ -1,4 +1,4 @@
-# # CteSefazRodo
+# CteSefazRodo
 
 ## Propriedades
 

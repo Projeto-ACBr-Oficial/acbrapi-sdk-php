@@ -1,4 +1,4 @@
-# # CteSimpSefazTotalSimp
+# CteSimpSefazTotalSimp
 
 ## Propriedades
 

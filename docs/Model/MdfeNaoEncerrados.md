@@ -1,4 +1,4 @@
-# # MdfeNaoEncerrados
+# MdfeNaoEncerrados
 
 ## Propriedades
 

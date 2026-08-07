@@ -1,4 +1,4 @@
-# # CteSimpSefazGIBSMunSimp
+# CteSimpSefazGIBSMunSimp
 
 ## Propriedades
 

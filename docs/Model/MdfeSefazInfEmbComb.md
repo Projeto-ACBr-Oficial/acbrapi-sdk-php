@@ -1,4 +1,4 @@
-# # MdfeSefazInfEmbComb
+# MdfeSefazInfEmbComb
 
 ## Propriedades
 

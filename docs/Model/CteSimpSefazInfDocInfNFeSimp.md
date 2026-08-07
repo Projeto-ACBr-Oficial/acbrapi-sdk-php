@@ -1,4 +1,4 @@
-# # CteSimpSefazInfDocInfNFeSimp
+# CteSimpSefazInfDocInfNFeSimp
 
 ## Propriedades
 

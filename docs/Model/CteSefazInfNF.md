@@ -1,4 +1,4 @@
-# # CteSefazInfNF
+# CteSefazInfNF
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # CteSefazICMS20
+# CteSefazICMS20
 
 ## Propriedades
 

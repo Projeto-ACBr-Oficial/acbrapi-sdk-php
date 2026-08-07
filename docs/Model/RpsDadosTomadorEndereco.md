@@ -1,4 +1,4 @@
-# # RpsDadosTomadorEndereco
+# RpsDadosTomadorEndereco
 
 ## Propriedades
 

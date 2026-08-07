@@ -1,4 +1,4 @@
-# # InfoRefNFSe
+# InfoRefNFSe
 
 ## Propriedades
 

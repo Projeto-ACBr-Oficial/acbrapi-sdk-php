@@ -1,4 +1,4 @@
-# # DocDedRed
+# DocDedRed
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # NfcomSefazGCofat
+# NfcomSefazGCofat
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # CnpjRepresentanteLegal
+# CnpjRepresentanteLegal
 
 ## Propriedades
 

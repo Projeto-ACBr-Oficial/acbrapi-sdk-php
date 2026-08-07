@@ -1,4 +1,4 @@
-# # CnpjOpcaoSimples
+# CnpjOpcaoSimples
 
 ## Propriedades
 

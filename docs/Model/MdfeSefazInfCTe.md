@@ -1,4 +1,4 @@
-# # MdfeSefazInfCTe
+# MdfeSefazInfCTe
 
 ## Propriedades
 

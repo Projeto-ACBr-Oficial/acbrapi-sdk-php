@@ -1,4 +1,4 @@
-# # RegTrib
+# RegTrib
 
 ## Propriedades
 

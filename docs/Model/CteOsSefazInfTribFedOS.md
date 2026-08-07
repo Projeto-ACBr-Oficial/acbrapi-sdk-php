@@ -1,4 +1,4 @@
-# # CteOsSefazInfTribFedOS
+# CteOsSefazInfTribFedOS
 
 ## Propriedades
 

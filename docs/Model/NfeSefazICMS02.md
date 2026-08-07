@@ -1,4 +1,4 @@
-# # NfeSefazICMS02
+# NfeSefazICMS02
 
 ## Propriedades
 

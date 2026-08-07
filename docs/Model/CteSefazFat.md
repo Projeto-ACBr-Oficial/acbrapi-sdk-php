@@ -1,4 +1,4 @@
-# # CteSefazFat
+# CteSefazFat
 
 ## Propriedades
 

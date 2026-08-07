@@ -1,4 +1,4 @@
-# # InfoCompl
+# InfoCompl
 
 ## Propriedades
 

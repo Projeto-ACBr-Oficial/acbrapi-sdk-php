@@ -1,4 +1,4 @@
-# # CteOsSefazCompraGovReduzidoOS
+# CteOsSefazCompraGovReduzidoOS
 
 ## Propriedades
 

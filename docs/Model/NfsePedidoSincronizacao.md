@@ -1,4 +1,4 @@
-# # NfsePedidoSincronizacao
+# NfsePedidoSincronizacao
 
 ## Propriedades
 

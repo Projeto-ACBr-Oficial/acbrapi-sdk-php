@@ -1,4 +1,4 @@
-# # CteOsSefazInfPercursoOS
+# CteOsSefazInfPercursoOS
 
 ## Propriedades
 

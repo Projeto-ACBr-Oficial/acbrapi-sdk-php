@@ -1,4 +1,4 @@
-# # CteSimpSefazObsContSimp
+# CteSimpSefazObsContSimp
 
 ## Propriedades
 

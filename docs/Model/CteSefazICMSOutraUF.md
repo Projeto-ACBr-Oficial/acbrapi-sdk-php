@@ -1,4 +1,4 @@
-# # CteSefazICMSOutraUF
+# CteSefazICMSOutraUF
 
 ## Propriedades
 

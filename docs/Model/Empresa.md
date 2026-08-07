@@ -1,4 +1,4 @@
-# # Empresa
+# Empresa
 
 ## Propriedades
 

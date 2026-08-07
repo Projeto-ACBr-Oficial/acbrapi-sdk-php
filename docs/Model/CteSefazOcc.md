@@ -1,4 +1,4 @@
-# # CteSefazOcc
+# CteSefazOcc
 
 ## Propriedades
 

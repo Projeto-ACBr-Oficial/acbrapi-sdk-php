@@ -1,4 +1,4 @@
-# # CteSimpSefazICMSUFFimSimp
+# CteSimpSefazICMSUFFimSimp
 
 ## Propriedades
 

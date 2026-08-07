@@ -1,4 +1,4 @@
-# # NfeSefazII
+# NfeSefazII
 
 ## Propriedades
 

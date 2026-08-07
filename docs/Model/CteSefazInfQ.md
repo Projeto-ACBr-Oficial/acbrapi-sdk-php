@@ -1,4 +1,4 @@
-# # CteSefazInfQ
+# CteSefazInfQ
 
 ## Propriedades
 

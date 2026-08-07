@@ -1,4 +1,4 @@
-# # CteOsSefazICMSUFFimOS
+# CteOsSefazICMSUFFimOS
 
 ## Propriedades
 

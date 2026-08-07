@@ -1,4 +1,4 @@
-# # NfcomSefazTotal
+# NfcomSefazTotal
 
 ## Propriedades
 

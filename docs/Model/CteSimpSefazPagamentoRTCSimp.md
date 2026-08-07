@@ -1,4 +1,4 @@
-# # CteSimpSefazPagamentoRTCSimp
+# CteSimpSefazPagamentoRTCSimp
 
 ## Propriedades
 

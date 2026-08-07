@@ -1,4 +1,4 @@
-# # MdfeSefazInfUnidCargaVazia
+# MdfeSefazInfUnidCargaVazia
 
 ## Propriedades
 

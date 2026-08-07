@@ -1,4 +1,4 @@
-# # CteSefazToma4
+# CteSefazToma4
 
 ## Propriedades
 

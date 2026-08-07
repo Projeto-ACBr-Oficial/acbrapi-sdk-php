@@ -1,4 +1,4 @@
-# # CteOsSefazICMS00OS
+# CteOsSefazICMS00OS
 
 ## Propriedades
 

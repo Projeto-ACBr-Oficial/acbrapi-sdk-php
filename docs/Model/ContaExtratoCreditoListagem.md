@@ -1,4 +1,4 @@
-# # ContaExtratoCreditoListagem
+# ContaExtratoCreditoListagem
 
 ## Propriedades
 

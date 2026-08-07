@@ -1,4 +1,4 @@
-# # DceSefazDet
+# DceSefazDet
 
 ## Propriedades
 

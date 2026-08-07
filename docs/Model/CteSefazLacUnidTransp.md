@@ -1,4 +1,4 @@
-# # CteSefazLacUnidTransp
+# CteSefazLacUnidTransp
 
 ## Propriedades
 

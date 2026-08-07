@@ -1,4 +1,4 @@
-# # CteCartaCorrecao
+# CteCartaCorrecao
 
 ## Propriedades
 

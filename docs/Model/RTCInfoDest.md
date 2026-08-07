@@ -1,4 +1,4 @@
-# # RTCInfoDest
+# RTCInfoDest
 
 ## Propriedades
 

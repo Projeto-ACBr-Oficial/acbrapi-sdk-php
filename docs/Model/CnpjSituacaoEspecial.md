@@ -1,4 +1,4 @@
-# # CnpjSituacaoEspecial
+# CnpjSituacaoEspecial
 
 ## Propriedades
 

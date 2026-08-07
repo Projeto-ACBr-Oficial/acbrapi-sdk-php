@@ -1,4 +1,4 @@
-# # NfseSincronizacao
+# NfseSincronizacao
 
 ## Propriedades
 

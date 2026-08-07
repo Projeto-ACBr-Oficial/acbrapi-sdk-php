@@ -1,4 +1,4 @@
-# # InfoObra
+# InfoObra
 
 ## Propriedades
 

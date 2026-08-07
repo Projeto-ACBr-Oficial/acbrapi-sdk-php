@@ -1,4 +1,4 @@
-# # CteSefazObsCont
+# CteSefazObsCont
 
 ## Propriedades
 

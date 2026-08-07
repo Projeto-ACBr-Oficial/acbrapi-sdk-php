@@ -1,4 +1,4 @@
-# # NfeSefazIBSCBSMonoTotGCBS
+# NfeSefazIBSCBSMonoTotGCBS
 
 ## Propriedades
 

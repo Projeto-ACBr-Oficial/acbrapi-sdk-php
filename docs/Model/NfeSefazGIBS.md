@@ -1,4 +1,4 @@
-# # NfeSefazGIBS
+# NfeSefazGIBS
 
 ## Propriedades
 

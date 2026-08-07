@@ -1,4 +1,4 @@
-# # CteSefazComHora
+# CteSefazComHora
 
 ## Propriedades
 

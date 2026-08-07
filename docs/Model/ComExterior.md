@@ -1,4 +1,4 @@
-# # ComExterior
+# ComExterior
 
 ## Propriedades
 

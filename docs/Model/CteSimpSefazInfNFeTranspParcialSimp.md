@@ -1,4 +1,4 @@
-# # CteSimpSefazInfNFeTranspParcialSimp
+# CteSimpSefazInfNFeTranspParcialSimp
 
 ## Propriedades
 

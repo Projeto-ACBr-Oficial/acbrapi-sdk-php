@@ -1,4 +1,4 @@
-# # CteSefazDocAnt
+# CteSefazDocAnt
 
 ## Propriedades
 

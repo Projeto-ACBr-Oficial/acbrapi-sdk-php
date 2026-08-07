@@ -1,4 +1,4 @@
-# # CteSefazRed
+# CteSefazRed
 
 ## Propriedades
 

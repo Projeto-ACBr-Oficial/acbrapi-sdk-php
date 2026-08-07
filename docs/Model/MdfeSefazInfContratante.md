@@ -1,4 +1,4 @@
-# # MdfeSefazInfContratante
+# MdfeSefazInfContratante
 
 ## Propriedades
 

@@ -1,4 +1,4 @@
-# # NfcomSefazGFidelidade
+# NfcomSefazGFidelidade
 
 ## Propriedades
 

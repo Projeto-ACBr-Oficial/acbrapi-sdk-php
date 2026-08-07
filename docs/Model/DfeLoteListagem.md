@@ -1,4 +1,4 @@
-# # DfeLoteListagem
+# DfeLoteListagem
 
 ## Propriedades
 

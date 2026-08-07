@@ -1,4 +1,4 @@
-# # CteSimpSefazPgtoVincSimp
+# CteSimpSefazPgtoVincSimp
 
 ## Propriedades
 

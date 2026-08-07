@@ -1,4 +1,4 @@
-# # RpsDados
+# RpsDados
 
 ## Propriedades
 

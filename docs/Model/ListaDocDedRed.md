@@ -1,4 +1,4 @@
-# # ListaDocDedRed
+# ListaDocDedRed
 
 ## Propriedades
 

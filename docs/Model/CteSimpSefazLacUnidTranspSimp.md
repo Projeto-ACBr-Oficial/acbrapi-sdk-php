@@ -1,4 +1,4 @@
-# # CteSimpSefazLacUnidTranspSimp
+# CteSimpSefazLacUnidTranspSimp
 
 ## Propriedades
 

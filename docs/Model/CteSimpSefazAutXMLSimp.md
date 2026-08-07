@@ -1,4 +1,4 @@
-# # CteSimpSefazAutXMLSimp
+# CteSimpSefazAutXMLSimp
 
 ## Propriedades
 

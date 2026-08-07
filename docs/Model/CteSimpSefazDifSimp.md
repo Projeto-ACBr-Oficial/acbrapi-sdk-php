@@ -1,4 +1,4 @@
-# # CteSimpSefazDifSimp
+# CteSimpSefazDifSimp
 
 ## Propriedades
 

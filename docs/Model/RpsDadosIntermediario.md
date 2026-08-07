@@ -1,4 +1,4 @@
-# # RpsDadosIntermediario
+# RpsDadosIntermediario
 
 ## Propriedades
 

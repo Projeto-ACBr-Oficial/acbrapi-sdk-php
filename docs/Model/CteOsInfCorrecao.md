@@ -1,4 +1,4 @@
-# # CteOsInfCorrecao
+# CteOsInfCorrecao
 
 ## Propriedades
 

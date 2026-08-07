@@ -1,4 +1,4 @@
-# # CteOsSefazInfDocRefOS
+# CteOsSefazInfDocRefOS
 
 ## Propriedades
 

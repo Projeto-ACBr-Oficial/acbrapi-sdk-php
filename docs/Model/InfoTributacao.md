@@ -1,4 +1,4 @@
-# # InfoTributacao
+# InfoTributacao
 
 ## Propriedades
 

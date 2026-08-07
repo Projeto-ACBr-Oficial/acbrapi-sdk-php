@@ -1,4 +1,4 @@
-# # NfeSefazAjusteCompet
+# NfeSefazAjusteCompet
 
 ## Propriedades
 

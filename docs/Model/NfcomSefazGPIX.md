@@ -1,4 +1,4 @@
-# # NfcomSefazGPIX
+# NfcomSefazGPIX
 
 ## Propriedades
 
