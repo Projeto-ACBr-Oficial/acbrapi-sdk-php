@@ -871,13 +871,14 @@ Classe | Método | Endpoint | Descrição
 - [NfePedidoCartaCorrecao](docs/Model/NfePedidoCartaCorrecao.md)
 - [NfePedidoEmissao](docs/Model/NfePedidoEmissao.md)
 - [NfePedidoEmissaoLote](docs/Model/NfePedidoEmissaoLote.md)
+- [NfeSefazALCZFMCBSNFe](docs/Model/NfeSefazALCZFMCBSNFe.md)
 - [NfeSefazAdi](docs/Model/NfeSefazAdi.md)
 - [NfeSefazAgropecuario](docs/Model/NfeSefazAgropecuario.md)
 - [NfeSefazAjusteCompet](docs/Model/NfeSefazAjusteCompet.md)
 - [NfeSefazArma](docs/Model/NfeSefazArma.md)
 - [NfeSefazAutXML](docs/Model/NfeSefazAutXML.md)
 - [NfeSefazAvulsa](docs/Model/NfeSefazAvulsa.md)
-- [NfeSefazCIBS](docs/Model/NfeSefazCIBS.md)
+- [NfeSefazCIBSNFe](docs/Model/NfeSefazCIBSNFe.md)
 - [NfeSefazCIDE](docs/Model/NfeSefazCIDE.md)
 - [NfeSefazCOFINS](docs/Model/NfeSefazCOFINS.md)
 - [NfeSefazCOFINSAliq](docs/Model/NfeSefazCOFINSAliq.md)
@@ -1088,6 +1089,6 @@ Classe | Método | Endpoint | Descrição
 
 ## Sobre este package
 
-- Versão da API: `3.1.7`
-    - Versão do package: `3.1.7`
+- Versão da API: `3.1.8`
+    - Versão do package: `3.1.8`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

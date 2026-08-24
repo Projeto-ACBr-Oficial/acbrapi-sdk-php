@@ -59,7 +59,8 @@ class NfeSefazCompraGov implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPITypes = [
         'tp_ente_gov' => 'int',
         'p_redutor' => 'float',
-        'tp_oper_gov' => 'int'
+        'tp_oper_gov' => 'int',
+        'ref_dfe_ant' => 'string[]'
     ];
 
     /**
@@ -72,7 +73,8 @@ class NfeSefazCompraGov implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPIFormats = [
         'tp_ente_gov' => null,
         'p_redutor' => null,
-        'tp_oper_gov' => null
+        'tp_oper_gov' => null,
+        'ref_dfe_ant' => null
     ];
 
     /**
@@ -83,7 +85,8 @@ class NfeSefazCompraGov implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static array $openAPINullables = [
         'tp_ente_gov' => true,
 		'p_redutor' => true,
-		'tp_oper_gov' => true
+		'tp_oper_gov' => true,
+		'ref_dfe_ant' => false
     ];
 
     /**
@@ -174,7 +177,8 @@ class NfeSefazCompraGov implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $attributeMap = [
         'tp_ente_gov' => 'tpEnteGov',
         'p_redutor' => 'pRedutor',
-        'tp_oper_gov' => 'tpOperGov'
+        'tp_oper_gov' => 'tpOperGov',
+        'ref_dfe_ant' => 'refDFeAnt'
     ];
 
     /**
@@ -185,7 +189,8 @@ class NfeSefazCompraGov implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $setters = [
         'tp_ente_gov' => 'setTpEnteGov',
         'p_redutor' => 'setPRedutor',
-        'tp_oper_gov' => 'setTpOperGov'
+        'tp_oper_gov' => 'setTpOperGov',
+        'ref_dfe_ant' => 'setRefDfeAnt'
     ];
 
     /**
@@ -196,7 +201,8 @@ class NfeSefazCompraGov implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $getters = [
         'tp_ente_gov' => 'getTpEnteGov',
         'p_redutor' => 'getPRedutor',
-        'tp_oper_gov' => 'getTpOperGov'
+        'tp_oper_gov' => 'getTpOperGov',
+        'ref_dfe_ant' => 'getRefDfeAnt'
     ];
 
     /**
@@ -259,6 +265,7 @@ class NfeSefazCompraGov implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('tp_ente_gov', $data ?? [], null);
         $this->setIfExists('p_redutor', $data ?? [], null);
         $this->setIfExists('tp_oper_gov', $data ?? [], null);
+        $this->setIfExists('ref_dfe_ant', $data ?? [], null);
     }
 
     /**
@@ -301,6 +308,10 @@ class NfeSefazCompraGov implements ModelInterface, ArrayAccess, \JsonSerializabl
         if ($this->container['tp_oper_gov'] === null) {
             $invalidProperties[] = "'tp_oper_gov' can't be null";
         }
+        if (!is_null($this->container['ref_dfe_ant']) && (count($this->container['ref_dfe_ant']) > 99)) {
+            $invalidProperties[] = "invalid value for 'ref_dfe_ant', number of items must be less than or equal to 99.";
+        }
+
         return $invalidProperties;
     }
 
@@ -329,7 +340,7 @@ class NfeSefazCompraGov implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets tp_ente_gov
      *
-     * @param int $tp_ente_gov Para administração pública direta e suas autarquias e fundações:  * 1 - União  * 2 - Estados  * 3 - Distrito Federal  * 4 - Municípios
+     * @param int $tp_ente_gov Para administração pública direta e suas autarquias e fundações:  * 1 - União  * 2 - Estados  * 3 - Distrito Federal  * 4 - Municípios  * 5 - Consórcio Público  * 6 - Comitê Gestor do IBS
      *
      * @return self
      */
@@ -363,7 +374,7 @@ class NfeSefazCompraGov implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets p_redutor
      *
-     * @param float $p_redutor Percentual de redução de aliquota em compra governamental.
+     * @param float $p_redutor Percentual de redução de alíquota em compra governamental.
      *
      * @return self
      */
@@ -402,7 +413,7 @@ class NfeSefazCompraGov implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets tp_oper_gov
      *
-     * @param int $tp_oper_gov Tipo da operação com ente governamental:  * 1 - Fornecimento  * 2 - Recebimento do Pagamento
+     * @param int $tp_oper_gov Tipo da operação com ente governamental:  * 1 - Fornecimento com pagamento posterior  * 2 - Recebimento do pagamento com fornecimento já realizado  * 3 - Fornecimento com pagamento já realizado  * 4 - Recebimento do pagamento com fornecimento posterior
      *
      * @return self
      */
@@ -419,6 +430,37 @@ class NfeSefazCompraGov implements ModelInterface, ArrayAccess, \JsonSerializabl
             }
         }
         $this->container['tp_oper_gov'] = $tp_oper_gov;
+
+        return $this;
+    }
+
+    /**
+     * Gets ref_dfe_ant
+     *
+     * @return string[]|null
+     */
+    public function getRefDfeAnt()
+    {
+        return $this->container['ref_dfe_ant'];
+    }
+
+    /**
+     * Sets ref_dfe_ant
+     *
+     * @param string[]|null $ref_dfe_ant Chave de acesso do documento fiscal anterior.  Deverá ser informado para tpOperGov 2 e 3 e vedado para os tipos 1 e 4.  No caso do tpOperGov 2 aceitará apenas uma chave referenciada, no tipo 3 poderá aceitar múltiplas chaves  Obs: a chave de acesso deverá ser de um emitente com o mesmo CNPJ base.
+     *
+     * @return self
+     */
+    public function setRefDfeAnt($ref_dfe_ant)
+    {
+        if (is_null($ref_dfe_ant)) {
+            throw new \InvalidArgumentException('non-nullable ref_dfe_ant cannot be null');
+        }
+
+        if ((count($ref_dfe_ant) > 99)) {
+            throw new \InvalidArgumentException('invalid value for $ref_dfe_ant when calling NfeSefazCompraGov., number of items must be less than or equal to 99.');
+        }
+        $this->container['ref_dfe_ant'] = $ref_dfe_ant;
 
         return $this;
     }

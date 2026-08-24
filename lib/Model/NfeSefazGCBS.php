@@ -61,6 +61,7 @@ class NfeSefazGCBS implements ModelInterface, ArrayAccess, \JsonSerializable
         'g_dif' => '\ACBrAPI\Model\NfeSefazDif',
         'g_dev_trib' => '\ACBrAPI\Model\NfeSefazDevTrib',
         'g_red' => '\ACBrAPI\Model\NfeSefazRed',
+        'g_alczfmcbs' => '\ACBrAPI\Model\NfeSefazALCZFMCBSNFe',
         'v_cbs' => 'float'
     ];
 
@@ -76,6 +77,7 @@ class NfeSefazGCBS implements ModelInterface, ArrayAccess, \JsonSerializable
         'g_dif' => null,
         'g_dev_trib' => null,
         'g_red' => null,
+        'g_alczfmcbs' => null,
         'v_cbs' => null
     ];
 
@@ -89,6 +91,7 @@ class NfeSefazGCBS implements ModelInterface, ArrayAccess, \JsonSerializable
 		'g_dif' => false,
 		'g_dev_trib' => false,
 		'g_red' => false,
+		'g_alczfmcbs' => false,
 		'v_cbs' => true
     ];
 
@@ -182,6 +185,7 @@ class NfeSefazGCBS implements ModelInterface, ArrayAccess, \JsonSerializable
         'g_dif' => 'gDif',
         'g_dev_trib' => 'gDevTrib',
         'g_red' => 'gRed',
+        'g_alczfmcbs' => 'gALCZFMCBS',
         'v_cbs' => 'vCBS'
     ];
 
@@ -195,6 +199,7 @@ class NfeSefazGCBS implements ModelInterface, ArrayAccess, \JsonSerializable
         'g_dif' => 'setGDif',
         'g_dev_trib' => 'setGDevTrib',
         'g_red' => 'setGRed',
+        'g_alczfmcbs' => 'setGAlczfmcbs',
         'v_cbs' => 'setVCbs'
     ];
 
@@ -208,6 +213,7 @@ class NfeSefazGCBS implements ModelInterface, ArrayAccess, \JsonSerializable
         'g_dif' => 'getGDif',
         'g_dev_trib' => 'getGDevTrib',
         'g_red' => 'getGRed',
+        'g_alczfmcbs' => 'getGAlczfmcbs',
         'v_cbs' => 'getVCbs'
     ];
 
@@ -272,6 +278,7 @@ class NfeSefazGCBS implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('g_dif', $data ?? [], null);
         $this->setIfExists('g_dev_trib', $data ?? [], null);
         $this->setIfExists('g_red', $data ?? [], null);
+        $this->setIfExists('g_alczfmcbs', $data ?? [], null);
         $this->setIfExists('v_cbs', $data ?? [], null);
     }
 
@@ -447,6 +454,33 @@ class NfeSefazGCBS implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable g_red cannot be null');
         }
         $this->container['g_red'] = $g_red;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_alczfmcbs
+     *
+     * @return \ACBrAPI\Model\NfeSefazALCZFMCBSNFe|null
+     */
+    public function getGAlczfmcbs()
+    {
+        return $this->container['g_alczfmcbs'];
+    }
+
+    /**
+     * Sets g_alczfmcbs
+     *
+     * @param \ACBrAPI\Model\NfeSefazALCZFMCBSNFe|null $g_alczfmcbs g_alczfmcbs
+     *
+     * @return self
+     */
+    public function setGAlczfmcbs($g_alczfmcbs)
+    {
+        if (is_null($g_alczfmcbs)) {
+            throw new \InvalidArgumentException('non-nullable g_alczfmcbs cannot be null');
+        }
+        $this->container['g_alczfmcbs'] = $g_alczfmcbs;
 
         return $this;
     }

@@ -57,6 +57,7 @@ class NfeSefazDevTrib implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'p_dev_trib' => 'float',
         'v_dev_trib' => 'float'
     ];
 
@@ -68,6 +69,7 @@ class NfeSefazDevTrib implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'p_dev_trib' => null,
         'v_dev_trib' => null
     ];
 
@@ -77,7 +79,8 @@ class NfeSefazDevTrib implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'v_dev_trib' => true
+        'p_dev_trib' => true,
+		'v_dev_trib' => true
     ];
 
     /**
@@ -166,6 +169,7 @@ class NfeSefazDevTrib implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'p_dev_trib' => 'pDevTrib',
         'v_dev_trib' => 'vDevTrib'
     ];
 
@@ -175,6 +179,7 @@ class NfeSefazDevTrib implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'p_dev_trib' => 'setPDevTrib',
         'v_dev_trib' => 'setVDevTrib'
     ];
 
@@ -184,6 +189,7 @@ class NfeSefazDevTrib implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'p_dev_trib' => 'getPDevTrib',
         'v_dev_trib' => 'getVDevTrib'
     ];
 
@@ -244,6 +250,7 @@ class NfeSefazDevTrib implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('p_dev_trib', $data ?? [], null);
         $this->setIfExists('v_dev_trib', $data ?? [], null);
     }
 
@@ -274,6 +281,10 @@ class NfeSefazDevTrib implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['p_dev_trib']) && ($this->container['p_dev_trib'] < 0)) {
+            $invalidProperties[] = "invalid value for 'p_dev_trib', must be bigger than or equal to 0.";
+        }
+
         if ($this->container['v_dev_trib'] === null) {
             $invalidProperties[] = "'v_dev_trib' can't be null";
         }
@@ -297,6 +308,45 @@ class NfeSefazDevTrib implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets p_dev_trib
+     *
+     * @return float|null
+     */
+    public function getPDevTrib()
+    {
+        return $this->container['p_dev_trib'];
+    }
+
+    /**
+     * Sets p_dev_trib
+     *
+     * @param float|null $p_dev_trib Percentual de devolução do tributo, conforme LC 214/25 art. 118.
+     *
+     * @return self
+     */
+    public function setPDevTrib($p_dev_trib)
+    {
+        if (is_null($p_dev_trib)) {
+            array_push($this->openAPINullablesSetToNull, 'p_dev_trib');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('p_dev_trib', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($p_dev_trib) && ($p_dev_trib < 0)) {
+            throw new \InvalidArgumentException('invalid value for $p_dev_trib when calling NfeSefazDevTrib., must be bigger than or equal to 0.');
+        }
+
+        $this->container['p_dev_trib'] = $p_dev_trib;
+
+        return $this;
+    }
+
+    /**
      * Gets v_dev_trib
      *
      * @return float
@@ -309,7 +359,7 @@ class NfeSefazDevTrib implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets v_dev_trib
      *
-     * @param float $v_dev_trib Valor do tributo devolvido. No fornecimento de energia elétrica, água, esgoto e  gás natural e em outras hipóteses definidas no regulamento.
+     * @param float $v_dev_trib Valor do tributo devolvido (\"cashback\" de desconto na própria Nota Fiscal / Fatura).
      *
      * @return self
      */

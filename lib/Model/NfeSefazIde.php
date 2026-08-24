@@ -80,6 +80,7 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
         'ind_final' => 'int',
         'ind_pres' => 'int',
         'ind_intermed' => 'int',
+        'c_ind_op' => 'string',
         'proc_emi' => 'int',
         'ver_proc' => 'string',
         'dh_cont' => '\DateTime',
@@ -120,6 +121,7 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
         'ind_final' => null,
         'ind_pres' => null,
         'ind_intermed' => null,
+        'c_ind_op' => null,
         'proc_emi' => null,
         'ver_proc' => null,
         'dh_cont' => 'date-time',
@@ -158,6 +160,7 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
 		'ind_final' => true,
 		'ind_pres' => true,
 		'ind_intermed' => true,
+		'c_ind_op' => true,
 		'proc_emi' => true,
 		'ver_proc' => true,
 		'dh_cont' => true,
@@ -276,6 +279,7 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
         'ind_final' => 'indFinal',
         'ind_pres' => 'indPres',
         'ind_intermed' => 'indIntermed',
+        'c_ind_op' => 'cIndOp',
         'proc_emi' => 'procEmi',
         'ver_proc' => 'verProc',
         'dh_cont' => 'dhCont',
@@ -314,6 +318,7 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
         'ind_final' => 'setIndFinal',
         'ind_pres' => 'setIndPres',
         'ind_intermed' => 'setIndIntermed',
+        'c_ind_op' => 'setCIndOp',
         'proc_emi' => 'setProcEmi',
         'ver_proc' => 'setVerProc',
         'dh_cont' => 'setDhCont',
@@ -352,6 +357,7 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
         'ind_final' => 'getIndFinal',
         'ind_pres' => 'getIndPres',
         'ind_intermed' => 'getIndIntermed',
+        'c_ind_op' => 'getCIndOp',
         'proc_emi' => 'getProcEmi',
         'ver_proc' => 'getVerProc',
         'dh_cont' => 'getDhCont',
@@ -441,6 +447,7 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('ind_final', $data ?? [], null);
         $this->setIfExists('ind_pres', $data ?? [], null);
         $this->setIfExists('ind_intermed', $data ?? [], null);
+        $this->setIfExists('c_ind_op', $data ?? [], null);
         $this->setIfExists('proc_emi', $data ?? [], null);
         $this->setIfExists('ver_proc', $data ?? [], null);
         $this->setIfExists('dh_cont', $data ?? [], null);
@@ -1033,7 +1040,7 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets c_mun_fgibs
      *
-     * @param string|null $c_mun_fgibs Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando “indPres = 5 (Operação presencial, fora do estabelecimento) ”, e não tiver endereço do destinatário (Grupo: E05) ou local de entrega (Grupo: G01).
+     * @param string|null $c_mun_fgibs Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS.  Campo preenchido somente quando \"indPres = 5 (Operação presencial, fora do estabelecimento)\", e não estiver preenchido o endereço do destinatário (grupo: E05) nem o local de entrega (grupo: G01).
      *
      * @return self
      */
@@ -1101,7 +1108,7 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tp_emis
      *
-     * @param int $tp_emis Forma de emissão da NF-e  * 1 - Normal  * 2 - Contingência FS  * 3 - Regime Especial NFF (NT 2021.002)  * 4 - Contingência DPEC  * 5 - Contingência FSDA  * 6 - Contingência SVC - AN  * 7 - Contingência SVC - RS  * 9 - Contingência off-line NFC-e
+     * @param int $tp_emis Forma de emissão da NF-e:  * 1 - Normal  * 2 - Contingência FS  * 3 - Regime Especial NFF (NT 2021.002)  * 4 - Contingência DPEC  * 5 - Contingência FSDA  * 6 - Contingência SVC - AN  * 7 - Contingência SVC - RS  * 9 - Contingência off-line da NFC-e e da NF-e com DANFE Simplificado Tipo 2
      *
      * @return self
      */
@@ -1245,7 +1252,7 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tp_nf_debito
      *
-     * @param string|null $tp_nf_debito Tipo de Nota de Débito:  * 01 - Transferência de créditos para Cooperativas  * 02 - Anulação de Crédito por Saídas Imunes/Isentas  * 03 - Débitos de notas fiscais não processadas na apuração  * 04 - Multa e juros  * 05 - Transferência de crédito de sucessão
+     * @param string|null $tp_nf_debito Tipo de Nota de Débito.
      *
      * @return self
      */
@@ -1398,6 +1405,40 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ind_intermed'] = $ind_intermed;
+
+        return $this;
+    }
+
+    /**
+     * Gets c_ind_op
+     *
+     * @return string|null
+     */
+    public function getCIndOp()
+    {
+        return $this->container['c_ind_op'];
+    }
+
+    /**
+     * Sets c_ind_op
+     *
+     * @param string|null $c_ind_op Código indicador do local da operação de fornecimento.
+     *
+     * @return self
+     */
+    public function setCIndOp($c_ind_op)
+    {
+        if (is_null($c_ind_op)) {
+            array_push($this->openAPINullablesSetToNull, 'c_ind_op');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('c_ind_op', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['c_ind_op'] = $c_ind_op;
 
         return $this;
     }

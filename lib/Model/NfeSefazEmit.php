@@ -66,7 +66,8 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'iest' => 'string',
         'im' => 'string',
         'cnae' => 'string',
-        'crt' => 'int'
+        'crt' => 'int',
+        'isuf_emit' => 'string'
     ];
 
     /**
@@ -86,7 +87,8 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'iest' => null,
         'im' => null,
         'cnae' => null,
-        'crt' => null
+        'crt' => null,
+        'isuf_emit' => null
     ];
 
     /**
@@ -104,7 +106,8 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
 		'iest' => true,
 		'im' => true,
 		'cnae' => true,
-		'crt' => true
+		'crt' => true,
+		'isuf_emit' => true
     ];
 
     /**
@@ -202,7 +205,8 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'iest' => 'IEST',
         'im' => 'IM',
         'cnae' => 'CNAE',
-        'crt' => 'CRT'
+        'crt' => 'CRT',
+        'isuf_emit' => 'ISUFEmit'
     ];
 
     /**
@@ -220,7 +224,8 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'iest' => 'setIest',
         'im' => 'setIm',
         'cnae' => 'setCnae',
-        'crt' => 'setCrt'
+        'crt' => 'setCrt',
+        'isuf_emit' => 'setIsufEmit'
     ];
 
     /**
@@ -238,7 +243,8 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'iest' => 'getIest',
         'im' => 'getIm',
         'cnae' => 'getCnae',
-        'crt' => 'getCrt'
+        'crt' => 'getCrt',
+        'isuf_emit' => 'getIsufEmit'
     ];
 
     /**
@@ -308,6 +314,7 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('im', $data ?? [], null);
         $this->setIfExists('cnae', $data ?? [], null);
         $this->setIfExists('crt', $data ?? [], null);
+        $this->setIfExists('isuf_emit', $data ?? [], null);
     }
 
     /**
@@ -758,6 +765,40 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['crt'] = $crt;
+
+        return $this;
+    }
+
+    /**
+     * Gets isuf_emit
+     *
+     * @return string|null
+     */
+    public function getIsufEmit()
+    {
+        return $this->container['isuf_emit'];
+    }
+
+    /**
+     * Sets isuf_emit
+     *
+     * @param string|null $isuf_emit Inscrição do emitente na Suframa.
+     *
+     * @return self
+     */
+    public function setIsufEmit($isuf_emit)
+    {
+        if (is_null($isuf_emit)) {
+            array_push($this->openAPINullablesSetToNull, 'isuf_emit');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('isuf_emit', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['isuf_emit'] = $isuf_emit;
 
         return $this;
     }

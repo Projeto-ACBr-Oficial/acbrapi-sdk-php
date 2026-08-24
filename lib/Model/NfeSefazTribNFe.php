@@ -60,7 +60,7 @@ class NfeSefazTribNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         'cst' => 'string',
         'c_class_trib' => 'string',
         'ind_doacao' => 'int',
-        'g_ibscbs' => '\ACBrAPI\Model\NfeSefazCIBS',
+        'g_ibscbs' => '\ACBrAPI\Model\NfeSefazCIBSNFe',
         'g_ibscbs_mono' => '\ACBrAPI\Model\NfeSefazMonofasia',
         'g_transf_cred' => '\ACBrAPI\Model\NfeSefazTransfCred',
         'g_ajuste_compet' => '\ACBrAPI\Model\NfeSefazAjusteCompet',
@@ -460,7 +460,7 @@ class NfeSefazTribNFe implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets g_ibscbs
      *
-     * @return \ACBrAPI\Model\NfeSefazCIBS|null
+     * @return \ACBrAPI\Model\NfeSefazCIBSNFe|null
      */
     public function getGIbscbs()
     {
@@ -470,7 +470,7 @@ class NfeSefazTribNFe implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets g_ibscbs
      *
-     * @param \ACBrAPI\Model\NfeSefazCIBS|null $g_ibscbs g_ibscbs
+     * @param \ACBrAPI\Model\NfeSefazCIBSNFe|null $g_ibscbs g_ibscbs
      *
      * @return self
      */

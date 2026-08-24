@@ -1,6 +1,6 @@
 <?php
 /**
- * NfeSefazIS
+ * NfeSefazALCZFMCBSNFe
  *
  * PHP version 7.4
  *
@@ -31,16 +31,16 @@ use \ArrayAccess;
 use \ACBrAPI\ObjectSerializer;
 
 /**
- * NfeSefazIS Class Doc Comment
+ * NfeSefazALCZFMCBSNFe Class Doc Comment
  *
  * @category Class
- * @description Grupo de informações do Imposto Seletivo.
+ * @description Grupo de operações em áreas incentivadas (ALC/ZFM) - CBS (alíquota zero).  Grupo de informações para identificação de operações em áreas incentivadas (ALC/ZFM) com alíquota zero da CBS, conforme arts. 451 e 466 da LC 214/2025, quando fornecedor e destinatário estiverem nessas áreas, distinguindo a existência de processo aprovado na Suframa.
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
+class NfeSefazALCZFMCBSNFe implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'NfeSefazIS';
+    protected static $openAPIModelName = 'NfeSefazALCZFMCBSNFe';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +57,10 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cstis' => 'string',
-        'c_class_trib_is' => 'string',
-        'v_bcis' => 'float',
-        'p_is' => 'float',
-        'ad_rem_is' => 'float',
-        'u_trib' => 'string',
-        'q_trib' => 'float',
-        'v_is' => 'float'
+        'tp_alczfmcbs' => 'int',
+        'n_proc_suframa' => 'string',
+        'p_aliq_efet_reg_cbs' => 'float',
+        'v_trib_reg_cbs' => 'float'
     ];
 
     /**
@@ -75,14 +71,10 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'cstis' => null,
-        'c_class_trib_is' => null,
-        'v_bcis' => null,
-        'p_is' => null,
-        'ad_rem_is' => null,
-        'u_trib' => null,
-        'q_trib' => null,
-        'v_is' => null
+        'tp_alczfmcbs' => null,
+        'n_proc_suframa' => null,
+        'p_aliq_efet_reg_cbs' => null,
+        'v_trib_reg_cbs' => null
     ];
 
     /**
@@ -91,14 +83,10 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'cstis' => true,
-		'c_class_trib_is' => true,
-		'v_bcis' => true,
-		'p_is' => true,
-		'ad_rem_is' => true,
-		'u_trib' => true,
-		'q_trib' => true,
-		'v_is' => true
+        'tp_alczfmcbs' => true,
+		'n_proc_suframa' => true,
+		'p_aliq_efet_reg_cbs' => true,
+		'v_trib_reg_cbs' => true
     ];
 
     /**
@@ -187,14 +175,10 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'cstis' => 'CSTIS',
-        'c_class_trib_is' => 'cClassTribIS',
-        'v_bcis' => 'vBCIS',
-        'p_is' => 'pIS',
-        'ad_rem_is' => 'adRemIS',
-        'u_trib' => 'uTrib',
-        'q_trib' => 'qTrib',
-        'v_is' => 'vIS'
+        'tp_alczfmcbs' => 'tpALCZFMCBS',
+        'n_proc_suframa' => 'nProcSuframa',
+        'p_aliq_efet_reg_cbs' => 'pAliqEfetRegCBS',
+        'v_trib_reg_cbs' => 'vTribRegCBS'
     ];
 
     /**
@@ -203,14 +187,10 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'cstis' => 'setCstis',
-        'c_class_trib_is' => 'setCClassTribIs',
-        'v_bcis' => 'setVBcis',
-        'p_is' => 'setPIs',
-        'ad_rem_is' => 'setAdRemIs',
-        'u_trib' => 'setUTrib',
-        'q_trib' => 'setQTrib',
-        'v_is' => 'setVIs'
+        'tp_alczfmcbs' => 'setTpAlczfmcbs',
+        'n_proc_suframa' => 'setNProcSuframa',
+        'p_aliq_efet_reg_cbs' => 'setPAliqEfetRegCbs',
+        'v_trib_reg_cbs' => 'setVTribRegCbs'
     ];
 
     /**
@@ -219,14 +199,10 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'cstis' => 'getCstis',
-        'c_class_trib_is' => 'getCClassTribIs',
-        'v_bcis' => 'getVBcis',
-        'p_is' => 'getPIs',
-        'ad_rem_is' => 'getAdRemIs',
-        'u_trib' => 'getUTrib',
-        'q_trib' => 'getQTrib',
-        'v_is' => 'getVIs'
+        'tp_alczfmcbs' => 'getTpAlczfmcbs',
+        'n_proc_suframa' => 'getNProcSuframa',
+        'p_aliq_efet_reg_cbs' => 'getPAliqEfetRegCbs',
+        'v_trib_reg_cbs' => 'getVTribRegCbs'
     ];
 
     /**
@@ -286,14 +262,10 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('cstis', $data ?? [], null);
-        $this->setIfExists('c_class_trib_is', $data ?? [], null);
-        $this->setIfExists('v_bcis', $data ?? [], null);
-        $this->setIfExists('p_is', $data ?? [], null);
-        $this->setIfExists('ad_rem_is', $data ?? [], null);
-        $this->setIfExists('u_trib', $data ?? [], null);
-        $this->setIfExists('q_trib', $data ?? [], null);
-        $this->setIfExists('v_is', $data ?? [], null);
+        $this->setIfExists('tp_alczfmcbs', $data ?? [], null);
+        $this->setIfExists('n_proc_suframa', $data ?? [], null);
+        $this->setIfExists('p_aliq_efet_reg_cbs', $data ?? [], null);
+        $this->setIfExists('v_trib_reg_cbs', $data ?? [], null);
     }
 
     /**
@@ -323,35 +295,29 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['cstis'] === null) {
-            $invalidProperties[] = "'cstis' can't be null";
+        if ($this->container['tp_alczfmcbs'] === null) {
+            $invalidProperties[] = "'tp_alczfmcbs' can't be null";
         }
-        if (!is_null($this->container['v_bcis']) && ($this->container['v_bcis'] < 0)) {
-            $invalidProperties[] = "invalid value for 'v_bcis', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['p_is']) && ($this->container['p_is'] < 0)) {
-            $invalidProperties[] = "invalid value for 'p_is', must be bigger than or equal to 0.";
+        if (!is_null($this->container['n_proc_suframa']) && (mb_strlen($this->container['n_proc_suframa']) > 12)) {
+            $invalidProperties[] = "invalid value for 'n_proc_suframa', the character length must be smaller than or equal to 12.";
         }
 
-        if (!is_null($this->container['ad_rem_is']) && ($this->container['ad_rem_is'] < 0)) {
-            $invalidProperties[] = "invalid value for 'ad_rem_is', must be bigger than or equal to 0.";
+        if (!is_null($this->container['n_proc_suframa']) && (mb_strlen($this->container['n_proc_suframa']) < 8)) {
+            $invalidProperties[] = "invalid value for 'n_proc_suframa', the character length must be bigger than or equal to 8.";
         }
 
-        if (!is_null($this->container['u_trib']) && (mb_strlen($this->container['u_trib']) > 6)) {
-            $invalidProperties[] = "invalid value for 'u_trib', the character length must be smaller than or equal to 6.";
+        if ($this->container['p_aliq_efet_reg_cbs'] === null) {
+            $invalidProperties[] = "'p_aliq_efet_reg_cbs' can't be null";
+        }
+        if (($this->container['p_aliq_efet_reg_cbs'] < 0)) {
+            $invalidProperties[] = "invalid value for 'p_aliq_efet_reg_cbs', must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['u_trib']) && (mb_strlen($this->container['u_trib']) < 1)) {
-            $invalidProperties[] = "invalid value for 'u_trib', the character length must be bigger than or equal to 1.";
+        if ($this->container['v_trib_reg_cbs'] === null) {
+            $invalidProperties[] = "'v_trib_reg_cbs' can't be null";
         }
-
-        if (!is_null($this->container['q_trib']) && ($this->container['q_trib'] <= 0)) {
-            $invalidProperties[] = "invalid value for 'q_trib', must be bigger than 0.";
-        }
-
-        if (!is_null($this->container['v_is']) && ($this->container['v_is'] < 0)) {
-            $invalidProperties[] = "invalid value for 'v_is', must be bigger than or equal to 0.";
+        if (($this->container['v_trib_reg_cbs'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_trib_reg_cbs', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -370,305 +336,154 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets cstis
+     * Gets tp_alczfmcbs
      *
-     * @return string
+     * @return int
      */
-    public function getCstis()
+    public function getTpAlczfmcbs()
     {
-        return $this->container['cstis'];
+        return $this->container['tp_alczfmcbs'];
     }
 
     /**
-     * Sets cstis
+     * Sets tp_alczfmcbs
      *
-     * @param string $cstis Código Situação Tributária do Imposto Seletivo.
+     * @param int $tp_alczfmcbs Tipo de aplicação da alíquota zero da CBS.
      *
      * @return self
      */
-    public function setCstis($cstis)
+    public function setTpAlczfmcbs($tp_alczfmcbs)
     {
-        if (is_null($cstis)) {
-            array_push($this->openAPINullablesSetToNull, 'cstis');
+        if (is_null($tp_alczfmcbs)) {
+            array_push($this->openAPINullablesSetToNull, 'tp_alczfmcbs');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cstis', $nullablesSetToNull);
+            $index = array_search('tp_alczfmcbs', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['cstis'] = $cstis;
+        $this->container['tp_alczfmcbs'] = $tp_alczfmcbs;
 
         return $this;
     }
 
     /**
-     * Gets c_class_trib_is
+     * Gets n_proc_suframa
      *
      * @return string|null
      */
-    public function getCClassTribIs()
+    public function getNProcSuframa()
     {
-        return $this->container['c_class_trib_is'];
+        return $this->container['n_proc_suframa'];
     }
 
     /**
-     * Sets c_class_trib_is
+     * Sets n_proc_suframa
      *
-     * @param string|null $c_class_trib_is c_class_trib_is
+     * @param string|null $n_proc_suframa Número do processo na Suframa para o item  comercializado.
      *
      * @return self
      */
-    public function setCClassTribIs($c_class_trib_is)
+    public function setNProcSuframa($n_proc_suframa)
     {
-        if (is_null($c_class_trib_is)) {
-            array_push($this->openAPINullablesSetToNull, 'c_class_trib_is');
+        if (is_null($n_proc_suframa)) {
+            array_push($this->openAPINullablesSetToNull, 'n_proc_suframa');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('c_class_trib_is', $nullablesSetToNull);
+            $index = array_search('n_proc_suframa', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['c_class_trib_is'] = $c_class_trib_is;
+        if (!is_null($n_proc_suframa) && (mb_strlen($n_proc_suframa) > 12)) {
+            throw new \InvalidArgumentException('invalid length for $n_proc_suframa when calling NfeSefazALCZFMCBSNFe., must be smaller than or equal to 12.');
+        }
+        if (!is_null($n_proc_suframa) && (mb_strlen($n_proc_suframa) < 8)) {
+            throw new \InvalidArgumentException('invalid length for $n_proc_suframa when calling NfeSefazALCZFMCBSNFe., must be bigger than or equal to 8.');
+        }
+
+        $this->container['n_proc_suframa'] = $n_proc_suframa;
 
         return $this;
     }
 
     /**
-     * Gets v_bcis
+     * Gets p_aliq_efet_reg_cbs
      *
-     * @return float|null
+     * @return float
      */
-    public function getVBcis()
+    public function getPAliqEfetRegCbs()
     {
-        return $this->container['v_bcis'];
+        return $this->container['p_aliq_efet_reg_cbs'];
     }
 
     /**
-     * Sets v_bcis
+     * Sets p_aliq_efet_reg_cbs
      *
-     * @param float|null $v_bcis Valor do BC.
+     * @param float $p_aliq_efet_reg_cbs Percentual efetivo sem a redução.  Alíquota efetiva de referência da CBS aplicável à operação fora de áreas ou regimes incentivados.
      *
      * @return self
      */
-    public function setVBcis($v_bcis)
+    public function setPAliqEfetRegCbs($p_aliq_efet_reg_cbs)
     {
-        if (is_null($v_bcis)) {
-            array_push($this->openAPINullablesSetToNull, 'v_bcis');
+        if (is_null($p_aliq_efet_reg_cbs)) {
+            array_push($this->openAPINullablesSetToNull, 'p_aliq_efet_reg_cbs');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('v_bcis', $nullablesSetToNull);
+            $index = array_search('p_aliq_efet_reg_cbs', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
 
-        if (!is_null($v_bcis) && ($v_bcis < 0)) {
-            throw new \InvalidArgumentException('invalid value for $v_bcis when calling NfeSefazIS., must be bigger than or equal to 0.');
+        if (!is_null($p_aliq_efet_reg_cbs) && ($p_aliq_efet_reg_cbs < 0)) {
+            throw new \InvalidArgumentException('invalid value for $p_aliq_efet_reg_cbs when calling NfeSefazALCZFMCBSNFe., must be bigger than or equal to 0.');
         }
 
-        $this->container['v_bcis'] = $v_bcis;
+        $this->container['p_aliq_efet_reg_cbs'] = $p_aliq_efet_reg_cbs;
 
         return $this;
     }
 
     /**
-     * Gets p_is
+     * Gets v_trib_reg_cbs
      *
-     * @return float|null
+     * @return float
      */
-    public function getPIs()
+    public function getVTribRegCbs()
     {
-        return $this->container['p_is'];
+        return $this->container['v_trib_reg_cbs'];
     }
 
     /**
-     * Sets p_is
+     * Sets v_trib_reg_cbs
      *
-     * @param float|null $p_is Alíquota do Imposto Seletivo (percentual).
+     * @param float $v_trib_reg_cbs Valor efetivo sem a redução.  Valor da CBS calculado para a operação fora de áreas ou regimes incentivado.
      *
      * @return self
      */
-    public function setPIs($p_is)
+    public function setVTribRegCbs($v_trib_reg_cbs)
     {
-        if (is_null($p_is)) {
-            array_push($this->openAPINullablesSetToNull, 'p_is');
+        if (is_null($v_trib_reg_cbs)) {
+            array_push($this->openAPINullablesSetToNull, 'v_trib_reg_cbs');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('p_is', $nullablesSetToNull);
+            $index = array_search('v_trib_reg_cbs', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
 
-        if (!is_null($p_is) && ($p_is < 0)) {
-            throw new \InvalidArgumentException('invalid value for $p_is when calling NfeSefazIS., must be bigger than or equal to 0.');
+        if (!is_null($v_trib_reg_cbs) && ($v_trib_reg_cbs < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_trib_reg_cbs when calling NfeSefazALCZFMCBSNFe., must be bigger than or equal to 0.');
         }
 
-        $this->container['p_is'] = $p_is;
-
-        return $this;
-    }
-
-    /**
-     * Gets ad_rem_is
-     *
-     * @return float|null
-     */
-    public function getAdRemIs()
-    {
-        return $this->container['ad_rem_is'];
-    }
-
-    /**
-     * Sets ad_rem_is
-     *
-     * @param float|null $ad_rem_is Alíquota do Imposto Seletivo (por valor).
-     *
-     * @return self
-     */
-    public function setAdRemIs($ad_rem_is)
-    {
-        if (is_null($ad_rem_is)) {
-            array_push($this->openAPINullablesSetToNull, 'ad_rem_is');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ad_rem_is', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($ad_rem_is) && ($ad_rem_is < 0)) {
-            throw new \InvalidArgumentException('invalid value for $ad_rem_is when calling NfeSefazIS., must be bigger than or equal to 0.');
-        }
-
-        $this->container['ad_rem_is'] = $ad_rem_is;
-
-        return $this;
-    }
-
-    /**
-     * Gets u_trib
-     *
-     * @return string|null
-     */
-    public function getUTrib()
-    {
-        return $this->container['u_trib'];
-    }
-
-    /**
-     * Sets u_trib
-     *
-     * @param string|null $u_trib Unidade de medida apropriada especificada em Lei Ordinaria para fins de apuração do Imposto Seletivo.
-     *
-     * @return self
-     */
-    public function setUTrib($u_trib)
-    {
-        if (is_null($u_trib)) {
-            array_push($this->openAPINullablesSetToNull, 'u_trib');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('u_trib', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        if (!is_null($u_trib) && (mb_strlen($u_trib) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $u_trib when calling NfeSefazIS., must be smaller than or equal to 6.');
-        }
-        if (!is_null($u_trib) && (mb_strlen($u_trib) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $u_trib when calling NfeSefazIS., must be bigger than or equal to 1.');
-        }
-
-        $this->container['u_trib'] = $u_trib;
-
-        return $this;
-    }
-
-    /**
-     * Gets q_trib
-     *
-     * @return float|null
-     */
-    public function getQTrib()
-    {
-        return $this->container['q_trib'];
-    }
-
-    /**
-     * Sets q_trib
-     *
-     * @param float|null $q_trib Quantidade com abse no campo uTrib informado.
-     *
-     * @return self
-     */
-    public function setQTrib($q_trib)
-    {
-        if (is_null($q_trib)) {
-            array_push($this->openAPINullablesSetToNull, 'q_trib');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('q_trib', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($q_trib) && ($q_trib <= 0)) {
-            throw new \InvalidArgumentException('invalid value for $q_trib when calling NfeSefazIS., must be bigger than 0.');
-        }
-
-        $this->container['q_trib'] = $q_trib;
-
-        return $this;
-    }
-
-    /**
-     * Gets v_is
-     *
-     * @return float|null
-     */
-    public function getVIs()
-    {
-        return $this->container['v_is'];
-    }
-
-    /**
-     * Sets v_is
-     *
-     * @param float|null $v_is Valor do Imposto Seletivo calculado.
-     *
-     * @return self
-     */
-    public function setVIs($v_is)
-    {
-        if (is_null($v_is)) {
-            array_push($this->openAPINullablesSetToNull, 'v_is');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('v_is', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($v_is) && ($v_is < 0)) {
-            throw new \InvalidArgumentException('invalid value for $v_is when calling NfeSefazIS., must be bigger than or equal to 0.');
-        }
-
-        $this->container['v_is'] = $v_is;
+        $this->container['v_trib_reg_cbs'] = $v_trib_reg_cbs;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * NfeSefazIS
+ * NfeSefazCIBSNFe
  *
  * PHP version 7.4
  *
@@ -31,16 +31,15 @@ use \ArrayAccess;
 use \ACBrAPI\ObjectSerializer;
 
 /**
- * NfeSefazIS Class Doc Comment
+ * NfeSefazCIBSNFe Class Doc Comment
  *
  * @category Class
- * @description Grupo de informações do Imposto Seletivo.
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
+class NfeSefazCIBSNFe implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'NfeSefazIS';
+    protected static $openAPIModelName = 'NfeSefazCIBSNFe';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +56,13 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'cstis' => 'string',
-        'c_class_trib_is' => 'string',
-        'v_bcis' => 'float',
-        'p_is' => 'float',
-        'ad_rem_is' => 'float',
-        'u_trib' => 'string',
-        'q_trib' => 'float',
-        'v_is' => 'float'
+        'v_bc' => 'float',
+        'g_ibsuf' => '\ACBrAPI\Model\NfeSefazGIBSUF',
+        'g_ibs_mun' => '\ACBrAPI\Model\NfeSefazGIBSMun',
+        'v_ibs' => 'float',
+        'g_cbs' => '\ACBrAPI\Model\NfeSefazGCBS',
+        'g_trib_regular' => '\ACBrAPI\Model\NfeSefazTribRegular',
+        'g_trib_compra_gov' => '\ACBrAPI\Model\NfeSefazTribCompraGov'
     ];
 
     /**
@@ -75,14 +73,13 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'cstis' => null,
-        'c_class_trib_is' => null,
-        'v_bcis' => null,
-        'p_is' => null,
-        'ad_rem_is' => null,
-        'u_trib' => null,
-        'q_trib' => null,
-        'v_is' => null
+        'v_bc' => null,
+        'g_ibsuf' => null,
+        'g_ibs_mun' => null,
+        'v_ibs' => null,
+        'g_cbs' => null,
+        'g_trib_regular' => null,
+        'g_trib_compra_gov' => null
     ];
 
     /**
@@ -91,14 +88,13 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'cstis' => true,
-		'c_class_trib_is' => true,
-		'v_bcis' => true,
-		'p_is' => true,
-		'ad_rem_is' => true,
-		'u_trib' => true,
-		'q_trib' => true,
-		'v_is' => true
+        'v_bc' => true,
+		'g_ibsuf' => false,
+		'g_ibs_mun' => false,
+		'v_ibs' => true,
+		'g_cbs' => false,
+		'g_trib_regular' => false,
+		'g_trib_compra_gov' => false
     ];
 
     /**
@@ -187,14 +183,13 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'cstis' => 'CSTIS',
-        'c_class_trib_is' => 'cClassTribIS',
-        'v_bcis' => 'vBCIS',
-        'p_is' => 'pIS',
-        'ad_rem_is' => 'adRemIS',
-        'u_trib' => 'uTrib',
-        'q_trib' => 'qTrib',
-        'v_is' => 'vIS'
+        'v_bc' => 'vBC',
+        'g_ibsuf' => 'gIBSUF',
+        'g_ibs_mun' => 'gIBSMun',
+        'v_ibs' => 'vIBS',
+        'g_cbs' => 'gCBS',
+        'g_trib_regular' => 'gTribRegular',
+        'g_trib_compra_gov' => 'gTribCompraGov'
     ];
 
     /**
@@ -203,14 +198,13 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'cstis' => 'setCstis',
-        'c_class_trib_is' => 'setCClassTribIs',
-        'v_bcis' => 'setVBcis',
-        'p_is' => 'setPIs',
-        'ad_rem_is' => 'setAdRemIs',
-        'u_trib' => 'setUTrib',
-        'q_trib' => 'setQTrib',
-        'v_is' => 'setVIs'
+        'v_bc' => 'setVBc',
+        'g_ibsuf' => 'setGIbsuf',
+        'g_ibs_mun' => 'setGIbsMun',
+        'v_ibs' => 'setVIbs',
+        'g_cbs' => 'setGCbs',
+        'g_trib_regular' => 'setGTribRegular',
+        'g_trib_compra_gov' => 'setGTribCompraGov'
     ];
 
     /**
@@ -219,14 +213,13 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'cstis' => 'getCstis',
-        'c_class_trib_is' => 'getCClassTribIs',
-        'v_bcis' => 'getVBcis',
-        'p_is' => 'getPIs',
-        'ad_rem_is' => 'getAdRemIs',
-        'u_trib' => 'getUTrib',
-        'q_trib' => 'getQTrib',
-        'v_is' => 'getVIs'
+        'v_bc' => 'getVBc',
+        'g_ibsuf' => 'getGIbsuf',
+        'g_ibs_mun' => 'getGIbsMun',
+        'v_ibs' => 'getVIbs',
+        'g_cbs' => 'getGCbs',
+        'g_trib_regular' => 'getGTribRegular',
+        'g_trib_compra_gov' => 'getGTribCompraGov'
     ];
 
     /**
@@ -286,14 +279,13 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('cstis', $data ?? [], null);
-        $this->setIfExists('c_class_trib_is', $data ?? [], null);
-        $this->setIfExists('v_bcis', $data ?? [], null);
-        $this->setIfExists('p_is', $data ?? [], null);
-        $this->setIfExists('ad_rem_is', $data ?? [], null);
-        $this->setIfExists('u_trib', $data ?? [], null);
-        $this->setIfExists('q_trib', $data ?? [], null);
-        $this->setIfExists('v_is', $data ?? [], null);
+        $this->setIfExists('v_bc', $data ?? [], null);
+        $this->setIfExists('g_ibsuf', $data ?? [], null);
+        $this->setIfExists('g_ibs_mun', $data ?? [], null);
+        $this->setIfExists('v_ibs', $data ?? [], null);
+        $this->setIfExists('g_cbs', $data ?? [], null);
+        $this->setIfExists('g_trib_regular', $data ?? [], null);
+        $this->setIfExists('g_trib_compra_gov', $data ?? [], null);
     }
 
     /**
@@ -323,37 +315,29 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['cstis'] === null) {
-            $invalidProperties[] = "'cstis' can't be null";
+        if ($this->container['v_bc'] === null) {
+            $invalidProperties[] = "'v_bc' can't be null";
         }
-        if (!is_null($this->container['v_bcis']) && ($this->container['v_bcis'] < 0)) {
-            $invalidProperties[] = "invalid value for 'v_bcis', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['p_is']) && ($this->container['p_is'] < 0)) {
-            $invalidProperties[] = "invalid value for 'p_is', must be bigger than or equal to 0.";
+        if (($this->container['v_bc'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_bc', must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['ad_rem_is']) && ($this->container['ad_rem_is'] < 0)) {
-            $invalidProperties[] = "invalid value for 'ad_rem_is', must be bigger than or equal to 0.";
+        if ($this->container['g_ibsuf'] === null) {
+            $invalidProperties[] = "'g_ibsuf' can't be null";
+        }
+        if ($this->container['g_ibs_mun'] === null) {
+            $invalidProperties[] = "'g_ibs_mun' can't be null";
+        }
+        if ($this->container['v_ibs'] === null) {
+            $invalidProperties[] = "'v_ibs' can't be null";
+        }
+        if (($this->container['v_ibs'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_ibs', must be bigger than or equal to 0.";
         }
 
-        if (!is_null($this->container['u_trib']) && (mb_strlen($this->container['u_trib']) > 6)) {
-            $invalidProperties[] = "invalid value for 'u_trib', the character length must be smaller than or equal to 6.";
+        if ($this->container['g_cbs'] === null) {
+            $invalidProperties[] = "'g_cbs' can't be null";
         }
-
-        if (!is_null($this->container['u_trib']) && (mb_strlen($this->container['u_trib']) < 1)) {
-            $invalidProperties[] = "invalid value for 'u_trib', the character length must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['q_trib']) && ($this->container['q_trib'] <= 0)) {
-            $invalidProperties[] = "invalid value for 'q_trib', must be bigger than 0.";
-        }
-
-        if (!is_null($this->container['v_is']) && ($this->container['v_is'] < 0)) {
-            $invalidProperties[] = "invalid value for 'v_is', must be bigger than or equal to 0.";
-        }
-
         return $invalidProperties;
     }
 
@@ -370,305 +354,214 @@ class NfeSefazIS implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets cstis
+     * Gets v_bc
      *
-     * @return string
+     * @return float
      */
-    public function getCstis()
+    public function getVBc()
     {
-        return $this->container['cstis'];
+        return $this->container['v_bc'];
     }
 
     /**
-     * Sets cstis
+     * Sets v_bc
      *
-     * @param string $cstis Código Situação Tributária do Imposto Seletivo.
+     * @param float $v_bc Valor do BC.
      *
      * @return self
      */
-    public function setCstis($cstis)
+    public function setVBc($v_bc)
     {
-        if (is_null($cstis)) {
-            array_push($this->openAPINullablesSetToNull, 'cstis');
+        if (is_null($v_bc)) {
+            array_push($this->openAPINullablesSetToNull, 'v_bc');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cstis', $nullablesSetToNull);
+            $index = array_search('v_bc', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['cstis'] = $cstis;
+
+        if (!is_null($v_bc) && ($v_bc < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_bc when calling NfeSefazCIBSNFe., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_bc'] = $v_bc;
 
         return $this;
     }
 
     /**
-     * Gets c_class_trib_is
+     * Gets g_ibsuf
      *
-     * @return string|null
+     * @return \ACBrAPI\Model\NfeSefazGIBSUF
      */
-    public function getCClassTribIs()
+    public function getGIbsuf()
     {
-        return $this->container['c_class_trib_is'];
+        return $this->container['g_ibsuf'];
     }
 
     /**
-     * Sets c_class_trib_is
+     * Sets g_ibsuf
      *
-     * @param string|null $c_class_trib_is c_class_trib_is
+     * @param \ACBrAPI\Model\NfeSefazGIBSUF $g_ibsuf g_ibsuf
      *
      * @return self
      */
-    public function setCClassTribIs($c_class_trib_is)
+    public function setGIbsuf($g_ibsuf)
     {
-        if (is_null($c_class_trib_is)) {
-            array_push($this->openAPINullablesSetToNull, 'c_class_trib_is');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('c_class_trib_is', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($g_ibsuf)) {
+            throw new \InvalidArgumentException('non-nullable g_ibsuf cannot be null');
         }
-        $this->container['c_class_trib_is'] = $c_class_trib_is;
+        $this->container['g_ibsuf'] = $g_ibsuf;
 
         return $this;
     }
 
     /**
-     * Gets v_bcis
+     * Gets g_ibs_mun
      *
-     * @return float|null
+     * @return \ACBrAPI\Model\NfeSefazGIBSMun
      */
-    public function getVBcis()
+    public function getGIbsMun()
     {
-        return $this->container['v_bcis'];
+        return $this->container['g_ibs_mun'];
     }
 
     /**
-     * Sets v_bcis
+     * Sets g_ibs_mun
      *
-     * @param float|null $v_bcis Valor do BC.
+     * @param \ACBrAPI\Model\NfeSefazGIBSMun $g_ibs_mun g_ibs_mun
      *
      * @return self
      */
-    public function setVBcis($v_bcis)
+    public function setGIbsMun($g_ibs_mun)
     {
-        if (is_null($v_bcis)) {
-            array_push($this->openAPINullablesSetToNull, 'v_bcis');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('v_bcis', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($g_ibs_mun)) {
+            throw new \InvalidArgumentException('non-nullable g_ibs_mun cannot be null');
         }
-
-        if (!is_null($v_bcis) && ($v_bcis < 0)) {
-            throw new \InvalidArgumentException('invalid value for $v_bcis when calling NfeSefazIS., must be bigger than or equal to 0.');
-        }
-
-        $this->container['v_bcis'] = $v_bcis;
+        $this->container['g_ibs_mun'] = $g_ibs_mun;
 
         return $this;
     }
 
     /**
-     * Gets p_is
+     * Gets v_ibs
      *
-     * @return float|null
+     * @return float
      */
-    public function getPIs()
+    public function getVIbs()
     {
-        return $this->container['p_is'];
+        return $this->container['v_ibs'];
     }
 
     /**
-     * Sets p_is
+     * Sets v_ibs
      *
-     * @param float|null $p_is Alíquota do Imposto Seletivo (percentual).
+     * @param float $v_ibs Valor do IBS.
      *
      * @return self
      */
-    public function setPIs($p_is)
+    public function setVIbs($v_ibs)
     {
-        if (is_null($p_is)) {
-            array_push($this->openAPINullablesSetToNull, 'p_is');
+        if (is_null($v_ibs)) {
+            array_push($this->openAPINullablesSetToNull, 'v_ibs');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('p_is', $nullablesSetToNull);
+            $index = array_search('v_ibs', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
 
-        if (!is_null($p_is) && ($p_is < 0)) {
-            throw new \InvalidArgumentException('invalid value for $p_is when calling NfeSefazIS., must be bigger than or equal to 0.');
+        if (!is_null($v_ibs) && ($v_ibs < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_ibs when calling NfeSefazCIBSNFe., must be bigger than or equal to 0.');
         }
 
-        $this->container['p_is'] = $p_is;
+        $this->container['v_ibs'] = $v_ibs;
 
         return $this;
     }
 
     /**
-     * Gets ad_rem_is
+     * Gets g_cbs
      *
-     * @return float|null
+     * @return \ACBrAPI\Model\NfeSefazGCBS
      */
-    public function getAdRemIs()
+    public function getGCbs()
     {
-        return $this->container['ad_rem_is'];
+        return $this->container['g_cbs'];
     }
 
     /**
-     * Sets ad_rem_is
+     * Sets g_cbs
      *
-     * @param float|null $ad_rem_is Alíquota do Imposto Seletivo (por valor).
+     * @param \ACBrAPI\Model\NfeSefazGCBS $g_cbs g_cbs
      *
      * @return self
      */
-    public function setAdRemIs($ad_rem_is)
+    public function setGCbs($g_cbs)
     {
-        if (is_null($ad_rem_is)) {
-            array_push($this->openAPINullablesSetToNull, 'ad_rem_is');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ad_rem_is', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($g_cbs)) {
+            throw new \InvalidArgumentException('non-nullable g_cbs cannot be null');
         }
-
-        if (!is_null($ad_rem_is) && ($ad_rem_is < 0)) {
-            throw new \InvalidArgumentException('invalid value for $ad_rem_is when calling NfeSefazIS., must be bigger than or equal to 0.');
-        }
-
-        $this->container['ad_rem_is'] = $ad_rem_is;
+        $this->container['g_cbs'] = $g_cbs;
 
         return $this;
     }
 
     /**
-     * Gets u_trib
+     * Gets g_trib_regular
      *
-     * @return string|null
+     * @return \ACBrAPI\Model\NfeSefazTribRegular|null
      */
-    public function getUTrib()
+    public function getGTribRegular()
     {
-        return $this->container['u_trib'];
+        return $this->container['g_trib_regular'];
     }
 
     /**
-     * Sets u_trib
+     * Sets g_trib_regular
      *
-     * @param string|null $u_trib Unidade de medida apropriada especificada em Lei Ordinaria para fins de apuração do Imposto Seletivo.
+     * @param \ACBrAPI\Model\NfeSefazTribRegular|null $g_trib_regular g_trib_regular
      *
      * @return self
      */
-    public function setUTrib($u_trib)
+    public function setGTribRegular($g_trib_regular)
     {
-        if (is_null($u_trib)) {
-            array_push($this->openAPINullablesSetToNull, 'u_trib');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('u_trib', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($g_trib_regular)) {
+            throw new \InvalidArgumentException('non-nullable g_trib_regular cannot be null');
         }
-        if (!is_null($u_trib) && (mb_strlen($u_trib) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $u_trib when calling NfeSefazIS., must be smaller than or equal to 6.');
-        }
-        if (!is_null($u_trib) && (mb_strlen($u_trib) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $u_trib when calling NfeSefazIS., must be bigger than or equal to 1.');
-        }
-
-        $this->container['u_trib'] = $u_trib;
+        $this->container['g_trib_regular'] = $g_trib_regular;
 
         return $this;
     }
 
     /**
-     * Gets q_trib
+     * Gets g_trib_compra_gov
      *
-     * @return float|null
+     * @return \ACBrAPI\Model\NfeSefazTribCompraGov|null
      */
-    public function getQTrib()
+    public function getGTribCompraGov()
     {
-        return $this->container['q_trib'];
+        return $this->container['g_trib_compra_gov'];
     }
 
     /**
-     * Sets q_trib
+     * Sets g_trib_compra_gov
      *
-     * @param float|null $q_trib Quantidade com abse no campo uTrib informado.
+     * @param \ACBrAPI\Model\NfeSefazTribCompraGov|null $g_trib_compra_gov g_trib_compra_gov
      *
      * @return self
      */
-    public function setQTrib($q_trib)
+    public function setGTribCompraGov($g_trib_compra_gov)
     {
-        if (is_null($q_trib)) {
-            array_push($this->openAPINullablesSetToNull, 'q_trib');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('q_trib', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+        if (is_null($g_trib_compra_gov)) {
+            throw new \InvalidArgumentException('non-nullable g_trib_compra_gov cannot be null');
         }
-
-        if (!is_null($q_trib) && ($q_trib <= 0)) {
-            throw new \InvalidArgumentException('invalid value for $q_trib when calling NfeSefazIS., must be bigger than 0.');
-        }
-
-        $this->container['q_trib'] = $q_trib;
-
-        return $this;
-    }
-
-    /**
-     * Gets v_is
-     *
-     * @return float|null
-     */
-    public function getVIs()
-    {
-        return $this->container['v_is'];
-    }
-
-    /**
-     * Sets v_is
-     *
-     * @param float|null $v_is Valor do Imposto Seletivo calculado.
-     *
-     * @return self
-     */
-    public function setVIs($v_is)
-    {
-        if (is_null($v_is)) {
-            array_push($this->openAPINullablesSetToNull, 'v_is');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('v_is', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($v_is) && ($v_is < 0)) {
-            throw new \InvalidArgumentException('invalid value for $v_is when calling NfeSefazIS., must be bigger than or equal to 0.');
-        }
-
-        $this->container['v_is'] = $v_is;
+        $this->container['g_trib_compra_gov'] = $g_trib_compra_gov;
 
         return $this;
     }
