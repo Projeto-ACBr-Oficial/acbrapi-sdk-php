@@ -14,9 +14,7 @@ Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação defin
 | [**consultarLoteNfse()**](NfseApi.md#consultarLoteNfse) | **GET** /nfse/lotes/{id} | Consultar lote de NFS-e |
 | [**consultarMetadados()**](NfseApi.md#consultarMetadados) | **GET** /nfse/cidades/{codigo_ibge} | Consultar metadados |
 | [**consultarNfse()**](NfseApi.md#consultarNfse) | **GET** /nfse/{id} | Consultar NFS-e |
-| [**emitirLoteNfse()**](NfseApi.md#emitirLoteNfse) | **POST** /nfse/lotes | Emitir lote de NFS-e |
 | [**emitirLoteNfseDps()**](NfseApi.md#emitirLoteNfseDps) | **POST** /nfse/dps/lotes | Emitir lote de NFS-e |
-| [**emitirNfse()**](NfseApi.md#emitirNfse) | **POST** /nfse | Emitir NFS-e |
 | [**emitirNfseDps()**](NfseApi.md#emitirNfseDps) | **POST** /nfse/dps | Emitir NFS-e |
 | [**listarLotesNfse()**](NfseApi.md#listarLotesNfse) | **GET** /nfse/lotes | Listar lotes de NFS-e |
 | [**listarNfse()**](NfseApi.md#listarNfse) | **GET** /nfse | Listar NFS-e |
@@ -622,66 +620,6 @@ try {
 [[Voltar à lista de DTOs]](../../README.md#models)
 [[Voltar ao README]](../../README.md)
 
-## `emitirLoteNfse()`
-
-```php
-emitirLoteNfse($body): \ACBrAPI\Model\RpsLote
-```
-
-Emitir lote de NFS-e
-
-**Informações adicionais**:  - Consumo: 1 unidade por NFS-e.
-
-### Exemplo
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configurar access token OAuth2 para autorização: oauth2
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
-
-
-$apiInstance = new ACBrAPI\Api\NfseApi(
-    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
-    new GuzzleHttp\Client(),
-    $config
-);
-$body = new \ACBrAPI\Model\RpsPedidoEmissaoLote(); // \ACBrAPI\Model\RpsPedidoEmissaoLote
-
-try {
-    $result = $apiInstance->emitirLoteNfse($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling NfseApi->emitirLoteNfse: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parâmetros
-
-| Nome | Tipo | Descrição  | Notas |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\ACBrAPI\Model\RpsPedidoEmissaoLote**](../Model/RpsPedidoEmissaoLote.md)|  | |
-
-### Tipo do retorno
-
-[**\ACBrAPI\Model\RpsLote**](../Model/RpsLote.md)
-
-### Autorização
-
-[oauth2](../../README.md#oauth2)
-
-### Headers HTTP da requisição
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
-[[Voltar à lista de DTOs]](../../README.md#models)
-[[Voltar ao README]](../../README.md)
-
 ## `emitirLoteNfseDps()`
 
 ```php
@@ -728,66 +666,6 @@ try {
 ### Tipo do retorno
 
 [**\ACBrAPI\Model\RpsLote**](../Model/RpsLote.md)
-
-### Autorização
-
-[oauth2](../../README.md#oauth2)
-
-### Headers HTTP da requisição
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
-[[Voltar à lista de DTOs]](../../README.md#models)
-[[Voltar ao README]](../../README.md)
-
-## `emitirNfse()`
-
-```php
-emitirNfse($body): \ACBrAPI\Model\Nfse
-```
-
-Emitir NFS-e
-
-**Informações adicionais**:  - Consumo: 1 unidade por requisição.
-
-### Exemplo
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configurar access token OAuth2 para autorização: oauth2
-$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
-
-
-$apiInstance = new ACBrAPI\Api\NfseApi(
-    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
-    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
-    new GuzzleHttp\Client(),
-    $config
-);
-$body = new \ACBrAPI\Model\NfsePedidoEmissao(); // \ACBrAPI\Model\NfsePedidoEmissao
-
-try {
-    $result = $apiInstance->emitirNfse($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling NfseApi->emitirNfse: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parâmetros
-
-| Nome | Tipo | Descrição  | Notas |
-| ------------- | ------------- | ------------- | ------------- |
-| **body** | [**\ACBrAPI\Model\NfsePedidoEmissao**](../Model/NfsePedidoEmissao.md)|  | |
-
-### Tipo do retorno
-
-[**\ACBrAPI\Model\Nfse**](../Model/Nfse.md)
 
 ### Autorização
 

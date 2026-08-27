@@ -328,9 +328,7 @@ Classe | Método | Endpoint | Descrição
 *NfseApi* | [**consultarLoteNfse**](docs/Api/NfseApi.md#consultarlotenfse) | **GET** /nfse/lotes/{id} | Consultar lote de NFS-e
 *NfseApi* | [**consultarMetadados**](docs/Api/NfseApi.md#consultarmetadados) | **GET** /nfse/cidades/{codigo_ibge} | Consultar metadados
 *NfseApi* | [**consultarNfse**](docs/Api/NfseApi.md#consultarnfse) | **GET** /nfse/{id} | Consultar NFS-e
-*NfseApi* | [**emitirLoteNfse**](docs/Api/NfseApi.md#emitirlotenfse) | **POST** /nfse/lotes | Emitir lote de NFS-e
 *NfseApi* | [**emitirLoteNfseDps**](docs/Api/NfseApi.md#emitirlotenfsedps) | **POST** /nfse/dps/lotes | Emitir lote de NFS-e
-*NfseApi* | [**emitirNfse**](docs/Api/NfseApi.md#emitirnfse) | **POST** /nfse | Emitir NFS-e
 *NfseApi* | [**emitirNfseDps**](docs/Api/NfseApi.md#emitirnfsedps) | **POST** /nfse/dps | Emitir NFS-e
 *NfseApi* | [**listarLotesNfse**](docs/Api/NfseApi.md#listarlotesnfse) | **GET** /nfse/lotes | Listar lotes de NFS-e
 *NfseApi* | [**listarNfse**](docs/Api/NfseApi.md#listarnfse) | **GET** /nfse | Listar NFS-e
@@ -1025,7 +1023,6 @@ Classe | Método | Endpoint | Descrição
 - [NfseLoteDpsPedidoEmissao](docs/Model/NfseLoteDpsPedidoEmissao.md)
 - [NfseMensagemRetorno](docs/Model/NfseMensagemRetorno.md)
 - [NfsePedidoCancelamento](docs/Model/NfsePedidoCancelamento.md)
-- [NfsePedidoEmissao](docs/Model/NfsePedidoEmissao.md)
 - [NfsePedidoSincronizacao](docs/Model/NfsePedidoSincronizacao.md)
 - [NfseSincronizacao](docs/Model/NfseSincronizacao.md)
 - [RTCInfoDest](docs/Model/RTCInfoDest.md)
@@ -1052,11 +1049,8 @@ Classe | Método | Endpoint | Descrição
 - [RpsDadosTomador](docs/Model/RpsDadosTomador.md)
 - [RpsDadosTomadorEndereco](docs/Model/RpsDadosTomadorEndereco.md)
 - [RpsIdentificacao](docs/Model/RpsIdentificacao.md)
-- [RpsIdentificacaoPrestador](docs/Model/RpsIdentificacaoPrestador.md)
 - [RpsLote](docs/Model/RpsLote.md)
 - [RpsLoteListagem](docs/Model/RpsLoteListagem.md)
-- [RpsPedidoEmissao](docs/Model/RpsPedidoEmissao.md)
-- [RpsPedidoEmissaoLote](docs/Model/RpsPedidoEmissaoLote.md)
 - [RpsServicoValores](docs/Model/RpsServicoValores.md)
 - [Serv](docs/Model/Serv.md)
 - [Substituicao](docs/Model/Substituicao.md)
@@ -1089,6 +1083,6 @@ Classe | Método | Endpoint | Descrição
 
 ## Sobre este package
 
-- Versão da API: `3.1.8`
-    - Versão do package: `3.1.8`
+- Versão da API: `3.1.9`
+    - Versão do package: `3.1.9`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
