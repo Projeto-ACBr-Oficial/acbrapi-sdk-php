@@ -34,6 +34,7 @@ use \ACBrAPI\ObjectSerializer;
  * EmpresaConfigNfceSefaz Class Doc Comment
  *
  * @category Class
+ * @description Configurações do CSC (Código de Segurança do Contribuinte) para emissão  da NFC-e.    Se informado &#x60;id_csc&#x60; e &#x60;csc&#x60;, será utilizada a versão 2 do QR Code da  NFC-e. Para utilizar a versão 3 do QR Code (NT 2025.001), que dispensa o  CSC, envie &#x60;id_csc&#x60; igual a 0 (zero) e &#x60;csc&#x60; como string vazia.    Observação: emitente pessoa física (CPF) utilizar sempre a versão 3 do  QR Code.
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -280,13 +281,7 @@ class EmpresaConfigNfceSefaz implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['id_csc'] === null) {
-            $invalidProperties[] = "'id_csc' can't be null";
-        }
-        if ($this->container['csc'] === null) {
-            $invalidProperties[] = "'csc' can't be null";
-        }
-        if ((mb_strlen($this->container['csc']) > 50)) {
+        if (!is_null($this->container['csc']) && (mb_strlen($this->container['csc']) > 50)) {
             $invalidProperties[] = "invalid value for 'csc', the character length must be smaller than or equal to 50.";
         }
 
@@ -308,7 +303,7 @@ class EmpresaConfigNfceSefaz implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets id_csc
      *
-     * @return int
+     * @return int|null
      */
     public function getIdCsc()
     {
@@ -318,7 +313,7 @@ class EmpresaConfigNfceSefaz implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets id_csc
      *
-     * @param int $id_csc Número de identificação do CSC.
+     * @param int|null $id_csc Número de identificação do CSC.
      *
      * @return self
      */
@@ -335,7 +330,7 @@ class EmpresaConfigNfceSefaz implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets csc
      *
-     * @return string
+     * @return string|null
      */
     public function getCsc()
     {
@@ -345,7 +340,7 @@ class EmpresaConfigNfceSefaz implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets csc
      *
-     * @param string $csc Código do CSC.
+     * @param string|null $csc Código do CSC.
      *
      * @return self
      */
