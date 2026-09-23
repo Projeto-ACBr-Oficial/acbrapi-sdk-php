@@ -1,6 +1,6 @@
 <?php
 /**
- * NfseLoteDpsPedidoEmissao
+ * NfcePedidoCancelamento
  *
  * PHP version 7.4
  *
@@ -31,7 +31,7 @@ use \ArrayAccess;
 use \ACBrAPI\ObjectSerializer;
 
 /**
- * NfseLoteDpsPedidoEmissao Class Doc Comment
+ * NfcePedidoCancelamento Class Doc Comment
  *
  * @category Class
  * @package  ACBrAPI
@@ -39,7 +39,7 @@ use \ACBrAPI\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class NfseLoteDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSerializable
+class NfcePedidoCancelamento implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class NfseLoteDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSeri
       *
       * @var string
       */
-    protected static $openAPIModelName = 'NfseLoteDpsPedidoEmissao';
+    protected static $openAPIModelName = 'NfcePedidoCancelamento';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,8 @@ class NfseLoteDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSeri
       * @var string[]
       */
     protected static $openAPITypes = [
-        'provedor' => 'string',
-        'ambiente' => 'string',
-        'referencia' => 'string',
-        'numero_lote' => 'int',
-        'documentos' => '\ACBrAPI\Model\NfseDpsPedidoEmissao[]'
+        'chave_substituta' => 'string',
+        'justificativa' => 'string'
     ];
 
     /**
@@ -71,11 +68,8 @@ class NfseLoteDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSeri
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'provedor' => null,
-        'ambiente' => null,
-        'referencia' => null,
-        'numero_lote' => 'int64',
-        'documentos' => null
+        'chave_substituta' => null,
+        'justificativa' => null
     ];
 
     /**
@@ -84,11 +78,8 @@ class NfseLoteDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'provedor' => false,
-		'ambiente' => true,
-		'referencia' => false,
-		'numero_lote' => true,
-		'documentos' => false
+        'chave_substituta' => false,
+		'justificativa' => false
     ];
 
     /**
@@ -177,11 +168,8 @@ class NfseLoteDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $attributeMap = [
-        'provedor' => 'provedor',
-        'ambiente' => 'ambiente',
-        'referencia' => 'referencia',
-        'numero_lote' => 'numeroLote',
-        'documentos' => 'documentos'
+        'chave_substituta' => 'chave_substituta',
+        'justificativa' => 'justificativa'
     ];
 
     /**
@@ -190,11 +178,8 @@ class NfseLoteDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $setters = [
-        'provedor' => 'setProvedor',
-        'ambiente' => 'setAmbiente',
-        'referencia' => 'setReferencia',
-        'numero_lote' => 'setNumeroLote',
-        'documentos' => 'setDocumentos'
+        'chave_substituta' => 'setChaveSubstituta',
+        'justificativa' => 'setJustificativa'
     ];
 
     /**
@@ -203,11 +188,8 @@ class NfseLoteDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static $getters = [
-        'provedor' => 'getProvedor',
-        'ambiente' => 'getAmbiente',
-        'referencia' => 'getReferencia',
-        'numero_lote' => 'getNumeroLote',
-        'documentos' => 'getDocumentos'
+        'chave_substituta' => 'getChaveSubstituta',
+        'justificativa' => 'getJustificativa'
     ];
 
     /**
@@ -251,36 +233,6 @@ class NfseLoteDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSeri
         return self::$openAPIModelName;
     }
 
-    public const PROVEDOR_PADRAO = 'padrao';
-    public const PROVEDOR_NACIONAL = 'nacional';
-    public const AMBIENTE_HOMOLOGACAO = 'homologacao';
-    public const AMBIENTE_PRODUCAO = 'producao';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getProvedorAllowableValues()
-    {
-        return [
-            self::PROVEDOR_PADRAO,
-            self::PROVEDOR_NACIONAL,
-        ];
-    }
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getAmbienteAllowableValues()
-    {
-        return [
-            self::AMBIENTE_HOMOLOGACAO,
-            self::AMBIENTE_PRODUCAO,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -297,11 +249,8 @@ class NfseLoteDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('provedor', $data ?? [], null);
-        $this->setIfExists('ambiente', $data ?? [], null);
-        $this->setIfExists('referencia', $data ?? [], null);
-        $this->setIfExists('numero_lote', $data ?? [], null);
-        $this->setIfExists('documentos', $data ?? [], null);
+        $this->setIfExists('chave_substituta', $data ?? [], null);
+        $this->setIfExists('justificativa', $data ?? [], null);
     }
 
     /**
@@ -331,35 +280,6 @@ class NfseLoteDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        $allowedValues = $this->getProvedorAllowableValues();
-        if (!is_null($this->container['provedor']) && !in_array($this->container['provedor'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'provedor', must be one of '%s'",
-                $this->container['provedor'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['ambiente'] === null) {
-            $invalidProperties[] = "'ambiente' can't be null";
-        }
-        $allowedValues = $this->getAmbienteAllowableValues();
-        if (!is_null($this->container['ambiente']) && !in_array($this->container['ambiente'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'ambiente', must be one of '%s'",
-                $this->container['ambiente'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if (!is_null($this->container['referencia']) && (mb_strlen($this->container['referencia']) > 50)) {
-            $invalidProperties[] = "invalid value for 'referencia', the character length must be smaller than or equal to 50.";
-        }
-
-        if (!is_null($this->container['documentos']) && (count($this->container['documentos']) > 50)) {
-            $invalidProperties[] = "invalid value for 'documentos', number of items must be less than or equal to 50.";
-        }
-
         return $invalidProperties;
     }
 
@@ -376,178 +296,55 @@ class NfseLoteDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSeri
 
 
     /**
-     * Gets provedor
+     * Gets chave_substituta
      *
      * @return string|null
      */
-    public function getProvedor()
+    public function getChaveSubstituta()
     {
-        return $this->container['provedor'];
+        return $this->container['chave_substituta'];
     }
 
     /**
-     * Sets provedor
+     * Sets chave_substituta
      *
-     * @param string|null $provedor Default: `\"padrao\"`    Identificação do provedor para transmissão da DPS:   * `\"padrao\"`: Provedor padrão da prefeitura.   * `\"nacional\"`: Ambiente de Dados Nacional (ADN) do <a href=\"https://www.gov.br/nfse/pt-br\" target=\"blank\">Sistema Nacional NFS-e</a>.
+     * @param string|null $chave_substituta Chave de acesso da NFC-e substituta.  Quando informada, o cancelamento é enviado à SEFAZ como evento de  \"Cancelamento por substituição\" (110112), no lugar do cancelamento  comum (110111). A NFC-e substituta precisa constar na API, pertencer  à mesma empresa, ter sido emitida no mesmo ambiente e estar autorizada.
      *
      * @return self
      */
-    public function setProvedor($provedor)
+    public function setChaveSubstituta($chave_substituta)
     {
-        if (is_null($provedor)) {
-            throw new \InvalidArgumentException('non-nullable provedor cannot be null');
+        if (is_null($chave_substituta)) {
+            throw new \InvalidArgumentException('non-nullable chave_substituta cannot be null');
         }
-        $allowedValues = $this->getProvedorAllowableValues();
-        if (!in_array($provedor, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'provedor', must be one of '%s'",
-                    $provedor,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['provedor'] = $provedor;
+        $this->container['chave_substituta'] = $chave_substituta;
 
         return $this;
     }
 
     /**
-     * Gets ambiente
-     *
-     * @return string
-     */
-    public function getAmbiente()
-    {
-        return $this->container['ambiente'];
-    }
-
-    /**
-     * Sets ambiente
-     *
-     * @param string $ambiente Identificação do Ambiente.
-     *
-     * @return self
-     */
-    public function setAmbiente($ambiente)
-    {
-        if (is_null($ambiente)) {
-            array_push($this->openAPINullablesSetToNull, 'ambiente');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ambiente', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $allowedValues = $this->getAmbienteAllowableValues();
-        if (!is_null($ambiente) && !in_array($ambiente, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'ambiente', must be one of '%s'",
-                    $ambiente,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['ambiente'] = $ambiente;
-
-        return $this;
-    }
-
-    /**
-     * Gets referencia
+     * Gets justificativa
      *
      * @return string|null
      */
-    public function getReferencia()
+    public function getJustificativa()
     {
-        return $this->container['referencia'];
+        return $this->container['justificativa'];
     }
 
     /**
-     * Sets referencia
+     * Sets justificativa
      *
-     * @param string|null $referencia Seu identificador único para este documento. Opcional, ajuda a evitar o envio duplicado de um mesmo documento.
+     * @param string|null $justificativa Justificativa para o cancelamento. Preencheremos automaticamente, caso esteja em branco.
      *
      * @return self
      */
-    public function setReferencia($referencia)
+    public function setJustificativa($justificativa)
     {
-        if (is_null($referencia)) {
-            throw new \InvalidArgumentException('non-nullable referencia cannot be null');
+        if (is_null($justificativa)) {
+            throw new \InvalidArgumentException('non-nullable justificativa cannot be null');
         }
-        if ((mb_strlen($referencia) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $referencia when calling NfseLoteDpsPedidoEmissao., must be smaller than or equal to 50.');
-        }
-
-        $this->container['referencia'] = $referencia;
-
-        return $this;
-    }
-
-    /**
-     * Gets numero_lote
-     *
-     * @return int|null
-     */
-    public function getNumeroLote()
-    {
-        return $this->container['numero_lote'];
-    }
-
-    /**
-     * Sets numero_lote
-     *
-     * @param int|null $numero_lote Número do lote. Use apenas quando a numeração automática estiver desativada na configuração da empresa.
-     *
-     * @return self
-     */
-    public function setNumeroLote($numero_lote)
-    {
-        if (is_null($numero_lote)) {
-            array_push($this->openAPINullablesSetToNull, 'numero_lote');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('numero_lote', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['numero_lote'] = $numero_lote;
-
-        return $this;
-    }
-
-    /**
-     * Gets documentos
-     *
-     * @return \ACBrAPI\Model\NfseDpsPedidoEmissao[]|null
-     */
-    public function getDocumentos()
-    {
-        return $this->container['documentos'];
-    }
-
-    /**
-     * Sets documentos
-     *
-     * @param \ACBrAPI\Model\NfseDpsPedidoEmissao[]|null $documentos Lista com as informações das DPS relativas aos serviços prestados.
-     *
-     * @return self
-     */
-    public function setDocumentos($documentos)
-    {
-        if (is_null($documentos)) {
-            throw new \InvalidArgumentException('non-nullable documentos cannot be null');
-        }
-
-        if ((count($documentos) > 50)) {
-            throw new \InvalidArgumentException('invalid value for $documentos when calling NfseLoteDpsPedidoEmissao., number of items must be less than or equal to 50.');
-        }
-        $this->container['documentos'] = $documentos;
+        $this->container['justificativa'] = $justificativa;
 
         return $this;
     }

@@ -4216,7 +4216,7 @@ class NfceApi
      * Cancelar uma NFC-e autorizada
      *
      * @param  string $id ID único da NFC-e gerado pela API. (required)
-     * @param  \ACBrAPI\Model\NfePedidoCancelamento $body body (optional)
+     * @param  \ACBrAPI\Model\NfcePedidoCancelamento $body body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfce'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response
@@ -4235,7 +4235,7 @@ class NfceApi
      * Cancelar uma NFC-e autorizada
      *
      * @param  string $id ID único da NFC-e gerado pela API. (required)
-     * @param  \ACBrAPI\Model\NfePedidoCancelamento $body (optional)
+     * @param  \ACBrAPI\Model\NfcePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfce'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response
@@ -4336,7 +4336,7 @@ class NfceApi
      * Cancelar uma NFC-e autorizada
      *
      * @param  string $id ID único da NFC-e gerado pela API. (required)
-     * @param  \ACBrAPI\Model\NfePedidoCancelamento $body (optional)
+     * @param  \ACBrAPI\Model\NfcePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4358,7 +4358,7 @@ class NfceApi
      * Cancelar uma NFC-e autorizada
      *
      * @param  string $id ID único da NFC-e gerado pela API. (required)
-     * @param  \ACBrAPI\Model\NfePedidoCancelamento $body (optional)
+     * @param  \ACBrAPI\Model\NfcePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -4409,7 +4409,7 @@ class NfceApi
      * Create request for operation 'cancelarNfce'
      *
      * @param  string $id ID único da NFC-e gerado pela API. (required)
-     * @param  \ACBrAPI\Model\NfePedidoCancelamento $body (optional)
+     * @param  \ACBrAPI\Model\NfcePedidoCancelamento $body (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelarNfce'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

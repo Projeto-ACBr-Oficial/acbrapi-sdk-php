@@ -106,6 +106,9 @@ class NfseApi
         'emitirNfseDps' => [
             'application/json',
         ],
+        'enviarEmailNfse' => [
+            'application/json',
+        ],
         'listarLotesNfse' => [
             'application/json',
         ],
@@ -3565,6 +3568,339 @@ class NfseApi
 
 
 
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation enviarEmailNfse
+     *
+     * Enviar e-mail
+     *
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)
+     * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body body (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfse'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \ACBrAPI\Model\EmailStatusResponse
+     */
+    public function enviarEmailNfse($id, $logotipo = false, $mensagem_rodape = null, $body = null, string $contentType = self::contentTypes['enviarEmailNfse'][0])
+    {
+        list($response) = $this->enviarEmailNfseWithHttpInfo($id, $logotipo, $mensagem_rodape, $body, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation enviarEmailNfseWithHttpInfo
+     *
+     * Enviar e-mail
+     *
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)
+     * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfse'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \ACBrAPI\Model\EmailStatusResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function enviarEmailNfseWithHttpInfo($id, $logotipo = false, $mensagem_rodape = null, $body = null, string $contentType = self::contentTypes['enviarEmailNfse'][0])
+    {
+        $request = $this->enviarEmailNfseRequest($id, $logotipo, $mensagem_rodape, $body, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\ACBrAPI\Model\EmailStatusResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ACBrAPI\Model\EmailStatusResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ACBrAPI\Model\EmailStatusResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\ACBrAPI\Model\EmailStatusResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ACBrAPI\Model\EmailStatusResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation enviarEmailNfseAsync
+     *
+     * Enviar e-mail
+     *
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)
+     * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfse'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function enviarEmailNfseAsync($id, $logotipo = false, $mensagem_rodape = null, $body = null, string $contentType = self::contentTypes['enviarEmailNfse'][0])
+    {
+        return $this->enviarEmailNfseAsyncWithHttpInfo($id, $logotipo, $mensagem_rodape, $body, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation enviarEmailNfseAsyncWithHttpInfo
+     *
+     * Enviar e-mail
+     *
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)
+     * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfse'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function enviarEmailNfseAsyncWithHttpInfo($id, $logotipo = false, $mensagem_rodape = null, $body = null, string $contentType = self::contentTypes['enviarEmailNfse'][0])
+    {
+        $returnType = '\ACBrAPI\Model\EmailStatusResponse';
+        $request = $this->enviarEmailNfseRequest($id, $logotipo, $mensagem_rodape, $body, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'enviarEmailNfse'
+     *
+     * @param  string $id ID único da NFS-e gerado pela API. (required)
+     * @param  bool $logotipo Imprime o documento com logotipo, desde que esteja cadastrado na empresa. (optional, default to false)
+     * @param  string $mensagem_rodape Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; (optional)
+     * @param  \ACBrAPI\Model\DfePedidoEnvioEmail $body (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['enviarEmailNfse'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function enviarEmailNfseRequest($id, $logotipo = false, $mensagem_rodape = null, $body = null, string $contentType = self::contentTypes['enviarEmailNfse'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling enviarEmailNfse'
+            );
+        }
+
+
+        if ($mensagem_rodape !== null && strlen($mensagem_rodape) > 120) {
+            throw new \InvalidArgumentException('invalid length for "$mensagem_rodape" when calling NfseApi.enviarEmailNfse, must be smaller than or equal to 120.');
+        }
+        
+
+
+        $resourcePath = '/nfse/{id}/email';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $logotipo,
+            'logotipo', // param base name
+            'boolean', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $mensagem_rodape,
+            'mensagem_rodape', // param base name
+            'string', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(

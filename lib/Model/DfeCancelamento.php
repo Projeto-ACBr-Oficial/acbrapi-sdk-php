@@ -57,6 +57,7 @@ class DfeCancelamento implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'justificativa' => 'string',
+        'chave_substituta' => 'string',
         'id' => 'string',
         'ambiente' => 'string',
         'status' => 'string',
@@ -82,6 +83,7 @@ class DfeCancelamento implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'justificativa' => null,
+        'chave_substituta' => null,
         'id' => null,
         'ambiente' => null,
         'status' => null,
@@ -105,6 +107,7 @@ class DfeCancelamento implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'justificativa' => false,
+		'chave_substituta' => false,
 		'id' => false,
 		'ambiente' => false,
 		'status' => false,
@@ -208,6 +211,7 @@ class DfeCancelamento implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'justificativa' => 'justificativa',
+        'chave_substituta' => 'chave_substituta',
         'id' => 'id',
         'ambiente' => 'ambiente',
         'status' => 'status',
@@ -231,6 +235,7 @@ class DfeCancelamento implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'justificativa' => 'setJustificativa',
+        'chave_substituta' => 'setChaveSubstituta',
         'id' => 'setId',
         'ambiente' => 'setAmbiente',
         'status' => 'setStatus',
@@ -254,6 +259,7 @@ class DfeCancelamento implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'justificativa' => 'getJustificativa',
+        'chave_substituta' => 'getChaveSubstituta',
         'id' => 'getId',
         'ambiente' => 'getAmbiente',
         'status' => 'getStatus',
@@ -362,6 +368,7 @@ class DfeCancelamento implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('justificativa', $data ?? [], null);
+        $this->setIfExists('chave_substituta', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('ambiente', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
@@ -461,6 +468,33 @@ class DfeCancelamento implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable justificativa cannot be null');
         }
         $this->container['justificativa'] = $justificativa;
+
+        return $this;
+    }
+
+    /**
+     * Gets chave_substituta
+     *
+     * @return string|null
+     */
+    public function getChaveSubstituta()
+    {
+        return $this->container['chave_substituta'];
+    }
+
+    /**
+     * Sets chave_substituta
+     *
+     * @param string|null $chave_substituta Chave de acesso da NFC-e substituta. Preenchida apenas no cancelamento  por substituição (evento 110112).
+     *
+     * @return self
+     */
+    public function setChaveSubstituta($chave_substituta)
+    {
+        if (is_null($chave_substituta)) {
+            throw new \InvalidArgumentException('non-nullable chave_substituta cannot be null');
+        }
+        $this->container['chave_substituta'] = $chave_substituta;
 
         return $this;
     }

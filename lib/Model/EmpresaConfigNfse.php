@@ -59,6 +59,7 @@ class EmpresaConfigNfse implements ModelInterface, ArrayAccess, \JsonSerializabl
         'reg_trib' => '\ACBrAPI\Model\EmpresaConfigNfseRegTrib',
         'rps' => '\ACBrAPI\Model\EmpresaConfigRps',
         'prefeitura' => '\ACBrAPI\Model\EmpresaConfigPrefeitura',
+        'numeracao_automatica' => 'bool',
         'incentivo_fiscal' => 'bool',
         'ambiente' => 'string'
     ];
@@ -74,6 +75,7 @@ class EmpresaConfigNfse implements ModelInterface, ArrayAccess, \JsonSerializabl
         'reg_trib' => null,
         'rps' => null,
         'prefeitura' => null,
+        'numeracao_automatica' => null,
         'incentivo_fiscal' => null,
         'ambiente' => null
     ];
@@ -87,6 +89,7 @@ class EmpresaConfigNfse implements ModelInterface, ArrayAccess, \JsonSerializabl
         'reg_trib' => false,
 		'rps' => false,
 		'prefeitura' => false,
+		'numeracao_automatica' => false,
 		'incentivo_fiscal' => false,
 		'ambiente' => false
     ];
@@ -180,6 +183,7 @@ class EmpresaConfigNfse implements ModelInterface, ArrayAccess, \JsonSerializabl
         'reg_trib' => 'regTrib',
         'rps' => 'rps',
         'prefeitura' => 'prefeitura',
+        'numeracao_automatica' => 'numeracao_automatica',
         'incentivo_fiscal' => 'incentivo_fiscal',
         'ambiente' => 'ambiente'
     ];
@@ -193,6 +197,7 @@ class EmpresaConfigNfse implements ModelInterface, ArrayAccess, \JsonSerializabl
         'reg_trib' => 'setRegTrib',
         'rps' => 'setRps',
         'prefeitura' => 'setPrefeitura',
+        'numeracao_automatica' => 'setNumeracaoAutomatica',
         'incentivo_fiscal' => 'setIncentivoFiscal',
         'ambiente' => 'setAmbiente'
     ];
@@ -206,6 +211,7 @@ class EmpresaConfigNfse implements ModelInterface, ArrayAccess, \JsonSerializabl
         'reg_trib' => 'getRegTrib',
         'rps' => 'getRps',
         'prefeitura' => 'getPrefeitura',
+        'numeracao_automatica' => 'getNumeracaoAutomatica',
         'incentivo_fiscal' => 'getIncentivoFiscal',
         'ambiente' => 'getAmbiente'
     ];
@@ -285,6 +291,7 @@ class EmpresaConfigNfse implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('reg_trib', $data ?? [], null);
         $this->setIfExists('rps', $data ?? [], null);
         $this->setIfExists('prefeitura', $data ?? [], null);
+        $this->setIfExists('numeracao_automatica', $data ?? [], true);
         $this->setIfExists('incentivo_fiscal', $data ?? [], false);
         $this->setIfExists('ambiente', $data ?? [], null);
     }
@@ -316,9 +323,6 @@ class EmpresaConfigNfse implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['rps'] === null) {
-            $invalidProperties[] = "'rps' can't be null";
-        }
         if ($this->container['ambiente'] === null) {
             $invalidProperties[] = "'ambiente' can't be null";
         }
@@ -376,7 +380,7 @@ class EmpresaConfigNfse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets rps
      *
-     * @return \ACBrAPI\Model\EmpresaConfigRps
+     * @return \ACBrAPI\Model\EmpresaConfigRps|null
      */
     public function getRps()
     {
@@ -386,7 +390,7 @@ class EmpresaConfigNfse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets rps
      *
-     * @param \ACBrAPI\Model\EmpresaConfigRps $rps rps
+     * @param \ACBrAPI\Model\EmpresaConfigRps|null $rps rps
      *
      * @return self
      */
@@ -423,6 +427,33 @@ class EmpresaConfigNfse implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable prefeitura cannot be null');
         }
         $this->container['prefeitura'] = $prefeitura;
+
+        return $this;
+    }
+
+    /**
+     * Gets numeracao_automatica
+     *
+     * @return bool|null
+     */
+    public function getNumeracaoAutomatica()
+    {
+        return $this->container['numeracao_automatica'];
+    }
+
+    /**
+     * Sets numeracao_automatica
+     *
+     * @param bool|null $numeracao_automatica Indicador para que a API controle a numeração da NFSe.
+     *
+     * @return self
+     */
+    public function setNumeracaoAutomatica($numeracao_automatica)
+    {
+        if (is_null($numeracao_automatica)) {
+            throw new \InvalidArgumentException('non-nullable numeracao_automatica cannot be null');
+        }
+        $this->container['numeracao_automatica'] = $numeracao_automatica;
 
         return $this;
     }

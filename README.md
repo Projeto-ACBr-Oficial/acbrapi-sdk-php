@@ -330,6 +330,7 @@ Classe | Método | Endpoint | Descrição
 *NfseApi* | [**consultarNfse**](docs/Api/NfseApi.md#consultarnfse) | **GET** /nfse/{id} | Consultar NFS-e
 *NfseApi* | [**emitirLoteNfseDps**](docs/Api/NfseApi.md#emitirlotenfsedps) | **POST** /nfse/dps/lotes | Emitir lote de NFS-e
 *NfseApi* | [**emitirNfseDps**](docs/Api/NfseApi.md#emitirnfsedps) | **POST** /nfse/dps | Emitir NFS-e
+*NfseApi* | [**enviarEmailNfse**](docs/Api/NfseApi.md#enviaremailnfse) | **POST** /nfse/{id}/email | Enviar e-mail
 *NfseApi* | [**listarLotesNfse**](docs/Api/NfseApi.md#listarlotesnfse) | **GET** /nfse/lotes | Listar lotes de NFS-e
 *NfseApi* | [**listarNfse**](docs/Api/NfseApi.md#listarnfse) | **GET** /nfse | Listar NFS-e
 *NfseApi* | [**sincronizarNfse**](docs/Api/NfseApi.md#sincronizarnfse) | **POST** /nfse/{id}/sincronizar | Sincroniza dados na NFS-e a partir da Prefeitura
@@ -802,6 +803,7 @@ Classe | Método | Endpoint | Descrição
 - [MdfeSefazVeicReboque](docs/Model/MdfeSefazVeicReboque.md)
 - [MdfeSefazVeicReboqueProp](docs/Model/MdfeSefazVeicReboqueProp.md)
 - [MdfeSefazVeicTracao](docs/Model/MdfeSefazVeicTracao.md)
+- [NfcePedidoCancelamento](docs/Model/NfcePedidoCancelamento.md)
 - [NfcomPedidoCancelamento](docs/Model/NfcomPedidoCancelamento.md)
 - [NfcomPedidoEmissao](docs/Model/NfcomPedidoEmissao.md)
 - [NfcomSefazALCZFMCBS](docs/Model/NfcomSefazALCZFMCBS.md)
@@ -1083,6 +1085,6 @@ Classe | Método | Endpoint | Descrição
 
 ## Sobre este package
 
-- Versão da API: `3.1.10`
-    - Versão do package: `3.1.10`
+- Versão da API: `3.1.11`
+    - Versão do package: `3.1.11`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

@@ -59,6 +59,7 @@ class NfseDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSerializ
         'provedor' => 'string',
         'ambiente' => 'string',
         'referencia' => 'string',
+        'numero_lote' => 'int',
         'inf_dps' => '\ACBrAPI\Model\InfDPS'
     ];
 
@@ -73,6 +74,7 @@ class NfseDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSerializ
         'provedor' => null,
         'ambiente' => null,
         'referencia' => null,
+        'numero_lote' => 'int64',
         'inf_dps' => null
     ];
 
@@ -85,6 +87,7 @@ class NfseDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSerializ
         'provedor' => false,
 		'ambiente' => false,
 		'referencia' => true,
+		'numero_lote' => true,
 		'inf_dps' => false
     ];
 
@@ -177,6 +180,7 @@ class NfseDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSerializ
         'provedor' => 'provedor',
         'ambiente' => 'ambiente',
         'referencia' => 'referencia',
+        'numero_lote' => 'numeroLote',
         'inf_dps' => 'infDPS'
     ];
 
@@ -189,6 +193,7 @@ class NfseDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSerializ
         'provedor' => 'setProvedor',
         'ambiente' => 'setAmbiente',
         'referencia' => 'setReferencia',
+        'numero_lote' => 'setNumeroLote',
         'inf_dps' => 'setInfDps'
     ];
 
@@ -201,6 +206,7 @@ class NfseDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSerializ
         'provedor' => 'getProvedor',
         'ambiente' => 'getAmbiente',
         'referencia' => 'getReferencia',
+        'numero_lote' => 'getNumeroLote',
         'inf_dps' => 'getInfDps'
     ];
 
@@ -294,6 +300,7 @@ class NfseDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->setIfExists('provedor', $data ?? [], null);
         $this->setIfExists('ambiente', $data ?? [], null);
         $this->setIfExists('referencia', $data ?? [], null);
+        $this->setIfExists('numero_lote', $data ?? [], null);
         $this->setIfExists('inf_dps', $data ?? [], null);
     }
 
@@ -475,6 +482,40 @@ class NfseDpsPedidoEmissao implements ModelInterface, ArrayAccess, \JsonSerializ
         }
 
         $this->container['referencia'] = $referencia;
+
+        return $this;
+    }
+
+    /**
+     * Gets numero_lote
+     *
+     * @return int|null
+     */
+    public function getNumeroLote()
+    {
+        return $this->container['numero_lote'];
+    }
+
+    /**
+     * Sets numero_lote
+     *
+     * @param int|null $numero_lote Numero do lote. Use apenas quando a numeracao automatica estiver desativada na configuracao da empresa.
+     *
+     * @return self
+     */
+    public function setNumeroLote($numero_lote)
+    {
+        if (is_null($numero_lote)) {
+            array_push($this->openAPINullablesSetToNull, 'numero_lote');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('numero_lote', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['numero_lote'] = $numero_lote;
 
         return $this;
     }

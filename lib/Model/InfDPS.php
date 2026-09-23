@@ -60,6 +60,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'tp_amb' => 'int',
         'dh_emi' => '\DateTime',
         'ver_aplic' => 'string',
+        'serie' => 'string',
+        'n_dps' => 'string',
         'd_compet' => '\DateTime',
         'c_motivo_emis_ti' => 'int',
         'ch_nfse_rej' => 'string',
@@ -83,6 +85,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'tp_amb' => null,
         'dh_emi' => 'date-time',
         'ver_aplic' => null,
+        'serie' => null,
+        'n_dps' => null,
         'd_compet' => 'date',
         'c_motivo_emis_ti' => null,
         'ch_nfse_rej' => null,
@@ -104,6 +108,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'tp_amb' => true,
 		'dh_emi' => true,
 		'ver_aplic' => true,
+		'serie' => true,
+		'n_dps' => true,
 		'd_compet' => true,
 		'c_motivo_emis_ti' => true,
 		'ch_nfse_rej' => true,
@@ -205,6 +211,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'tp_amb' => 'tpAmb',
         'dh_emi' => 'dhEmi',
         'ver_aplic' => 'verAplic',
+        'serie' => 'serie',
+        'n_dps' => 'nDPS',
         'd_compet' => 'dCompet',
         'c_motivo_emis_ti' => 'cMotivoEmisTI',
         'ch_nfse_rej' => 'chNFSeRej',
@@ -226,6 +234,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'tp_amb' => 'setTpAmb',
         'dh_emi' => 'setDhEmi',
         'ver_aplic' => 'setVerAplic',
+        'serie' => 'setSerie',
+        'n_dps' => 'setNDps',
         'd_compet' => 'setDCompet',
         'c_motivo_emis_ti' => 'setCMotivoEmisTi',
         'ch_nfse_rej' => 'setChNfseRej',
@@ -247,6 +257,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'tp_amb' => 'getTpAmb',
         'dh_emi' => 'getDhEmi',
         'ver_aplic' => 'getVerAplic',
+        'serie' => 'getSerie',
+        'n_dps' => 'getNDps',
         'd_compet' => 'getDCompet',
         'c_motivo_emis_ti' => 'getCMotivoEmisTi',
         'ch_nfse_rej' => 'getChNfseRej',
@@ -319,6 +331,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('tp_amb', $data ?? [], null);
         $this->setIfExists('dh_emi', $data ?? [], null);
         $this->setIfExists('ver_aplic', $data ?? [], null);
+        $this->setIfExists('serie', $data ?? [], null);
+        $this->setIfExists('n_dps', $data ?? [], null);
         $this->setIfExists('d_compet', $data ?? [], null);
         $this->setIfExists('c_motivo_emis_ti', $data ?? [], null);
         $this->setIfExists('ch_nfse_rej', $data ?? [], null);
@@ -367,6 +381,14 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if (!is_null($this->container['ver_aplic']) && (mb_strlen($this->container['ver_aplic']) < 1)) {
             $invalidProperties[] = "invalid value for 'ver_aplic', the character length must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['serie']) && (mb_strlen($this->container['serie']) > 5)) {
+            $invalidProperties[] = "invalid value for 'serie', the character length must be smaller than or equal to 5.";
+        }
+
+        if (!is_null($this->container['n_dps']) && (mb_strlen($this->container['n_dps']) > 15)) {
+            $invalidProperties[] = "invalid value for 'n_dps', the character length must be smaller than or equal to 15.";
         }
 
         if (!is_null($this->container['ch_nfse_rej']) && (mb_strlen($this->container['ch_nfse_rej']) > 50)) {
@@ -502,6 +524,82 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['ver_aplic'] = $ver_aplic;
+
+        return $this;
+    }
+
+    /**
+     * Gets serie
+     *
+     * @return string|null
+     */
+    public function getSerie()
+    {
+        return $this->container['serie'];
+    }
+
+    /**
+     * Sets serie
+     *
+     * @param string|null $serie Número do equipamento emissor do DPS ou série do DPS.    Informar apenas quando a numeracao automatica estiver desabilitada na configuracao da empresa.
+     *
+     * @return self
+     */
+    public function setSerie($serie)
+    {
+        if (is_null($serie)) {
+            array_push($this->openAPINullablesSetToNull, 'serie');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('serie', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($serie) && (mb_strlen($serie) > 5)) {
+            throw new \InvalidArgumentException('invalid length for $serie when calling InfDPS., must be smaller than or equal to 5.');
+        }
+
+        $this->container['serie'] = $serie;
+
+        return $this;
+    }
+
+    /**
+     * Gets n_dps
+     *
+     * @return string|null
+     */
+    public function getNDps()
+    {
+        return $this->container['n_dps'];
+    }
+
+    /**
+     * Sets n_dps
+     *
+     * @param string|null $n_dps Número do DPS.    Informar apenas quando a numeracao automatica estiver desabilitada na configuracao da empresa.
+     *
+     * @return self
+     */
+    public function setNDps($n_dps)
+    {
+        if (is_null($n_dps)) {
+            array_push($this->openAPINullablesSetToNull, 'n_dps');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('n_dps', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($n_dps) && (mb_strlen($n_dps) > 15)) {
+            throw new \InvalidArgumentException('invalid length for $n_dps when calling InfDPS., must be smaller than or equal to 15.');
+        }
+
+        $this->container['n_dps'] = $n_dps;
 
         return $this;
     }

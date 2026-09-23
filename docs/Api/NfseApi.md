@@ -16,6 +16,7 @@ Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação defin
 | [**consultarNfse()**](NfseApi.md#consultarNfse) | **GET** /nfse/{id} | Consultar NFS-e |
 | [**emitirLoteNfseDps()**](NfseApi.md#emitirLoteNfseDps) | **POST** /nfse/dps/lotes | Emitir lote de NFS-e |
 | [**emitirNfseDps()**](NfseApi.md#emitirNfseDps) | **POST** /nfse/dps | Emitir NFS-e |
+| [**enviarEmailNfse()**](NfseApi.md#enviarEmailNfse) | **POST** /nfse/{id}/email | Enviar e-mail |
 | [**listarLotesNfse()**](NfseApi.md#listarLotesNfse) | **GET** /nfse/lotes | Listar lotes de NFS-e |
 | [**listarNfse()**](NfseApi.md#listarNfse) | **GET** /nfse | Listar NFS-e |
 | [**sincronizarNfse()**](NfseApi.md#sincronizarNfse) | **POST** /nfse/{id}/sincronizar | Sincroniza dados na NFS-e a partir da Prefeitura |
@@ -726,6 +727,72 @@ try {
 ### Tipo do retorno
 
 [**\ACBrAPI\Model\Nfse**](../Model/Nfse.md)
+
+### Autorização
+
+[oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
+## `enviarEmailNfse()`
+
+```php
+enviarEmailNfse($id, $logotipo, $mensagem_rodape, $body): \ACBrAPI\Model\EmailStatusResponse
+```
+
+Enviar e-mail
+
+Envia o XML e PDF da nota via email.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\NfseApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | ID único da NFS-e gerado pela API.
+$logotipo = false; // bool | Imprime o documento com logotipo, desde que esteja cadastrado na empresa.
+$mensagem_rodape = 'mensagem_rodape_example'; // string | Imprime mensagem no rodapé do documento.    O caractere `|` (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * `\"esquerda\"`  * `\"esquerda|centro\"`  * `\"esquerda|centro|direita\"`  * `\"|centro\"`, `\"|centro|\"`  * `\"|centro|direita\"`  * `\"||direita\"`  * `\"esquerda||direita\"`    Default: `\"\"`
+$body = new \ACBrAPI\Model\DfePedidoEnvioEmail(); // \ACBrAPI\Model\DfePedidoEnvioEmail
+
+try {
+    $result = $apiInstance->enviarEmailNfse($id, $logotipo, $mensagem_rodape, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NfseApi->enviarEmailNfse: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| ID único da NFS-e gerado pela API. | |
+| **logotipo** | **bool**| Imprime o documento com logotipo, desde que esteja cadastrado na empresa. | [optional] [default to false] |
+| **mensagem_rodape** | **string**| Imprime mensagem no rodapé do documento.    O caractere &#x60;|&#x60; (pipe) poderá ser utilizado para definir a quantidade e o alinhamento das mensagens.    **Exemplos de Uso:**  * &#x60;\&quot;esquerda\&quot;&#x60;  * &#x60;\&quot;esquerda|centro\&quot;&#x60;  * &#x60;\&quot;esquerda|centro|direita\&quot;&#x60;  * &#x60;\&quot;|centro\&quot;&#x60;, &#x60;\&quot;|centro|\&quot;&#x60;  * &#x60;\&quot;|centro|direita\&quot;&#x60;  * &#x60;\&quot;||direita\&quot;&#x60;  * &#x60;\&quot;esquerda||direita\&quot;&#x60;    Default: &#x60;\&quot;\&quot;&#x60; | [optional] |
+| **body** | [**\ACBrAPI\Model\DfePedidoEnvioEmail**](../Model/DfePedidoEnvioEmail.md)|  | [optional] |
+
+### Tipo do retorno
+
+[**\ACBrAPI\Model\EmailStatusResponse**](../Model/EmailStatusResponse.md)
 
 ### Autorização
 

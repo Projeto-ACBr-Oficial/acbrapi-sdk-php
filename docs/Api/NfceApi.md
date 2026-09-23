@@ -868,7 +868,7 @@ $apiInstance = new ACBrAPI\Api\NfceApi(
     $config
 );
 $id = 'id_example'; // string | ID único da NFC-e gerado pela API.
-$body = new \ACBrAPI\Model\NfePedidoCancelamento(); // \ACBrAPI\Model\NfePedidoCancelamento
+$body = new \ACBrAPI\Model\NfcePedidoCancelamento(); // \ACBrAPI\Model\NfcePedidoCancelamento
 
 try {
     $result = $apiInstance->cancelarNfce($id, $body);
@@ -883,7 +883,7 @@ try {
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| ID único da NFC-e gerado pela API. | |
-| **body** | [**\ACBrAPI\Model\NfePedidoCancelamento**](../Model/NfePedidoCancelamento.md)|  | [optional] |
+| **body** | [**\ACBrAPI\Model\NfcePedidoCancelamento**](../Model/NfcePedidoCancelamento.md)|  | [optional] |
 
 ### Tipo do retorno
 
