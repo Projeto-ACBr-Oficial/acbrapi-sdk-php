@@ -1,6 +1,6 @@
 <?php
 /**
- * RTCInfoValoresIBSCBS
+ * RTCInfoTributosAbrasf
  *
  * PHP version 7.4
  *
@@ -31,16 +31,16 @@ use \ArrayAccess;
 use \ACBrAPI\ObjectSerializer;
 
 /**
- * RTCInfoValoresIBSCBS Class Doc Comment
+ * RTCInfoTributosAbrasf Class Doc Comment
  *
  * @category Class
- * @description Grupo de informações relativas aos valores do serviço prestado para IBS e CBS.
+ * @description Grupo de informações dos valores do IBS e da CBS utilizado pelos provedores municipais.    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado.
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
+class RTCInfoTributosAbrasf implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'RTCInfoValoresIBSCBS';
+    protected static $openAPIModelName = 'RTCInfoTributosAbrasf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'g_ree_rep_res' => '\ACBrAPI\Model\RTCInfoReeRepRes',
-        'trib' => '\ACBrAPI\Model\RTCInfoTributosIBSCBS',
-        'trib_abrasf' => '\ACBrAPI\Model\RTCInfoTributosAbrasf'
+        'v_bc' => 'float',
+        'fed' => '\ACBrAPI\Model\RTCInfoTributosAbrasfFed',
+        'uf' => '\ACBrAPI\Model\RTCInfoTributosAbrasfUF',
+        'mun' => '\ACBrAPI\Model\RTCInfoTributosAbrasfMun'
     ];
 
     /**
@@ -70,9 +71,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'g_ree_rep_res' => null,
-        'trib' => null,
-        'trib_abrasf' => null
+        'v_bc' => null,
+        'fed' => null,
+        'uf' => null,
+        'mun' => null
     ];
 
     /**
@@ -81,9 +83,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'g_ree_rep_res' => false,
-		'trib' => false,
-		'trib_abrasf' => false
+        'v_bc' => true,
+		'fed' => false,
+		'uf' => false,
+		'mun' => false
     ];
 
     /**
@@ -172,9 +175,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'g_ree_rep_res' => 'gReeRepRes',
-        'trib' => 'trib',
-        'trib_abrasf' => 'tribAbrasf'
+        'v_bc' => 'vBC',
+        'fed' => 'fed',
+        'uf' => 'uf',
+        'mun' => 'mun'
     ];
 
     /**
@@ -183,9 +187,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'g_ree_rep_res' => 'setGReeRepRes',
-        'trib' => 'setTrib',
-        'trib_abrasf' => 'setTribAbrasf'
+        'v_bc' => 'setVBc',
+        'fed' => 'setFed',
+        'uf' => 'setUf',
+        'mun' => 'setMun'
     ];
 
     /**
@@ -194,9 +199,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'g_ree_rep_res' => 'getGReeRepRes',
-        'trib' => 'getTrib',
-        'trib_abrasf' => 'getTribAbrasf'
+        'v_bc' => 'getVBc',
+        'fed' => 'getFed',
+        'uf' => 'getUf',
+        'mun' => 'getMun'
     ];
 
     /**
@@ -256,9 +262,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('g_ree_rep_res', $data ?? [], null);
-        $this->setIfExists('trib', $data ?? [], null);
-        $this->setIfExists('trib_abrasf', $data ?? [], null);
+        $this->setIfExists('v_bc', $data ?? [], null);
+        $this->setIfExists('fed', $data ?? [], null);
+        $this->setIfExists('uf', $data ?? [], null);
+        $this->setIfExists('mun', $data ?? [], null);
     }
 
     /**
@@ -288,9 +295,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['trib'] === null) {
-            $invalidProperties[] = "'trib' can't be null";
+        if (!is_null($this->container['v_bc']) && ($this->container['v_bc'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_bc', must be bigger than or equal to 0.";
         }
+
         return $invalidProperties;
     }
 
@@ -307,82 +315,121 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets g_ree_rep_res
+     * Gets v_bc
      *
-     * @return \ACBrAPI\Model\RTCInfoReeRepRes|null
+     * @return float|null
      */
-    public function getGReeRepRes()
+    public function getVBc()
     {
-        return $this->container['g_ree_rep_res'];
+        return $this->container['v_bc'];
     }
 
     /**
-     * Sets g_ree_rep_res
+     * Sets v_bc
      *
-     * @param \ACBrAPI\Model\RTCInfoReeRepRes|null $g_ree_rep_res g_ree_rep_res
+     * @param float|null $v_bc Valor da base de cálculo (BC) do IBS/CBS (R$).
      *
      * @return self
      */
-    public function setGReeRepRes($g_ree_rep_res)
+    public function setVBc($v_bc)
     {
-        if (is_null($g_ree_rep_res)) {
-            throw new \InvalidArgumentException('non-nullable g_ree_rep_res cannot be null');
+        if (is_null($v_bc)) {
+            array_push($this->openAPINullablesSetToNull, 'v_bc');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_bc', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['g_ree_rep_res'] = $g_ree_rep_res;
+
+        if (!is_null($v_bc) && ($v_bc < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_bc when calling RTCInfoTributosAbrasf., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_bc'] = $v_bc;
 
         return $this;
     }
 
     /**
-     * Gets trib
+     * Gets fed
      *
-     * @return \ACBrAPI\Model\RTCInfoTributosIBSCBS
+     * @return \ACBrAPI\Model\RTCInfoTributosAbrasfFed|null
      */
-    public function getTrib()
+    public function getFed()
     {
-        return $this->container['trib'];
+        return $this->container['fed'];
     }
 
     /**
-     * Sets trib
+     * Sets fed
      *
-     * @param \ACBrAPI\Model\RTCInfoTributosIBSCBS $trib trib
+     * @param \ACBrAPI\Model\RTCInfoTributosAbrasfFed|null $fed fed
      *
      * @return self
      */
-    public function setTrib($trib)
+    public function setFed($fed)
     {
-        if (is_null($trib)) {
-            throw new \InvalidArgumentException('non-nullable trib cannot be null');
+        if (is_null($fed)) {
+            throw new \InvalidArgumentException('non-nullable fed cannot be null');
         }
-        $this->container['trib'] = $trib;
+        $this->container['fed'] = $fed;
 
         return $this;
     }
 
     /**
-     * Gets trib_abrasf
+     * Gets uf
      *
-     * @return \ACBrAPI\Model\RTCInfoTributosAbrasf|null
+     * @return \ACBrAPI\Model\RTCInfoTributosAbrasfUF|null
      */
-    public function getTribAbrasf()
+    public function getUf()
     {
-        return $this->container['trib_abrasf'];
+        return $this->container['uf'];
     }
 
     /**
-     * Sets trib_abrasf
+     * Sets uf
      *
-     * @param \ACBrAPI\Model\RTCInfoTributosAbrasf|null $trib_abrasf trib_abrasf
+     * @param \ACBrAPI\Model\RTCInfoTributosAbrasfUF|null $uf uf
      *
      * @return self
      */
-    public function setTribAbrasf($trib_abrasf)
+    public function setUf($uf)
     {
-        if (is_null($trib_abrasf)) {
-            throw new \InvalidArgumentException('non-nullable trib_abrasf cannot be null');
+        if (is_null($uf)) {
+            throw new \InvalidArgumentException('non-nullable uf cannot be null');
         }
-        $this->container['trib_abrasf'] = $trib_abrasf;
+        $this->container['uf'] = $uf;
+
+        return $this;
+    }
+
+    /**
+     * Gets mun
+     *
+     * @return \ACBrAPI\Model\RTCInfoTributosAbrasfMun|null
+     */
+    public function getMun()
+    {
+        return $this->container['mun'];
+    }
+
+    /**
+     * Sets mun
+     *
+     * @param \ACBrAPI\Model\RTCInfoTributosAbrasfMun|null $mun mun
+     *
+     * @return self
+     */
+    public function setMun($mun)
+    {
+        if (is_null($mun)) {
+            throw new \InvalidArgumentException('non-nullable mun cannot be null');
+        }
+        $this->container['mun'] = $mun;
 
         return $this;
     }

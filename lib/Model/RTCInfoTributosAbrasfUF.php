@@ -1,6 +1,6 @@
 <?php
 /**
- * RTCInfoValoresIBSCBS
+ * RTCInfoTributosAbrasfUF
  *
  * PHP version 7.4
  *
@@ -31,16 +31,16 @@ use \ArrayAccess;
 use \ACBrAPI\ObjectSerializer;
 
 /**
- * RTCInfoValoresIBSCBS Class Doc Comment
+ * RTCInfoTributosAbrasfUF Class Doc Comment
  *
  * @category Class
- * @description Grupo de informações relativas aos valores do serviço prestado para IBS e CBS.
+ * @description Grupo de informações relativas aos valores do IBS estadual.
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
+class RTCInfoTributosAbrasfUF implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'RTCInfoValoresIBSCBS';
+    protected static $openAPIModelName = 'RTCInfoTributosAbrasfUF';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'g_ree_rep_res' => '\ACBrAPI\Model\RTCInfoReeRepRes',
-        'trib' => '\ACBrAPI\Model\RTCInfoTributosIBSCBS',
-        'trib_abrasf' => '\ACBrAPI\Model\RTCInfoTributosAbrasf'
+        'p_ibsuf' => 'float',
+        'p_red_aliq_uf' => 'float',
+        'p_aliq_efet_uf' => 'float',
+        'v_ibsuf' => 'float'
     ];
 
     /**
@@ -70,9 +71,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'g_ree_rep_res' => null,
-        'trib' => null,
-        'trib_abrasf' => null
+        'p_ibsuf' => null,
+        'p_red_aliq_uf' => null,
+        'p_aliq_efet_uf' => null,
+        'v_ibsuf' => null
     ];
 
     /**
@@ -81,9 +83,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'g_ree_rep_res' => false,
-		'trib' => false,
-		'trib_abrasf' => false
+        'p_ibsuf' => true,
+		'p_red_aliq_uf' => true,
+		'p_aliq_efet_uf' => true,
+		'v_ibsuf' => true
     ];
 
     /**
@@ -172,9 +175,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'g_ree_rep_res' => 'gReeRepRes',
-        'trib' => 'trib',
-        'trib_abrasf' => 'tribAbrasf'
+        'p_ibsuf' => 'pIBSUF',
+        'p_red_aliq_uf' => 'pRedAliqUF',
+        'p_aliq_efet_uf' => 'pAliqEfetUF',
+        'v_ibsuf' => 'vIBSUF'
     ];
 
     /**
@@ -183,9 +187,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'g_ree_rep_res' => 'setGReeRepRes',
-        'trib' => 'setTrib',
-        'trib_abrasf' => 'setTribAbrasf'
+        'p_ibsuf' => 'setPIbsuf',
+        'p_red_aliq_uf' => 'setPRedAliqUf',
+        'p_aliq_efet_uf' => 'setPAliqEfetUf',
+        'v_ibsuf' => 'setVIbsuf'
     ];
 
     /**
@@ -194,9 +199,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'g_ree_rep_res' => 'getGReeRepRes',
-        'trib' => 'getTrib',
-        'trib_abrasf' => 'getTribAbrasf'
+        'p_ibsuf' => 'getPIbsuf',
+        'p_red_aliq_uf' => 'getPRedAliqUf',
+        'p_aliq_efet_uf' => 'getPAliqEfetUf',
+        'v_ibsuf' => 'getVIbsuf'
     ];
 
     /**
@@ -256,9 +262,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('g_ree_rep_res', $data ?? [], null);
-        $this->setIfExists('trib', $data ?? [], null);
-        $this->setIfExists('trib_abrasf', $data ?? [], null);
+        $this->setIfExists('p_ibsuf', $data ?? [], null);
+        $this->setIfExists('p_red_aliq_uf', $data ?? [], null);
+        $this->setIfExists('p_aliq_efet_uf', $data ?? [], null);
+        $this->setIfExists('v_ibsuf', $data ?? [], null);
     }
 
     /**
@@ -288,9 +295,22 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['trib'] === null) {
-            $invalidProperties[] = "'trib' can't be null";
+        if (!is_null($this->container['p_ibsuf']) && ($this->container['p_ibsuf'] < 0)) {
+            $invalidProperties[] = "invalid value for 'p_ibsuf', must be bigger than or equal to 0.";
         }
+
+        if (!is_null($this->container['p_red_aliq_uf']) && ($this->container['p_red_aliq_uf'] < 0)) {
+            $invalidProperties[] = "invalid value for 'p_red_aliq_uf', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['p_aliq_efet_uf']) && ($this->container['p_aliq_efet_uf'] < 0)) {
+            $invalidProperties[] = "invalid value for 'p_aliq_efet_uf', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['v_ibsuf']) && ($this->container['v_ibsuf'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_ibsuf', must be bigger than or equal to 0.";
+        }
+
         return $invalidProperties;
     }
 
@@ -307,82 +327,157 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets g_ree_rep_res
+     * Gets p_ibsuf
      *
-     * @return \ACBrAPI\Model\RTCInfoReeRepRes|null
+     * @return float|null
      */
-    public function getGReeRepRes()
+    public function getPIbsuf()
     {
-        return $this->container['g_ree_rep_res'];
+        return $this->container['p_ibsuf'];
     }
 
     /**
-     * Sets g_ree_rep_res
+     * Sets p_ibsuf
      *
-     * @param \ACBrAPI\Model\RTCInfoReeRepRes|null $g_ree_rep_res g_ree_rep_res
+     * @param float|null $p_ibsuf Alíquota da UF para IBS.
      *
      * @return self
      */
-    public function setGReeRepRes($g_ree_rep_res)
+    public function setPIbsuf($p_ibsuf)
     {
-        if (is_null($g_ree_rep_res)) {
-            throw new \InvalidArgumentException('non-nullable g_ree_rep_res cannot be null');
+        if (is_null($p_ibsuf)) {
+            array_push($this->openAPINullablesSetToNull, 'p_ibsuf');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('p_ibsuf', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['g_ree_rep_res'] = $g_ree_rep_res;
+
+        if (!is_null($p_ibsuf) && ($p_ibsuf < 0)) {
+            throw new \InvalidArgumentException('invalid value for $p_ibsuf when calling RTCInfoTributosAbrasfUF., must be bigger than or equal to 0.');
+        }
+
+        $this->container['p_ibsuf'] = $p_ibsuf;
 
         return $this;
     }
 
     /**
-     * Gets trib
+     * Gets p_red_aliq_uf
      *
-     * @return \ACBrAPI\Model\RTCInfoTributosIBSCBS
+     * @return float|null
      */
-    public function getTrib()
+    public function getPRedAliqUf()
     {
-        return $this->container['trib'];
+        return $this->container['p_red_aliq_uf'];
     }
 
     /**
-     * Sets trib
+     * Sets p_red_aliq_uf
      *
-     * @param \ACBrAPI\Model\RTCInfoTributosIBSCBS $trib trib
+     * @param float|null $p_red_aliq_uf Percentual de redução de alíquota estadual.
      *
      * @return self
      */
-    public function setTrib($trib)
+    public function setPRedAliqUf($p_red_aliq_uf)
     {
-        if (is_null($trib)) {
-            throw new \InvalidArgumentException('non-nullable trib cannot be null');
+        if (is_null($p_red_aliq_uf)) {
+            array_push($this->openAPINullablesSetToNull, 'p_red_aliq_uf');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('p_red_aliq_uf', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['trib'] = $trib;
+
+        if (!is_null($p_red_aliq_uf) && ($p_red_aliq_uf < 0)) {
+            throw new \InvalidArgumentException('invalid value for $p_red_aliq_uf when calling RTCInfoTributosAbrasfUF., must be bigger than or equal to 0.');
+        }
+
+        $this->container['p_red_aliq_uf'] = $p_red_aliq_uf;
 
         return $this;
     }
 
     /**
-     * Gets trib_abrasf
+     * Gets p_aliq_efet_uf
      *
-     * @return \ACBrAPI\Model\RTCInfoTributosAbrasf|null
+     * @return float|null
      */
-    public function getTribAbrasf()
+    public function getPAliqEfetUf()
     {
-        return $this->container['trib_abrasf'];
+        return $this->container['p_aliq_efet_uf'];
     }
 
     /**
-     * Sets trib_abrasf
+     * Sets p_aliq_efet_uf
      *
-     * @param \ACBrAPI\Model\RTCInfoTributosAbrasf|null $trib_abrasf trib_abrasf
+     * @param float|null $p_aliq_efet_uf Alíquota efetiva do IBS estadual.  pAliqEfetUF = pIBSUF x (1 - pRedAliqUF) x (1 - pRedutor)
      *
      * @return self
      */
-    public function setTribAbrasf($trib_abrasf)
+    public function setPAliqEfetUf($p_aliq_efet_uf)
     {
-        if (is_null($trib_abrasf)) {
-            throw new \InvalidArgumentException('non-nullable trib_abrasf cannot be null');
+        if (is_null($p_aliq_efet_uf)) {
+            array_push($this->openAPINullablesSetToNull, 'p_aliq_efet_uf');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('p_aliq_efet_uf', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['trib_abrasf'] = $trib_abrasf;
+
+        if (!is_null($p_aliq_efet_uf) && ($p_aliq_efet_uf < 0)) {
+            throw new \InvalidArgumentException('invalid value for $p_aliq_efet_uf when calling RTCInfoTributosAbrasfUF., must be bigger than or equal to 0.');
+        }
+
+        $this->container['p_aliq_efet_uf'] = $p_aliq_efet_uf;
+
+        return $this;
+    }
+
+    /**
+     * Gets v_ibsuf
+     *
+     * @return float|null
+     */
+    public function getVIbsuf()
+    {
+        return $this->container['v_ibsuf'];
+    }
+
+    /**
+     * Sets v_ibsuf
+     *
+     * @param float|null $v_ibsuf Valor do IBS estadual (R$).  vIBSUF = vBC x (pIBSUF ou pAliqEfetUF)
+     *
+     * @return self
+     */
+    public function setVIbsuf($v_ibsuf)
+    {
+        if (is_null($v_ibsuf)) {
+            array_push($this->openAPINullablesSetToNull, 'v_ibsuf');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_ibsuf', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($v_ibsuf) && ($v_ibsuf < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_ibsuf when calling RTCInfoTributosAbrasfUF., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_ibsuf'] = $v_ibsuf;
 
         return $this;
     }

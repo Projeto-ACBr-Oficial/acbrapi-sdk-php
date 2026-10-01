@@ -1,6 +1,6 @@
 <?php
 /**
- * RTCInfoValoresIBSCBS
+ * RTCInfoTributosAbrasfFed
  *
  * PHP version 7.4
  *
@@ -31,16 +31,16 @@ use \ArrayAccess;
 use \ACBrAPI\ObjectSerializer;
 
 /**
- * RTCInfoValoresIBSCBS Class Doc Comment
+ * RTCInfoTributosAbrasfFed Class Doc Comment
  *
  * @category Class
- * @description Grupo de informações relativas aos valores do serviço prestado para IBS e CBS.
+ * @description Grupo de informações relativas aos valores da CBS.
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
+class RTCInfoTributosAbrasfFed implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'RTCInfoValoresIBSCBS';
+    protected static $openAPIModelName = 'RTCInfoTributosAbrasfFed';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'g_ree_rep_res' => '\ACBrAPI\Model\RTCInfoReeRepRes',
-        'trib' => '\ACBrAPI\Model\RTCInfoTributosIBSCBS',
-        'trib_abrasf' => '\ACBrAPI\Model\RTCInfoTributosAbrasf'
+        'p_cbs' => 'float',
+        'p_red_aliq_cbs' => 'float',
+        'p_aliq_efet_cbs' => 'float',
+        'v_cbs' => 'float'
     ];
 
     /**
@@ -70,9 +71,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'g_ree_rep_res' => null,
-        'trib' => null,
-        'trib_abrasf' => null
+        'p_cbs' => null,
+        'p_red_aliq_cbs' => null,
+        'p_aliq_efet_cbs' => null,
+        'v_cbs' => null
     ];
 
     /**
@@ -81,9 +83,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'g_ree_rep_res' => false,
-		'trib' => false,
-		'trib_abrasf' => false
+        'p_cbs' => true,
+		'p_red_aliq_cbs' => true,
+		'p_aliq_efet_cbs' => true,
+		'v_cbs' => true
     ];
 
     /**
@@ -172,9 +175,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'g_ree_rep_res' => 'gReeRepRes',
-        'trib' => 'trib',
-        'trib_abrasf' => 'tribAbrasf'
+        'p_cbs' => 'pCBS',
+        'p_red_aliq_cbs' => 'pRedAliqCBS',
+        'p_aliq_efet_cbs' => 'pAliqEfetCBS',
+        'v_cbs' => 'vCBS'
     ];
 
     /**
@@ -183,9 +187,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'g_ree_rep_res' => 'setGReeRepRes',
-        'trib' => 'setTrib',
-        'trib_abrasf' => 'setTribAbrasf'
+        'p_cbs' => 'setPCbs',
+        'p_red_aliq_cbs' => 'setPRedAliqCbs',
+        'p_aliq_efet_cbs' => 'setPAliqEfetCbs',
+        'v_cbs' => 'setVCbs'
     ];
 
     /**
@@ -194,9 +199,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'g_ree_rep_res' => 'getGReeRepRes',
-        'trib' => 'getTrib',
-        'trib_abrasf' => 'getTribAbrasf'
+        'p_cbs' => 'getPCbs',
+        'p_red_aliq_cbs' => 'getPRedAliqCbs',
+        'p_aliq_efet_cbs' => 'getPAliqEfetCbs',
+        'v_cbs' => 'getVCbs'
     ];
 
     /**
@@ -256,9 +262,10 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('g_ree_rep_res', $data ?? [], null);
-        $this->setIfExists('trib', $data ?? [], null);
-        $this->setIfExists('trib_abrasf', $data ?? [], null);
+        $this->setIfExists('p_cbs', $data ?? [], null);
+        $this->setIfExists('p_red_aliq_cbs', $data ?? [], null);
+        $this->setIfExists('p_aliq_efet_cbs', $data ?? [], null);
+        $this->setIfExists('v_cbs', $data ?? [], null);
     }
 
     /**
@@ -288,9 +295,22 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['trib'] === null) {
-            $invalidProperties[] = "'trib' can't be null";
+        if (!is_null($this->container['p_cbs']) && ($this->container['p_cbs'] < 0)) {
+            $invalidProperties[] = "invalid value for 'p_cbs', must be bigger than or equal to 0.";
         }
+
+        if (!is_null($this->container['p_red_aliq_cbs']) && ($this->container['p_red_aliq_cbs'] < 0)) {
+            $invalidProperties[] = "invalid value for 'p_red_aliq_cbs', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['p_aliq_efet_cbs']) && ($this->container['p_aliq_efet_cbs'] < 0)) {
+            $invalidProperties[] = "invalid value for 'p_aliq_efet_cbs', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['v_cbs']) && ($this->container['v_cbs'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_cbs', must be bigger than or equal to 0.";
+        }
+
         return $invalidProperties;
     }
 
@@ -307,82 +327,157 @@ class RTCInfoValoresIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets g_ree_rep_res
+     * Gets p_cbs
      *
-     * @return \ACBrAPI\Model\RTCInfoReeRepRes|null
+     * @return float|null
      */
-    public function getGReeRepRes()
+    public function getPCbs()
     {
-        return $this->container['g_ree_rep_res'];
+        return $this->container['p_cbs'];
     }
 
     /**
-     * Sets g_ree_rep_res
+     * Sets p_cbs
      *
-     * @param \ACBrAPI\Model\RTCInfoReeRepRes|null $g_ree_rep_res g_ree_rep_res
+     * @param float|null $p_cbs Alíquota da União para CBS.
      *
      * @return self
      */
-    public function setGReeRepRes($g_ree_rep_res)
+    public function setPCbs($p_cbs)
     {
-        if (is_null($g_ree_rep_res)) {
-            throw new \InvalidArgumentException('non-nullable g_ree_rep_res cannot be null');
+        if (is_null($p_cbs)) {
+            array_push($this->openAPINullablesSetToNull, 'p_cbs');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('p_cbs', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['g_ree_rep_res'] = $g_ree_rep_res;
+
+        if (!is_null($p_cbs) && ($p_cbs < 0)) {
+            throw new \InvalidArgumentException('invalid value for $p_cbs when calling RTCInfoTributosAbrasfFed., must be bigger than or equal to 0.');
+        }
+
+        $this->container['p_cbs'] = $p_cbs;
 
         return $this;
     }
 
     /**
-     * Gets trib
+     * Gets p_red_aliq_cbs
      *
-     * @return \ACBrAPI\Model\RTCInfoTributosIBSCBS
+     * @return float|null
      */
-    public function getTrib()
+    public function getPRedAliqCbs()
     {
-        return $this->container['trib'];
+        return $this->container['p_red_aliq_cbs'];
     }
 
     /**
-     * Sets trib
+     * Sets p_red_aliq_cbs
      *
-     * @param \ACBrAPI\Model\RTCInfoTributosIBSCBS $trib trib
+     * @param float|null $p_red_aliq_cbs Percentual da redução de alíquota da CBS.
      *
      * @return self
      */
-    public function setTrib($trib)
+    public function setPRedAliqCbs($p_red_aliq_cbs)
     {
-        if (is_null($trib)) {
-            throw new \InvalidArgumentException('non-nullable trib cannot be null');
+        if (is_null($p_red_aliq_cbs)) {
+            array_push($this->openAPINullablesSetToNull, 'p_red_aliq_cbs');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('p_red_aliq_cbs', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['trib'] = $trib;
+
+        if (!is_null($p_red_aliq_cbs) && ($p_red_aliq_cbs < 0)) {
+            throw new \InvalidArgumentException('invalid value for $p_red_aliq_cbs when calling RTCInfoTributosAbrasfFed., must be bigger than or equal to 0.');
+        }
+
+        $this->container['p_red_aliq_cbs'] = $p_red_aliq_cbs;
 
         return $this;
     }
 
     /**
-     * Gets trib_abrasf
+     * Gets p_aliq_efet_cbs
      *
-     * @return \ACBrAPI\Model\RTCInfoTributosAbrasf|null
+     * @return float|null
      */
-    public function getTribAbrasf()
+    public function getPAliqEfetCbs()
     {
-        return $this->container['trib_abrasf'];
+        return $this->container['p_aliq_efet_cbs'];
     }
 
     /**
-     * Sets trib_abrasf
+     * Sets p_aliq_efet_cbs
      *
-     * @param \ACBrAPI\Model\RTCInfoTributosAbrasf|null $trib_abrasf trib_abrasf
+     * @param float|null $p_aliq_efet_cbs Alíquota efetiva da CBS.  pAliqEfetCBS = pCBS x (1 - pRedAliqCBS) x (1 - pRedutor)
      *
      * @return self
      */
-    public function setTribAbrasf($trib_abrasf)
+    public function setPAliqEfetCbs($p_aliq_efet_cbs)
     {
-        if (is_null($trib_abrasf)) {
-            throw new \InvalidArgumentException('non-nullable trib_abrasf cannot be null');
+        if (is_null($p_aliq_efet_cbs)) {
+            array_push($this->openAPINullablesSetToNull, 'p_aliq_efet_cbs');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('p_aliq_efet_cbs', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['trib_abrasf'] = $trib_abrasf;
+
+        if (!is_null($p_aliq_efet_cbs) && ($p_aliq_efet_cbs < 0)) {
+            throw new \InvalidArgumentException('invalid value for $p_aliq_efet_cbs when calling RTCInfoTributosAbrasfFed., must be bigger than or equal to 0.');
+        }
+
+        $this->container['p_aliq_efet_cbs'] = $p_aliq_efet_cbs;
+
+        return $this;
+    }
+
+    /**
+     * Gets v_cbs
+     *
+     * @return float|null
+     */
+    public function getVCbs()
+    {
+        return $this->container['v_cbs'];
+    }
+
+    /**
+     * Sets v_cbs
+     *
+     * @param float|null $v_cbs Valor da CBS (R$).  vCBS = vBC x (pCBS ou pAliqEfetCBS)
+     *
+     * @return self
+     */
+    public function setVCbs($v_cbs)
+    {
+        if (is_null($v_cbs)) {
+            array_push($this->openAPINullablesSetToNull, 'v_cbs');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_cbs', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($v_cbs) && ($v_cbs < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_cbs when calling RTCInfoTributosAbrasfFed., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_cbs'] = $v_cbs;
 
         return $this;
     }

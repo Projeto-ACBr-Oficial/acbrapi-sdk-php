@@ -1074,7 +1074,7 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tp_imp
      *
-     * @param int $tp_imp Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica
+     * @param int $tp_imp Formato de impressão do DANFE:  * 0 - Sem DANFE  * 1 - DANFe Retrato  * 2 - DANFe Paisagem  * 3 - DANFe Simplificado  * 4 - DANFe NFC-e  * 5 - DANFe NFC-e em mensagem eletrônica  * 6 - DANFE Simplificado Tipo 2 (nas condições do Ajuste SINIEF 13/26)
      *
      * @return self
      */
@@ -1354,7 +1354,7 @@ class NfeSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ind_pres
      *
-     * @param int $ind_pres Indicador de presença do comprador no estabelecimento comercial no momento da operação:  * 0 - Não se aplica (ex.: Nota Fiscal complementar ou de ajuste)  * 1 - Operação presencial  * 2 - Não presencial, internet  * 3 - Não presencial, teleatendimento  * 4 - NFC-e entrega em domicílio  * 5 - Operação presencial, fora do estabelecimento  * 9 - Não presencial, outros
+     * @param int $ind_pres Indicador de presença do comprador no estabelecimento comercial no momento da operação:  * 0 - Não se aplica (ex.: Nota Fiscal complementar ou de ajuste)  * 1 - Operação presencial  * 2 - Não presencial, internet  * 3 - Não presencial, teleatendimento  * 4 - Operação não presencial com NFC-e e NF-e com DANFE Simplificado Tipo 2 (com entrega)  * 5 - Operação presencial, fora do estabelecimento  * 9 - Não presencial, outros
      *
      * @return self
      */

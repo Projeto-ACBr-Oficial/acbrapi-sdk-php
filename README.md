@@ -1031,6 +1031,10 @@ Classe | Método | Endpoint | Descrição
 - [RTCInfoIBSCBS](docs/Model/RTCInfoIBSCBS.md)
 - [RTCInfoImovel](docs/Model/RTCInfoImovel.md)
 - [RTCInfoReeRepRes](docs/Model/RTCInfoReeRepRes.md)
+- [RTCInfoTributosAbrasf](docs/Model/RTCInfoTributosAbrasf.md)
+- [RTCInfoTributosAbrasfFed](docs/Model/RTCInfoTributosAbrasfFed.md)
+- [RTCInfoTributosAbrasfMun](docs/Model/RTCInfoTributosAbrasfMun.md)
+- [RTCInfoTributosAbrasfUF](docs/Model/RTCInfoTributosAbrasfUF.md)
 - [RTCInfoTributosDif](docs/Model/RTCInfoTributosDif.md)
 - [RTCInfoTributosIBSCBS](docs/Model/RTCInfoTributosIBSCBS.md)
 - [RTCInfoTributosSitClas](docs/Model/RTCInfoTributosSitClas.md)
@@ -1085,6 +1089,6 @@ Classe | Método | Endpoint | Descrição
 
 ## Sobre este package
 
-- Versão da API: `3.1.11`
-    - Versão do package: `3.1.11`
+- Versão da API: `3.1.12`
+    - Versão do package: `3.1.12`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

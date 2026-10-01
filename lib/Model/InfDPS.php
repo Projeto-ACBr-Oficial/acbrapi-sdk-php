@@ -387,6 +387,10 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'serie', the character length must be smaller than or equal to 5.";
         }
 
+        if (!is_null($this->container['serie']) && (mb_strlen($this->container['serie']) < 1)) {
+            $invalidProperties[] = "invalid value for 'serie', the character length must be bigger than or equal to 1.";
+        }
+
         if (!is_null($this->container['n_dps']) && (mb_strlen($this->container['n_dps']) > 15)) {
             $invalidProperties[] = "invalid value for 'n_dps', the character length must be smaller than or equal to 15.";
         }
@@ -559,6 +563,9 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (!is_null($serie) && (mb_strlen($serie) > 5)) {
             throw new \InvalidArgumentException('invalid length for $serie when calling InfDPS., must be smaller than or equal to 5.');
+        }
+        if (!is_null($serie) && (mb_strlen($serie) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $serie when calling InfDPS., must be bigger than or equal to 1.');
         }
 
         $this->container['serie'] = $serie;
