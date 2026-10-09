@@ -64,7 +64,12 @@ class ContaExtratoCredito implements ModelInterface, ArrayAccess, \JsonSerializa
         'document_id' => 'string',
         'arquivo_id' => 'string',
         'http_method' => 'string',
-        'uri' => 'string'
+        'uri' => 'string',
+        'client_id' => 'string',
+        'origin' => 'string',
+        'resource_type' => 'string',
+        'resource_id' => 'string',
+        'request_id' => 'string'
     ];
 
     /**
@@ -83,7 +88,12 @@ class ContaExtratoCredito implements ModelInterface, ArrayAccess, \JsonSerializa
         'document_id' => null,
         'arquivo_id' => null,
         'http_method' => null,
-        'uri' => null
+        'uri' => null,
+        'client_id' => null,
+        'origin' => null,
+        'resource_type' => null,
+        'resource_id' => null,
+        'request_id' => null
     ];
 
     /**
@@ -100,7 +110,12 @@ class ContaExtratoCredito implements ModelInterface, ArrayAccess, \JsonSerializa
 		'document_id' => false,
 		'arquivo_id' => false,
 		'http_method' => false,
-		'uri' => false
+		'uri' => false,
+		'client_id' => false,
+		'origin' => false,
+		'resource_type' => false,
+		'resource_id' => false,
+		'request_id' => false
     ];
 
     /**
@@ -197,7 +212,12 @@ class ContaExtratoCredito implements ModelInterface, ArrayAccess, \JsonSerializa
         'document_id' => 'document_id',
         'arquivo_id' => 'arquivo_id',
         'http_method' => 'http_method',
-        'uri' => 'uri'
+        'uri' => 'uri',
+        'client_id' => 'client_id',
+        'origin' => 'origin',
+        'resource_type' => 'resource_type',
+        'resource_id' => 'resource_id',
+        'request_id' => 'request_id'
     ];
 
     /**
@@ -214,7 +234,12 @@ class ContaExtratoCredito implements ModelInterface, ArrayAccess, \JsonSerializa
         'document_id' => 'setDocumentId',
         'arquivo_id' => 'setArquivoId',
         'http_method' => 'setHttpMethod',
-        'uri' => 'setUri'
+        'uri' => 'setUri',
+        'client_id' => 'setClientId',
+        'origin' => 'setOrigin',
+        'resource_type' => 'setResourceType',
+        'resource_id' => 'setResourceId',
+        'request_id' => 'setRequestId'
     ];
 
     /**
@@ -231,7 +256,12 @@ class ContaExtratoCredito implements ModelInterface, ArrayAccess, \JsonSerializa
         'document_id' => 'getDocumentId',
         'arquivo_id' => 'getArquivoId',
         'http_method' => 'getHttpMethod',
-        'uri' => 'getUri'
+        'uri' => 'getUri',
+        'client_id' => 'getClientId',
+        'origin' => 'getOrigin',
+        'resource_type' => 'getResourceType',
+        'resource_id' => 'getResourceId',
+        'request_id' => 'getRequestId'
     ];
 
     /**
@@ -300,6 +330,11 @@ class ContaExtratoCredito implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('arquivo_id', $data ?? [], null);
         $this->setIfExists('http_method', $data ?? [], null);
         $this->setIfExists('uri', $data ?? [], null);
+        $this->setIfExists('client_id', $data ?? [], null);
+        $this->setIfExists('origin', $data ?? [], null);
+        $this->setIfExists('resource_type', $data ?? [], null);
+        $this->setIfExists('resource_id', $data ?? [], null);
+        $this->setIfExists('request_id', $data ?? [], null);
     }
 
     /**
@@ -583,6 +618,141 @@ class ContaExtratoCredito implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable uri cannot be null');
         }
         $this->container['uri'] = $uri;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_id
+     *
+     * @return string|null
+     */
+    public function getClientId()
+    {
+        return $this->container['client_id'];
+    }
+
+    /**
+     * Sets client_id
+     *
+     * @param string|null $client_id client_id
+     *
+     * @return self
+     */
+    public function setClientId($client_id)
+    {
+        if (is_null($client_id)) {
+            throw new \InvalidArgumentException('non-nullable client_id cannot be null');
+        }
+        $this->container['client_id'] = $client_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets origin
+     *
+     * @return string|null
+     */
+    public function getOrigin()
+    {
+        return $this->container['origin'];
+    }
+
+    /**
+     * Sets origin
+     *
+     * @param string|null $origin origin
+     *
+     * @return self
+     */
+    public function setOrigin($origin)
+    {
+        if (is_null($origin)) {
+            throw new \InvalidArgumentException('non-nullable origin cannot be null');
+        }
+        $this->container['origin'] = $origin;
+
+        return $this;
+    }
+
+    /**
+     * Gets resource_type
+     *
+     * @return string|null
+     */
+    public function getResourceType()
+    {
+        return $this->container['resource_type'];
+    }
+
+    /**
+     * Sets resource_type
+     *
+     * @param string|null $resource_type resource_type
+     *
+     * @return self
+     */
+    public function setResourceType($resource_type)
+    {
+        if (is_null($resource_type)) {
+            throw new \InvalidArgumentException('non-nullable resource_type cannot be null');
+        }
+        $this->container['resource_type'] = $resource_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets resource_id
+     *
+     * @return string|null
+     */
+    public function getResourceId()
+    {
+        return $this->container['resource_id'];
+    }
+
+    /**
+     * Sets resource_id
+     *
+     * @param string|null $resource_id resource_id
+     *
+     * @return self
+     */
+    public function setResourceId($resource_id)
+    {
+        if (is_null($resource_id)) {
+            throw new \InvalidArgumentException('non-nullable resource_id cannot be null');
+        }
+        $this->container['resource_id'] = $resource_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets request_id
+     *
+     * @return string|null
+     */
+    public function getRequestId()
+    {
+        return $this->container['request_id'];
+    }
+
+    /**
+     * Sets request_id
+     *
+     * @param string|null $request_id request_id
+     *
+     * @return self
+     */
+    public function setRequestId($request_id)
+    {
+        if (is_null($request_id)) {
+            throw new \InvalidArgumentException('non-nullable request_id cannot be null');
+        }
+        $this->container['request_id'] = $request_id;
 
         return $this;
     }

@@ -697,7 +697,7 @@ class NfseApi
         }
 
 
-        $resourcePath = '/nfse/{Id}/cancelamento/xml';
+        $resourcePath = '/nfse/{id}/cancelamento/xml';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -709,7 +709,7 @@ class NfseApi
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'Id' . '}',
+                '{' . 'id' . '}',
                 ObjectSerializer::toPathValue($id),
                 $resourcePath
             );

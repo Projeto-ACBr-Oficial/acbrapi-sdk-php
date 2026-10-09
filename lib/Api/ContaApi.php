@@ -966,15 +966,17 @@ class ContaApi
      * @param  int $top top (optional)
      * @param  int $skip skip (optional)
      * @param  int $limit limit (optional)
+     * @param  string $client_id client_id (optional)
+     * @param  bool $incluir_isentos incluir_isentos (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarExtratoCreditosConta'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ACBrAPI\Model\ContaExtratoCreditoListagem
      */
-    public function listarExtratoCreditosConta($data_inicial = null, $data_final = null, $top = null, $skip = null, $limit = null, string $contentType = self::contentTypes['listarExtratoCreditosConta'][0])
+    public function listarExtratoCreditosConta($data_inicial = null, $data_final = null, $top = null, $skip = null, $limit = null, $client_id = null, $incluir_isentos = null, string $contentType = self::contentTypes['listarExtratoCreditosConta'][0])
     {
-        list($response) = $this->listarExtratoCreditosContaWithHttpInfo($data_inicial, $data_final, $top, $skip, $limit, $contentType);
+        list($response) = $this->listarExtratoCreditosContaWithHttpInfo($data_inicial, $data_final, $top, $skip, $limit, $client_id, $incluir_isentos, $contentType);
         return $response;
     }
 
@@ -988,15 +990,17 @@ class ContaApi
      * @param  int $top (optional)
      * @param  int $skip (optional)
      * @param  int $limit (optional)
+     * @param  string $client_id (optional)
+     * @param  bool $incluir_isentos (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarExtratoCreditosConta'] to see the possible values for this operation
      *
      * @throws \ACBrAPI\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ACBrAPI\Model\ContaExtratoCreditoListagem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listarExtratoCreditosContaWithHttpInfo($data_inicial = null, $data_final = null, $top = null, $skip = null, $limit = null, string $contentType = self::contentTypes['listarExtratoCreditosConta'][0])
+    public function listarExtratoCreditosContaWithHttpInfo($data_inicial = null, $data_final = null, $top = null, $skip = null, $limit = null, $client_id = null, $incluir_isentos = null, string $contentType = self::contentTypes['listarExtratoCreditosConta'][0])
     {
-        $request = $this->listarExtratoCreditosContaRequest($data_inicial, $data_final, $top, $skip, $limit, $contentType);
+        $request = $this->listarExtratoCreditosContaRequest($data_inicial, $data_final, $top, $skip, $limit, $client_id, $incluir_isentos, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1092,14 +1096,16 @@ class ContaApi
      * @param  int $top (optional)
      * @param  int $skip (optional)
      * @param  int $limit (optional)
+     * @param  string $client_id (optional)
+     * @param  bool $incluir_isentos (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarExtratoCreditosConta'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listarExtratoCreditosContaAsync($data_inicial = null, $data_final = null, $top = null, $skip = null, $limit = null, string $contentType = self::contentTypes['listarExtratoCreditosConta'][0])
+    public function listarExtratoCreditosContaAsync($data_inicial = null, $data_final = null, $top = null, $skip = null, $limit = null, $client_id = null, $incluir_isentos = null, string $contentType = self::contentTypes['listarExtratoCreditosConta'][0])
     {
-        return $this->listarExtratoCreditosContaAsyncWithHttpInfo($data_inicial, $data_final, $top, $skip, $limit, $contentType)
+        return $this->listarExtratoCreditosContaAsyncWithHttpInfo($data_inicial, $data_final, $top, $skip, $limit, $client_id, $incluir_isentos, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1117,15 +1123,17 @@ class ContaApi
      * @param  int $top (optional)
      * @param  int $skip (optional)
      * @param  int $limit (optional)
+     * @param  string $client_id (optional)
+     * @param  bool $incluir_isentos (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarExtratoCreditosConta'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listarExtratoCreditosContaAsyncWithHttpInfo($data_inicial = null, $data_final = null, $top = null, $skip = null, $limit = null, string $contentType = self::contentTypes['listarExtratoCreditosConta'][0])
+    public function listarExtratoCreditosContaAsyncWithHttpInfo($data_inicial = null, $data_final = null, $top = null, $skip = null, $limit = null, $client_id = null, $incluir_isentos = null, string $contentType = self::contentTypes['listarExtratoCreditosConta'][0])
     {
         $returnType = '\ACBrAPI\Model\ContaExtratoCreditoListagem';
-        $request = $this->listarExtratoCreditosContaRequest($data_inicial, $data_final, $top, $skip, $limit, $contentType);
+        $request = $this->listarExtratoCreditosContaRequest($data_inicial, $data_final, $top, $skip, $limit, $client_id, $incluir_isentos, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1171,13 +1179,17 @@ class ContaApi
      * @param  int $top (optional)
      * @param  int $skip (optional)
      * @param  int $limit (optional)
+     * @param  string $client_id (optional)
+     * @param  bool $incluir_isentos (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarExtratoCreditosConta'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listarExtratoCreditosContaRequest($data_inicial = null, $data_final = null, $top = null, $skip = null, $limit = null, string $contentType = self::contentTypes['listarExtratoCreditosConta'][0])
+    public function listarExtratoCreditosContaRequest($data_inicial = null, $data_final = null, $top = null, $skip = null, $limit = null, $client_id = null, $incluir_isentos = null, string $contentType = self::contentTypes['listarExtratoCreditosConta'][0])
     {
+
+
 
 
 
@@ -1233,6 +1245,24 @@ class ContaApi
             $limit,
             'limit', // param base name
             'integer', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $client_id,
+            'client_id', // param base name
+            'string', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $incluir_isentos,
+            'incluir_isentos', // param base name
+            'boolean', // openApiType
             '', // style
             false, // explode
             false // required

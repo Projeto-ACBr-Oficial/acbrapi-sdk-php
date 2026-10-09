@@ -181,7 +181,7 @@ Este endpoint não usa parâmetros.
 ## `listarExtratoCreditosConta()`
 
 ```php
-listarExtratoCreditosConta($data_inicial, $data_final, $top, $skip, $limit): \ACBrAPI\Model\ContaExtratoCreditoListagem
+listarExtratoCreditosConta($data_inicial, $data_final, $top, $skip, $limit, $client_id, $incluir_isentos): \ACBrAPI\Model\ContaExtratoCreditoListagem
 ```
 
 Consultar o extrato de movimentação de créditos do tenant atual.
@@ -208,9 +208,11 @@ $data_final = 'data_final_example'; // string
 $top = 56; // int
 $skip = 56; // int
 $limit = 56; // int
+$client_id = 'client_id_example'; // string
+$incluir_isentos = True; // bool
 
 try {
-    $result = $apiInstance->listarExtratoCreditosConta($data_inicial, $data_final, $top, $skip, $limit);
+    $result = $apiInstance->listarExtratoCreditosConta($data_inicial, $data_final, $top, $skip, $limit, $client_id, $incluir_isentos);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContaApi->listarExtratoCreditosConta: ', $e->getMessage(), PHP_EOL;
@@ -226,6 +228,8 @@ try {
 | **top** | **int**|  | [optional] |
 | **skip** | **int**|  | [optional] |
 | **limit** | **int**|  | [optional] |
+| **client_id** | **string**|  | [optional] |
+| **incluir_isentos** | **bool**|  | [optional] |
 
 ### Tipo do retorno
 
