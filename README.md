@@ -916,19 +916,35 @@ Classe | Método | Endpoint | Descrição
 - [NfeSefazFat](docs/Model/NfeSefazFat.md)
 - [NfeSefazForDia](docs/Model/NfeSefazForDia.md)
 - [NfeSefazGCBS](docs/Model/NfeSefazGCBS.md)
+- [NfeSefazGCBSMonoAdRem](docs/Model/NfeSefazGCBSMonoAdRem.md)
+- [NfeSefazGCBSMonoAdRemGMonoPadrao](docs/Model/NfeSefazGCBSMonoAdRemGMonoPadrao.md)
+- [NfeSefazGCBSMonoAdRemGMonoRet](docs/Model/NfeSefazGCBSMonoAdRemGMonoRet.md)
+- [NfeSefazGCBSMonoAdRemGMonoReten](docs/Model/NfeSefazGCBSMonoAdRemGMonoReten.md)
+- [NfeSefazGCBSMonoAdRemGpBioDiferenca](docs/Model/NfeSefazGCBSMonoAdRemGpBioDiferenca.md)
+- [NfeSefazGCBSMonoAdValorem](docs/Model/NfeSefazGCBSMonoAdValorem.md)
+- [NfeSefazGCBSMonoAdValoremGMonoPadrao](docs/Model/NfeSefazGCBSMonoAdValoremGMonoPadrao.md)
+- [NfeSefazGCBSMonoAdValoremGMonoRet](docs/Model/NfeSefazGCBSMonoAdValoremGMonoRet.md)
+- [NfeSefazGCBSMonoAdValoremGMonoReten](docs/Model/NfeSefazGCBSMonoAdValoremGMonoReten.md)
+- [NfeSefazGCBSMonoAdValoremGpBioDiferenca](docs/Model/NfeSefazGCBSMonoAdValoremGpBioDiferenca.md)
 - [NfeSefazGCred](docs/Model/NfeSefazGCred.md)
 - [NfeSefazGEstornoCred](docs/Model/NfeSefazGEstornoCred.md)
 - [NfeSefazGIBS](docs/Model/NfeSefazGIBS.md)
 - [NfeSefazGIBSGIBSMun](docs/Model/NfeSefazGIBSGIBSMun.md)
 - [NfeSefazGIBSGIBSUF](docs/Model/NfeSefazGIBSGIBSUF.md)
+- [NfeSefazGIBSMonoAdRem](docs/Model/NfeSefazGIBSMonoAdRem.md)
+- [NfeSefazGIBSMonoAdValorem](docs/Model/NfeSefazGIBSMonoAdValorem.md)
+- [NfeSefazGIBSMonoAdValoremGMonoPadrao](docs/Model/NfeSefazGIBSMonoAdValoremGMonoPadrao.md)
+- [NfeSefazGIBSMonoAdValoremGMonoRet](docs/Model/NfeSefazGIBSMonoAdValoremGMonoRet.md)
+- [NfeSefazGIBSMonoAdValoremGMonoReten](docs/Model/NfeSefazGIBSMonoAdValoremGMonoReten.md)
+- [NfeSefazGIBSMonoAdValoremGpBioDiferenca](docs/Model/NfeSefazGIBSMonoAdValoremGpBioDiferenca.md)
 - [NfeSefazGIBSMun](docs/Model/NfeSefazGIBSMun.md)
 - [NfeSefazGIBSUF](docs/Model/NfeSefazGIBSUF.md)
 - [NfeSefazGMono](docs/Model/NfeSefazGMono.md)
-- [NfeSefazGMonoDif](docs/Model/NfeSefazGMonoDif.md)
 - [NfeSefazGMonoPadrao](docs/Model/NfeSefazGMonoPadrao.md)
 - [NfeSefazGMonoRet](docs/Model/NfeSefazGMonoRet.md)
 - [NfeSefazGMonoReten](docs/Model/NfeSefazGMonoReten.md)
 - [NfeSefazGPagAntecipado](docs/Model/NfeSefazGPagAntecipado.md)
+- [NfeSefazGpBioDiferenca](docs/Model/NfeSefazGpBioDiferenca.md)
 - [NfeSefazGuiaTransito](docs/Model/NfeSefazGuiaTransito.md)
 - [NfeSefazIBSCBSMonoTot](docs/Model/NfeSefazIBSCBSMonoTot.md)
 - [NfeSefazIBSCBSMonoTotGCBS](docs/Model/NfeSefazIBSCBSMonoTotGCBS.md)
@@ -1089,6 +1105,6 @@ Classe | Método | Endpoint | Descrição
 
 ## Sobre este package
 
-- Versão da API: `3.1.14`
-    - Versão do package: `3.1.14`
+- Versão da API: `3.1.15`
+    - Versão do package: `3.1.15`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

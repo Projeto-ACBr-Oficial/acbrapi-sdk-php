@@ -34,7 +34,7 @@ use \ACBrAPI\ObjectSerializer;
  * NfeSefazGMonoRet Class Doc Comment
  *
  * @category Class
- * @description Grupo de informações da Tributação Monofásica retida anteriormente.
+ * @description Grupo de informações da Tributação Monofásica Retida Anteriormente.
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -57,11 +57,7 @@ class NfeSefazGMonoRet implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'q_bc_mono_ret' => 'float',
-        'ad_rem_ibs_ret' => 'float',
-        'v_ibs_mono_ret' => 'float',
-        'ad_rem_cbs_ret' => 'float',
-        'v_cbs_mono_ret' => 'float'
+        'v_ibs_mono_ret' => 'float'
     ];
 
     /**
@@ -72,11 +68,7 @@ class NfeSefazGMonoRet implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'q_bc_mono_ret' => null,
-        'ad_rem_ibs_ret' => null,
-        'v_ibs_mono_ret' => null,
-        'ad_rem_cbs_ret' => null,
-        'v_cbs_mono_ret' => null
+        'v_ibs_mono_ret' => null
     ];
 
     /**
@@ -85,11 +77,7 @@ class NfeSefazGMonoRet implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'q_bc_mono_ret' => true,
-		'ad_rem_ibs_ret' => true,
-		'v_ibs_mono_ret' => true,
-		'ad_rem_cbs_ret' => true,
-		'v_cbs_mono_ret' => true
+        'v_ibs_mono_ret' => true
     ];
 
     /**
@@ -178,11 +166,7 @@ class NfeSefazGMonoRet implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'q_bc_mono_ret' => 'qBCMonoRet',
-        'ad_rem_ibs_ret' => 'adRemIBSRet',
-        'v_ibs_mono_ret' => 'vIBSMonoRet',
-        'ad_rem_cbs_ret' => 'adRemCBSRet',
-        'v_cbs_mono_ret' => 'vCBSMonoRet'
+        'v_ibs_mono_ret' => 'vIBSMonoRet'
     ];
 
     /**
@@ -191,11 +175,7 @@ class NfeSefazGMonoRet implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'q_bc_mono_ret' => 'setQBcMonoRet',
-        'ad_rem_ibs_ret' => 'setAdRemIbsRet',
-        'v_ibs_mono_ret' => 'setVIbsMonoRet',
-        'ad_rem_cbs_ret' => 'setAdRemCbsRet',
-        'v_cbs_mono_ret' => 'setVCbsMonoRet'
+        'v_ibs_mono_ret' => 'setVIbsMonoRet'
     ];
 
     /**
@@ -204,11 +184,7 @@ class NfeSefazGMonoRet implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'q_bc_mono_ret' => 'getQBcMonoRet',
-        'ad_rem_ibs_ret' => 'getAdRemIbsRet',
-        'v_ibs_mono_ret' => 'getVIbsMonoRet',
-        'ad_rem_cbs_ret' => 'getAdRemCbsRet',
-        'v_cbs_mono_ret' => 'getVCbsMonoRet'
+        'v_ibs_mono_ret' => 'getVIbsMonoRet'
     ];
 
     /**
@@ -268,11 +244,7 @@ class NfeSefazGMonoRet implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('q_bc_mono_ret', $data ?? [], null);
-        $this->setIfExists('ad_rem_ibs_ret', $data ?? [], null);
         $this->setIfExists('v_ibs_mono_ret', $data ?? [], null);
-        $this->setIfExists('ad_rem_cbs_ret', $data ?? [], null);
-        $this->setIfExists('v_cbs_mono_ret', $data ?? [], null);
     }
 
     /**
@@ -302,39 +274,11 @@ class NfeSefazGMonoRet implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['q_bc_mono_ret'] === null) {
-            $invalidProperties[] = "'q_bc_mono_ret' can't be null";
-        }
-        if (($this->container['q_bc_mono_ret'] < 0)) {
-            $invalidProperties[] = "invalid value for 'q_bc_mono_ret', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['ad_rem_ibs_ret'] === null) {
-            $invalidProperties[] = "'ad_rem_ibs_ret' can't be null";
-        }
-        if (($this->container['ad_rem_ibs_ret'] < 0)) {
-            $invalidProperties[] = "invalid value for 'ad_rem_ibs_ret', must be bigger than or equal to 0.";
-        }
-
         if ($this->container['v_ibs_mono_ret'] === null) {
             $invalidProperties[] = "'v_ibs_mono_ret' can't be null";
         }
         if (($this->container['v_ibs_mono_ret'] < 0)) {
             $invalidProperties[] = "invalid value for 'v_ibs_mono_ret', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['ad_rem_cbs_ret'] === null) {
-            $invalidProperties[] = "'ad_rem_cbs_ret' can't be null";
-        }
-        if (($this->container['ad_rem_cbs_ret'] < 0)) {
-            $invalidProperties[] = "invalid value for 'ad_rem_cbs_ret', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['v_cbs_mono_ret'] === null) {
-            $invalidProperties[] = "'v_cbs_mono_ret' can't be null";
-        }
-        if (($this->container['v_cbs_mono_ret'] < 0)) {
-            $invalidProperties[] = "invalid value for 'v_cbs_mono_ret', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -351,84 +295,6 @@ class NfeSefazGMonoRet implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets q_bc_mono_ret
-     *
-     * @return float
-     */
-    public function getQBcMonoRet()
-    {
-        return $this->container['q_bc_mono_ret'];
-    }
-
-    /**
-     * Sets q_bc_mono_ret
-     *
-     * @param float $q_bc_mono_ret Quantidade tributada retida anteriormente.
-     *
-     * @return self
-     */
-    public function setQBcMonoRet($q_bc_mono_ret)
-    {
-        if (is_null($q_bc_mono_ret)) {
-            array_push($this->openAPINullablesSetToNull, 'q_bc_mono_ret');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('q_bc_mono_ret', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($q_bc_mono_ret) && ($q_bc_mono_ret < 0)) {
-            throw new \InvalidArgumentException('invalid value for $q_bc_mono_ret when calling NfeSefazGMonoRet., must be bigger than or equal to 0.');
-        }
-
-        $this->container['q_bc_mono_ret'] = $q_bc_mono_ret;
-
-        return $this;
-    }
-
-    /**
-     * Gets ad_rem_ibs_ret
-     *
-     * @return float
-     */
-    public function getAdRemIbsRet()
-    {
-        return $this->container['ad_rem_ibs_ret'];
-    }
-
-    /**
-     * Sets ad_rem_ibs_ret
-     *
-     * @param float $ad_rem_ibs_ret Alíquota ad rem do IBS retido anteriormente.
-     *
-     * @return self
-     */
-    public function setAdRemIbsRet($ad_rem_ibs_ret)
-    {
-        if (is_null($ad_rem_ibs_ret)) {
-            array_push($this->openAPINullablesSetToNull, 'ad_rem_ibs_ret');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ad_rem_ibs_ret', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($ad_rem_ibs_ret) && ($ad_rem_ibs_ret < 0)) {
-            throw new \InvalidArgumentException('invalid value for $ad_rem_ibs_ret when calling NfeSefazGMonoRet., must be bigger than or equal to 0.');
-        }
-
-        $this->container['ad_rem_ibs_ret'] = $ad_rem_ibs_ret;
-
-        return $this;
-    }
 
     /**
      * Gets v_ibs_mono_ret
@@ -465,84 +331,6 @@ class NfeSefazGMonoRet implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['v_ibs_mono_ret'] = $v_ibs_mono_ret;
-
-        return $this;
-    }
-
-    /**
-     * Gets ad_rem_cbs_ret
-     *
-     * @return float
-     */
-    public function getAdRemCbsRet()
-    {
-        return $this->container['ad_rem_cbs_ret'];
-    }
-
-    /**
-     * Sets ad_rem_cbs_ret
-     *
-     * @param float $ad_rem_cbs_ret Alíquota ad rem da CBS retida anteriormente.
-     *
-     * @return self
-     */
-    public function setAdRemCbsRet($ad_rem_cbs_ret)
-    {
-        if (is_null($ad_rem_cbs_ret)) {
-            array_push($this->openAPINullablesSetToNull, 'ad_rem_cbs_ret');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ad_rem_cbs_ret', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($ad_rem_cbs_ret) && ($ad_rem_cbs_ret < 0)) {
-            throw new \InvalidArgumentException('invalid value for $ad_rem_cbs_ret when calling NfeSefazGMonoRet., must be bigger than or equal to 0.');
-        }
-
-        $this->container['ad_rem_cbs_ret'] = $ad_rem_cbs_ret;
-
-        return $this;
-    }
-
-    /**
-     * Gets v_cbs_mono_ret
-     *
-     * @return float
-     */
-    public function getVCbsMonoRet()
-    {
-        return $this->container['v_cbs_mono_ret'];
-    }
-
-    /**
-     * Sets v_cbs_mono_ret
-     *
-     * @param float $v_cbs_mono_ret Valor da CBS retida anteriormente.
-     *
-     * @return self
-     */
-    public function setVCbsMonoRet($v_cbs_mono_ret)
-    {
-        if (is_null($v_cbs_mono_ret)) {
-            array_push($this->openAPINullablesSetToNull, 'v_cbs_mono_ret');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('v_cbs_mono_ret', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($v_cbs_mono_ret) && ($v_cbs_mono_ret < 0)) {
-            throw new \InvalidArgumentException('invalid value for $v_cbs_mono_ret when calling NfeSefazGMonoRet., must be bigger than or equal to 0.');
-        }
-
-        $this->container['v_cbs_mono_ret'] = $v_cbs_mono_ret;
 
         return $this;
     }

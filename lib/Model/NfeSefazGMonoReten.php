@@ -34,7 +34,7 @@ use \ACBrAPI\ObjectSerializer;
  * NfeSefazGMonoReten Class Doc Comment
  *
  * @category Class
- * @description Grupo de informações da Tributação Monofásica sujeita a retenção.
+ * @description Grupo de informações da Tributação Monofásica Sujeita à Retenção.
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,9 +59,7 @@ class NfeSefazGMonoReten implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'q_bc_mono_reten' => 'float',
         'ad_rem_ibs_reten' => 'float',
-        'v_ibs_mono_reten' => 'float',
-        'ad_rem_cbs_reten' => 'float',
-        'v_cbs_mono_reten' => 'float'
+        'v_ibs_mono_reten' => 'float'
     ];
 
     /**
@@ -74,9 +72,7 @@ class NfeSefazGMonoReten implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPIFormats = [
         'q_bc_mono_reten' => null,
         'ad_rem_ibs_reten' => null,
-        'v_ibs_mono_reten' => null,
-        'ad_rem_cbs_reten' => null,
-        'v_cbs_mono_reten' => null
+        'v_ibs_mono_reten' => null
     ];
 
     /**
@@ -87,9 +83,7 @@ class NfeSefazGMonoReten implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static array $openAPINullables = [
         'q_bc_mono_reten' => true,
 		'ad_rem_ibs_reten' => true,
-		'v_ibs_mono_reten' => true,
-		'ad_rem_cbs_reten' => true,
-		'v_cbs_mono_reten' => true
+		'v_ibs_mono_reten' => true
     ];
 
     /**
@@ -180,9 +174,7 @@ class NfeSefazGMonoReten implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $attributeMap = [
         'q_bc_mono_reten' => 'qBCMonoReten',
         'ad_rem_ibs_reten' => 'adRemIBSReten',
-        'v_ibs_mono_reten' => 'vIBSMonoReten',
-        'ad_rem_cbs_reten' => 'adRemCBSReten',
-        'v_cbs_mono_reten' => 'vCBSMonoReten'
+        'v_ibs_mono_reten' => 'vIBSMonoReten'
     ];
 
     /**
@@ -193,9 +185,7 @@ class NfeSefazGMonoReten implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $setters = [
         'q_bc_mono_reten' => 'setQBcMonoReten',
         'ad_rem_ibs_reten' => 'setAdRemIbsReten',
-        'v_ibs_mono_reten' => 'setVIbsMonoReten',
-        'ad_rem_cbs_reten' => 'setAdRemCbsReten',
-        'v_cbs_mono_reten' => 'setVCbsMonoReten'
+        'v_ibs_mono_reten' => 'setVIbsMonoReten'
     ];
 
     /**
@@ -206,9 +196,7 @@ class NfeSefazGMonoReten implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $getters = [
         'q_bc_mono_reten' => 'getQBcMonoReten',
         'ad_rem_ibs_reten' => 'getAdRemIbsReten',
-        'v_ibs_mono_reten' => 'getVIbsMonoReten',
-        'ad_rem_cbs_reten' => 'getAdRemCbsReten',
-        'v_cbs_mono_reten' => 'getVCbsMonoReten'
+        'v_ibs_mono_reten' => 'getVIbsMonoReten'
     ];
 
     /**
@@ -271,8 +259,6 @@ class NfeSefazGMonoReten implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('q_bc_mono_reten', $data ?? [], null);
         $this->setIfExists('ad_rem_ibs_reten', $data ?? [], null);
         $this->setIfExists('v_ibs_mono_reten', $data ?? [], null);
-        $this->setIfExists('ad_rem_cbs_reten', $data ?? [], null);
-        $this->setIfExists('v_cbs_mono_reten', $data ?? [], null);
     }
 
     /**
@@ -323,20 +309,6 @@ class NfeSefazGMonoReten implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'v_ibs_mono_reten', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['ad_rem_cbs_reten'] === null) {
-            $invalidProperties[] = "'ad_rem_cbs_reten' can't be null";
-        }
-        if (($this->container['ad_rem_cbs_reten'] < 0)) {
-            $invalidProperties[] = "invalid value for 'ad_rem_cbs_reten', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['v_cbs_mono_reten'] === null) {
-            $invalidProperties[] = "'v_cbs_mono_reten' can't be null";
-        }
-        if (($this->container['v_cbs_mono_reten'] < 0)) {
-            $invalidProperties[] = "invalid value for 'v_cbs_mono_reten', must be bigger than or equal to 0.";
-        }
-
         return $invalidProperties;
     }
 
@@ -365,7 +337,7 @@ class NfeSefazGMonoReten implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets q_bc_mono_reten
      *
-     * @param float $q_bc_mono_reten Quantidade tributada sujeita a retenção.
+     * @param float $q_bc_mono_reten Quantidade tributada sujeita à retenção na monofasia.
      *
      * @return self
      */
@@ -404,7 +376,7 @@ class NfeSefazGMonoReten implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets ad_rem_ibs_reten
      *
-     * @param float $ad_rem_ibs_reten Alíquota ad rem do IBS sujeito a retenção.
+     * @param float $ad_rem_ibs_reten Alíquota ad rem do IBS sujeito à retenção.
      *
      * @return self
      */
@@ -443,7 +415,7 @@ class NfeSefazGMonoReten implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets v_ibs_mono_reten
      *
-     * @param float $v_ibs_mono_reten Valor do IBS monofásico sujeito a retenção.
+     * @param float $v_ibs_mono_reten Valor do IBS monofásico sujeito à retenção.
      *
      * @return self
      */
@@ -465,84 +437,6 @@ class NfeSefazGMonoReten implements ModelInterface, ArrayAccess, \JsonSerializab
         }
 
         $this->container['v_ibs_mono_reten'] = $v_ibs_mono_reten;
-
-        return $this;
-    }
-
-    /**
-     * Gets ad_rem_cbs_reten
-     *
-     * @return float
-     */
-    public function getAdRemCbsReten()
-    {
-        return $this->container['ad_rem_cbs_reten'];
-    }
-
-    /**
-     * Sets ad_rem_cbs_reten
-     *
-     * @param float $ad_rem_cbs_reten Alíquota ad rem da CBS sujeita a retenção.
-     *
-     * @return self
-     */
-    public function setAdRemCbsReten($ad_rem_cbs_reten)
-    {
-        if (is_null($ad_rem_cbs_reten)) {
-            array_push($this->openAPINullablesSetToNull, 'ad_rem_cbs_reten');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ad_rem_cbs_reten', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($ad_rem_cbs_reten) && ($ad_rem_cbs_reten < 0)) {
-            throw new \InvalidArgumentException('invalid value for $ad_rem_cbs_reten when calling NfeSefazGMonoReten., must be bigger than or equal to 0.');
-        }
-
-        $this->container['ad_rem_cbs_reten'] = $ad_rem_cbs_reten;
-
-        return $this;
-    }
-
-    /**
-     * Gets v_cbs_mono_reten
-     *
-     * @return float
-     */
-    public function getVCbsMonoReten()
-    {
-        return $this->container['v_cbs_mono_reten'];
-    }
-
-    /**
-     * Sets v_cbs_mono_reten
-     *
-     * @param float $v_cbs_mono_reten Valor da CBS monofásica sujeita a retenção.
-     *
-     * @return self
-     */
-    public function setVCbsMonoReten($v_cbs_mono_reten)
-    {
-        if (is_null($v_cbs_mono_reten)) {
-            array_push($this->openAPINullablesSetToNull, 'v_cbs_mono_reten');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('v_cbs_mono_reten', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($v_cbs_mono_reten) && ($v_cbs_mono_reten < 0)) {
-            throw new \InvalidArgumentException('invalid value for $v_cbs_mono_reten when calling NfeSefazGMonoReten., must be bigger than or equal to 0.');
-        }
-
-        $this->container['v_cbs_mono_reten'] = $v_cbs_mono_reten;
 
         return $this;
     }

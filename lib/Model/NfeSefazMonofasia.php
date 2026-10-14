@@ -34,7 +34,7 @@ use \ACBrAPI\ObjectSerializer;
  * NfeSefazMonofasia Class Doc Comment
  *
  * @category Class
- * @description Informar essa opção da Choice para Monofasia (CST 620).
+ * @description Grupo de Informações do IBS e CBS em operações com imposto monofásico (CST 620).
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -57,10 +57,10 @@ class NfeSefazMonofasia implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'g_mono_padrao' => '\ACBrAPI\Model\NfeSefazGMonoPadrao',
-        'g_mono_reten' => '\ACBrAPI\Model\NfeSefazGMonoReten',
-        'g_mono_ret' => '\ACBrAPI\Model\NfeSefazGMonoRet',
-        'g_mono_dif' => '\ACBrAPI\Model\NfeSefazGMonoDif',
+        'g_ibs_mono_ad_rem' => '\ACBrAPI\Model\NfeSefazGIBSMonoAdRem',
+        'g_ibs_mono_ad_valorem' => '\ACBrAPI\Model\NfeSefazGIBSMonoAdValorem',
+        'g_cbs_mono_ad_rem' => '\ACBrAPI\Model\NfeSefazGCBSMonoAdRem',
+        'g_cbs_mono_ad_valorem' => '\ACBrAPI\Model\NfeSefazGCBSMonoAdValorem',
         'v_tot_ibs_mono_item' => 'float',
         'v_tot_cbs_mono_item' => 'float'
     ];
@@ -73,10 +73,10 @@ class NfeSefazMonofasia implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'g_mono_padrao' => null,
-        'g_mono_reten' => null,
-        'g_mono_ret' => null,
-        'g_mono_dif' => null,
+        'g_ibs_mono_ad_rem' => null,
+        'g_ibs_mono_ad_valorem' => null,
+        'g_cbs_mono_ad_rem' => null,
+        'g_cbs_mono_ad_valorem' => null,
         'v_tot_ibs_mono_item' => null,
         'v_tot_cbs_mono_item' => null
     ];
@@ -87,10 +87,10 @@ class NfeSefazMonofasia implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'g_mono_padrao' => false,
-		'g_mono_reten' => false,
-		'g_mono_ret' => false,
-		'g_mono_dif' => false,
+        'g_ibs_mono_ad_rem' => false,
+		'g_ibs_mono_ad_valorem' => false,
+		'g_cbs_mono_ad_rem' => false,
+		'g_cbs_mono_ad_valorem' => false,
 		'v_tot_ibs_mono_item' => true,
 		'v_tot_cbs_mono_item' => true
     ];
@@ -181,10 +181,10 @@ class NfeSefazMonofasia implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'g_mono_padrao' => 'gMonoPadrao',
-        'g_mono_reten' => 'gMonoReten',
-        'g_mono_ret' => 'gMonoRet',
-        'g_mono_dif' => 'gMonoDif',
+        'g_ibs_mono_ad_rem' => 'gIBSMonoAdRem',
+        'g_ibs_mono_ad_valorem' => 'gIBSMonoAdValorem',
+        'g_cbs_mono_ad_rem' => 'gCBSMonoAdRem',
+        'g_cbs_mono_ad_valorem' => 'gCBSMonoAdValorem',
         'v_tot_ibs_mono_item' => 'vTotIBSMonoItem',
         'v_tot_cbs_mono_item' => 'vTotCBSMonoItem'
     ];
@@ -195,10 +195,10 @@ class NfeSefazMonofasia implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'g_mono_padrao' => 'setGMonoPadrao',
-        'g_mono_reten' => 'setGMonoReten',
-        'g_mono_ret' => 'setGMonoRet',
-        'g_mono_dif' => 'setGMonoDif',
+        'g_ibs_mono_ad_rem' => 'setGIbsMonoAdRem',
+        'g_ibs_mono_ad_valorem' => 'setGIbsMonoAdValorem',
+        'g_cbs_mono_ad_rem' => 'setGCbsMonoAdRem',
+        'g_cbs_mono_ad_valorem' => 'setGCbsMonoAdValorem',
         'v_tot_ibs_mono_item' => 'setVTotIbsMonoItem',
         'v_tot_cbs_mono_item' => 'setVTotCbsMonoItem'
     ];
@@ -209,10 +209,10 @@ class NfeSefazMonofasia implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'g_mono_padrao' => 'getGMonoPadrao',
-        'g_mono_reten' => 'getGMonoReten',
-        'g_mono_ret' => 'getGMonoRet',
-        'g_mono_dif' => 'getGMonoDif',
+        'g_ibs_mono_ad_rem' => 'getGIbsMonoAdRem',
+        'g_ibs_mono_ad_valorem' => 'getGIbsMonoAdValorem',
+        'g_cbs_mono_ad_rem' => 'getGCbsMonoAdRem',
+        'g_cbs_mono_ad_valorem' => 'getGCbsMonoAdValorem',
         'v_tot_ibs_mono_item' => 'getVTotIbsMonoItem',
         'v_tot_cbs_mono_item' => 'getVTotCbsMonoItem'
     ];
@@ -274,10 +274,10 @@ class NfeSefazMonofasia implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('g_mono_padrao', $data ?? [], null);
-        $this->setIfExists('g_mono_reten', $data ?? [], null);
-        $this->setIfExists('g_mono_ret', $data ?? [], null);
-        $this->setIfExists('g_mono_dif', $data ?? [], null);
+        $this->setIfExists('g_ibs_mono_ad_rem', $data ?? [], null);
+        $this->setIfExists('g_ibs_mono_ad_valorem', $data ?? [], null);
+        $this->setIfExists('g_cbs_mono_ad_rem', $data ?? [], null);
+        $this->setIfExists('g_cbs_mono_ad_valorem', $data ?? [], null);
         $this->setIfExists('v_tot_ibs_mono_item', $data ?? [], null);
         $this->setIfExists('v_tot_cbs_mono_item', $data ?? [], null);
     }
@@ -339,109 +339,109 @@ class NfeSefazMonofasia implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets g_mono_padrao
+     * Gets g_ibs_mono_ad_rem
      *
-     * @return \ACBrAPI\Model\NfeSefazGMonoPadrao|null
+     * @return \ACBrAPI\Model\NfeSefazGIBSMonoAdRem|null
      */
-    public function getGMonoPadrao()
+    public function getGIbsMonoAdRem()
     {
-        return $this->container['g_mono_padrao'];
+        return $this->container['g_ibs_mono_ad_rem'];
     }
 
     /**
-     * Sets g_mono_padrao
+     * Sets g_ibs_mono_ad_rem
      *
-     * @param \ACBrAPI\Model\NfeSefazGMonoPadrao|null $g_mono_padrao g_mono_padrao
+     * @param \ACBrAPI\Model\NfeSefazGIBSMonoAdRem|null $g_ibs_mono_ad_rem g_ibs_mono_ad_rem
      *
      * @return self
      */
-    public function setGMonoPadrao($g_mono_padrao)
+    public function setGIbsMonoAdRem($g_ibs_mono_ad_rem)
     {
-        if (is_null($g_mono_padrao)) {
-            throw new \InvalidArgumentException('non-nullable g_mono_padrao cannot be null');
+        if (is_null($g_ibs_mono_ad_rem)) {
+            throw new \InvalidArgumentException('non-nullable g_ibs_mono_ad_rem cannot be null');
         }
-        $this->container['g_mono_padrao'] = $g_mono_padrao;
+        $this->container['g_ibs_mono_ad_rem'] = $g_ibs_mono_ad_rem;
 
         return $this;
     }
 
     /**
-     * Gets g_mono_reten
+     * Gets g_ibs_mono_ad_valorem
      *
-     * @return \ACBrAPI\Model\NfeSefazGMonoReten|null
+     * @return \ACBrAPI\Model\NfeSefazGIBSMonoAdValorem|null
      */
-    public function getGMonoReten()
+    public function getGIbsMonoAdValorem()
     {
-        return $this->container['g_mono_reten'];
+        return $this->container['g_ibs_mono_ad_valorem'];
     }
 
     /**
-     * Sets g_mono_reten
+     * Sets g_ibs_mono_ad_valorem
      *
-     * @param \ACBrAPI\Model\NfeSefazGMonoReten|null $g_mono_reten g_mono_reten
+     * @param \ACBrAPI\Model\NfeSefazGIBSMonoAdValorem|null $g_ibs_mono_ad_valorem g_ibs_mono_ad_valorem
      *
      * @return self
      */
-    public function setGMonoReten($g_mono_reten)
+    public function setGIbsMonoAdValorem($g_ibs_mono_ad_valorem)
     {
-        if (is_null($g_mono_reten)) {
-            throw new \InvalidArgumentException('non-nullable g_mono_reten cannot be null');
+        if (is_null($g_ibs_mono_ad_valorem)) {
+            throw new \InvalidArgumentException('non-nullable g_ibs_mono_ad_valorem cannot be null');
         }
-        $this->container['g_mono_reten'] = $g_mono_reten;
+        $this->container['g_ibs_mono_ad_valorem'] = $g_ibs_mono_ad_valorem;
 
         return $this;
     }
 
     /**
-     * Gets g_mono_ret
+     * Gets g_cbs_mono_ad_rem
      *
-     * @return \ACBrAPI\Model\NfeSefazGMonoRet|null
+     * @return \ACBrAPI\Model\NfeSefazGCBSMonoAdRem|null
      */
-    public function getGMonoRet()
+    public function getGCbsMonoAdRem()
     {
-        return $this->container['g_mono_ret'];
+        return $this->container['g_cbs_mono_ad_rem'];
     }
 
     /**
-     * Sets g_mono_ret
+     * Sets g_cbs_mono_ad_rem
      *
-     * @param \ACBrAPI\Model\NfeSefazGMonoRet|null $g_mono_ret g_mono_ret
+     * @param \ACBrAPI\Model\NfeSefazGCBSMonoAdRem|null $g_cbs_mono_ad_rem g_cbs_mono_ad_rem
      *
      * @return self
      */
-    public function setGMonoRet($g_mono_ret)
+    public function setGCbsMonoAdRem($g_cbs_mono_ad_rem)
     {
-        if (is_null($g_mono_ret)) {
-            throw new \InvalidArgumentException('non-nullable g_mono_ret cannot be null');
+        if (is_null($g_cbs_mono_ad_rem)) {
+            throw new \InvalidArgumentException('non-nullable g_cbs_mono_ad_rem cannot be null');
         }
-        $this->container['g_mono_ret'] = $g_mono_ret;
+        $this->container['g_cbs_mono_ad_rem'] = $g_cbs_mono_ad_rem;
 
         return $this;
     }
 
     /**
-     * Gets g_mono_dif
+     * Gets g_cbs_mono_ad_valorem
      *
-     * @return \ACBrAPI\Model\NfeSefazGMonoDif|null
+     * @return \ACBrAPI\Model\NfeSefazGCBSMonoAdValorem|null
      */
-    public function getGMonoDif()
+    public function getGCbsMonoAdValorem()
     {
-        return $this->container['g_mono_dif'];
+        return $this->container['g_cbs_mono_ad_valorem'];
     }
 
     /**
-     * Sets g_mono_dif
+     * Sets g_cbs_mono_ad_valorem
      *
-     * @param \ACBrAPI\Model\NfeSefazGMonoDif|null $g_mono_dif g_mono_dif
+     * @param \ACBrAPI\Model\NfeSefazGCBSMonoAdValorem|null $g_cbs_mono_ad_valorem g_cbs_mono_ad_valorem
      *
      * @return self
      */
-    public function setGMonoDif($g_mono_dif)
+    public function setGCbsMonoAdValorem($g_cbs_mono_ad_valorem)
     {
-        if (is_null($g_mono_dif)) {
-            throw new \InvalidArgumentException('non-nullable g_mono_dif cannot be null');
+        if (is_null($g_cbs_mono_ad_valorem)) {
+            throw new \InvalidArgumentException('non-nullable g_cbs_mono_ad_valorem cannot be null');
         }
-        $this->container['g_mono_dif'] = $g_mono_dif;
+        $this->container['g_cbs_mono_ad_valorem'] = $g_cbs_mono_ad_valorem;
 
         return $this;
     }
@@ -459,7 +459,7 @@ class NfeSefazMonofasia implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets v_tot_ibs_mono_item
      *
-     * @param float $v_tot_ibs_mono_item Total de IBS monofásico do item.
+     * @param float $v_tot_ibs_mono_item Total de IBS Monofásico.
      *
      * @return self
      */
@@ -498,7 +498,7 @@ class NfeSefazMonofasia implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets v_tot_cbs_mono_item
      *
-     * @param float $v_tot_cbs_mono_item Total da CBS monofásica do item.
+     * @param float $v_tot_cbs_mono_item Total da CBS Monofásica.
      *
      * @return self
      */

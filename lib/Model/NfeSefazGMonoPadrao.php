@@ -34,7 +34,7 @@ use \ACBrAPI\ObjectSerializer;
  * NfeSefazGMonoPadrao Class Doc Comment
  *
  * @category Class
- * @description Grupo de informações da Tributação Monofásica padrão.
+ * @description Grupo de informações da Tributação Monofásica Padrão.
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,9 +59,7 @@ class NfeSefazGMonoPadrao implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPITypes = [
         'q_bc_mono' => 'float',
         'ad_rem_ibs' => 'float',
-        'ad_rem_cbs' => 'float',
-        'v_ibs_mono' => 'float',
-        'v_cbs_mono' => 'float'
+        'v_ibs_mono' => 'float'
     ];
 
     /**
@@ -74,9 +72,7 @@ class NfeSefazGMonoPadrao implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $openAPIFormats = [
         'q_bc_mono' => null,
         'ad_rem_ibs' => null,
-        'ad_rem_cbs' => null,
-        'v_ibs_mono' => null,
-        'v_cbs_mono' => null
+        'v_ibs_mono' => null
     ];
 
     /**
@@ -87,9 +83,7 @@ class NfeSefazGMonoPadrao implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static array $openAPINullables = [
         'q_bc_mono' => true,
 		'ad_rem_ibs' => true,
-		'ad_rem_cbs' => true,
-		'v_ibs_mono' => true,
-		'v_cbs_mono' => true
+		'v_ibs_mono' => true
     ];
 
     /**
@@ -180,9 +174,7 @@ class NfeSefazGMonoPadrao implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $attributeMap = [
         'q_bc_mono' => 'qBCMono',
         'ad_rem_ibs' => 'adRemIBS',
-        'ad_rem_cbs' => 'adRemCBS',
-        'v_ibs_mono' => 'vIBSMono',
-        'v_cbs_mono' => 'vCBSMono'
+        'v_ibs_mono' => 'vIBSMono'
     ];
 
     /**
@@ -193,9 +185,7 @@ class NfeSefazGMonoPadrao implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $setters = [
         'q_bc_mono' => 'setQBcMono',
         'ad_rem_ibs' => 'setAdRemIbs',
-        'ad_rem_cbs' => 'setAdRemCbs',
-        'v_ibs_mono' => 'setVIbsMono',
-        'v_cbs_mono' => 'setVCbsMono'
+        'v_ibs_mono' => 'setVIbsMono'
     ];
 
     /**
@@ -206,9 +196,7 @@ class NfeSefazGMonoPadrao implements ModelInterface, ArrayAccess, \JsonSerializa
     protected static $getters = [
         'q_bc_mono' => 'getQBcMono',
         'ad_rem_ibs' => 'getAdRemIbs',
-        'ad_rem_cbs' => 'getAdRemCbs',
-        'v_ibs_mono' => 'getVIbsMono',
-        'v_cbs_mono' => 'getVCbsMono'
+        'v_ibs_mono' => 'getVIbsMono'
     ];
 
     /**
@@ -270,9 +258,7 @@ class NfeSefazGMonoPadrao implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $this->setIfExists('q_bc_mono', $data ?? [], null);
         $this->setIfExists('ad_rem_ibs', $data ?? [], null);
-        $this->setIfExists('ad_rem_cbs', $data ?? [], null);
         $this->setIfExists('v_ibs_mono', $data ?? [], null);
-        $this->setIfExists('v_cbs_mono', $data ?? [], null);
     }
 
     /**
@@ -316,25 +302,11 @@ class NfeSefazGMonoPadrao implements ModelInterface, ArrayAccess, \JsonSerializa
             $invalidProperties[] = "invalid value for 'ad_rem_ibs', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['ad_rem_cbs'] === null) {
-            $invalidProperties[] = "'ad_rem_cbs' can't be null";
-        }
-        if (($this->container['ad_rem_cbs'] < 0)) {
-            $invalidProperties[] = "invalid value for 'ad_rem_cbs', must be bigger than or equal to 0.";
-        }
-
         if ($this->container['v_ibs_mono'] === null) {
             $invalidProperties[] = "'v_ibs_mono' can't be null";
         }
         if (($this->container['v_ibs_mono'] < 0)) {
             $invalidProperties[] = "invalid value for 'v_ibs_mono', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['v_cbs_mono'] === null) {
-            $invalidProperties[] = "'v_cbs_mono' can't be null";
-        }
-        if (($this->container['v_cbs_mono'] < 0)) {
-            $invalidProperties[] = "invalid value for 'v_cbs_mono', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -431,45 +403,6 @@ class NfeSefazGMonoPadrao implements ModelInterface, ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Gets ad_rem_cbs
-     *
-     * @return float
-     */
-    public function getAdRemCbs()
-    {
-        return $this->container['ad_rem_cbs'];
-    }
-
-    /**
-     * Sets ad_rem_cbs
-     *
-     * @param float $ad_rem_cbs Alíquota ad rem da CBS.
-     *
-     * @return self
-     */
-    public function setAdRemCbs($ad_rem_cbs)
-    {
-        if (is_null($ad_rem_cbs)) {
-            array_push($this->openAPINullablesSetToNull, 'ad_rem_cbs');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ad_rem_cbs', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($ad_rem_cbs) && ($ad_rem_cbs < 0)) {
-            throw new \InvalidArgumentException('invalid value for $ad_rem_cbs when calling NfeSefazGMonoPadrao., must be bigger than or equal to 0.');
-        }
-
-        $this->container['ad_rem_cbs'] = $ad_rem_cbs;
-
-        return $this;
-    }
-
-    /**
      * Gets v_ibs_mono
      *
      * @return float
@@ -504,45 +437,6 @@ class NfeSefazGMonoPadrao implements ModelInterface, ArrayAccess, \JsonSerializa
         }
 
         $this->container['v_ibs_mono'] = $v_ibs_mono;
-
-        return $this;
-    }
-
-    /**
-     * Gets v_cbs_mono
-     *
-     * @return float
-     */
-    public function getVCbsMono()
-    {
-        return $this->container['v_cbs_mono'];
-    }
-
-    /**
-     * Sets v_cbs_mono
-     *
-     * @param float $v_cbs_mono Valor da CBS monofásica.
-     *
-     * @return self
-     */
-    public function setVCbsMono($v_cbs_mono)
-    {
-        if (is_null($v_cbs_mono)) {
-            array_push($this->openAPINullablesSetToNull, 'v_cbs_mono');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('v_cbs_mono', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-
-        if (!is_null($v_cbs_mono) && ($v_cbs_mono < 0)) {
-            throw new \InvalidArgumentException('invalid value for $v_cbs_mono when calling NfeSefazGMonoPadrao., must be bigger than or equal to 0.');
-        }
-
-        $this->container['v_cbs_mono'] = $v_cbs_mono;
 
         return $this;
     }

@@ -312,8 +312,8 @@ class NfeSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['icms_tot'] === null) {
             $invalidProperties[] = "'icms_tot' can't be null";
         }
-        if (!is_null($this->container['v_nf_tot']) && ($this->container['v_nf_tot'] <= 0)) {
-            $invalidProperties[] = "invalid value for 'v_nf_tot', must be bigger than 0.";
+        if (!is_null($this->container['v_nf_tot']) && ($this->container['v_nf_tot'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_nf_tot', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -496,8 +496,8 @@ class NfeSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
 
-        if (!is_null($v_nf_tot) && ($v_nf_tot <= 0)) {
-            throw new \InvalidArgumentException('invalid value for $v_nf_tot when calling NfeSefazTotal., must be bigger than 0.');
+        if (!is_null($v_nf_tot) && ($v_nf_tot < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_nf_tot when calling NfeSefazTotal., must be bigger than or equal to 0.');
         }
 
         $this->container['v_nf_tot'] = $v_nf_tot;
