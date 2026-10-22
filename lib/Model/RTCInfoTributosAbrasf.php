@@ -57,6 +57,7 @@ class RTCInfoTributosAbrasf implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
+        'c_loc_incid_ibscbs' => 'string',
         'v_bc' => 'float',
         'fed' => '\ACBrAPI\Model\RTCInfoTributosAbrasfFed',
         'uf' => '\ACBrAPI\Model\RTCInfoTributosAbrasfUF',
@@ -71,6 +72,7 @@ class RTCInfoTributosAbrasf implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'c_loc_incid_ibscbs' => null,
         'v_bc' => null,
         'fed' => null,
         'uf' => null,
@@ -83,7 +85,8 @@ class RTCInfoTributosAbrasf implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'v_bc' => true,
+        'c_loc_incid_ibscbs' => true,
+		'v_bc' => true,
 		'fed' => false,
 		'uf' => false,
 		'mun' => false
@@ -175,6 +178,7 @@ class RTCInfoTributosAbrasf implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
+        'c_loc_incid_ibscbs' => 'cLocIncidIBSCBS',
         'v_bc' => 'vBC',
         'fed' => 'fed',
         'uf' => 'uf',
@@ -187,6 +191,7 @@ class RTCInfoTributosAbrasf implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
+        'c_loc_incid_ibscbs' => 'setCLocIncidIbscbs',
         'v_bc' => 'setVBc',
         'fed' => 'setFed',
         'uf' => 'setUf',
@@ -199,6 +204,7 @@ class RTCInfoTributosAbrasf implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
+        'c_loc_incid_ibscbs' => 'getCLocIncidIbscbs',
         'v_bc' => 'getVBc',
         'fed' => 'getFed',
         'uf' => 'getUf',
@@ -262,6 +268,7 @@ class RTCInfoTributosAbrasf implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('c_loc_incid_ibscbs', $data ?? [], null);
         $this->setIfExists('v_bc', $data ?? [], null);
         $this->setIfExists('fed', $data ?? [], null);
         $this->setIfExists('uf', $data ?? [], null);
@@ -313,6 +320,40 @@ class RTCInfoTributosAbrasf implements ModelInterface, ArrayAccess, \JsonSeriali
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets c_loc_incid_ibscbs
+     *
+     * @return string|null
+     */
+    public function getCLocIncidIbscbs()
+    {
+        return $this->container['c_loc_incid_ibscbs'];
+    }
+
+    /**
+     * Sets c_loc_incid_ibscbs
+     *
+     * @param string|null $c_loc_incid_ibscbs Código do município de incidência do IBS/CBS (tabela do IBGE).    Caso não seja informado, é determinado pelo local da operação (LC 214/25, art. 11), conforme o indicador da operação (`cIndOp`). Não confundir com o município de incidência do ISSQN (`tribMun.cLocIncid`).
+     *
+     * @return self
+     */
+    public function setCLocIncidIbscbs($c_loc_incid_ibscbs)
+    {
+        if (is_null($c_loc_incid_ibscbs)) {
+            array_push($this->openAPINullablesSetToNull, 'c_loc_incid_ibscbs');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('c_loc_incid_ibscbs', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['c_loc_incid_ibscbs'] = $c_loc_incid_ibscbs;
+
+        return $this;
+    }
 
     /**
      * Gets v_bc
