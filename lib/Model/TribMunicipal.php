@@ -547,7 +547,7 @@ class TribMunicipal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tp_ret_issqn
      *
-     * @param int|null $tp_ret_issqn Tipo de retencao do ISSQN:  * 1 - Não Retido  * 2 - Retido pelo Tomador  * 3 - Retido pelo Intermediario
+     * @param int|null $tp_ret_issqn Tipo de retencao do ISSQN:  * 1 - Não Retido / Prestador  * 2 - Retido pelo Tomador  * 3 - Retido pelo Intermediario
      *
      * @return self
      */
