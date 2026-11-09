@@ -57,6 +57,8 @@ class RTCInfoTributosIBSCBS implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
+        'cst' => 'string',
+        'c_class_trib' => 'string',
         'g_ibscbs' => '\ACBrAPI\Model\RTCInfoTributosSitClas'
     ];
 
@@ -68,6 +70,8 @@ class RTCInfoTributosIBSCBS implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'cst' => null,
+        'c_class_trib' => null,
         'g_ibscbs' => null
     ];
 
@@ -77,7 +81,9 @@ class RTCInfoTributosIBSCBS implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'g_ibscbs' => false
+        'cst' => true,
+		'c_class_trib' => true,
+		'g_ibscbs' => false
     ];
 
     /**
@@ -166,6 +172,8 @@ class RTCInfoTributosIBSCBS implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
+        'cst' => 'CST',
+        'c_class_trib' => 'cClassTrib',
         'g_ibscbs' => 'gIBSCBS'
     ];
 
@@ -175,6 +183,8 @@ class RTCInfoTributosIBSCBS implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
+        'cst' => 'setCst',
+        'c_class_trib' => 'setCClassTrib',
         'g_ibscbs' => 'setGIbscbs'
     ];
 
@@ -184,6 +194,8 @@ class RTCInfoTributosIBSCBS implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
+        'cst' => 'getCst',
+        'c_class_trib' => 'getCClassTrib',
         'g_ibscbs' => 'getGIbscbs'
     ];
 
@@ -244,6 +256,8 @@ class RTCInfoTributosIBSCBS implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('cst', $data ?? [], null);
+        $this->setIfExists('c_class_trib', $data ?? [], null);
         $this->setIfExists('g_ibscbs', $data ?? [], null);
     }
 
@@ -274,9 +288,6 @@ class RTCInfoTributosIBSCBS implements ModelInterface, ArrayAccess, \JsonSeriali
     {
         $invalidProperties = [];
 
-        if ($this->container['g_ibscbs'] === null) {
-            $invalidProperties[] = "'g_ibscbs' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -293,9 +304,77 @@ class RTCInfoTributosIBSCBS implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
+     * Gets cst
+     *
+     * @return string|null
+     */
+    public function getCst()
+    {
+        return $this->container['cst'];
+    }
+
+    /**
+     * Sets cst
+     *
+     * @param string|null $cst Código de Situação Tributária do IBS e da CBS.  *Disponível a partir da NT 009 (leiaute 009.1.01).*
+     *
+     * @return self
+     */
+    public function setCst($cst)
+    {
+        if (is_null($cst)) {
+            array_push($this->openAPINullablesSetToNull, 'cst');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cst', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['cst'] = $cst;
+
+        return $this;
+    }
+
+    /**
+     * Gets c_class_trib
+     *
+     * @return string|null
+     */
+    public function getCClassTrib()
+    {
+        return $this->container['c_class_trib'];
+    }
+
+    /**
+     * Sets c_class_trib
+     *
+     * @param string|null $c_class_trib Código de Classificação Tributária do IBS e da CBS.  *Disponível a partir da NT 009 (leiaute 009.1.01).*
+     *
+     * @return self
+     */
+    public function setCClassTrib($c_class_trib)
+    {
+        if (is_null($c_class_trib)) {
+            array_push($this->openAPINullablesSetToNull, 'c_class_trib');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('c_class_trib', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['c_class_trib'] = $c_class_trib;
+
+        return $this;
+    }
+
+    /**
      * Gets g_ibscbs
      *
-     * @return \ACBrAPI\Model\RTCInfoTributosSitClas
+     * @return \ACBrAPI\Model\RTCInfoTributosSitClas|null
      */
     public function getGIbscbs()
     {
@@ -305,7 +384,7 @@ class RTCInfoTributosIBSCBS implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets g_ibscbs
      *
-     * @param \ACBrAPI\Model\RTCInfoTributosSitClas $g_ibscbs g_ibscbs
+     * @param \ACBrAPI\Model\RTCInfoTributosSitClas|null $g_ibscbs g_ibscbs
      *
      * @return self
      */

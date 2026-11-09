@@ -379,14 +379,11 @@ class InfoTomador implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'im', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['x_nome'] === null) {
-            $invalidProperties[] = "'x_nome' can't be null";
-        }
-        if ((mb_strlen($this->container['x_nome']) > 300)) {
+        if (!is_null($this->container['x_nome']) && (mb_strlen($this->container['x_nome']) > 300)) {
             $invalidProperties[] = "invalid value for 'x_nome', the character length must be smaller than or equal to 300.";
         }
 
-        if ((mb_strlen($this->container['x_nome']) < 1)) {
+        if (!is_null($this->container['x_nome']) && (mb_strlen($this->container['x_nome']) < 1)) {
             $invalidProperties[] = "invalid value for 'x_nome', the character length must be bigger than or equal to 1.";
         }
 
@@ -714,7 +711,7 @@ class InfoTomador implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets x_nome
      *
-     * @return string
+     * @return string|null
      */
     public function getXNome()
     {
@@ -724,7 +721,7 @@ class InfoTomador implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets x_nome
      *
-     * @param string $x_nome Nome/Nome Empresarial.
+     * @param string|null $x_nome Nome/Nome Empresarial.
      *
      * @return self
      */

@@ -11,6 +11,7 @@ Nome | Tipo | Descrição | Comentários
 **n_dps** | **string** | Número do DPS.    Informar apenas quando a numeracao automatica estiver desabilitada na configuracao da empresa. | [optional]
 **d_compet** | **\DateTime** | Data em que se iniciou a prestação do serviço: Dia, mês e ano (AAAAMMDD). (AAAA-MM-DDThh:mm:ssTZD).      *Geramos automaticamente quando nenhum valor é informado.* | [optional]
 **c_motivo_emis_ti** | **int** | Motivo da Emissão da DPS pelo Tomador/Intermediário:  * 1 - Importação de Serviço  * 2 - Tomador/Intermediário obrigado a emitir NFS-e por legislação municipal  * 3 - Tomador/Intermediário emitindo NFS-e por recusa de emissão pelo prestador  * 4 - Tomador/Intermediário emitindo por rejeitar a NFS-e emitida pelo prestador | [optional]
+**fin_nfse** | **int** | Indicador da finalidade da emissão de NFS-e:  * 0 - NFS-e regular.    Caso não seja informado, será utilizado o valor de &#x60;IBSCBS.finNFSe&#x60; ou, na ausência dele, &#x60;0&#x60;.  *Disponível a partir da NT 009 (leiaute 009.1.01).* | [optional]
 **ch_nfse_rej** | **string** | Chave de Acesso da NFS-e rejeitada pelo Tomador/Intermediário. | [optional]
 **subst** | [**\ACBrAPI\Model\Substituicao**](Substituicao.md) |  | [optional]
 **prest** | [**\ACBrAPI\Model\InfoPrestador**](InfoPrestador.md) |  |

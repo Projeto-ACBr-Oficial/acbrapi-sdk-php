@@ -64,6 +64,7 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'n_dps' => 'string',
         'd_compet' => '\DateTime',
         'c_motivo_emis_ti' => 'int',
+        'fin_nfse' => 'int',
         'ch_nfse_rej' => 'string',
         'subst' => '\ACBrAPI\Model\Substituicao',
         'prest' => '\ACBrAPI\Model\InfoPrestador',
@@ -89,6 +90,7 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'n_dps' => null,
         'd_compet' => 'date',
         'c_motivo_emis_ti' => null,
+        'fin_nfse' => null,
         'ch_nfse_rej' => null,
         'subst' => null,
         'prest' => null,
@@ -112,6 +114,7 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
 		'n_dps' => true,
 		'd_compet' => true,
 		'c_motivo_emis_ti' => true,
+		'fin_nfse' => true,
 		'ch_nfse_rej' => true,
 		'subst' => false,
 		'prest' => false,
@@ -215,6 +218,7 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'n_dps' => 'nDPS',
         'd_compet' => 'dCompet',
         'c_motivo_emis_ti' => 'cMotivoEmisTI',
+        'fin_nfse' => 'finNFSe',
         'ch_nfse_rej' => 'chNFSeRej',
         'subst' => 'subst',
         'prest' => 'prest',
@@ -238,6 +242,7 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'n_dps' => 'setNDps',
         'd_compet' => 'setDCompet',
         'c_motivo_emis_ti' => 'setCMotivoEmisTi',
+        'fin_nfse' => 'setFinNfse',
         'ch_nfse_rej' => 'setChNfseRej',
         'subst' => 'setSubst',
         'prest' => 'setPrest',
@@ -261,6 +266,7 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'n_dps' => 'getNDps',
         'd_compet' => 'getDCompet',
         'c_motivo_emis_ti' => 'getCMotivoEmisTi',
+        'fin_nfse' => 'getFinNfse',
         'ch_nfse_rej' => 'getChNfseRej',
         'subst' => 'getSubst',
         'prest' => 'getPrest',
@@ -335,6 +341,7 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('n_dps', $data ?? [], null);
         $this->setIfExists('d_compet', $data ?? [], null);
         $this->setIfExists('c_motivo_emis_ti', $data ?? [], null);
+        $this->setIfExists('fin_nfse', $data ?? [], null);
         $this->setIfExists('ch_nfse_rej', $data ?? [], null);
         $this->setIfExists('subst', $data ?? [], null);
         $this->setIfExists('prest', $data ?? [], null);
@@ -675,6 +682,40 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['c_motivo_emis_ti'] = $c_motivo_emis_ti;
+
+        return $this;
+    }
+
+    /**
+     * Gets fin_nfse
+     *
+     * @return int|null
+     */
+    public function getFinNfse()
+    {
+        return $this->container['fin_nfse'];
+    }
+
+    /**
+     * Sets fin_nfse
+     *
+     * @param int|null $fin_nfse Indicador da finalidade da emissão de NFS-e:  * 0 - NFS-e regular.    Caso não seja informado, será utilizado o valor de `IBSCBS.finNFSe` ou, na ausência dele, `0`.  *Disponível a partir da NT 009 (leiaute 009.1.01).*
+     *
+     * @return self
+     */
+    public function setFinNfse($fin_nfse)
+    {
+        if (is_null($fin_nfse)) {
+            array_push($this->openAPINullablesSetToNull, 'fin_nfse');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('fin_nfse', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['fin_nfse'] = $fin_nfse;
 
         return $this;
     }

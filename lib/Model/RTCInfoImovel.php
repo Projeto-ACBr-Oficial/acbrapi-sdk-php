@@ -57,6 +57,9 @@ class RTCInfoImovel implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'c_mun' => 'string',
+        'g_locacao' => '\ACBrAPI\Model\RTCLocacaoImovel',
+        'g_unid_imob' => '\ACBrAPI\Model\RTCUnidadesImobiliarias[]',
         'insc_imob_fisc' => 'string',
         'c_cib' => 'string',
         'end' => '\ACBrAPI\Model\EnderObraEvento'
@@ -70,6 +73,9 @@ class RTCInfoImovel implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'c_mun' => null,
+        'g_locacao' => null,
+        'g_unid_imob' => null,
         'insc_imob_fisc' => null,
         'c_cib' => null,
         'end' => null
@@ -81,7 +87,10 @@ class RTCInfoImovel implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'insc_imob_fisc' => true,
+        'c_mun' => true,
+		'g_locacao' => false,
+		'g_unid_imob' => false,
+		'insc_imob_fisc' => true,
 		'c_cib' => true,
 		'end' => false
     ];
@@ -172,6 +181,9 @@ class RTCInfoImovel implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'c_mun' => 'cMun',
+        'g_locacao' => 'gLocacao',
+        'g_unid_imob' => 'gUnidImob',
         'insc_imob_fisc' => 'inscImobFisc',
         'c_cib' => 'cCIB',
         'end' => 'end'
@@ -183,6 +195,9 @@ class RTCInfoImovel implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'c_mun' => 'setCMun',
+        'g_locacao' => 'setGLocacao',
+        'g_unid_imob' => 'setGUnidImob',
         'insc_imob_fisc' => 'setInscImobFisc',
         'c_cib' => 'setCCib',
         'end' => 'setEnd'
@@ -194,6 +209,9 @@ class RTCInfoImovel implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'c_mun' => 'getCMun',
+        'g_locacao' => 'getGLocacao',
+        'g_unid_imob' => 'getGUnidImob',
         'insc_imob_fisc' => 'getInscImobFisc',
         'c_cib' => 'getCCib',
         'end' => 'getEnd'
@@ -256,6 +274,9 @@ class RTCInfoImovel implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('c_mun', $data ?? [], null);
+        $this->setIfExists('g_locacao', $data ?? [], null);
+        $this->setIfExists('g_unid_imob', $data ?? [], null);
         $this->setIfExists('insc_imob_fisc', $data ?? [], null);
         $this->setIfExists('c_cib', $data ?? [], null);
         $this->setIfExists('end', $data ?? [], null);
@@ -288,6 +309,10 @@ class RTCInfoImovel implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['g_unid_imob']) && (count($this->container['g_unid_imob']) > 99)) {
+            $invalidProperties[] = "invalid value for 'g_unid_imob', number of items must be less than or equal to 99.";
+        }
+
         if (!is_null($this->container['insc_imob_fisc']) && (mb_strlen($this->container['insc_imob_fisc']) > 30)) {
             $invalidProperties[] = "invalid value for 'insc_imob_fisc', the character length must be smaller than or equal to 30.";
         }
@@ -316,6 +341,98 @@ class RTCInfoImovel implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
+     * Gets c_mun
+     *
+     * @return string|null
+     */
+    public function getCMun()
+    {
+        return $this->container['c_mun'];
+    }
+
+    /**
+     * Sets c_mun
+     *
+     * @param string|null $c_mun Código do município do endereço do imóvel (Tabela do IBGE).  *Disponível a partir da NT 009 (leiaute 009.1.01).*
+     *
+     * @return self
+     */
+    public function setCMun($c_mun)
+    {
+        if (is_null($c_mun)) {
+            array_push($this->openAPINullablesSetToNull, 'c_mun');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('c_mun', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['c_mun'] = $c_mun;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_locacao
+     *
+     * @return \ACBrAPI\Model\RTCLocacaoImovel|null
+     */
+    public function getGLocacao()
+    {
+        return $this->container['g_locacao'];
+    }
+
+    /**
+     * Sets g_locacao
+     *
+     * @param \ACBrAPI\Model\RTCLocacaoImovel|null $g_locacao g_locacao
+     *
+     * @return self
+     */
+    public function setGLocacao($g_locacao)
+    {
+        if (is_null($g_locacao)) {
+            throw new \InvalidArgumentException('non-nullable g_locacao cannot be null');
+        }
+        $this->container['g_locacao'] = $g_locacao;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_unid_imob
+     *
+     * @return \ACBrAPI\Model\RTCUnidadesImobiliarias[]|null
+     */
+    public function getGUnidImob()
+    {
+        return $this->container['g_unid_imob'];
+    }
+
+    /**
+     * Sets g_unid_imob
+     *
+     * @param \ACBrAPI\Model\RTCUnidadesImobiliarias[]|null $g_unid_imob g_unid_imob
+     *
+     * @return self
+     */
+    public function setGUnidImob($g_unid_imob)
+    {
+        if (is_null($g_unid_imob)) {
+            throw new \InvalidArgumentException('non-nullable g_unid_imob cannot be null');
+        }
+
+        if ((count($g_unid_imob) > 99)) {
+            throw new \InvalidArgumentException('invalid value for $g_unid_imob when calling RTCInfoImovel., number of items must be less than or equal to 99.');
+        }
+        $this->container['g_unid_imob'] = $g_unid_imob;
+
+        return $this;
+    }
+
+    /**
      * Gets insc_imob_fisc
      *
      * @return string|null
@@ -328,7 +445,7 @@ class RTCInfoImovel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets insc_imob_fisc
      *
-     * @param string|null $insc_imob_fisc Inscrição imobiliária fiscal (código fornecido pela Prefeitura Municipal para a identificação da obra ou para fins de recolhimento do IPTU).
+     * @param string|null $insc_imob_fisc `Deprecated`    **Propriedade depreciada** a partir da NT 009 (leiaute 009.1.01).    *Utilize `IBSCBS.imovel.gUnidImob[].inscImobFisc`*.  Inscrição imobiliária fiscal (código fornecido pela Prefeitura Municipal para a identificação da obra ou para fins de recolhimento do IPTU).
      *
      * @return self
      */
@@ -369,7 +486,7 @@ class RTCInfoImovel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets c_cib
      *
-     * @param string|null $c_cib Código do Cadastro Imobiliário Brasileiro - CIB.
+     * @param string|null $c_cib `Deprecated`    **Propriedade depreciada** a partir da NT 009 (leiaute 009.1.01).    *Utilize `IBSCBS.imovel.gUnidImob[].cCIB`*.  Código do Cadastro Imobiliário Brasileiro - CIB.
      *
      * @return self
      */

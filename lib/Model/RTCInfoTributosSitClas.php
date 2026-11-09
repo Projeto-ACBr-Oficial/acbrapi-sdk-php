@@ -302,12 +302,6 @@ class RTCInfoTributosSitClas implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['cst'] === null) {
-            $invalidProperties[] = "'cst' can't be null";
-        }
-        if ($this->container['c_class_trib'] === null) {
-            $invalidProperties[] = "'c_class_trib' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -326,7 +320,7 @@ class RTCInfoTributosSitClas implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets cst
      *
-     * @return string
+     * @return string|null
      */
     public function getCst()
     {
@@ -336,7 +330,7 @@ class RTCInfoTributosSitClas implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets cst
      *
-     * @param string $cst Código de Situação Tributária do IBS e da CBS.
+     * @param string|null $cst `Deprecated`    **Propriedade depreciada** a partir da NT 009 (leiaute 009.1.01).    *Utilize `IBSCBS.valores.trib.CST`*.  Código de Situação Tributária do IBS e da CBS.
      *
      * @return self
      */
@@ -360,7 +354,7 @@ class RTCInfoTributosSitClas implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets c_class_trib
      *
-     * @return string
+     * @return string|null
      */
     public function getCClassTrib()
     {
@@ -370,7 +364,7 @@ class RTCInfoTributosSitClas implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets c_class_trib
      *
-     * @param string $c_class_trib Código de Classificação Tributária do IBS e da CBS.
+     * @param string|null $c_class_trib `Deprecated`    **Propriedade depreciada** a partir da NT 009 (leiaute 009.1.01).    *Utilize `IBSCBS.valores.trib.cClassTrib`*.  Código de Classificação Tributária do IBS e da CBS.
      *
      * @return self
      */

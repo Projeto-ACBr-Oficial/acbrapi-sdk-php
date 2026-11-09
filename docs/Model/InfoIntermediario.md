@@ -11,7 +11,7 @@ Nome | Tipo | Descrição | Comentários
 **caepf** | **string** | Número do Cadastro de Atividade Econômica da Pessoa Física (CAEPF). | [optional]
 **im** | **string** | Número da inscrição municipal. | [optional]
 **ie** | **string** | Número da inscrição estadual.    **Atenção**: Para emissões pelo Sistema Nacional NFS-e, esse campo é ignorado. | [optional]
-**x_nome** | **string** | Nome/Nome Empresarial. |
+**x_nome** | **string** | Nome/Nome Empresarial. | [optional]
 **end** | [**\ACBrAPI\Model\Endereco**](Endereco.md) |  | [optional]
 **fone** | **string** | Número do telefone do prestador:  Preencher com o Código DDD + número do telefone.  Nas operações com exterior é permitido informar o código do país + código da localidade + número do telefone). | [optional]
 **email** | **string** | * E-mail | [optional]

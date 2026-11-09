@@ -34,7 +34,7 @@ use \ACBrAPI\ObjectSerializer;
  * InfoDedRed Class Doc Comment
  *
  * @category Class
- * @description Grupo de informações relativas ao valores para dedução/redução do valor da base de cálculo (valor do serviço).
+ * @description &#x60;Deprecated&#x60;    **Propriedade depreciada** a partir da NT 009 (leiaute 009.1.01).    *Utilize &#x60;valores.vAjusteBC&#x60;*.  Grupo de informações relativas ao valores para dedução/redução do valor da base de cálculo (valor do serviço).
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

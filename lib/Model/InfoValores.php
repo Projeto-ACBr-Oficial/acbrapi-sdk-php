@@ -59,6 +59,7 @@ class InfoValores implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'v_serv_prest' => '\ACBrAPI\Model\VServPrest',
         'v_desc_cond_incond' => '\ACBrAPI\Model\VDescCondIncond',
+        'v_ajuste_bc' => '\ACBrAPI\Model\InfoAjusteBC',
         'v_ded_red' => '\ACBrAPI\Model\InfoDedRed',
         'trib' => '\ACBrAPI\Model\InfoTributacao'
     ];
@@ -73,6 +74,7 @@ class InfoValores implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'v_serv_prest' => null,
         'v_desc_cond_incond' => null,
+        'v_ajuste_bc' => null,
         'v_ded_red' => null,
         'trib' => null
     ];
@@ -85,6 +87,7 @@ class InfoValores implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'v_serv_prest' => false,
 		'v_desc_cond_incond' => false,
+		'v_ajuste_bc' => false,
 		'v_ded_red' => false,
 		'trib' => false
     ];
@@ -177,6 +180,7 @@ class InfoValores implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'v_serv_prest' => 'vServPrest',
         'v_desc_cond_incond' => 'vDescCondIncond',
+        'v_ajuste_bc' => 'vAjusteBC',
         'v_ded_red' => 'vDedRed',
         'trib' => 'trib'
     ];
@@ -189,6 +193,7 @@ class InfoValores implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'v_serv_prest' => 'setVServPrest',
         'v_desc_cond_incond' => 'setVDescCondIncond',
+        'v_ajuste_bc' => 'setVAjusteBc',
         'v_ded_red' => 'setVDedRed',
         'trib' => 'setTrib'
     ];
@@ -201,6 +206,7 @@ class InfoValores implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'v_serv_prest' => 'getVServPrest',
         'v_desc_cond_incond' => 'getVDescCondIncond',
+        'v_ajuste_bc' => 'getVAjusteBc',
         'v_ded_red' => 'getVDedRed',
         'trib' => 'getTrib'
     ];
@@ -264,6 +270,7 @@ class InfoValores implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('v_serv_prest', $data ?? [], null);
         $this->setIfExists('v_desc_cond_incond', $data ?? [], null);
+        $this->setIfExists('v_ajuste_bc', $data ?? [], null);
         $this->setIfExists('v_ded_red', $data ?? [], null);
         $this->setIfExists('trib', $data ?? [], null);
     }
@@ -366,6 +373,33 @@ class InfoValores implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable v_desc_cond_incond cannot be null');
         }
         $this->container['v_desc_cond_incond'] = $v_desc_cond_incond;
+
+        return $this;
+    }
+
+    /**
+     * Gets v_ajuste_bc
+     *
+     * @return \ACBrAPI\Model\InfoAjusteBC|null
+     */
+    public function getVAjusteBc()
+    {
+        return $this->container['v_ajuste_bc'];
+    }
+
+    /**
+     * Sets v_ajuste_bc
+     *
+     * @param \ACBrAPI\Model\InfoAjusteBC|null $v_ajuste_bc v_ajuste_bc
+     *
+     * @return self
+     */
+    public function setVAjusteBc($v_ajuste_bc)
+    {
+        if (is_null($v_ajuste_bc)) {
+            throw new \InvalidArgumentException('non-nullable v_ajuste_bc cannot be null');
+        }
+        $this->container['v_ajuste_bc'] = $v_ajuste_bc;
 
         return $this;
     }

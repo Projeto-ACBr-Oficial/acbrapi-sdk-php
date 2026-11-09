@@ -34,7 +34,7 @@ use \ACBrAPI\ObjectSerializer;
  * RTCInfoReeRepRes Class Doc Comment
  *
  * @category Class
- * @description Grupo de informações relativas a valores incluídos neste documento e recebidos por motivo de estarem relacionadas  a operações de terceiros, objeto de reembolso, repasse ou ressarcimento pelo recebedor, já tributados e aqui referenciados.
+ * @description &#x60;Deprecated&#x60;    **Propriedade depreciada** a partir da NT 009 (leiaute 009.1.01).    *Utilize &#x60;valores.vAjusteBC.documentos&#x60; (tipos de ajuste 101 a 104 e 199)*.  Grupo de informações relativas a valores incluídos neste documento e recebidos por motivo de estarem relacionadas  a operações de terceiros, objeto de reembolso, repasse ou ressarcimento pelo recebedor, já tributados e aqui referenciados.
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

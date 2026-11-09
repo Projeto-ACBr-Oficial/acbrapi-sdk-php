@@ -677,6 +677,7 @@ Classe | Método | Endpoint | Descrição
 - [DistribuicaoNfeNotaListagem](docs/Model/DistribuicaoNfeNotaListagem.md)
 - [DistribuicaoNfePedido](docs/Model/DistribuicaoNfePedido.md)
 - [DistribuicaoNfePedidoManifestacao](docs/Model/DistribuicaoNfePedidoManifestacao.md)
+- [DocAjusteBC](docs/Model/DocAjusteBC.md)
 - [DocDedRed](docs/Model/DocDedRed.md)
 - [DocNFNFS](docs/Model/DocNFNFS.md)
 - [DocOutNFSe](docs/Model/DocOutNFSe.md)
@@ -707,6 +708,7 @@ Classe | Método | Endpoint | Descrição
 - [EmpresaPedidoCadastroCertificado](docs/Model/EmpresaPedidoCadastroCertificado.md)
 - [EnderExt](docs/Model/EnderExt.md)
 - [EnderExtSimples](docs/Model/EnderExtSimples.md)
+- [EnderImovel](docs/Model/EnderImovel.md)
 - [EnderNac](docs/Model/EnderNac.md)
 - [EnderObraEvento](docs/Model/EnderObraEvento.md)
 - [Endereco](docs/Model/Endereco.md)
@@ -715,6 +717,7 @@ Classe | Método | Endpoint | Descrição
 - [ExigSuspensa](docs/Model/ExigSuspensa.md)
 - [HttpRequestDebug](docs/Model/HttpRequestDebug.md)
 - [InfDPS](docs/Model/InfDPS.md)
+- [InfoAjusteBC](docs/Model/InfoAjusteBC.md)
 - [InfoCompl](docs/Model/InfoCompl.md)
 - [InfoDedRed](docs/Model/InfoDedRed.md)
 - [InfoFornecDocDedRed](docs/Model/InfoFornecDocDedRed.md)
@@ -726,6 +729,7 @@ Classe | Método | Endpoint | Descrição
 - [InfoTomador](docs/Model/InfoTomador.md)
 - [InfoTributacao](docs/Model/InfoTributacao.md)
 - [InfoValores](docs/Model/InfoValores.md)
+- [ListaDocAjusteBC](docs/Model/ListaDocAjusteBC.md)
 - [ListaDocDedRed](docs/Model/ListaDocDedRed.md)
 - [LocPrest](docs/Model/LocPrest.md)
 - [ManifestacaoNfeListagem](docs/Model/ManifestacaoNfeListagem.md)
@@ -1043,6 +1047,7 @@ Classe | Método | Endpoint | Descrição
 - [NfsePedidoCancelamento](docs/Model/NfsePedidoCancelamento.md)
 - [NfsePedidoSincronizacao](docs/Model/NfsePedidoSincronizacao.md)
 - [NfseSincronizacao](docs/Model/NfseSincronizacao.md)
+- [RTCInfoBensMoveis](docs/Model/RTCInfoBensMoveis.md)
 - [RTCInfoDest](docs/Model/RTCInfoDest.md)
 - [RTCInfoIBSCBS](docs/Model/RTCInfoIBSCBS.md)
 - [RTCInfoImovel](docs/Model/RTCInfoImovel.md)
@@ -1061,6 +1066,9 @@ Classe | Método | Endpoint | Descrição
 - [RTCListaDocFiscalOutro](docs/Model/RTCListaDocFiscalOutro.md)
 - [RTCListaDocFornec](docs/Model/RTCListaDocFornec.md)
 - [RTCListaDocOutro](docs/Model/RTCListaDocOutro.md)
+- [RTCLocacaoImovel](docs/Model/RTCLocacaoImovel.md)
+- [RTCUnidadesImobiliarias](docs/Model/RTCUnidadesImobiliarias.md)
+- [RTCValoresBCImoveis](docs/Model/RTCValoresBCImoveis.md)
 - [RegTrib](docs/Model/RegTrib.md)
 - [Rps](docs/Model/Rps.md)
 - [RpsDados](docs/Model/RpsDados.md)
@@ -1105,6 +1113,6 @@ Classe | Método | Endpoint | Descrição
 
 ## Sobre este package
 
-- Versão da API: `3.1.17`
-    - Versão do package: `3.1.17`
+- Versão da API: `3.1.18`
+    - Versão do package: `3.1.18`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`
