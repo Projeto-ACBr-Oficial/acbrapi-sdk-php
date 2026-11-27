@@ -12,6 +12,7 @@ Nome | Tipo | Descrição | Comentários
 **d_contrato_fim** | **\DateTime** | Data de término do contrato.  Formato AAAA-MM-DD. | [optional]
 **nro_term_princ** | **string** | Número do Terminal Principal do serviço contratado.  Em se tratando de plano de prestação de serviço telefônico corporativo, familiar ou similares, informar o número do terminal telefônico principal do plano. | [optional]
 **c_uf_princ** | **int** | Código da UF de habilitação do terminal.  Utilizar a  Tabela do IBGE de código de unidades da federação. | [optional]
+**c_mun_princ** | **string** | Código do município do terminal. | [optional]
 **nro_term_adic** | **string** | Número dos Terminais adicionais do serviço contratado. | [optional]
 **c_uf_adic** | **int** | Código da UF de habilitação do terminal. | [optional]
 

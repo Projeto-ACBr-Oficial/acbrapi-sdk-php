@@ -62,7 +62,8 @@ class CteOsSefazImpOS implements ModelInterface, ArrayAccess, \JsonSerializable
         'icms45' => '\ACBrAPI\Model\CteOsSefazICMS45OS',
         'icms90' => '\ACBrAPI\Model\CteOsSefazICMS90OS',
         'icms_outra_uf' => '\ACBrAPI\Model\CteOsSefazICMSOutraUFOS',
-        'icmssn' => '\ACBrAPI\Model\CteOsSefazICMSSNOS'
+        'icmssn' => '\ACBrAPI\Model\CteOsSefazICMSSNOS',
+        'g_icms_previsto_pagto_antecip' => '\ACBrAPI\Model\CteOsSefazGICMSPrevistoPagtoAntecipOS'
     ];
 
     /**
@@ -78,7 +79,8 @@ class CteOsSefazImpOS implements ModelInterface, ArrayAccess, \JsonSerializable
         'icms45' => null,
         'icms90' => null,
         'icms_outra_uf' => null,
-        'icmssn' => null
+        'icmssn' => null,
+        'g_icms_previsto_pagto_antecip' => null
     ];
 
     /**
@@ -92,7 +94,8 @@ class CteOsSefazImpOS implements ModelInterface, ArrayAccess, \JsonSerializable
 		'icms45' => false,
 		'icms90' => false,
 		'icms_outra_uf' => false,
-		'icmssn' => false
+		'icmssn' => false,
+		'g_icms_previsto_pagto_antecip' => false
     ];
 
     /**
@@ -186,7 +189,8 @@ class CteOsSefazImpOS implements ModelInterface, ArrayAccess, \JsonSerializable
         'icms45' => 'ICMS45',
         'icms90' => 'ICMS90',
         'icms_outra_uf' => 'ICMSOutraUF',
-        'icmssn' => 'ICMSSN'
+        'icmssn' => 'ICMSSN',
+        'g_icms_previsto_pagto_antecip' => 'gICMSPrevistoPagtoAntecip'
     ];
 
     /**
@@ -200,7 +204,8 @@ class CteOsSefazImpOS implements ModelInterface, ArrayAccess, \JsonSerializable
         'icms45' => 'setIcms45',
         'icms90' => 'setIcms90',
         'icms_outra_uf' => 'setIcmsOutraUf',
-        'icmssn' => 'setIcmssn'
+        'icmssn' => 'setIcmssn',
+        'g_icms_previsto_pagto_antecip' => 'setGIcmsPrevistoPagtoAntecip'
     ];
 
     /**
@@ -214,7 +219,8 @@ class CteOsSefazImpOS implements ModelInterface, ArrayAccess, \JsonSerializable
         'icms45' => 'getIcms45',
         'icms90' => 'getIcms90',
         'icms_outra_uf' => 'getIcmsOutraUf',
-        'icmssn' => 'getIcmssn'
+        'icmssn' => 'getIcmssn',
+        'g_icms_previsto_pagto_antecip' => 'getGIcmsPrevistoPagtoAntecip'
     ];
 
     /**
@@ -280,6 +286,7 @@ class CteOsSefazImpOS implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('icms90', $data ?? [], null);
         $this->setIfExists('icms_outra_uf', $data ?? [], null);
         $this->setIfExists('icmssn', $data ?? [], null);
+        $this->setIfExists('g_icms_previsto_pagto_antecip', $data ?? [], null);
     }
 
     /**
@@ -482,6 +489,33 @@ class CteOsSefazImpOS implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable icmssn cannot be null');
         }
         $this->container['icmssn'] = $icmssn;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_icms_previsto_pagto_antecip
+     *
+     * @return \ACBrAPI\Model\CteOsSefazGICMSPrevistoPagtoAntecipOS|null
+     */
+    public function getGIcmsPrevistoPagtoAntecip()
+    {
+        return $this->container['g_icms_previsto_pagto_antecip'];
+    }
+
+    /**
+     * Sets g_icms_previsto_pagto_antecip
+     *
+     * @param \ACBrAPI\Model\CteOsSefazGICMSPrevistoPagtoAntecipOS|null $g_icms_previsto_pagto_antecip g_icms_previsto_pagto_antecip
+     *
+     * @return self
+     */
+    public function setGIcmsPrevistoPagtoAntecip($g_icms_previsto_pagto_antecip)
+    {
+        if (is_null($g_icms_previsto_pagto_antecip)) {
+            throw new \InvalidArgumentException('non-nullable g_icms_previsto_pagto_antecip cannot be null');
+        }
+        $this->container['g_icms_previsto_pagto_antecip'] = $g_icms_previsto_pagto_antecip;
 
         return $this;
     }

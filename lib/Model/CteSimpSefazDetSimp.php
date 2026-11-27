@@ -63,8 +63,10 @@ class CteSimpSefazDetSimp implements ModelInterface, ArrayAccess, \JsonSerializa
         'c_mun_fim' => 'string',
         'x_mun_fim' => 'string',
         'v_prest' => 'float',
+        'v_prest_liq' => 'float',
         'v_rec' => 'float',
         'comp' => '\ACBrAPI\Model\CteSimpSefazCompSimp[]',
+        'ibscbs' => '\ACBrAPI\Model\CteSimpSefazTribCTeSimp',
         'inf_nfe' => '\ACBrAPI\Model\CteSimpSefazInfNFeSimp[]',
         'inf_doc_ant' => '\ACBrAPI\Model\CteSimpSefazInfDocAntSimp[]'
     ];
@@ -83,8 +85,10 @@ class CteSimpSefazDetSimp implements ModelInterface, ArrayAccess, \JsonSerializa
         'c_mun_fim' => null,
         'x_mun_fim' => null,
         'v_prest' => null,
+        'v_prest_liq' => null,
         'v_rec' => null,
         'comp' => null,
+        'ibscbs' => null,
         'inf_nfe' => null,
         'inf_doc_ant' => null
     ];
@@ -101,8 +105,10 @@ class CteSimpSefazDetSimp implements ModelInterface, ArrayAccess, \JsonSerializa
 		'c_mun_fim' => true,
 		'x_mun_fim' => true,
 		'v_prest' => true,
+		'v_prest_liq' => true,
 		'v_rec' => true,
 		'comp' => false,
+		'ibscbs' => false,
 		'inf_nfe' => false,
 		'inf_doc_ant' => false
     ];
@@ -199,8 +205,10 @@ class CteSimpSefazDetSimp implements ModelInterface, ArrayAccess, \JsonSerializa
         'c_mun_fim' => 'cMunFim',
         'x_mun_fim' => 'xMunFim',
         'v_prest' => 'vPrest',
+        'v_prest_liq' => 'vPrestLiq',
         'v_rec' => 'vRec',
         'comp' => 'Comp',
+        'ibscbs' => 'IBSCBS',
         'inf_nfe' => 'infNFe',
         'inf_doc_ant' => 'infDocAnt'
     ];
@@ -217,8 +225,10 @@ class CteSimpSefazDetSimp implements ModelInterface, ArrayAccess, \JsonSerializa
         'c_mun_fim' => 'setCMunFim',
         'x_mun_fim' => 'setXMunFim',
         'v_prest' => 'setVPrest',
+        'v_prest_liq' => 'setVPrestLiq',
         'v_rec' => 'setVRec',
         'comp' => 'setComp',
+        'ibscbs' => 'setIbscbs',
         'inf_nfe' => 'setInfNfe',
         'inf_doc_ant' => 'setInfDocAnt'
     ];
@@ -235,8 +245,10 @@ class CteSimpSefazDetSimp implements ModelInterface, ArrayAccess, \JsonSerializa
         'c_mun_fim' => 'getCMunFim',
         'x_mun_fim' => 'getXMunFim',
         'v_prest' => 'getVPrest',
+        'v_prest_liq' => 'getVPrestLiq',
         'v_rec' => 'getVRec',
         'comp' => 'getComp',
+        'ibscbs' => 'getIbscbs',
         'inf_nfe' => 'getInfNfe',
         'inf_doc_ant' => 'getInfDocAnt'
     ];
@@ -304,8 +316,10 @@ class CteSimpSefazDetSimp implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('c_mun_fim', $data ?? [], null);
         $this->setIfExists('x_mun_fim', $data ?? [], null);
         $this->setIfExists('v_prest', $data ?? [], null);
+        $this->setIfExists('v_prest_liq', $data ?? [], null);
         $this->setIfExists('v_rec', $data ?? [], null);
         $this->setIfExists('comp', $data ?? [], null);
+        $this->setIfExists('ibscbs', $data ?? [], null);
         $this->setIfExists('inf_nfe', $data ?? [], null);
         $this->setIfExists('inf_doc_ant', $data ?? [], null);
     }
@@ -381,6 +395,10 @@ class CteSimpSefazDetSimp implements ModelInterface, ArrayAccess, \JsonSerializa
         }
         if (($this->container['v_prest'] < 0)) {
             $invalidProperties[] = "invalid value for 'v_prest', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['v_prest_liq']) && ($this->container['v_prest_liq'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_prest_liq', must be bigger than or equal to 0.";
         }
 
         if ($this->container['v_rec'] === null) {
@@ -610,7 +628,7 @@ class CteSimpSefazDetSimp implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets v_prest
      *
-     * @param float $v_prest Valorl da Prestação do Serviço.  Pode conter zeros quando o CT-e for de complemento de ICMS.
+     * @param float $v_prest Valorl da Prestação do Serviço.
      *
      * @return self
      */
@@ -632,6 +650,45 @@ class CteSimpSefazDetSimp implements ModelInterface, ArrayAccess, \JsonSerializa
         }
 
         $this->container['v_prest'] = $v_prest;
+
+        return $this;
+    }
+
+    /**
+     * Gets v_prest_liq
+     *
+     * @return float|null
+     */
+    public function getVPrestLiq()
+    {
+        return $this->container['v_prest_liq'];
+    }
+
+    /**
+     * Sets v_prest_liq
+     *
+     * @param float|null $v_prest_liq Valor Líquido da Prestação SEM tributos.
+     *
+     * @return self
+     */
+    public function setVPrestLiq($v_prest_liq)
+    {
+        if (is_null($v_prest_liq)) {
+            array_push($this->openAPINullablesSetToNull, 'v_prest_liq');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_prest_liq', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($v_prest_liq) && ($v_prest_liq < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_prest_liq when calling CteSimpSefazDetSimp., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_prest_liq'] = $v_prest_liq;
 
         return $this;
     }
@@ -698,6 +755,33 @@ class CteSimpSefazDetSimp implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable comp cannot be null');
         }
         $this->container['comp'] = $comp;
+
+        return $this;
+    }
+
+    /**
+     * Gets ibscbs
+     *
+     * @return \ACBrAPI\Model\CteSimpSefazTribCTeSimp|null
+     */
+    public function getIbscbs()
+    {
+        return $this->container['ibscbs'];
+    }
+
+    /**
+     * Sets ibscbs
+     *
+     * @param \ACBrAPI\Model\CteSimpSefazTribCTeSimp|null $ibscbs ibscbs
+     *
+     * @return self
+     */
+    public function setIbscbs($ibscbs)
+    {
+        if (is_null($ibscbs)) {
+            throw new \InvalidArgumentException('non-nullable ibscbs cannot be null');
+        }
+        $this->container['ibscbs'] = $ibscbs;
 
         return $this;
     }

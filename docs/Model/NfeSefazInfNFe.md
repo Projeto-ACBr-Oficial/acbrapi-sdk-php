@@ -19,6 +19,7 @@ Nome | Tipo | Descrição | Comentários
 **cobr** | [**\ACBrAPI\Model\NfeSefazCobr**](NfeSefazCobr.md) |  | [optional]
 **pag** | [**\ACBrAPI\Model\NfeSefazPag**](NfeSefazPag.md) |  |
 **inf_intermed** | [**\ACBrAPI\Model\NfeSefazInfIntermed**](NfeSefazInfIntermed.md) |  | [optional]
+**g_pgto_vinc** | [**\ACBrAPI\Model\NfeSefazPgtoVinc**](NfeSefazPgtoVinc.md) |  | [optional]
 **inf_adic** | [**\ACBrAPI\Model\NfeSefazInfAdic**](NfeSefazInfAdic.md) |  | [optional]
 **exporta** | [**\ACBrAPI\Model\NfeSefazExporta**](NfeSefazExporta.md) |  | [optional]
 **compra** | [**\ACBrAPI\Model\NfeSefazCompra**](NfeSefazCompra.md) |  | [optional]

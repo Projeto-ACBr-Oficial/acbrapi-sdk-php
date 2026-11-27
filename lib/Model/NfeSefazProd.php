@@ -75,6 +75,8 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'q_com' => 'float',
         'v_un_com' => 'float',
         'v_prod' => 'float',
+        'v_un_com_liq' => 'float',
+        'v_prod_liq' => 'float',
         'c_ean_trib' => 'string',
         'c_barra_trib' => 'string',
         'u_trib' => 'string',
@@ -86,6 +88,7 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'v_outro' => 'float',
         'ind_tot' => 'int',
         'ind_bem_movel_usado' => 'int',
+        'c_ativ_sn' => 'string',
         'di' => '\ACBrAPI\Model\NfeSefazDI[]',
         'det_export' => '\ACBrAPI\Model\NfeSefazDetExport[]',
         'x_ped' => 'string',
@@ -127,6 +130,8 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'q_com' => null,
         'v_un_com' => null,
         'v_prod' => null,
+        'v_un_com_liq' => null,
+        'v_prod_liq' => null,
         'c_ean_trib' => null,
         'c_barra_trib' => null,
         'u_trib' => null,
@@ -138,6 +143,7 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'v_outro' => null,
         'ind_tot' => null,
         'ind_bem_movel_usado' => null,
+        'c_ativ_sn' => null,
         'di' => null,
         'det_export' => null,
         'x_ped' => null,
@@ -177,6 +183,8 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
 		'q_com' => true,
 		'v_un_com' => true,
 		'v_prod' => true,
+		'v_un_com_liq' => true,
+		'v_prod_liq' => true,
 		'c_ean_trib' => true,
 		'c_barra_trib' => true,
 		'u_trib' => true,
@@ -188,6 +196,7 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
 		'v_outro' => true,
 		'ind_tot' => true,
 		'ind_bem_movel_usado' => true,
+		'c_ativ_sn' => true,
 		'di' => false,
 		'det_export' => false,
 		'x_ped' => true,
@@ -307,6 +316,8 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'q_com' => 'qCom',
         'v_un_com' => 'vUnCom',
         'v_prod' => 'vProd',
+        'v_un_com_liq' => 'vUnComLiq',
+        'v_prod_liq' => 'vProdLiq',
         'c_ean_trib' => 'cEANTrib',
         'c_barra_trib' => 'cBarraTrib',
         'u_trib' => 'uTrib',
@@ -318,6 +329,7 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'v_outro' => 'vOutro',
         'ind_tot' => 'indTot',
         'ind_bem_movel_usado' => 'indBemMovelUsado',
+        'c_ativ_sn' => 'cAtivSN',
         'di' => 'DI',
         'det_export' => 'detExport',
         'x_ped' => 'xPed',
@@ -357,6 +369,8 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'q_com' => 'setQCom',
         'v_un_com' => 'setVUnCom',
         'v_prod' => 'setVProd',
+        'v_un_com_liq' => 'setVUnComLiq',
+        'v_prod_liq' => 'setVProdLiq',
         'c_ean_trib' => 'setCEanTrib',
         'c_barra_trib' => 'setCBarraTrib',
         'u_trib' => 'setUTrib',
@@ -368,6 +382,7 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'v_outro' => 'setVOutro',
         'ind_tot' => 'setIndTot',
         'ind_bem_movel_usado' => 'setIndBemMovelUsado',
+        'c_ativ_sn' => 'setCAtivSn',
         'di' => 'setDi',
         'det_export' => 'setDetExport',
         'x_ped' => 'setXPed',
@@ -407,6 +422,8 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'q_com' => 'getQCom',
         'v_un_com' => 'getVUnCom',
         'v_prod' => 'getVProd',
+        'v_un_com_liq' => 'getVUnComLiq',
+        'v_prod_liq' => 'getVProdLiq',
         'c_ean_trib' => 'getCEanTrib',
         'c_barra_trib' => 'getCBarraTrib',
         'u_trib' => 'getUTrib',
@@ -418,6 +435,7 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'v_outro' => 'getVOutro',
         'ind_tot' => 'getIndTot',
         'ind_bem_movel_usado' => 'getIndBemMovelUsado',
+        'c_ativ_sn' => 'getCAtivSn',
         'di' => 'getDi',
         'det_export' => 'getDetExport',
         'x_ped' => 'getXPed',
@@ -508,6 +526,8 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('q_com', $data ?? [], null);
         $this->setIfExists('v_un_com', $data ?? [], null);
         $this->setIfExists('v_prod', $data ?? [], null);
+        $this->setIfExists('v_un_com_liq', $data ?? [], null);
+        $this->setIfExists('v_prod_liq', $data ?? [], null);
         $this->setIfExists('c_ean_trib', $data ?? [], null);
         $this->setIfExists('c_barra_trib', $data ?? [], null);
         $this->setIfExists('u_trib', $data ?? [], null);
@@ -519,6 +539,7 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('v_outro', $data ?? [], null);
         $this->setIfExists('ind_tot', $data ?? [], null);
         $this->setIfExists('ind_bem_movel_usado', $data ?? [], null);
+        $this->setIfExists('c_ativ_sn', $data ?? [], null);
         $this->setIfExists('di', $data ?? [], null);
         $this->setIfExists('det_export', $data ?? [], null);
         $this->setIfExists('x_ped', $data ?? [], null);
@@ -642,6 +663,14 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (($this->container['v_prod'] < 0)) {
             $invalidProperties[] = "invalid value for 'v_prod', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['v_un_com_liq']) && ($this->container['v_un_com_liq'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_un_com_liq', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['v_prod_liq']) && ($this->container['v_prod_liq'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_prod_liq', must be bigger than or equal to 0.";
         }
 
         if ($this->container['c_ean_trib'] === null) {
@@ -1404,6 +1433,84 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets v_un_com_liq
+     *
+     * @return float|null
+     */
+    public function getVUnComLiq()
+    {
+        return $this->container['v_un_com_liq'];
+    }
+
+    /**
+     * Sets v_un_com_liq
+     *
+     * @param float|null $v_un_com_liq Valor Líquido Unitário do Produto ou Serviço (sem tributos).
+     *
+     * @return self
+     */
+    public function setVUnComLiq($v_un_com_liq)
+    {
+        if (is_null($v_un_com_liq)) {
+            array_push($this->openAPINullablesSetToNull, 'v_un_com_liq');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_un_com_liq', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($v_un_com_liq) && ($v_un_com_liq < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_un_com_liq when calling NfeSefazProd., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_un_com_liq'] = $v_un_com_liq;
+
+        return $this;
+    }
+
+    /**
+     * Gets v_prod_liq
+     *
+     * @return float|null
+     */
+    public function getVProdLiq()
+    {
+        return $this->container['v_prod_liq'];
+    }
+
+    /**
+     * Sets v_prod_liq
+     *
+     * @param float|null $v_prod_liq Valor Líquido do Produto ou Serviço (sem tributos).
+     *
+     * @return self
+     */
+    public function setVProdLiq($v_prod_liq)
+    {
+        if (is_null($v_prod_liq)) {
+            array_push($this->openAPINullablesSetToNull, 'v_prod_liq');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_prod_liq', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($v_prod_liq) && ($v_prod_liq < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_prod_liq when calling NfeSefazProd., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_prod_liq'] = $v_prod_liq;
+
+        return $this;
+    }
+
+    /**
      * Gets c_ean_trib
      *
      * @return string
@@ -1817,6 +1924,40 @@ class NfeSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['ind_bem_movel_usado'] = $ind_bem_movel_usado;
+
+        return $this;
+    }
+
+    /**
+     * Gets c_ativ_sn
+     *
+     * @return string|null
+     */
+    public function getCAtivSn()
+    {
+        return $this->container['c_ativ_sn'];
+    }
+
+    /**
+     * Sets c_ativ_sn
+     *
+     * @param string|null $c_ativ_sn Código de atividade do Simples Nacional:  * 01 - Revenda de mercadorias, venda de mercadorias industrializadas pelo contribuinte - Anexo I  * 02 - Operações com os demais bens materiais, sem incidência de ICMS - Anexo I  * 03 - Venda de mercadorias industrializadas pelo contribuinte, com industrialização incentivada na Zona Franca de Manaus - Anexo II  * 04 - Operações com os demais bens materiais, com industrialização incentivada na Zona Franca de Manaus, sem incidência de ICMS - Anexo II  * 90 - Operações não Tributáveis  Observação: informar somente quando o emitente for optante do Simples Nacional ou estiver com opção pendente.
+     *
+     * @return self
+     */
+    public function setCAtivSn($c_ativ_sn)
+    {
+        if (is_null($c_ativ_sn)) {
+            array_push($this->openAPINullablesSetToNull, 'c_ativ_sn');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('c_ativ_sn', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['c_ativ_sn'] = $c_ativ_sn;
 
         return $this;
     }

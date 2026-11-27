@@ -76,6 +76,9 @@ class NfcomApi
         'baixarXmlCancelamentoNfcom' => [
             'application/json',
         ],
+        'baixarXmlEventoNfcom' => [
+            'application/json',
+        ],
         'baixarXmlNfcom' => [
             'application/json',
         ],
@@ -91,13 +94,22 @@ class NfcomApi
         'consultarCancelamentoNfcom' => [
             'application/json',
         ],
+        'consultarEventoNfcom' => [
+            'application/json',
+        ],
         'consultarNfcom' => [
             'application/json',
         ],
         'consultarStatusSefazNfcom' => [
             'application/json',
         ],
+        'criarEventoNfcom' => [
+            'application/json',
+        ],
         'emitirNfcom' => [
+            'application/json',
+        ],
+        'listarEventosNfcom' => [
             'application/json',
         ],
         'listarNfcom' => [
@@ -665,6 +677,293 @@ class NfcomApi
 
 
         $resourcePath = '/nfcom/{id}/cancelamento/xml';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['*/*', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation baixarXmlEventoNfcom
+     *
+     * Baixar XML do evento
+     *
+     * @param  string $id ID único do evento gerado pela API. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SplFileObject
+     */
+    public function baixarXmlEventoNfcom($id, string $contentType = self::contentTypes['baixarXmlEventoNfcom'][0])
+    {
+        list($response) = $this->baixarXmlEventoNfcomWithHttpInfo($id, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation baixarXmlEventoNfcomWithHttpInfo
+     *
+     * Baixar XML do evento
+     *
+     * @param  string $id ID único do evento gerado pela API. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function baixarXmlEventoNfcomWithHttpInfo($id, string $contentType = self::contentTypes['baixarXmlEventoNfcom'][0])
+    {
+        $request = $this->baixarXmlEventoNfcomRequest($id, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\SplFileObject' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\SplFileObject' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\SplFileObject', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\SplFileObject';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SplFileObject',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation baixarXmlEventoNfcomAsync
+     *
+     * Baixar XML do evento
+     *
+     * @param  string $id ID único do evento gerado pela API. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function baixarXmlEventoNfcomAsync($id, string $contentType = self::contentTypes['baixarXmlEventoNfcom'][0])
+    {
+        return $this->baixarXmlEventoNfcomAsyncWithHttpInfo($id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation baixarXmlEventoNfcomAsyncWithHttpInfo
+     *
+     * Baixar XML do evento
+     *
+     * @param  string $id ID único do evento gerado pela API. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function baixarXmlEventoNfcomAsyncWithHttpInfo($id, string $contentType = self::contentTypes['baixarXmlEventoNfcom'][0])
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->baixarXmlEventoNfcomRequest($id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'baixarXmlEventoNfcom'
+     *
+     * @param  string $id ID único do evento gerado pela API. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['baixarXmlEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function baixarXmlEventoNfcomRequest($id, string $contentType = self::contentTypes['baixarXmlEventoNfcom'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling baixarXmlEventoNfcom'
+            );
+        }
+
+
+        $resourcePath = '/nfcom/eventos/{id}/xml';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2189,6 +2488,293 @@ class NfcomApi
     }
 
     /**
+     * Operation consultarEventoNfcom
+     *
+     * Consultar evento
+     *
+     * @param  string $id ID único do evento gerado pela API. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \ACBrAPI\Model\DfeEvento
+     */
+    public function consultarEventoNfcom($id, string $contentType = self::contentTypes['consultarEventoNfcom'][0])
+    {
+        list($response) = $this->consultarEventoNfcomWithHttpInfo($id, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation consultarEventoNfcomWithHttpInfo
+     *
+     * Consultar evento
+     *
+     * @param  string $id ID único do evento gerado pela API. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \ACBrAPI\Model\DfeEvento, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function consultarEventoNfcomWithHttpInfo($id, string $contentType = self::contentTypes['consultarEventoNfcom'][0])
+    {
+        $request = $this->consultarEventoNfcomRequest($id, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\ACBrAPI\Model\DfeEvento' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ACBrAPI\Model\DfeEvento' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ACBrAPI\Model\DfeEvento', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\ACBrAPI\Model\DfeEvento';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ACBrAPI\Model\DfeEvento',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation consultarEventoNfcomAsync
+     *
+     * Consultar evento
+     *
+     * @param  string $id ID único do evento gerado pela API. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function consultarEventoNfcomAsync($id, string $contentType = self::contentTypes['consultarEventoNfcom'][0])
+    {
+        return $this->consultarEventoNfcomAsyncWithHttpInfo($id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation consultarEventoNfcomAsyncWithHttpInfo
+     *
+     * Consultar evento
+     *
+     * @param  string $id ID único do evento gerado pela API. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function consultarEventoNfcomAsyncWithHttpInfo($id, string $contentType = self::contentTypes['consultarEventoNfcom'][0])
+    {
+        $returnType = '\ACBrAPI\Model\DfeEvento';
+        $request = $this->consultarEventoNfcomRequest($id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'consultarEventoNfcom'
+     *
+     * @param  string $id ID único do evento gerado pela API. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['consultarEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function consultarEventoNfcomRequest($id, string $contentType = self::contentTypes['consultarEventoNfcom'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling consultarEventoNfcom'
+            );
+        }
+
+
+        $resourcePath = '/nfcom/eventos/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation consultarNfcom
      *
      * Consultar NFCom
@@ -2779,6 +3365,312 @@ class NfcomApi
     }
 
     /**
+     * Operation criarEventoNfcom
+     *
+     * Registrar evento da NFCom
+     *
+     * @param  string $id ID único da NFCom gerado pela API. (required)
+     * @param  \ACBrAPI\Model\NfcomPedidoEvento $body Contém o código e os dados do evento. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \ACBrAPI\Model\DfeEvento
+     */
+    public function criarEventoNfcom($id, $body, string $contentType = self::contentTypes['criarEventoNfcom'][0])
+    {
+        list($response) = $this->criarEventoNfcomWithHttpInfo($id, $body, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation criarEventoNfcomWithHttpInfo
+     *
+     * Registrar evento da NFCom
+     *
+     * @param  string $id ID único da NFCom gerado pela API. (required)
+     * @param  \ACBrAPI\Model\NfcomPedidoEvento $body Contém o código e os dados do evento. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \ACBrAPI\Model\DfeEvento, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function criarEventoNfcomWithHttpInfo($id, $body, string $contentType = self::contentTypes['criarEventoNfcom'][0])
+    {
+        $request = $this->criarEventoNfcomRequest($id, $body, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\ACBrAPI\Model\DfeEvento' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ACBrAPI\Model\DfeEvento' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ACBrAPI\Model\DfeEvento', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\ACBrAPI\Model\DfeEvento';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ACBrAPI\Model\DfeEvento',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation criarEventoNfcomAsync
+     *
+     * Registrar evento da NFCom
+     *
+     * @param  string $id ID único da NFCom gerado pela API. (required)
+     * @param  \ACBrAPI\Model\NfcomPedidoEvento $body Contém o código e os dados do evento. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function criarEventoNfcomAsync($id, $body, string $contentType = self::contentTypes['criarEventoNfcom'][0])
+    {
+        return $this->criarEventoNfcomAsyncWithHttpInfo($id, $body, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation criarEventoNfcomAsyncWithHttpInfo
+     *
+     * Registrar evento da NFCom
+     *
+     * @param  string $id ID único da NFCom gerado pela API. (required)
+     * @param  \ACBrAPI\Model\NfcomPedidoEvento $body Contém o código e os dados do evento. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function criarEventoNfcomAsyncWithHttpInfo($id, $body, string $contentType = self::contentTypes['criarEventoNfcom'][0])
+    {
+        $returnType = '\ACBrAPI\Model\DfeEvento';
+        $request = $this->criarEventoNfcomRequest($id, $body, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'criarEventoNfcom'
+     *
+     * @param  string $id ID único da NFCom gerado pela API. (required)
+     * @param  \ACBrAPI\Model\NfcomPedidoEvento $body Contém o código e os dados do evento. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarEventoNfcom'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function criarEventoNfcomRequest($id, $body, string $contentType = self::contentTypes['criarEventoNfcom'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling criarEventoNfcom'
+            );
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling criarEventoNfcom'
+            );
+        }
+
+
+        $resourcePath = '/nfcom/{id}/eventos';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation emitirNfcom
      *
      * Emitir NFCom
@@ -3058,6 +3950,339 @@ class NfcomApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation listarEventosNfcom
+     *
+     * Listar eventos
+     *
+     * @param  string $dfe_id ID único gerado pela API para o documento fiscal. (required)
+     * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
+     * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
+     * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarEventosNfcom'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \ACBrAPI\Model\DfeEventoListagem
+     */
+    public function listarEventosNfcom($dfe_id, $top = 10, $skip = 0, $inlinecount = false, string $contentType = self::contentTypes['listarEventosNfcom'][0])
+    {
+        list($response) = $this->listarEventosNfcomWithHttpInfo($dfe_id, $top, $skip, $inlinecount, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation listarEventosNfcomWithHttpInfo
+     *
+     * Listar eventos
+     *
+     * @param  string $dfe_id ID único gerado pela API para o documento fiscal. (required)
+     * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
+     * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
+     * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarEventosNfcom'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \ACBrAPI\Model\DfeEventoListagem, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listarEventosNfcomWithHttpInfo($dfe_id, $top = 10, $skip = 0, $inlinecount = false, string $contentType = self::contentTypes['listarEventosNfcom'][0])
+    {
+        $request = $this->listarEventosNfcomRequest($dfe_id, $top, $skip, $inlinecount, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\ACBrAPI\Model\DfeEventoListagem' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ACBrAPI\Model\DfeEventoListagem' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ACBrAPI\Model\DfeEventoListagem', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\ACBrAPI\Model\DfeEventoListagem';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ACBrAPI\Model\DfeEventoListagem',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listarEventosNfcomAsync
+     *
+     * Listar eventos
+     *
+     * @param  string $dfe_id ID único gerado pela API para o documento fiscal. (required)
+     * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
+     * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
+     * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarEventosNfcom'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listarEventosNfcomAsync($dfe_id, $top = 10, $skip = 0, $inlinecount = false, string $contentType = self::contentTypes['listarEventosNfcom'][0])
+    {
+        return $this->listarEventosNfcomAsyncWithHttpInfo($dfe_id, $top, $skip, $inlinecount, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listarEventosNfcomAsyncWithHttpInfo
+     *
+     * Listar eventos
+     *
+     * @param  string $dfe_id ID único gerado pela API para o documento fiscal. (required)
+     * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
+     * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
+     * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarEventosNfcom'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listarEventosNfcomAsyncWithHttpInfo($dfe_id, $top = 10, $skip = 0, $inlinecount = false, string $contentType = self::contentTypes['listarEventosNfcom'][0])
+    {
+        $returnType = '\ACBrAPI\Model\DfeEventoListagem';
+        $request = $this->listarEventosNfcomRequest($dfe_id, $top, $skip, $inlinecount, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listarEventosNfcom'
+     *
+     * @param  string $dfe_id ID único gerado pela API para o documento fiscal. (required)
+     * @param  int $top Limite no número de objetos a serem retornados pela API, entre 1 e 100. (optional, default to 10)
+     * @param  int $skip Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. (optional, default to 0)
+     * @param  bool $inlinecount Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. (optional, default to false)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['listarEventosNfcom'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listarEventosNfcomRequest($dfe_id, $top = 10, $skip = 0, $inlinecount = false, string $contentType = self::contentTypes['listarEventosNfcom'][0])
+    {
+
+        // verify the required parameter 'dfe_id' is set
+        if ($dfe_id === null || (is_array($dfe_id) && count($dfe_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $dfe_id when calling listarEventosNfcom'
+            );
+        }
+
+
+
+
+
+        $resourcePath = '/nfcom/eventos';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $top,
+            '$top', // param base name
+            'integer', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $skip,
+            '$skip', // param base name
+            'integer', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $inlinecount,
+            '$inlinecount', // param base name
+            'boolean', // openApiType
+            '', // style
+            false, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $dfe_id,
+            'dfe_id', // param base name
+            'string', // openApiType
+            '', // style
+            false, // explode
+            true // required
+        ) ?? []);
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

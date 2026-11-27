@@ -11,6 +11,7 @@ Nome | Tipo | Descrição | Comentários
 **g_ibscbs_mono** | [**\ACBrAPI\Model\NfeSefazMonofasia**](NfeSefazMonofasia.md) |  | [optional]
 **g_transf_cred** | [**\ACBrAPI\Model\NfeSefazTransfCred**](NfeSefazTransfCred.md) |  | [optional]
 **g_ajuste_compet** | [**\ACBrAPI\Model\NfeSefazAjusteCompet**](NfeSefazAjusteCompet.md) |  | [optional]
+**g_trib_sn** | [**\ACBrAPI\Model\NfeSefazTribSN**](NfeSefazTribSN.md) |  | [optional]
 **g_estorno_cred** | [**\ACBrAPI\Model\NfeSefazEstornoCred**](NfeSefazEstornoCred.md) |  | [optional]
 **g_cred_pres_oper** | [**\ACBrAPI\Model\NfeSefazCredPresOper**](NfeSefazCredPresOper.md) |  | [optional]
 **g_cred_pres_ibszfm** | [**\ACBrAPI\Model\NfeSefazCredPresIBSZFM**](NfeSefazCredPresIBSZFM.md) |  | [optional]

@@ -57,6 +57,7 @@ class DfeAutorizacao implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'digest_value' => 'string',
+        'alertas' => '\ACBrAPI\Model\DfeAlerta[]',
         'id' => 'string',
         'ambiente' => 'string',
         'status' => 'string',
@@ -82,6 +83,7 @@ class DfeAutorizacao implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'digest_value' => null,
+        'alertas' => null,
         'id' => null,
         'ambiente' => null,
         'status' => null,
@@ -105,6 +107,7 @@ class DfeAutorizacao implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'digest_value' => false,
+		'alertas' => false,
 		'id' => false,
 		'ambiente' => false,
 		'status' => false,
@@ -208,6 +211,7 @@ class DfeAutorizacao implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'digest_value' => 'digest_value',
+        'alertas' => 'alertas',
         'id' => 'id',
         'ambiente' => 'ambiente',
         'status' => 'status',
@@ -231,6 +235,7 @@ class DfeAutorizacao implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'digest_value' => 'setDigestValue',
+        'alertas' => 'setAlertas',
         'id' => 'setId',
         'ambiente' => 'setAmbiente',
         'status' => 'setStatus',
@@ -254,6 +259,7 @@ class DfeAutorizacao implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'digest_value' => 'getDigestValue',
+        'alertas' => 'getAlertas',
         'id' => 'getId',
         'ambiente' => 'getAmbiente',
         'status' => 'getStatus',
@@ -362,6 +368,7 @@ class DfeAutorizacao implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('digest_value', $data ?? [], null);
+        $this->setIfExists('alertas', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('ambiente', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
@@ -461,6 +468,33 @@ class DfeAutorizacao implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable digest_value cannot be null');
         }
         $this->container['digest_value'] = $digest_value;
+
+        return $this;
+    }
+
+    /**
+     * Gets alertas
+     *
+     * @return \ACBrAPI\Model\DfeAlerta[]|null
+     */
+    public function getAlertas()
+    {
+        return $this->container['alertas'];
+    }
+
+    /**
+     * Sets alertas
+     *
+     * @param \ACBrAPI\Model\DfeAlerta[]|null $alertas Lista de mensagens (alertas) da SEFAZ retornadas no protocolo de autorização.    A partir da NT 2026.002 o protocolo da NF-e/NFC-e pode trazer até 5 pares  cMsg/xMsg, por exemplo quando o uso é autorizado com alerta (`codigo_status` 120).  Os campos `codigo_mensagem` e `mensagem` continuam trazendo apenas o primeiro par.    Omitido quando o protocolo não traz mensagens.
+     *
+     * @return self
+     */
+    public function setAlertas($alertas)
+    {
+        if (is_null($alertas)) {
+            throw new \InvalidArgumentException('non-nullable alertas cannot be null');
+        }
+        $this->container['alertas'] = $alertas;
 
         return $this;
     }
@@ -829,7 +863,7 @@ class DfeAutorizacao implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets mensagem
      *
-     * @param string|null $mensagem Mensagem da SEFAZ para o emissor.
+     * @param string|null $mensagem Mensagem da SEFAZ para o emissor ou, na inutilização, aviso da API (ex.: serviço  de inutilização desativado pela SEFAZ na UF do emitente).
      *
      * @return self
      */

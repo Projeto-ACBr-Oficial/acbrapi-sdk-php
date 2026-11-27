@@ -6,14 +6,18 @@ Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação defin
 | ------------- | ------------- | ------------- |
 | [**baixarPdfNfcom()**](NfcomApi.md#baixarPdfNfcom) | **GET** /nfcom/{id}/pdf | Baixar PDF do DANFE-COM |
 | [**baixarXmlCancelamentoNfcom()**](NfcomApi.md#baixarXmlCancelamentoNfcom) | **GET** /nfcom/{id}/cancelamento/xml | Baixar XML do cancelamento |
+| [**baixarXmlEventoNfcom()**](NfcomApi.md#baixarXmlEventoNfcom) | **GET** /nfcom/eventos/{id}/xml | Baixar XML do evento |
 | [**baixarXmlNfcom()**](NfcomApi.md#baixarXmlNfcom) | **GET** /nfcom/{id}/xml | Baixar XML da NFCom processada |
 | [**baixarXmlNfcomNota()**](NfcomApi.md#baixarXmlNfcomNota) | **GET** /nfcom/{id}/xml/nota | Baixar XML da NFCom |
 | [**baixarXmlNfcomProtocolo()**](NfcomApi.md#baixarXmlNfcomProtocolo) | **GET** /nfcom/{id}/xml/protocolo | Baixar XML do Protocolo da SEFAZ |
 | [**cancelarNfcom()**](NfcomApi.md#cancelarNfcom) | **POST** /nfcom/{id}/cancelamento | Cancelar uma NFCom autorizada |
 | [**consultarCancelamentoNfcom()**](NfcomApi.md#consultarCancelamentoNfcom) | **GET** /nfcom/{id}/cancelamento | Consultar o cancelamento da NFCom |
+| [**consultarEventoNfcom()**](NfcomApi.md#consultarEventoNfcom) | **GET** /nfcom/eventos/{id} | Consultar evento |
 | [**consultarNfcom()**](NfcomApi.md#consultarNfcom) | **GET** /nfcom/{id} | Consultar NFCom |
 | [**consultarStatusSefazNfcom()**](NfcomApi.md#consultarStatusSefazNfcom) | **GET** /nfcom/sefaz/status | Consulta do Status do Serviço na SEFAZ Autorizadora |
+| [**criarEventoNfcom()**](NfcomApi.md#criarEventoNfcom) | **POST** /nfcom/{id}/eventos | Registrar evento da NFCom |
 | [**emitirNfcom()**](NfcomApi.md#emitirNfcom) | **POST** /nfcom | Emitir NFCom |
+| [**listarEventosNfcom()**](NfcomApi.md#listarEventosNfcom) | **GET** /nfcom/eventos | Listar eventos |
 | [**listarNfcom()**](NfcomApi.md#listarNfcom) | **GET** /nfcom | Listar NFCom |
 
 
@@ -119,6 +123,66 @@ try {
 | Nome | Tipo | Descrição  | Notas |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **string**| ID único da NFCom gerada pela API. | |
+
+### Tipo do retorno
+
+**\SplFileObject**
+
+### Autorização
+
+[oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
+## `baixarXmlEventoNfcom()`
+
+```php
+baixarXmlEventoNfcom($id): \SplFileObject
+```
+
+Baixar XML do evento
+
+**Informações adicionais**:  - Consumo: Primeira requisição isenta, posteriores 1 unidade por requisição.
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\NfcomApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | ID único do evento gerado pela API.
+
+try {
+    $result = $apiInstance->baixarXmlEventoNfcom($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NfcomApi->baixarXmlEventoNfcom: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| ID único do evento gerado pela API. | |
 
 ### Tipo do retorno
 
@@ -437,6 +501,64 @@ try {
 [[Voltar à lista de DTOs]](../../README.md#models)
 [[Voltar ao README]](../../README.md)
 
+## `consultarEventoNfcom()`
+
+```php
+consultarEventoNfcom($id): \ACBrAPI\Model\DfeEvento
+```
+
+Consultar evento
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\NfcomApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | ID único do evento gerado pela API.
+
+try {
+    $result = $apiInstance->consultarEventoNfcom($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NfcomApi->consultarEventoNfcom: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| ID único do evento gerado pela API. | |
+
+### Tipo do retorno
+
+[**\ACBrAPI\Model\DfeEvento**](../Model/DfeEvento.md)
+
+### Autorização
+
+[oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
 ## `consultarNfcom()`
 
 ```php
@@ -559,6 +681,68 @@ try {
 [[Voltar à lista de DTOs]](../../README.md#models)
 [[Voltar ao README]](../../README.md)
 
+## `criarEventoNfcom()`
+
+```php
+criarEventoNfcom($id, $body): \ACBrAPI\Model\DfeEvento
+```
+
+Registrar evento da NFCom
+
+Registra na SEFAZ um evento vinculado à NFCom, a partir do código do evento (`tipo_evento`) e do grupo de dados correspondente a ele.    Os campos de controle do evento (`nSeqEvento`, `dhEvento`, descrição e protocolos) são preenchidos pela API.    **Eventos disponíveis**:    | Código | Evento | Grupo |  |--------|--------|-------|  | `110300` | Vinculação do Pagamento | `vinculacao_pagamento` |  | `110301` | Cancelamento da Vinculação do Pagamento | `cancelamento_evento` |    O cancelamento da vinculação (`110301`) referencia a vinculação original pelo ID gerado pela API (`cancelamento_evento.evento_id`). O número sequencial do pagamento (`nPag`) é o número sequencial do evento (`nSeqEvento`).    Para cancelar a NFCom, continue usando a rota `POST /nfcom/{id}/cancelamento`.    Após o registro, o evento pode ser consultado em `GET /nfcom/eventos/{id}`, e seu XML baixado em `GET /nfcom/eventos/{id}/xml`.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\NfcomApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | ID único da NFCom gerado pela API.
+$body = new \ACBrAPI\Model\NfcomPedidoEvento(); // \ACBrAPI\Model\NfcomPedidoEvento | Contém o código e os dados do evento.
+
+try {
+    $result = $apiInstance->criarEventoNfcom($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NfcomApi->criarEventoNfcom: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| ID único da NFCom gerado pela API. | |
+| **body** | [**\ACBrAPI\Model\NfcomPedidoEvento**](../Model/NfcomPedidoEvento.md)| Contém o código e os dados do evento. | |
+
+### Tipo do retorno
+
+[**\ACBrAPI\Model\DfeEvento**](../Model/DfeEvento.md)
+
+### Autorização
+
+[oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
 ## `emitirNfcom()`
 
 ```php
@@ -613,6 +797,72 @@ try {
 ### Headers HTTP da requisição
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
+## `listarEventosNfcom()`
+
+```php
+listarEventosNfcom($dfe_id, $top, $skip, $inlinecount): \ACBrAPI\Model\DfeEventoListagem
+```
+
+Listar eventos
+
+Retorna a lista de eventos vinculados a uma NFCom de acordo com os critérios de busca utilizados. Os eventos são retornados ordenados pela data da criação, com as mais recentes aparecendo primeiro.
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\NfcomApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$dfe_id = 'dfe_id_example'; // string | ID único gerado pela API para o documento fiscal.
+$top = 10; // int | Limite no número de objetos a serem retornados pela API, entre 1 e 100.
+$skip = 0; // int | Quantidade de objetos que serão ignorados antes da lista começar a ser retornada.
+$inlinecount = false; // bool | Inclui no JSON de resposta, na propriedade `@count`, o número total de registros que o filtro retornaria, independente dos filtros de paginação.
+
+try {
+    $result = $apiInstance->listarEventosNfcom($dfe_id, $top, $skip, $inlinecount);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NfcomApi->listarEventosNfcom: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **dfe_id** | **string**| ID único gerado pela API para o documento fiscal. | |
+| **top** | **int**| Limite no número de objetos a serem retornados pela API, entre 1 e 100. | [optional] [default to 10] |
+| **skip** | **int**| Quantidade de objetos que serão ignorados antes da lista começar a ser retornada. | [optional] [default to 0] |
+| **inlinecount** | **bool**| Inclui no JSON de resposta, na propriedade &#x60;@count&#x60;, o número total de registros que o filtro retornaria, independente dos filtros de paginação. | [optional] [default to false] |
+
+### Tipo do retorno
+
+[**\ACBrAPI\Model\DfeEventoListagem**](../Model/DfeEventoListagem.md)
+
+### Autorização
+
+[oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)

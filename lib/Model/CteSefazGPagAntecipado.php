@@ -57,6 +57,7 @@ class CteSefazGPagAntecipado implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
+        'ch_dfe_pag_ant' => 'string',
         'ch_cte_pag_ant' => 'string'
     ];
 
@@ -68,6 +69,7 @@ class CteSefazGPagAntecipado implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'ch_dfe_pag_ant' => null,
         'ch_cte_pag_ant' => null
     ];
 
@@ -77,7 +79,8 @@ class CteSefazGPagAntecipado implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ch_cte_pag_ant' => true
+        'ch_dfe_pag_ant' => true,
+		'ch_cte_pag_ant' => true
     ];
 
     /**
@@ -166,6 +169,7 @@ class CteSefazGPagAntecipado implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
+        'ch_dfe_pag_ant' => 'chDFePagAnt',
         'ch_cte_pag_ant' => 'chCTePagAnt'
     ];
 
@@ -175,6 +179,7 @@ class CteSefazGPagAntecipado implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
+        'ch_dfe_pag_ant' => 'setChDfePagAnt',
         'ch_cte_pag_ant' => 'setChCtePagAnt'
     ];
 
@@ -184,6 +189,7 @@ class CteSefazGPagAntecipado implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
+        'ch_dfe_pag_ant' => 'getChDfePagAnt',
         'ch_cte_pag_ant' => 'getChCtePagAnt'
     ];
 
@@ -244,6 +250,7 @@ class CteSefazGPagAntecipado implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('ch_dfe_pag_ant', $data ?? [], null);
         $this->setIfExists('ch_cte_pag_ant', $data ?? [], null);
     }
 
@@ -274,10 +281,11 @@ class CteSefazGPagAntecipado implements ModelInterface, ArrayAccess, \JsonSerial
     {
         $invalidProperties = [];
 
-        if ($this->container['ch_cte_pag_ant'] === null) {
-            $invalidProperties[] = "'ch_cte_pag_ant' can't be null";
+        if (!is_null($this->container['ch_dfe_pag_ant']) && (mb_strlen($this->container['ch_dfe_pag_ant']) > 44)) {
+            $invalidProperties[] = "invalid value for 'ch_dfe_pag_ant', the character length must be smaller than or equal to 44.";
         }
-        if ((mb_strlen($this->container['ch_cte_pag_ant']) > 44)) {
+
+        if (!is_null($this->container['ch_cte_pag_ant']) && (mb_strlen($this->container['ch_cte_pag_ant']) > 44)) {
             $invalidProperties[] = "invalid value for 'ch_cte_pag_ant', the character length must be smaller than or equal to 44.";
         }
 
@@ -297,9 +305,47 @@ class CteSefazGPagAntecipado implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
+     * Gets ch_dfe_pag_ant
+     *
+     * @return string|null
+     */
+    public function getChDfePagAnt()
+    {
+        return $this->container['ch_dfe_pag_ant'];
+    }
+
+    /**
+     * Sets ch_dfe_pag_ant
+     *
+     * @param string|null $ch_dfe_pag_ant Chave de acesso do CTe de antecipação de pagamento.  Referência a CTe emitido anteriormente, referente a pagamento antecipado.
+     *
+     * @return self
+     */
+    public function setChDfePagAnt($ch_dfe_pag_ant)
+    {
+        if (is_null($ch_dfe_pag_ant)) {
+            array_push($this->openAPINullablesSetToNull, 'ch_dfe_pag_ant');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ch_dfe_pag_ant', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($ch_dfe_pag_ant) && (mb_strlen($ch_dfe_pag_ant) > 44)) {
+            throw new \InvalidArgumentException('invalid length for $ch_dfe_pag_ant when calling CteSefazGPagAntecipado., must be smaller than or equal to 44.');
+        }
+
+        $this->container['ch_dfe_pag_ant'] = $ch_dfe_pag_ant;
+
+        return $this;
+    }
+
+    /**
      * Gets ch_cte_pag_ant
      *
-     * @return string
+     * @return string|null
      */
     public function getChCtePagAnt()
     {
@@ -309,7 +355,7 @@ class CteSefazGPagAntecipado implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets ch_cte_pag_ant
      *
-     * @param string $ch_cte_pag_ant Chave de acesso do CTe de antecipação de pagamento.  Referência a CTe emitido anteriormente, referente a pagamento antecipado.
+     * @param string|null $ch_cte_pag_ant `Deprecated`  **Campo depreciado**.  *Utilize `chDFePagAnt`*.
      *
      * @return self
      */

@@ -17,7 +17,7 @@ Nome | Tipo | Descrição | Comentários
 **inf_cte_comp** | [**\ACBrAPI\Model\CteOsSefazInfCteCompOS[]**](CteOsSefazInfCteCompOS.md) |  | [optional]
 **aut_xml** | [**\ACBrAPI\Model\CteOsSefazAutXMLOS[]**](CteOsSefazAutXMLOS.md) |  | [optional]
 **inf_resp_tec** | [**\ACBrAPI\Model\CteOsSefazRespTecOS**](CteOsSefazRespTecOS.md) |  | [optional]
-**tp_pag_ant** | **int** | Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado quando pagamento que ocorre antes da prestação do serviço e na DFe de fornecimento associada a esses pagamentos, demais hipóteses de prestação de serviço sem antecipação não devem preencher. | [optional]
+**tp_pag_ant** | **int** | &#x60;Deprecated&#x60;    **Propriedade depreciada**.    *Utilize &#x60;ide.tpPagAnt&#x60;*. | [optional]
 **g_pag_antecipado** | [**\ACBrAPI\Model\CteOsSefazGPagAntecipadoOS**](CteOsSefazGPagAntecipadoOS.md) |  | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

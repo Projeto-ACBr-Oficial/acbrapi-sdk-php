@@ -22,6 +22,8 @@ Nome | Tipo | Descrição | Comentários
 **q_com** | **float** | Quantidade Comercial  do produto, alterado para aceitar de 0 a 4 casas decimais e 11 inteiros. |
 **v_un_com** | **float** | Valor unitário de comercialização  - alterado para aceitar 0 a 10 casas decimais e 11 inteiros. |
 **v_prod** | **float** | Valor bruto do produto ou serviço. |
+**v_un_com_liq** | **float** | Valor Líquido Unitário do Produto ou Serviço (sem tributos). | [optional]
+**v_prod_liq** | **float** | Valor Líquido do Produto ou Serviço (sem tributos). | [optional]
 **c_ean_trib** | **string** | GTIN (Global Trade Item Number) da unidade tributável, antigo código EAN ou código de barras. |
 **c_barra_trib** | **string** | Código de barras da unidade tributável diferente do padrão GTIN. | [optional]
 **u_trib** | **string** | Unidade Tributável. |
@@ -33,6 +35,7 @@ Nome | Tipo | Descrição | Comentários
 **v_outro** | **float** | Outras despesas acessórias. | [optional]
 **ind_tot** | **int** | Este campo deverá ser preenchido com:  * 0 - o valor do item (vProd) não compõe o valor total da NF-e (vProd)  * 1 - o valor do item (vProd) compõe o valor total da NF-e (vProd) |
 **ind_bem_movel_usado** | **int** | Indicador de fornecimento de bem móvel usado: 1-Bem Móvel Usado. | [optional]
+**c_ativ_sn** | **string** | Código de atividade do Simples Nacional:  * 01 - Revenda de mercadorias, venda de mercadorias industrializadas pelo contribuinte - Anexo I  * 02 - Operações com os demais bens materiais, sem incidência de ICMS - Anexo I  * 03 - Venda de mercadorias industrializadas pelo contribuinte, com industrialização incentivada na Zona Franca de Manaus - Anexo II  * 04 - Operações com os demais bens materiais, com industrialização incentivada na Zona Franca de Manaus, sem incidência de ICMS - Anexo II  * 90 - Operações não Tributáveis  Observação: informar somente quando o emitente for optante do Simples Nacional ou estiver com opção pendente. | [optional]
 **di** | [**\ACBrAPI\Model\NfeSefazDI[]**](NfeSefazDI.md) |  | [optional]
 **det_export** | [**\ACBrAPI\Model\NfeSefazDetExport[]**](NfeSefazDetExport.md) |  | [optional]
 **x_ped** | **string** | pedido de compra - Informação de interesse do emissor para controle do B2B. | [optional]

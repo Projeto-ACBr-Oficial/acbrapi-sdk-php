@@ -61,6 +61,7 @@ class CteSefazTribCTe implements ModelInterface, ArrayAccess, \JsonSerializable
         'c_class_trib' => 'string',
         'ind_doacao' => 'int',
         'g_ibscbs' => '\ACBrAPI\Model\CteSefazCIBS',
+        'g_trib_sn' => '\ACBrAPI\Model\CteSefazTribSN',
         'g_estorno_cred' => '\ACBrAPI\Model\CteSefazEstornoCred'
     ];
 
@@ -76,6 +77,7 @@ class CteSefazTribCTe implements ModelInterface, ArrayAccess, \JsonSerializable
         'c_class_trib' => null,
         'ind_doacao' => null,
         'g_ibscbs' => null,
+        'g_trib_sn' => null,
         'g_estorno_cred' => null
     ];
 
@@ -89,6 +91,7 @@ class CteSefazTribCTe implements ModelInterface, ArrayAccess, \JsonSerializable
 		'c_class_trib' => true,
 		'ind_doacao' => true,
 		'g_ibscbs' => false,
+		'g_trib_sn' => false,
 		'g_estorno_cred' => false
     ];
 
@@ -182,6 +185,7 @@ class CteSefazTribCTe implements ModelInterface, ArrayAccess, \JsonSerializable
         'c_class_trib' => 'cClassTrib',
         'ind_doacao' => 'indDoacao',
         'g_ibscbs' => 'gIBSCBS',
+        'g_trib_sn' => 'gTribSN',
         'g_estorno_cred' => 'gEstornoCred'
     ];
 
@@ -195,6 +199,7 @@ class CteSefazTribCTe implements ModelInterface, ArrayAccess, \JsonSerializable
         'c_class_trib' => 'setCClassTrib',
         'ind_doacao' => 'setIndDoacao',
         'g_ibscbs' => 'setGIbscbs',
+        'g_trib_sn' => 'setGTribSn',
         'g_estorno_cred' => 'setGEstornoCred'
     ];
 
@@ -208,6 +213,7 @@ class CteSefazTribCTe implements ModelInterface, ArrayAccess, \JsonSerializable
         'c_class_trib' => 'getCClassTrib',
         'ind_doacao' => 'getIndDoacao',
         'g_ibscbs' => 'getGIbscbs',
+        'g_trib_sn' => 'getGTribSn',
         'g_estorno_cred' => 'getGEstornoCred'
     ];
 
@@ -272,6 +278,7 @@ class CteSefazTribCTe implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('c_class_trib', $data ?? [], null);
         $this->setIfExists('ind_doacao', $data ?? [], null);
         $this->setIfExists('g_ibscbs', $data ?? [], null);
+        $this->setIfExists('g_trib_sn', $data ?? [], null);
         $this->setIfExists('g_estorno_cred', $data ?? [], null);
     }
 
@@ -445,6 +452,33 @@ class CteSefazTribCTe implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable g_ibscbs cannot be null');
         }
         $this->container['g_ibscbs'] = $g_ibscbs;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_trib_sn
+     *
+     * @return \ACBrAPI\Model\CteSefazTribSN|null
+     */
+    public function getGTribSn()
+    {
+        return $this->container['g_trib_sn'];
+    }
+
+    /**
+     * Sets g_trib_sn
+     *
+     * @param \ACBrAPI\Model\CteSefazTribSN|null $g_trib_sn g_trib_sn
+     *
+     * @return self
+     */
+    public function setGTribSn($g_trib_sn)
+    {
+        if (is_null($g_trib_sn)) {
+            throw new \InvalidArgumentException('non-nullable g_trib_sn cannot be null');
+        }
+        $this->container['g_trib_sn'] = $g_trib_sn;
 
         return $this;
     }

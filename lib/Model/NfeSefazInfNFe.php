@@ -72,6 +72,7 @@ class NfeSefazInfNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         'cobr' => '\ACBrAPI\Model\NfeSefazCobr',
         'pag' => '\ACBrAPI\Model\NfeSefazPag',
         'inf_intermed' => '\ACBrAPI\Model\NfeSefazInfIntermed',
+        'g_pgto_vinc' => '\ACBrAPI\Model\NfeSefazPgtoVinc',
         'inf_adic' => '\ACBrAPI\Model\NfeSefazInfAdic',
         'exporta' => '\ACBrAPI\Model\NfeSefazExporta',
         'compra' => '\ACBrAPI\Model\NfeSefazCompra',
@@ -105,6 +106,7 @@ class NfeSefazInfNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         'cobr' => null,
         'pag' => null,
         'inf_intermed' => null,
+        'g_pgto_vinc' => null,
         'inf_adic' => null,
         'exporta' => null,
         'compra' => null,
@@ -136,6 +138,7 @@ class NfeSefazInfNFe implements ModelInterface, ArrayAccess, \JsonSerializable
 		'cobr' => false,
 		'pag' => false,
 		'inf_intermed' => false,
+		'g_pgto_vinc' => false,
 		'inf_adic' => false,
 		'exporta' => false,
 		'compra' => false,
@@ -247,6 +250,7 @@ class NfeSefazInfNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         'cobr' => 'cobr',
         'pag' => 'pag',
         'inf_intermed' => 'infIntermed',
+        'g_pgto_vinc' => 'gPgtoVinc',
         'inf_adic' => 'infAdic',
         'exporta' => 'exporta',
         'compra' => 'compra',
@@ -278,6 +282,7 @@ class NfeSefazInfNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         'cobr' => 'setCobr',
         'pag' => 'setPag',
         'inf_intermed' => 'setInfIntermed',
+        'g_pgto_vinc' => 'setGPgtoVinc',
         'inf_adic' => 'setInfAdic',
         'exporta' => 'setExporta',
         'compra' => 'setCompra',
@@ -309,6 +314,7 @@ class NfeSefazInfNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         'cobr' => 'getCobr',
         'pag' => 'getPag',
         'inf_intermed' => 'getInfIntermed',
+        'g_pgto_vinc' => 'getGPgtoVinc',
         'inf_adic' => 'getInfAdic',
         'exporta' => 'getExporta',
         'compra' => 'getCompra',
@@ -391,6 +397,7 @@ class NfeSefazInfNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('cobr', $data ?? [], null);
         $this->setIfExists('pag', $data ?? [], null);
         $this->setIfExists('inf_intermed', $data ?? [], null);
+        $this->setIfExists('g_pgto_vinc', $data ?? [], null);
         $this->setIfExists('inf_adic', $data ?? [], null);
         $this->setIfExists('exporta', $data ?? [], null);
         $this->setIfExists('compra', $data ?? [], null);
@@ -902,6 +909,33 @@ class NfeSefazInfNFe implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable inf_intermed cannot be null');
         }
         $this->container['inf_intermed'] = $inf_intermed;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_pgto_vinc
+     *
+     * @return \ACBrAPI\Model\NfeSefazPgtoVinc|null
+     */
+    public function getGPgtoVinc()
+    {
+        return $this->container['g_pgto_vinc'];
+    }
+
+    /**
+     * Sets g_pgto_vinc
+     *
+     * @param \ACBrAPI\Model\NfeSefazPgtoVinc|null $g_pgto_vinc g_pgto_vinc
+     *
+     * @return self
+     */
+    public function setGPgtoVinc($g_pgto_vinc)
+    {
+        if (is_null($g_pgto_vinc)) {
+            throw new \InvalidArgumentException('non-nullable g_pgto_vinc cannot be null');
+        }
+        $this->container['g_pgto_vinc'] = $g_pgto_vinc;
 
         return $this;
     }

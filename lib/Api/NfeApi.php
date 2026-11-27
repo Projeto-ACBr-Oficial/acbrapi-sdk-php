@@ -142,6 +142,9 @@ class NfeApi
         'criarCartaCorrecaoNfe' => [
             'application/json',
         ],
+        'criarEventoNfe' => [
+            'application/json',
+        ],
         'emitirLoteNfe' => [
             'application/json',
         ],
@@ -7382,6 +7385,312 @@ class NfeApi
 
 
         $resourcePath = '/nfe/{id}/carta-correcao';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation criarEventoNfe
+     *
+     * Registrar evento da NF-e
+     *
+     * @param  string $id ID único da NF-e gerado pela API. (required)
+     * @param  \ACBrAPI\Model\NfePedidoEvento $body Contém o código e os dados do evento. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarEventoNfe'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \ACBrAPI\Model\DfeEvento
+     */
+    public function criarEventoNfe($id, $body, string $contentType = self::contentTypes['criarEventoNfe'][0])
+    {
+        list($response) = $this->criarEventoNfeWithHttpInfo($id, $body, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation criarEventoNfeWithHttpInfo
+     *
+     * Registrar evento da NF-e
+     *
+     * @param  string $id ID único da NF-e gerado pela API. (required)
+     * @param  \ACBrAPI\Model\NfePedidoEvento $body Contém o código e os dados do evento. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarEventoNfe'] to see the possible values for this operation
+     *
+     * @throws \ACBrAPI\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \ACBrAPI\Model\DfeEvento, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function criarEventoNfeWithHttpInfo($id, $body, string $contentType = self::contentTypes['criarEventoNfe'][0])
+    {
+        $request = $this->criarEventoNfeRequest($id, $body, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\ACBrAPI\Model\DfeEvento' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\ACBrAPI\Model\DfeEvento' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\ACBrAPI\Model\DfeEvento', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\ACBrAPI\Model\DfeEvento';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ACBrAPI\Model\DfeEvento',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation criarEventoNfeAsync
+     *
+     * Registrar evento da NF-e
+     *
+     * @param  string $id ID único da NF-e gerado pela API. (required)
+     * @param  \ACBrAPI\Model\NfePedidoEvento $body Contém o código e os dados do evento. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarEventoNfe'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function criarEventoNfeAsync($id, $body, string $contentType = self::contentTypes['criarEventoNfe'][0])
+    {
+        return $this->criarEventoNfeAsyncWithHttpInfo($id, $body, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation criarEventoNfeAsyncWithHttpInfo
+     *
+     * Registrar evento da NF-e
+     *
+     * @param  string $id ID único da NF-e gerado pela API. (required)
+     * @param  \ACBrAPI\Model\NfePedidoEvento $body Contém o código e os dados do evento. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarEventoNfe'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function criarEventoNfeAsyncWithHttpInfo($id, $body, string $contentType = self::contentTypes['criarEventoNfe'][0])
+    {
+        $returnType = '\ACBrAPI\Model\DfeEvento';
+        $request = $this->criarEventoNfeRequest($id, $body, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'criarEventoNfe'
+     *
+     * @param  string $id ID único da NF-e gerado pela API. (required)
+     * @param  \ACBrAPI\Model\NfePedidoEvento $body Contém o código e os dados do evento. (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['criarEventoNfe'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function criarEventoNfeRequest($id, $body, string $contentType = self::contentTypes['criarEventoNfe'][0])
+    {
+
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling criarEventoNfe'
+            );
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling criarEventoNfe'
+            );
+        }
+
+
+        $resourcePath = '/nfe/{id}/eventos';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

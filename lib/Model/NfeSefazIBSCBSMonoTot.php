@@ -61,7 +61,8 @@ class NfeSefazIBSCBSMonoTot implements ModelInterface, ArrayAccess, \JsonSeriali
         'g_ibs' => '\ACBrAPI\Model\NfeSefazGIBS',
         'g_cbs' => '\ACBrAPI\Model\NfeSefazIBSCBSMonoTotGCBS',
         'g_mono' => '\ACBrAPI\Model\NfeSefazGMono',
-        'g_estorno_cred' => '\ACBrAPI\Model\NfeSefazGEstornoCred'
+        'g_estorno_cred' => '\ACBrAPI\Model\NfeSefazGEstornoCred',
+        'g_trib_sn' => '\ACBrAPI\Model\NfeSefazGTribSN'
     ];
 
     /**
@@ -76,7 +77,8 @@ class NfeSefazIBSCBSMonoTot implements ModelInterface, ArrayAccess, \JsonSeriali
         'g_ibs' => null,
         'g_cbs' => null,
         'g_mono' => null,
-        'g_estorno_cred' => null
+        'g_estorno_cred' => null,
+        'g_trib_sn' => null
     ];
 
     /**
@@ -89,7 +91,8 @@ class NfeSefazIBSCBSMonoTot implements ModelInterface, ArrayAccess, \JsonSeriali
 		'g_ibs' => false,
 		'g_cbs' => false,
 		'g_mono' => false,
-		'g_estorno_cred' => false
+		'g_estorno_cred' => false,
+		'g_trib_sn' => false
     ];
 
     /**
@@ -182,7 +185,8 @@ class NfeSefazIBSCBSMonoTot implements ModelInterface, ArrayAccess, \JsonSeriali
         'g_ibs' => 'gIBS',
         'g_cbs' => 'gCBS',
         'g_mono' => 'gMono',
-        'g_estorno_cred' => 'gEstornoCred'
+        'g_estorno_cred' => 'gEstornoCred',
+        'g_trib_sn' => 'gTribSN'
     ];
 
     /**
@@ -195,7 +199,8 @@ class NfeSefazIBSCBSMonoTot implements ModelInterface, ArrayAccess, \JsonSeriali
         'g_ibs' => 'setGIbs',
         'g_cbs' => 'setGCbs',
         'g_mono' => 'setGMono',
-        'g_estorno_cred' => 'setGEstornoCred'
+        'g_estorno_cred' => 'setGEstornoCred',
+        'g_trib_sn' => 'setGTribSn'
     ];
 
     /**
@@ -208,7 +213,8 @@ class NfeSefazIBSCBSMonoTot implements ModelInterface, ArrayAccess, \JsonSeriali
         'g_ibs' => 'getGIbs',
         'g_cbs' => 'getGCbs',
         'g_mono' => 'getGMono',
-        'g_estorno_cred' => 'getGEstornoCred'
+        'g_estorno_cred' => 'getGEstornoCred',
+        'g_trib_sn' => 'getGTribSn'
     ];
 
     /**
@@ -273,6 +279,7 @@ class NfeSefazIBSCBSMonoTot implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('g_cbs', $data ?? [], null);
         $this->setIfExists('g_mono', $data ?? [], null);
         $this->setIfExists('g_estorno_cred', $data ?? [], null);
+        $this->setIfExists('g_trib_sn', $data ?? [], null);
     }
 
     /**
@@ -467,6 +474,33 @@ class NfeSefazIBSCBSMonoTot implements ModelInterface, ArrayAccess, \JsonSeriali
             throw new \InvalidArgumentException('non-nullable g_estorno_cred cannot be null');
         }
         $this->container['g_estorno_cred'] = $g_estorno_cred;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_trib_sn
+     *
+     * @return \ACBrAPI\Model\NfeSefazGTribSN|null
+     */
+    public function getGTribSn()
+    {
+        return $this->container['g_trib_sn'];
+    }
+
+    /**
+     * Sets g_trib_sn
+     *
+     * @param \ACBrAPI\Model\NfeSefazGTribSN|null $g_trib_sn g_trib_sn
+     *
+     * @return self
+     */
+    public function setGTribSn($g_trib_sn)
+    {
+        if (is_null($g_trib_sn)) {
+            throw new \InvalidArgumentException('non-nullable g_trib_sn cannot be null');
+        }
+        $this->container['g_trib_sn'] = $g_trib_sn;
 
         return $this;
     }

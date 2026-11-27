@@ -58,6 +58,7 @@ class NfcomSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'v_prod' => 'float',
+        'v_prod_liq' => 'float',
         'icms_tot' => '\ACBrAPI\Model\NfcomSefazICMSTot',
         'v_cofins' => 'float',
         'v_pis' => 'float',
@@ -80,6 +81,7 @@ class NfcomSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'v_prod' => null,
+        'v_prod_liq' => null,
         'icms_tot' => null,
         'v_cofins' => null,
         'v_pis' => null,
@@ -100,6 +102,7 @@ class NfcomSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'v_prod' => true,
+		'v_prod_liq' => true,
 		'icms_tot' => false,
 		'v_cofins' => true,
 		'v_pis' => true,
@@ -200,6 +203,7 @@ class NfcomSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'v_prod' => 'vProd',
+        'v_prod_liq' => 'vProdLiq',
         'icms_tot' => 'ICMSTot',
         'v_cofins' => 'vCOFINS',
         'v_pis' => 'vPIS',
@@ -220,6 +224,7 @@ class NfcomSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'v_prod' => 'setVProd',
+        'v_prod_liq' => 'setVProdLiq',
         'icms_tot' => 'setIcmsTot',
         'v_cofins' => 'setVCofins',
         'v_pis' => 'setVPis',
@@ -240,6 +245,7 @@ class NfcomSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'v_prod' => 'getVProd',
+        'v_prod_liq' => 'getVProdLiq',
         'icms_tot' => 'getIcmsTot',
         'v_cofins' => 'getVCofins',
         'v_pis' => 'getVPis',
@@ -311,6 +317,7 @@ class NfcomSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->setIfExists('v_prod', $data ?? [], null);
+        $this->setIfExists('v_prod_liq', $data ?? [], null);
         $this->setIfExists('icms_tot', $data ?? [], null);
         $this->setIfExists('v_cofins', $data ?? [], null);
         $this->setIfExists('v_pis', $data ?? [], null);
@@ -356,6 +363,10 @@ class NfcomSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (($this->container['v_prod'] < 0)) {
             $invalidProperties[] = "invalid value for 'v_prod', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['v_prod_liq']) && ($this->container['v_prod_liq'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_prod_liq', must be bigger than or equal to 0.";
         }
 
         if ($this->container['icms_tot'] === null) {
@@ -467,6 +478,45 @@ class NfcomSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['v_prod'] = $v_prod;
+
+        return $this;
+    }
+
+    /**
+     * Gets v_prod_liq
+     *
+     * @return float|null
+     */
+    public function getVProdLiq()
+    {
+        return $this->container['v_prod_liq'];
+    }
+
+    /**
+     * Sets v_prod_liq
+     *
+     * @param float|null $v_prod_liq Valor Total Liquido dos produtos e serviços sem tributos.
+     *
+     * @return self
+     */
+    public function setVProdLiq($v_prod_liq)
+    {
+        if (is_null($v_prod_liq)) {
+            array_push($this->openAPINullablesSetToNull, 'v_prod_liq');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_prod_liq', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($v_prod_liq) && ($v_prod_liq < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_prod_liq when calling NfcomSefazTotal., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_prod_liq'] = $v_prod_liq;
 
         return $this;
     }
@@ -838,7 +888,7 @@ class NfcomSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets v_tot_dfe
      *
-     * @param float|null $v_tot_dfe Valor total do documento fiscal  (vNF + total do IBS + total da CBS).
+     * @param float|null $v_tot_dfe Valor total do documento fiscal  (vNF + IBS + CBS).
      *
      * @return self
      */

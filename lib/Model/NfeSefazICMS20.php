@@ -34,7 +34,7 @@ use \ACBrAPI\ObjectSerializer;
  * NfeSefazICMS20 Class Doc Comment
  *
  * @category Class
- * @description Tributção pelo ICMS  * 20 - Com redução de base de cálculo
+ * @description Tributação pelo ICMS  * 20 - Com redução de base de cálculo
  * @package  ACBrAPI
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -473,7 +473,7 @@ class NfeSefazICMS20 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cst
      *
-     * @param string $cst Tributção pelo ICMS  * 20 - Com redução de base de cálculo
+     * @param string $cst Tributação pelo ICMS  * 20 - Com redução de base de cálculo
      *
      * @return self
      */

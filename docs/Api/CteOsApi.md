@@ -21,6 +21,7 @@ Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação defin
 | [**consultarEventoCteOs()**](CteOsApi.md#consultarEventoCteOs) | **GET** /cteos/eventos/{id} | Consultar evento |
 | [**consultarStatusSefazCteOs()**](CteOsApi.md#consultarStatusSefazCteOs) | **GET** /cteos/sefaz/status | Consulta do Status do Serviço na SEFAZ Autorizadora |
 | [**criarCartaCorrecaoCteOs()**](CteOsApi.md#criarCartaCorrecaoCteOs) | **POST** /cteos/{id}/carta-correcao | Solicitar correção do CT-e OS |
+| [**criarEventoCteOs()**](CteOsApi.md#criarEventoCteOs) | **POST** /cteos/{id}/eventos | Registrar evento do CT-e OS |
 | [**emitirCteOs()**](CteOsApi.md#emitirCteOs) | **POST** /cteos | Emitir CT-e OS |
 | [**listarCteOs()**](CteOsApi.md#listarCteOs) | **GET** /cteos | Listar CT-e OS |
 | [**sincronizarCteOs()**](CteOsApi.md#sincronizarCteOs) | **POST** /cteos/{id}/sincronizar | Sincroniza dados no CT-e OS a partir da SEFAZ |
@@ -1026,6 +1027,68 @@ try {
 ### Tipo do retorno
 
 [**\ACBrAPI\Model\CteOsCartaCorrecao**](../Model/CteOsCartaCorrecao.md)
+
+### Autorização
+
+[oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
+## `criarEventoCteOs()`
+
+```php
+criarEventoCteOs($id, $body): \ACBrAPI\Model\DfeEvento
+```
+
+Registrar evento do CT-e OS
+
+Registra na SEFAZ um evento do emitente vinculado ao CT-e OS, a partir do código do evento (`tipo_evento`) e do grupo de dados correspondente a ele.    Os campos de controle do evento (`nSeqEvento`, `dhEvento`, órgão, versão e descrição) são preenchidos pela API.    **Eventos disponíveis**:    | Código | Evento | Grupo |  |--------|--------|-------|  | `110170` | Informações da GTV | `gtv` |    Para cancelar o CT-e OS ou emitir a carta de correção, continue usando as rotas `POST /cteos/{id}/cancelamento` e `POST /cteos/{id}/carta-correcao`.    Após o registro, o evento pode ser consultado em `GET /cteos/eventos/{id}`, e seu XML e PDF baixados em `GET /cteos/eventos/{id}/xml` e `GET /cteos/eventos/{id}/pdf`.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\CteOsApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | ID único do CT-e OS gerado pela API.
+$body = new \ACBrAPI\Model\CteOsPedidoEvento(); // \ACBrAPI\Model\CteOsPedidoEvento | Contém o código e os dados do evento.
+
+try {
+    $result = $apiInstance->criarEventoCteOs($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CteOsApi->criarEventoCteOs: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| ID único do CT-e OS gerado pela API. | |
+| **body** | [**\ACBrAPI\Model\CteOsPedidoEvento**](../Model/CteOsPedidoEvento.md)| Contém o código e os dados do evento. | |
+
+### Tipo do retorno
+
+[**\ACBrAPI\Model\DfeEvento**](../Model/DfeEvento.md)
 
 ### Autorização
 

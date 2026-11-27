@@ -22,6 +22,7 @@ Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação defin
 | [**consultarMdfe()**](MdfeApi.md#consultarMdfe) | **GET** /mdfe/{id} | Consultar manifesto |
 | [**consultarMdfeNaoEncerrados()**](MdfeApi.md#consultarMdfeNaoEncerrados) | **GET** /mdfe/nao-encerrados | Consulta MDF-e não encerrados |
 | [**consultarStatusSefazMdfe()**](MdfeApi.md#consultarStatusSefazMdfe) | **GET** /mdfe/sefaz/status | Consulta do Status do Serviço na SEFAZ Autorizadora |
+| [**criarEventoMdfe()**](MdfeApi.md#criarEventoMdfe) | **POST** /mdfe/{id}/eventos | Registrar evento do MDF-e |
 | [**emitirLoteMdfe()**](MdfeApi.md#emitirLoteMdfe) | **POST** /mdfe/lotes | Emitir lote de MDF-e |
 | [**emitirMdfe()**](MdfeApi.md#emitirMdfe) | **POST** /mdfe | Emitir MDF-e |
 | [**encerrarMdfe()**](MdfeApi.md#encerrarMdfe) | **POST** /mdfe/{id}/encerramento | Encerrar um MDF-e autorizado |
@@ -1096,6 +1097,68 @@ try {
 ### Headers HTTP da requisição
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
+## `criarEventoMdfe()`
+
+```php
+criarEventoMdfe($id, $body): \ACBrAPI\Model\DfeEvento
+```
+
+Registrar evento do MDF-e
+
+Registra na SEFAZ um evento vinculado ao MDF-e, a partir do código do evento (`tipo_evento`) e do grupo de dados correspondente a ele.    Os campos de controle do evento (`nSeqEvento`, `dhEvento`, descrição e protocolo de autorização) são preenchidos pela API.    **Eventos disponíveis**:    | Código | Evento | Grupo |  |--------|--------|-------|  | `110116` | Pagamento da Operação de Transporte | `pagamento_operacao` |  | `110118` | Alteração do Pagamento do Serviço | `alteracao_pagamento` |    Os dois eventos são do emitente e valem só para o MDF-e do modal rodoviário (rejeições 722 e 749 da SEFAZ).    O pagamento da operação (`110116`) é usado pelo emitente que contratou o TAC para informar o pagamento ao final do período, conforme as viagens realizadas. Exige que o proprietário do veículo de tração do MDF-e seja TAC Agregado (`tpProp` = 0, rejeição 723) e só pode ser registrado **uma vez** por MDF-e. A alteração do pagamento (`110118`) pode ser registrada até 99 vezes.    Os pagamentos seguem o formato do grupo `infPag` da emissão do MDF-e rodoviário, sem o campo `indAltoDesemp`.    Para cancelar, encerrar ou incluir condutor ou DF-e, continue usando as rotas próprias desses eventos.    Após o registro, o evento pode ser consultado em `GET /mdfe/eventos/{id}`, e seu XML baixado em `GET /mdfe/eventos/{id}/xml`.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\MdfeApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | ID único do MDF-e gerado pela API.
+$body = new \ACBrAPI\Model\MdfePedidoEvento(); // \ACBrAPI\Model\MdfePedidoEvento | Contém o código e os dados do evento.
+
+try {
+    $result = $apiInstance->criarEventoMdfe($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MdfeApi->criarEventoMdfe: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| ID único do MDF-e gerado pela API. | |
+| **body** | [**\ACBrAPI\Model\MdfePedidoEvento**](../Model/MdfePedidoEvento.md)| Contém o código e os dados do evento. | |
+
+### Tipo do retorno
+
+[**\ACBrAPI\Model\DfeEvento**](../Model/DfeEvento.md)
+
+### Autorização
+
+[oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)

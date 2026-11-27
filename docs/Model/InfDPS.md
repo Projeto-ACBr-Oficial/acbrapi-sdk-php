@@ -16,6 +16,8 @@ Nome | Tipo | Descrição | Comentários
 **subst** | [**\ACBrAPI\Model\Substituicao**](Substituicao.md) |  | [optional]
 **prest** | [**\ACBrAPI\Model\InfoPrestador**](InfoPrestador.md) |  |
 **toma** | [**\ACBrAPI\Model\InfoTomador**](InfoTomador.md) |  | [optional]
+**ind_dest** | **int** | A respeito do Destinatário dos serviços.  *Disponível a partir da NT 009 (leiaute 009.1.01).* | [optional]
+**dest** | [**\ACBrAPI\Model\RTCInfoDest**](RTCInfoDest.md) |  | [optional]
 **interm** | [**\ACBrAPI\Model\InfoIntermediario**](InfoIntermediario.md) |  | [optional]
 **serv** | [**\ACBrAPI\Model\Serv**](Serv.md) |  |
 **valores** | [**\ACBrAPI\Model\InfoValores**](InfoValores.md) |  |

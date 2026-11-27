@@ -10,6 +10,7 @@ Nome | Tipo | Descrição | Comentários
 **icms51** | [**\ACBrAPI\Model\NfcomSefazICMS51**](NfcomSefazICMS51.md) |  | [optional]
 **icms90** | [**\ACBrAPI\Model\NfcomSefazICMS90**](NfcomSefazICMS90.md) |  | [optional]
 **icmssn** | [**\ACBrAPI\Model\NfcomSefazICMSSN**](NfcomSefazICMSSN.md) |  | [optional]
+**g_icms_previsto_pagto_antecip** | [**\ACBrAPI\Model\NfcomSefazGICMSPrevistoPagtoAntecip**](NfcomSefazGICMSPrevistoPagtoAntecip.md) |  | [optional]
 **icmsuf_dest** | [**\ACBrAPI\Model\NfcomSefazICMSUFDest[]**](NfcomSefazICMSUFDest.md) |  | [optional]
 **ind_sem_cst** | **int** | Sem Situação Tributária para o ICMS.  Informar para itens que não tenham nenhuma relação com o ICMS.  Quando informado o item NÃO PODE ter CFOP informado  Se informado esse grupo o schema não permite informar nenhum dos grupos de ICMSXX. | [optional]
 **pis** | [**\ACBrAPI\Model\NfcomSefazPIS**](NfcomSefazPIS.md) |  | [optional]

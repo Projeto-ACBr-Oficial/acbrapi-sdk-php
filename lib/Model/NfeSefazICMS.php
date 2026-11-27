@@ -77,7 +77,8 @@ class NfeSefazICMS implements ModelInterface, ArrayAccess, \JsonSerializable
         'icmssn201' => '\ACBrAPI\Model\NfeSefazICMSSN201',
         'icmssn202' => '\ACBrAPI\Model\NfeSefazICMSSN202',
         'icmssn500' => '\ACBrAPI\Model\NfeSefazICMSSN500',
-        'icmssn900' => '\ACBrAPI\Model\NfeSefazICMSSN900'
+        'icmssn900' => '\ACBrAPI\Model\NfeSefazICMSSN900',
+        'icms_previsto_pagto_antecip' => '\ACBrAPI\Model\NfeSefazICMSPrevistoPagtoAntecip'
     ];
 
     /**
@@ -108,7 +109,8 @@ class NfeSefazICMS implements ModelInterface, ArrayAccess, \JsonSerializable
         'icmssn201' => null,
         'icmssn202' => null,
         'icmssn500' => null,
-        'icmssn900' => null
+        'icmssn900' => null,
+        'icms_previsto_pagto_antecip' => null
     ];
 
     /**
@@ -137,7 +139,8 @@ class NfeSefazICMS implements ModelInterface, ArrayAccess, \JsonSerializable
 		'icmssn201' => false,
 		'icmssn202' => false,
 		'icmssn500' => false,
-		'icmssn900' => false
+		'icmssn900' => false,
+		'icms_previsto_pagto_antecip' => false
     ];
 
     /**
@@ -246,7 +249,8 @@ class NfeSefazICMS implements ModelInterface, ArrayAccess, \JsonSerializable
         'icmssn201' => 'ICMSSN201',
         'icmssn202' => 'ICMSSN202',
         'icmssn500' => 'ICMSSN500',
-        'icmssn900' => 'ICMSSN900'
+        'icmssn900' => 'ICMSSN900',
+        'icms_previsto_pagto_antecip' => 'ICMSPrevistoPagtoAntecip'
     ];
 
     /**
@@ -275,7 +279,8 @@ class NfeSefazICMS implements ModelInterface, ArrayAccess, \JsonSerializable
         'icmssn201' => 'setIcmssn201',
         'icmssn202' => 'setIcmssn202',
         'icmssn500' => 'setIcmssn500',
-        'icmssn900' => 'setIcmssn900'
+        'icmssn900' => 'setIcmssn900',
+        'icms_previsto_pagto_antecip' => 'setIcmsPrevistoPagtoAntecip'
     ];
 
     /**
@@ -304,7 +309,8 @@ class NfeSefazICMS implements ModelInterface, ArrayAccess, \JsonSerializable
         'icmssn201' => 'getIcmssn201',
         'icmssn202' => 'getIcmssn202',
         'icmssn500' => 'getIcmssn500',
-        'icmssn900' => 'getIcmssn900'
+        'icmssn900' => 'getIcmssn900',
+        'icms_previsto_pagto_antecip' => 'getIcmsPrevistoPagtoAntecip'
     ];
 
     /**
@@ -385,6 +391,7 @@ class NfeSefazICMS implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('icmssn202', $data ?? [], null);
         $this->setIfExists('icmssn500', $data ?? [], null);
         $this->setIfExists('icmssn900', $data ?? [], null);
+        $this->setIfExists('icms_previsto_pagto_antecip', $data ?? [], null);
     }
 
     /**
@@ -992,6 +999,33 @@ class NfeSefazICMS implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable icmssn900 cannot be null');
         }
         $this->container['icmssn900'] = $icmssn900;
+
+        return $this;
+    }
+
+    /**
+     * Gets icms_previsto_pagto_antecip
+     *
+     * @return \ACBrAPI\Model\NfeSefazICMSPrevistoPagtoAntecip|null
+     */
+    public function getIcmsPrevistoPagtoAntecip()
+    {
+        return $this->container['icms_previsto_pagto_antecip'];
+    }
+
+    /**
+     * Sets icms_previsto_pagto_antecip
+     *
+     * @param \ACBrAPI\Model\NfeSefazICMSPrevistoPagtoAntecip|null $icms_previsto_pagto_antecip icms_previsto_pagto_antecip
+     *
+     * @return self
+     */
+    public function setIcmsPrevistoPagtoAntecip($icms_previsto_pagto_antecip)
+    {
+        if (is_null($icms_previsto_pagto_antecip)) {
+            throw new \InvalidArgumentException('non-nullable icms_previsto_pagto_antecip cannot be null');
+        }
+        $this->container['icms_previsto_pagto_antecip'] = $icms_previsto_pagto_antecip;
 
         return $this;
     }

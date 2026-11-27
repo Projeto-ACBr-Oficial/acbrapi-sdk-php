@@ -13,7 +13,7 @@ Nome | Tipo | Descrição | Comentários
 **n_ct** | **int** | Número do CT-e OS. |
 **dh_emi** | **\DateTime** | Data e hora de emissão do CT-e OS.  Formato AAAA-MM-DDTHH:MM:DD TZD. |
 **tp_imp** | **int** | Formato de impressão do DACTE:  * 1 - Retrato  * 2 - Paisagem |
-**tp_emis** | **int** | Forma de emissão do CT-e.  Preencher com:  * 1 - Normal  * 5 - Contingência FSDA  * 7 - Autorização pela SVC-RS  * 8 - Autorização pela SVC-SP |
+**tp_emis** | **int** | Forma de emissão do CT-e.  Preencher com:  * 1 - Normal  * 2 - Contingência Offline  * 7 - Autorização pela SVC-RS  * 8 - Autorização pela SVC-SP |
 **c_dv** | **int** | Digito Verificador da chave de acesso do CT-e.  Informar o dígito  de controle da chave de acesso do CT-e, que deve ser calculado com a aplicação do algoritmo módulo 11 (base 2,9) da chave de acesso.    *Geramos automaticamente quando nenhum valor é informado.* | [optional]
 **tp_amb** | **int** | Tipo do Ambiente:  * 1 - Produção  * 2 - Homologação | [optional]
 **tp_cte** | **int** | Tipo do CT-e OS.  Preencher com:  * 0 - CT-e Normal  * 1 - CT-e Complementar  * 3 - CT-e de Substituição |
@@ -35,5 +35,8 @@ Nome | Tipo | Descrição | Comentários
 **dh_cont** | **\DateTime** | Data e Hora da entrada em contingência.  Informar a data e hora no formato AAAA-MM-DDTHH:MM:SS. | [optional]
 **x_just** | **string** | Justificativa da entrada em contingência. | [optional]
 **g_compra_gov** | [**\ACBrAPI\Model\CteOsSefazCompraGovReduzidoOS**](CteOsSefazCompraGovReduzidoOS.md) |  | [optional]
+**tp_pag_ant** | **int** | Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado quando pagamento que ocorre antes da prestação do serviço e na DFe de fornecimento associada a esses pagamentos, demais hipóteses de prestação de serviço sem antecipação não devem preencher. | [optional]
+**g_pag_antecipado** | [**\ACBrAPI\Model\CteOsSefazGPagAntecipadoOS**](CteOsSefazGPagAntecipadoOS.md) |  | [optional]
+**g_multa_juros** | [**\ACBrAPI\Model\CteOsSefazGMultaJurosOS**](CteOsSefazGMultaJurosOS.md) |  | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

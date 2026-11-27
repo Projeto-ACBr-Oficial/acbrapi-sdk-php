@@ -58,7 +58,9 @@ class CteSimpSefazTotalSimp implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPITypes = [
         'v_t_prest' => 'float',
+        'v_t_prest_liq' => 'float',
         'v_t_rec' => 'float',
+        'ibscbs_tot' => '\ACBrAPI\Model\CteSimpSefazIBSCBSTotSimp',
         'v_tot_dfe' => 'float'
     ];
 
@@ -71,7 +73,9 @@ class CteSimpSefazTotalSimp implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static $openAPIFormats = [
         'v_t_prest' => null,
+        'v_t_prest_liq' => null,
         'v_t_rec' => null,
+        'ibscbs_tot' => null,
         'v_tot_dfe' => null
     ];
 
@@ -82,7 +86,9 @@ class CteSimpSefazTotalSimp implements ModelInterface, ArrayAccess, \JsonSeriali
       */
     protected static array $openAPINullables = [
         'v_t_prest' => true,
+		'v_t_prest_liq' => true,
 		'v_t_rec' => true,
+		'ibscbs_tot' => false,
 		'v_tot_dfe' => true
     ];
 
@@ -173,7 +179,9 @@ class CteSimpSefazTotalSimp implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $attributeMap = [
         'v_t_prest' => 'vTPrest',
+        'v_t_prest_liq' => 'vTPrestLiq',
         'v_t_rec' => 'vTRec',
+        'ibscbs_tot' => 'IBSCBSTot',
         'v_tot_dfe' => 'vTotDFe'
     ];
 
@@ -184,7 +192,9 @@ class CteSimpSefazTotalSimp implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $setters = [
         'v_t_prest' => 'setVTPrest',
+        'v_t_prest_liq' => 'setVTPrestLiq',
         'v_t_rec' => 'setVTRec',
+        'ibscbs_tot' => 'setIbscbsTot',
         'v_tot_dfe' => 'setVTotDfe'
     ];
 
@@ -195,7 +205,9 @@ class CteSimpSefazTotalSimp implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     protected static $getters = [
         'v_t_prest' => 'getVTPrest',
+        'v_t_prest_liq' => 'getVTPrestLiq',
         'v_t_rec' => 'getVTRec',
+        'ibscbs_tot' => 'getIbscbsTot',
         'v_tot_dfe' => 'getVTotDfe'
     ];
 
@@ -257,7 +269,9 @@ class CteSimpSefazTotalSimp implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(array $data = null)
     {
         $this->setIfExists('v_t_prest', $data ?? [], null);
+        $this->setIfExists('v_t_prest_liq', $data ?? [], null);
         $this->setIfExists('v_t_rec', $data ?? [], null);
+        $this->setIfExists('ibscbs_tot', $data ?? [], null);
         $this->setIfExists('v_tot_dfe', $data ?? [], null);
     }
 
@@ -293,6 +307,10 @@ class CteSimpSefazTotalSimp implements ModelInterface, ArrayAccess, \JsonSeriali
         }
         if (($this->container['v_t_prest'] < 0)) {
             $invalidProperties[] = "invalid value for 'v_t_prest', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['v_t_prest_liq']) && ($this->container['v_t_prest_liq'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_t_prest_liq', must be bigger than or equal to 0.";
         }
 
         if ($this->container['v_t_rec'] === null) {
@@ -334,7 +352,7 @@ class CteSimpSefazTotalSimp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets v_t_prest
      *
-     * @param float $v_t_prest Valor Total da Prestação do Serviço.  Pode conter zeros quando o CT-e for de complemento de ICMS.
+     * @param float $v_t_prest Valor Total da Prestação do Serviço.
      *
      * @return self
      */
@@ -356,6 +374,45 @@ class CteSimpSefazTotalSimp implements ModelInterface, ArrayAccess, \JsonSeriali
         }
 
         $this->container['v_t_prest'] = $v_t_prest;
+
+        return $this;
+    }
+
+    /**
+     * Gets v_t_prest_liq
+     *
+     * @return float|null
+     */
+    public function getVTPrestLiq()
+    {
+        return $this->container['v_t_prest_liq'];
+    }
+
+    /**
+     * Sets v_t_prest_liq
+     *
+     * @param float|null $v_t_prest_liq Valor Total Líquido da Prestação do Serviço sem tributos.
+     *
+     * @return self
+     */
+    public function setVTPrestLiq($v_t_prest_liq)
+    {
+        if (is_null($v_t_prest_liq)) {
+            array_push($this->openAPINullablesSetToNull, 'v_t_prest_liq');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_t_prest_liq', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($v_t_prest_liq) && ($v_t_prest_liq < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_t_prest_liq when calling CteSimpSefazTotalSimp., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_t_prest_liq'] = $v_t_prest_liq;
 
         return $this;
     }
@@ -400,6 +457,33 @@ class CteSimpSefazTotalSimp implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets ibscbs_tot
+     *
+     * @return \ACBrAPI\Model\CteSimpSefazIBSCBSTotSimp|null
+     */
+    public function getIbscbsTot()
+    {
+        return $this->container['ibscbs_tot'];
+    }
+
+    /**
+     * Sets ibscbs_tot
+     *
+     * @param \ACBrAPI\Model\CteSimpSefazIBSCBSTotSimp|null $ibscbs_tot ibscbs_tot
+     *
+     * @return self
+     */
+    public function setIbscbsTot($ibscbs_tot)
+    {
+        if (is_null($ibscbs_tot)) {
+            throw new \InvalidArgumentException('non-nullable ibscbs_tot cannot be null');
+        }
+        $this->container['ibscbs_tot'] = $ibscbs_tot;
+
+        return $this;
+    }
+
+    /**
      * Gets v_tot_dfe
      *
      * @return float|null
@@ -412,7 +496,7 @@ class CteSimpSefazTotalSimp implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets v_tot_dfe
      *
-     * @param float|null $v_tot_dfe Valor total do documento fiscal  (vTPrest + total do IBS + total da CBS).
+     * @param float|null $v_tot_dfe Valor total do documento fiscal (vTPrest + IBS + CBS).
      *
      * @return self
      */

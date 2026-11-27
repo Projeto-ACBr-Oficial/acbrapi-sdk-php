@@ -87,7 +87,10 @@ class CteOsSefazIdeOS implements ModelInterface, ArrayAccess, \JsonSerializable
         'inf_percurso' => '\ACBrAPI\Model\CteOsSefazInfPercursoOS[]',
         'dh_cont' => '\DateTime',
         'x_just' => 'string',
-        'g_compra_gov' => '\ACBrAPI\Model\CteOsSefazCompraGovReduzidoOS'
+        'g_compra_gov' => '\ACBrAPI\Model\CteOsSefazCompraGovReduzidoOS',
+        'tp_pag_ant' => 'int',
+        'g_pag_antecipado' => '\ACBrAPI\Model\CteOsSefazGPagAntecipadoOS',
+        'g_multa_juros' => '\ACBrAPI\Model\CteOsSefazGMultaJurosOS'
     ];
 
     /**
@@ -128,7 +131,10 @@ class CteOsSefazIdeOS implements ModelInterface, ArrayAccess, \JsonSerializable
         'inf_percurso' => null,
         'dh_cont' => 'date-time',
         'x_just' => null,
-        'g_compra_gov' => null
+        'g_compra_gov' => null,
+        'tp_pag_ant' => null,
+        'g_pag_antecipado' => null,
+        'g_multa_juros' => null
     ];
 
     /**
@@ -167,7 +173,10 @@ class CteOsSefazIdeOS implements ModelInterface, ArrayAccess, \JsonSerializable
 		'inf_percurso' => false,
 		'dh_cont' => true,
 		'x_just' => true,
-		'g_compra_gov' => false
+		'g_compra_gov' => false,
+		'tp_pag_ant' => true,
+		'g_pag_antecipado' => false,
+		'g_multa_juros' => false
     ];
 
     /**
@@ -286,7 +295,10 @@ class CteOsSefazIdeOS implements ModelInterface, ArrayAccess, \JsonSerializable
         'inf_percurso' => 'infPercurso',
         'dh_cont' => 'dhCont',
         'x_just' => 'xJust',
-        'g_compra_gov' => 'gCompraGov'
+        'g_compra_gov' => 'gCompraGov',
+        'tp_pag_ant' => 'tpPagAnt',
+        'g_pag_antecipado' => 'gPagAntecipado',
+        'g_multa_juros' => 'gMultaJuros'
     ];
 
     /**
@@ -325,7 +337,10 @@ class CteOsSefazIdeOS implements ModelInterface, ArrayAccess, \JsonSerializable
         'inf_percurso' => 'setInfPercurso',
         'dh_cont' => 'setDhCont',
         'x_just' => 'setXJust',
-        'g_compra_gov' => 'setGCompraGov'
+        'g_compra_gov' => 'setGCompraGov',
+        'tp_pag_ant' => 'setTpPagAnt',
+        'g_pag_antecipado' => 'setGPagAntecipado',
+        'g_multa_juros' => 'setGMultaJuros'
     ];
 
     /**
@@ -364,7 +379,10 @@ class CteOsSefazIdeOS implements ModelInterface, ArrayAccess, \JsonSerializable
         'inf_percurso' => 'getInfPercurso',
         'dh_cont' => 'getDhCont',
         'x_just' => 'getXJust',
-        'g_compra_gov' => 'getGCompraGov'
+        'g_compra_gov' => 'getGCompraGov',
+        'tp_pag_ant' => 'getTpPagAnt',
+        'g_pag_antecipado' => 'getGPagAntecipado',
+        'g_multa_juros' => 'getGMultaJuros'
     ];
 
     /**
@@ -455,6 +473,9 @@ class CteOsSefazIdeOS implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('dh_cont', $data ?? [], null);
         $this->setIfExists('x_just', $data ?? [], null);
         $this->setIfExists('g_compra_gov', $data ?? [], null);
+        $this->setIfExists('tp_pag_ant', $data ?? [], null);
+        $this->setIfExists('g_pag_antecipado', $data ?? [], null);
+        $this->setIfExists('g_multa_juros', $data ?? [], null);
     }
 
     /**
@@ -968,7 +989,7 @@ class CteOsSefazIdeOS implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tp_emis
      *
-     * @param int $tp_emis Forma de emissão do CT-e.  Preencher com:  * 1 - Normal  * 5 - Contingência FSDA  * 7 - Autorização pela SVC-RS  * 8 - Autorização pela SVC-SP
+     * @param int $tp_emis Forma de emissão do CT-e.  Preencher com:  * 1 - Normal  * 2 - Contingência Offline  * 7 - Autorização pela SVC-RS  * 8 - Autorização pela SVC-SP
      *
      * @return self
      */
@@ -1732,6 +1753,94 @@ class CteOsSefazIdeOS implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable g_compra_gov cannot be null');
         }
         $this->container['g_compra_gov'] = $g_compra_gov;
+
+        return $this;
+    }
+
+    /**
+     * Gets tp_pag_ant
+     *
+     * @return int|null
+     */
+    public function getTpPagAnt()
+    {
+        return $this->container['tp_pag_ant'];
+    }
+
+    /**
+     * Sets tp_pag_ant
+     *
+     * @param int|null $tp_pag_ant Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado quando pagamento que ocorre antes da prestação do serviço e na DFe de fornecimento associada a esses pagamentos, demais hipóteses de prestação de serviço sem antecipação não devem preencher.
+     *
+     * @return self
+     */
+    public function setTpPagAnt($tp_pag_ant)
+    {
+        if (is_null($tp_pag_ant)) {
+            array_push($this->openAPINullablesSetToNull, 'tp_pag_ant');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('tp_pag_ant', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['tp_pag_ant'] = $tp_pag_ant;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_pag_antecipado
+     *
+     * @return \ACBrAPI\Model\CteOsSefazGPagAntecipadoOS|null
+     */
+    public function getGPagAntecipado()
+    {
+        return $this->container['g_pag_antecipado'];
+    }
+
+    /**
+     * Sets g_pag_antecipado
+     *
+     * @param \ACBrAPI\Model\CteOsSefazGPagAntecipadoOS|null $g_pag_antecipado g_pag_antecipado
+     *
+     * @return self
+     */
+    public function setGPagAntecipado($g_pag_antecipado)
+    {
+        if (is_null($g_pag_antecipado)) {
+            throw new \InvalidArgumentException('non-nullable g_pag_antecipado cannot be null');
+        }
+        $this->container['g_pag_antecipado'] = $g_pag_antecipado;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_multa_juros
+     *
+     * @return \ACBrAPI\Model\CteOsSefazGMultaJurosOS|null
+     */
+    public function getGMultaJuros()
+    {
+        return $this->container['g_multa_juros'];
+    }
+
+    /**
+     * Sets g_multa_juros
+     *
+     * @param \ACBrAPI\Model\CteOsSefazGMultaJurosOS|null $g_multa_juros g_multa_juros
+     *
+     * @return self
+     */
+    public function setGMultaJuros($g_multa_juros)
+    {
+        if (is_null($g_multa_juros)) {
+            throw new \InvalidArgumentException('non-nullable g_multa_juros cannot be null');
+        }
+        $this->container['g_multa_juros'] = $g_multa_juros;
 
         return $this;
     }

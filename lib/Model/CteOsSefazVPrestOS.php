@@ -58,6 +58,7 @@ class CteOsSefazVPrestOS implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPITypes = [
         'v_t_prest' => 'float',
+        'v_t_prest_liq' => 'float',
         'v_rec' => 'float',
         'comp' => '\ACBrAPI\Model\CteOsSefazCompOS[]'
     ];
@@ -71,6 +72,7 @@ class CteOsSefazVPrestOS implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static $openAPIFormats = [
         'v_t_prest' => null,
+        'v_t_prest_liq' => null,
         'v_rec' => null,
         'comp' => null
     ];
@@ -82,6 +84,7 @@ class CteOsSefazVPrestOS implements ModelInterface, ArrayAccess, \JsonSerializab
       */
     protected static array $openAPINullables = [
         'v_t_prest' => true,
+		'v_t_prest_liq' => true,
 		'v_rec' => true,
 		'comp' => false
     ];
@@ -173,6 +176,7 @@ class CteOsSefazVPrestOS implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $attributeMap = [
         'v_t_prest' => 'vTPrest',
+        'v_t_prest_liq' => 'vTPrestLiq',
         'v_rec' => 'vRec',
         'comp' => 'Comp'
     ];
@@ -184,6 +188,7 @@ class CteOsSefazVPrestOS implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $setters = [
         'v_t_prest' => 'setVTPrest',
+        'v_t_prest_liq' => 'setVTPrestLiq',
         'v_rec' => 'setVRec',
         'comp' => 'setComp'
     ];
@@ -195,6 +200,7 @@ class CteOsSefazVPrestOS implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     protected static $getters = [
         'v_t_prest' => 'getVTPrest',
+        'v_t_prest_liq' => 'getVTPrestLiq',
         'v_rec' => 'getVRec',
         'comp' => 'getComp'
     ];
@@ -257,6 +263,7 @@ class CteOsSefazVPrestOS implements ModelInterface, ArrayAccess, \JsonSerializab
     public function __construct(array $data = null)
     {
         $this->setIfExists('v_t_prest', $data ?? [], null);
+        $this->setIfExists('v_t_prest_liq', $data ?? [], null);
         $this->setIfExists('v_rec', $data ?? [], null);
         $this->setIfExists('comp', $data ?? [], null);
     }
@@ -295,6 +302,10 @@ class CteOsSefazVPrestOS implements ModelInterface, ArrayAccess, \JsonSerializab
             $invalidProperties[] = "invalid value for 'v_t_prest', must be bigger than or equal to 0.";
         }
 
+        if (!is_null($this->container['v_t_prest_liq']) && ($this->container['v_t_prest_liq'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_t_prest_liq', must be bigger than or equal to 0.";
+        }
+
         if ($this->container['v_rec'] === null) {
             $invalidProperties[] = "'v_rec' can't be null";
         }
@@ -330,7 +341,7 @@ class CteOsSefazVPrestOS implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets v_t_prest
      *
-     * @param float $v_t_prest Valor Total da Prestação do Serviço.  Pode conter zeros quando o CT-e for de complemento de ICMS.
+     * @param float $v_t_prest Valor Total da Prestação do Serviço.
      *
      * @return self
      */
@@ -352,6 +363,45 @@ class CteOsSefazVPrestOS implements ModelInterface, ArrayAccess, \JsonSerializab
         }
 
         $this->container['v_t_prest'] = $v_t_prest;
+
+        return $this;
+    }
+
+    /**
+     * Gets v_t_prest_liq
+     *
+     * @return float|null
+     */
+    public function getVTPrestLiq()
+    {
+        return $this->container['v_t_prest_liq'];
+    }
+
+    /**
+     * Sets v_t_prest_liq
+     *
+     * @param float|null $v_t_prest_liq Valor Líquido da Prestação SEM tributos.
+     *
+     * @return self
+     */
+    public function setVTPrestLiq($v_t_prest_liq)
+    {
+        if (is_null($v_t_prest_liq)) {
+            array_push($this->openAPINullablesSetToNull, 'v_t_prest_liq');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_t_prest_liq', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($v_t_prest_liq) && ($v_t_prest_liq < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_t_prest_liq when calling CteOsSefazVPrestOS., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_t_prest_liq'] = $v_t_prest_liq;
 
         return $this;
     }

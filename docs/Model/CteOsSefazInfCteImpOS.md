@@ -10,6 +10,6 @@ Nome | Tipo | Descrição | Comentários
 **icmsuf_fim** | [**\ACBrAPI\Model\CteOsSefazICMSUFFimOS**](CteOsSefazICMSUFFimOS.md) |  | [optional]
 **inf_trib_fed** | [**\ACBrAPI\Model\CteOsSefazInfTribFedOS**](CteOsSefazInfTribFedOS.md) |  | [optional]
 **ibscbs** | [**\ACBrAPI\Model\CteOsSefazTribCTeOS**](CteOsSefazTribCTeOS.md) |  | [optional]
-**v_tot_dfe** | **float** | Valor total do documento fiscal  (vTPrest + total do IBS + total da CBS). | [optional]
+**v_tot_dfe** | **float** | Valor total do documento fiscal (vTPrest + IBS + CBS). | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

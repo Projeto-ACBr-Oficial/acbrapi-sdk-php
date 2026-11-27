@@ -67,6 +67,7 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'im' => 'string',
         'cnae' => 'string',
         'crt' => 'int',
+        'tp_regime_ibscbs' => 'int',
         'isuf_emit' => 'string'
     ];
 
@@ -88,6 +89,7 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'im' => null,
         'cnae' => null,
         'crt' => null,
+        'tp_regime_ibscbs' => null,
         'isuf_emit' => null
     ];
 
@@ -107,6 +109,7 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
 		'im' => true,
 		'cnae' => true,
 		'crt' => true,
+		'tp_regime_ibscbs' => true,
 		'isuf_emit' => true
     ];
 
@@ -206,6 +209,7 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'im' => 'IM',
         'cnae' => 'CNAE',
         'crt' => 'CRT',
+        'tp_regime_ibscbs' => 'tpRegimeIBSCBS',
         'isuf_emit' => 'ISUFEmit'
     ];
 
@@ -225,6 +229,7 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'im' => 'setIm',
         'cnae' => 'setCnae',
         'crt' => 'setCrt',
+        'tp_regime_ibscbs' => 'setTpRegimeIbscbs',
         'isuf_emit' => 'setIsufEmit'
     ];
 
@@ -244,6 +249,7 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'im' => 'getIm',
         'cnae' => 'getCnae',
         'crt' => 'getCrt',
+        'tp_regime_ibscbs' => 'getTpRegimeIbscbs',
         'isuf_emit' => 'getIsufEmit'
     ];
 
@@ -314,6 +320,7 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('im', $data ?? [], null);
         $this->setIfExists('cnae', $data ?? [], null);
         $this->setIfExists('crt', $data ?? [], null);
+        $this->setIfExists('tp_regime_ibscbs', $data ?? [], null);
         $this->setIfExists('isuf_emit', $data ?? [], null);
     }
 
@@ -765,6 +772,40 @@ class NfeSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['crt'] = $crt;
+
+        return $this;
+    }
+
+    /**
+     * Gets tp_regime_ibscbs
+     *
+     * @return int|null
+     */
+    public function getTpRegimeIbscbs()
+    {
+        return $this->container['tp_regime_ibscbs'];
+    }
+
+    /**
+     * Sets tp_regime_ibscbs
+     *
+     * @param int|null $tp_regime_ibscbs Tipo de Regime de Apuração do IBS e da CBS:  * 1 - Contribuinte do Simples Nacional (CRT=1 ou 2) com opção pelo regime regular do IBS e da CBS  * 2 - Contribuinte do Regime Normal (CRT=3) com opção pendente pelo CRT=\"1-Simples Nacional\" sem regime regular do IBS e da CBS  * 3 - Contribuinte do Regime Normal (CRT=3) com opção pendente pelo CRT=\"2-Simples Nacional, excesso sublimite de receita bruta\" sem regime regular do IBS e da CBS  * 4 - Contribuinte do Regime Normal (CRT=3) com opção pendente pelo Simples Nacional (CRT=1 ou 2), com regime regular do IBS e da CBS
+     *
+     * @return self
+     */
+    public function setTpRegimeIbscbs($tp_regime_ibscbs)
+    {
+        if (is_null($tp_regime_ibscbs)) {
+            array_push($this->openAPINullablesSetToNull, 'tp_regime_ibscbs');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('tp_regime_ibscbs', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['tp_regime_ibscbs'] = $tp_regime_ibscbs;
 
         return $this;
     }

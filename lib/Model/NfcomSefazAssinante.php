@@ -65,6 +65,7 @@ class NfcomSefazAssinante implements ModelInterface, ArrayAccess, \JsonSerializa
         'd_contrato_fim' => '\DateTime',
         'nro_term_princ' => 'string',
         'c_uf_princ' => 'int',
+        'c_mun_princ' => 'string',
         'nro_term_adic' => 'string',
         'c_uf_adic' => 'int'
     ];
@@ -85,6 +86,7 @@ class NfcomSefazAssinante implements ModelInterface, ArrayAccess, \JsonSerializa
         'd_contrato_fim' => 'date',
         'nro_term_princ' => null,
         'c_uf_princ' => null,
+        'c_mun_princ' => null,
         'nro_term_adic' => null,
         'c_uf_adic' => null
     ];
@@ -103,6 +105,7 @@ class NfcomSefazAssinante implements ModelInterface, ArrayAccess, \JsonSerializa
 		'd_contrato_fim' => true,
 		'nro_term_princ' => true,
 		'c_uf_princ' => true,
+		'c_mun_princ' => true,
 		'nro_term_adic' => true,
 		'c_uf_adic' => true
     ];
@@ -201,6 +204,7 @@ class NfcomSefazAssinante implements ModelInterface, ArrayAccess, \JsonSerializa
         'd_contrato_fim' => 'dContratoFim',
         'nro_term_princ' => 'NroTermPrinc',
         'c_uf_princ' => 'cUFPrinc',
+        'c_mun_princ' => 'cMunPrinc',
         'nro_term_adic' => 'NroTermAdic',
         'c_uf_adic' => 'cUFAdic'
     ];
@@ -219,6 +223,7 @@ class NfcomSefazAssinante implements ModelInterface, ArrayAccess, \JsonSerializa
         'd_contrato_fim' => 'setDContratoFim',
         'nro_term_princ' => 'setNroTermPrinc',
         'c_uf_princ' => 'setCUfPrinc',
+        'c_mun_princ' => 'setCMunPrinc',
         'nro_term_adic' => 'setNroTermAdic',
         'c_uf_adic' => 'setCUfAdic'
     ];
@@ -237,6 +242,7 @@ class NfcomSefazAssinante implements ModelInterface, ArrayAccess, \JsonSerializa
         'd_contrato_fim' => 'getDContratoFim',
         'nro_term_princ' => 'getNroTermPrinc',
         'c_uf_princ' => 'getCUfPrinc',
+        'c_mun_princ' => 'getCMunPrinc',
         'nro_term_adic' => 'getNroTermAdic',
         'c_uf_adic' => 'getCUfAdic'
     ];
@@ -306,6 +312,7 @@ class NfcomSefazAssinante implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('d_contrato_fim', $data ?? [], null);
         $this->setIfExists('nro_term_princ', $data ?? [], null);
         $this->setIfExists('c_uf_princ', $data ?? [], null);
+        $this->setIfExists('c_mun_princ', $data ?? [], null);
         $this->setIfExists('nro_term_adic', $data ?? [], null);
         $this->setIfExists('c_uf_adic', $data ?? [], null);
     }
@@ -659,6 +666,40 @@ class NfcomSefazAssinante implements ModelInterface, ArrayAccess, \JsonSerializa
             }
         }
         $this->container['c_uf_princ'] = $c_uf_princ;
+
+        return $this;
+    }
+
+    /**
+     * Gets c_mun_princ
+     *
+     * @return string|null
+     */
+    public function getCMunPrinc()
+    {
+        return $this->container['c_mun_princ'];
+    }
+
+    /**
+     * Sets c_mun_princ
+     *
+     * @param string|null $c_mun_princ Código do município do terminal.
+     *
+     * @return self
+     */
+    public function setCMunPrinc($c_mun_princ)
+    {
+        if (is_null($c_mun_princ)) {
+            array_push($this->openAPINullablesSetToNull, 'c_mun_princ');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('c_mun_princ', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['c_mun_princ'] = $c_mun_princ;
 
         return $this;
     }

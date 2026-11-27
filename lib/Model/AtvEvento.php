@@ -61,6 +61,7 @@ class AtvEvento implements ModelInterface, ArrayAccess, \JsonSerializable
         'desc' => 'string',
         'dt_ini' => '\DateTime',
         'dt_fim' => '\DateTime',
+        'c_mun' => 'string',
         'id_atv_evt' => 'string',
         'id' => 'string',
         'end' => '\ACBrAPI\Model\EnderecoSimples'
@@ -78,6 +79,7 @@ class AtvEvento implements ModelInterface, ArrayAccess, \JsonSerializable
         'desc' => null,
         'dt_ini' => 'date',
         'dt_fim' => 'date',
+        'c_mun' => null,
         'id_atv_evt' => null,
         'id' => null,
         'end' => null
@@ -93,6 +95,7 @@ class AtvEvento implements ModelInterface, ArrayAccess, \JsonSerializable
 		'desc' => true,
 		'dt_ini' => true,
 		'dt_fim' => true,
+		'c_mun' => true,
 		'id_atv_evt' => true,
 		'id' => true,
 		'end' => false
@@ -188,6 +191,7 @@ class AtvEvento implements ModelInterface, ArrayAccess, \JsonSerializable
         'desc' => 'desc',
         'dt_ini' => 'dtIni',
         'dt_fim' => 'dtFim',
+        'c_mun' => 'cMun',
         'id_atv_evt' => 'idAtvEvt',
         'id' => 'id',
         'end' => 'end'
@@ -203,6 +207,7 @@ class AtvEvento implements ModelInterface, ArrayAccess, \JsonSerializable
         'desc' => 'setDesc',
         'dt_ini' => 'setDtIni',
         'dt_fim' => 'setDtFim',
+        'c_mun' => 'setCMun',
         'id_atv_evt' => 'setIdAtvEvt',
         'id' => 'setId',
         'end' => 'setEnd'
@@ -218,6 +223,7 @@ class AtvEvento implements ModelInterface, ArrayAccess, \JsonSerializable
         'desc' => 'getDesc',
         'dt_ini' => 'getDtIni',
         'dt_fim' => 'getDtFim',
+        'c_mun' => 'getCMun',
         'id_atv_evt' => 'getIdAtvEvt',
         'id' => 'getId',
         'end' => 'getEnd'
@@ -284,6 +290,7 @@ class AtvEvento implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('desc', $data ?? [], null);
         $this->setIfExists('dt_ini', $data ?? [], null);
         $this->setIfExists('dt_fim', $data ?? [], null);
+        $this->setIfExists('c_mun', $data ?? [], null);
         $this->setIfExists('id_atv_evt', $data ?? [], null);
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('end', $data ?? [], null);
@@ -515,6 +522,40 @@ class AtvEvento implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['dt_fim'] = $dt_fim;
+
+        return $this;
+    }
+
+    /**
+     * Gets c_mun
+     *
+     * @return string|null
+     */
+    public function getCMun()
+    {
+        return $this->container['c_mun'];
+    }
+
+    /**
+     * Sets c_mun
+     *
+     * @param string|null $c_mun Código do município da localidade do evento. (Tabela do IBGE).  *Disponível a partir da NT 009 (leiaute 009.1.01).*
+     *
+     * @return self
+     */
+    public function setCMun($c_mun)
+    {
+        if (is_null($c_mun)) {
+            array_push($this->openAPINullablesSetToNull, 'c_mun');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('c_mun', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['c_mun'] = $c_mun;
 
         return $this;
     }

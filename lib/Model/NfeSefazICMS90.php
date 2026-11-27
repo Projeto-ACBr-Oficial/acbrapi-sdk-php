@@ -648,7 +648,7 @@ class NfeSefazICMS90 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cst
      *
-     * @param string $cst Tributção pelo ICMS  * 90 - Outras
+     * @param string $cst Tributação pelo ICMS  * 90 - Outras
      *
      * @return self
      */

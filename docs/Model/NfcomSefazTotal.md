@@ -5,6 +5,7 @@
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
 **v_prod** | **float** | Valor Total dos produtos e serviços. |
+**v_prod_liq** | **float** | Valor Total Liquido dos produtos e serviços sem tributos. | [optional]
 **icms_tot** | [**\ACBrAPI\Model\NfcomSefazICMSTot**](NfcomSefazICMSTot.md) |  |
 **v_cofins** | **float** | Valor do COFINS. |
 **v_pis** | **float** | Valor do PIS. |
@@ -15,6 +16,6 @@ Nome | Tipo | Descrição | Comentários
 **v_outro** | **float** | Outras Despesas acessórias. |
 **v_nf** | **float** | Valor Total da NFCom. |
 **ibscbs_tot** | [**\ACBrAPI\Model\NfcomSefazIBSCBSTot**](NfcomSefazIBSCBSTot.md) |  | [optional]
-**v_tot_dfe** | **float** | Valor total do documento fiscal  (vNF + total do IBS + total da CBS). | [optional]
+**v_tot_dfe** | **float** | Valor total do documento fiscal  (vNF + IBS + CBS). | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

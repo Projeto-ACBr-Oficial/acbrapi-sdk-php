@@ -69,6 +69,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'subst' => '\ACBrAPI\Model\Substituicao',
         'prest' => '\ACBrAPI\Model\InfoPrestador',
         'toma' => '\ACBrAPI\Model\InfoTomador',
+        'ind_dest' => 'int',
+        'dest' => '\ACBrAPI\Model\RTCInfoDest',
         'interm' => '\ACBrAPI\Model\InfoIntermediario',
         'serv' => '\ACBrAPI\Model\Serv',
         'valores' => '\ACBrAPI\Model\InfoValores',
@@ -95,6 +97,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'subst' => null,
         'prest' => null,
         'toma' => null,
+        'ind_dest' => null,
+        'dest' => null,
         'interm' => null,
         'serv' => null,
         'valores' => null,
@@ -119,6 +123,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
 		'subst' => false,
 		'prest' => false,
 		'toma' => false,
+		'ind_dest' => true,
+		'dest' => false,
 		'interm' => false,
 		'serv' => false,
 		'valores' => false,
@@ -223,6 +229,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'subst' => 'subst',
         'prest' => 'prest',
         'toma' => 'toma',
+        'ind_dest' => 'indDest',
+        'dest' => 'dest',
         'interm' => 'interm',
         'serv' => 'serv',
         'valores' => 'valores',
@@ -247,6 +255,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'subst' => 'setSubst',
         'prest' => 'setPrest',
         'toma' => 'setToma',
+        'ind_dest' => 'setIndDest',
+        'dest' => 'setDest',
         'interm' => 'setInterm',
         'serv' => 'setServ',
         'valores' => 'setValores',
@@ -271,6 +281,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         'subst' => 'getSubst',
         'prest' => 'getPrest',
         'toma' => 'getToma',
+        'ind_dest' => 'getIndDest',
+        'dest' => 'getDest',
         'interm' => 'getInterm',
         'serv' => 'getServ',
         'valores' => 'getValores',
@@ -346,6 +358,8 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('subst', $data ?? [], null);
         $this->setIfExists('prest', $data ?? [], null);
         $this->setIfExists('toma', $data ?? [], null);
+        $this->setIfExists('ind_dest', $data ?? [], null);
+        $this->setIfExists('dest', $data ?? [], null);
         $this->setIfExists('interm', $data ?? [], null);
         $this->setIfExists('serv', $data ?? [], null);
         $this->setIfExists('valores', $data ?? [], null);
@@ -835,6 +849,67 @@ class InfDPS implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable toma cannot be null');
         }
         $this->container['toma'] = $toma;
+
+        return $this;
+    }
+
+    /**
+     * Gets ind_dest
+     *
+     * @return int|null
+     */
+    public function getIndDest()
+    {
+        return $this->container['ind_dest'];
+    }
+
+    /**
+     * Sets ind_dest
+     *
+     * @param int|null $ind_dest A respeito do Destinatário dos serviços.  *Disponível a partir da NT 009 (leiaute 009.1.01).*
+     *
+     * @return self
+     */
+    public function setIndDest($ind_dest)
+    {
+        if (is_null($ind_dest)) {
+            array_push($this->openAPINullablesSetToNull, 'ind_dest');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('ind_dest', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['ind_dest'] = $ind_dest;
+
+        return $this;
+    }
+
+    /**
+     * Gets dest
+     *
+     * @return \ACBrAPI\Model\RTCInfoDest|null
+     */
+    public function getDest()
+    {
+        return $this->container['dest'];
+    }
+
+    /**
+     * Sets dest
+     *
+     * @param \ACBrAPI\Model\RTCInfoDest|null $dest dest
+     *
+     * @return self
+     */
+    public function setDest($dest)
+    {
+        if (is_null($dest)) {
+            throw new \InvalidArgumentException('non-nullable dest cannot be null');
+        }
+        $this->container['dest'] = $dest;
 
         return $this;
     }

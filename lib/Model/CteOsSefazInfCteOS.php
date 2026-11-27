@@ -796,7 +796,7 @@ class CteOsSefazInfCteOS implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets tp_pag_ant
      *
-     * @param int|null $tp_pag_ant Tipo Pagamento ou Pagamento Antecipado.  Informar:  * 1 - Pagamento Antecipado  * 3 - Fornecimento com pagamento realizado anteriormente  Este campo é opcional e apenas deve ser informado quando pagamento que ocorre antes da prestação do serviço e na DFe de fornecimento associada a esses pagamentos, demais hipóteses de prestação de serviço sem antecipação não devem preencher.
+     * @param int|null $tp_pag_ant `Deprecated`    **Propriedade depreciada**.    *Utilize `ide.tpPagAnt`*.
      *
      * @return self
      */

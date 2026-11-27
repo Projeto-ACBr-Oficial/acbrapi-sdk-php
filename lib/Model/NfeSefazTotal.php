@@ -57,6 +57,7 @@ class NfeSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
+        'v_prod_liq_tot' => 'float',
         'icms_tot' => '\ACBrAPI\Model\NfeSefazICMSTot',
         'issq_ntot' => '\ACBrAPI\Model\NfeSefazISSQNtot',
         'ret_trib' => '\ACBrAPI\Model\NfeSefazRetTrib',
@@ -73,6 +74,7 @@ class NfeSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'v_prod_liq_tot' => null,
         'icms_tot' => null,
         'issq_ntot' => null,
         'ret_trib' => null,
@@ -87,7 +89,8 @@ class NfeSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'icms_tot' => false,
+        'v_prod_liq_tot' => true,
+		'icms_tot' => false,
 		'issq_ntot' => false,
 		'ret_trib' => false,
 		'is_tot' => false,
@@ -181,6 +184,7 @@ class NfeSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
+        'v_prod_liq_tot' => 'vProdLiqTot',
         'icms_tot' => 'ICMSTot',
         'issq_ntot' => 'ISSQNtot',
         'ret_trib' => 'retTrib',
@@ -195,6 +199,7 @@ class NfeSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
+        'v_prod_liq_tot' => 'setVProdLiqTot',
         'icms_tot' => 'setIcmsTot',
         'issq_ntot' => 'setIssqNtot',
         'ret_trib' => 'setRetTrib',
@@ -209,6 +214,7 @@ class NfeSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
+        'v_prod_liq_tot' => 'getVProdLiqTot',
         'icms_tot' => 'getIcmsTot',
         'issq_ntot' => 'getIssqNtot',
         'ret_trib' => 'getRetTrib',
@@ -274,6 +280,7 @@ class NfeSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('v_prod_liq_tot', $data ?? [], null);
         $this->setIfExists('icms_tot', $data ?? [], null);
         $this->setIfExists('issq_ntot', $data ?? [], null);
         $this->setIfExists('ret_trib', $data ?? [], null);
@@ -309,6 +316,10 @@ class NfeSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if (!is_null($this->container['v_prod_liq_tot']) && ($this->container['v_prod_liq_tot'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_prod_liq_tot', must be bigger than or equal to 0.";
+        }
+
         if ($this->container['icms_tot'] === null) {
             $invalidProperties[] = "'icms_tot' can't be null";
         }
@@ -330,6 +341,45 @@ class NfeSefazTotal implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets v_prod_liq_tot
+     *
+     * @return float|null
+     */
+    public function getVProdLiqTot()
+    {
+        return $this->container['v_prod_liq_tot'];
+    }
+
+    /**
+     * Sets v_prod_liq_tot
+     *
+     * @param float|null $v_prod_liq_tot Valor Total Líquido dos Produtos ou Serviços (sem tributos).
+     *
+     * @return self
+     */
+    public function setVProdLiqTot($v_prod_liq_tot)
+    {
+        if (is_null($v_prod_liq_tot)) {
+            array_push($this->openAPINullablesSetToNull, 'v_prod_liq_tot');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_prod_liq_tot', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($v_prod_liq_tot) && ($v_prod_liq_tot < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_prod_liq_tot when calling NfeSefazTotal., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_prod_liq_tot'] = $v_prod_liq_tot;
+
+        return $this;
+    }
 
     /**
      * Gets icms_tot

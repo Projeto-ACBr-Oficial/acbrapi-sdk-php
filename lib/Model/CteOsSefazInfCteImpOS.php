@@ -551,7 +551,7 @@ class CteOsSefazInfCteImpOS implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets v_tot_dfe
      *
-     * @param float|null $v_tot_dfe Valor total do documento fiscal  (vTPrest + total do IBS + total da CBS).
+     * @param float|null $v_tot_dfe Valor total do documento fiscal (vTPrest + IBS + CBS).
      *
      * @return self
      */

@@ -17,9 +17,11 @@ Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação defin
 | [**emitirLoteNfseDps()**](NfseApi.md#emitirLoteNfseDps) | **POST** /nfse/dps/lotes | Emitir lote de NFS-e |
 | [**emitirNfseDps()**](NfseApi.md#emitirNfseDps) | **POST** /nfse/dps | Emitir NFS-e |
 | [**enviarEmailNfse()**](NfseApi.md#enviarEmailNfse) | **POST** /nfse/{id}/email | Enviar e-mail |
+| [**listarEventosNfse()**](NfseApi.md#listarEventosNfse) | **GET** /nfse/{id}/eventos | Listar eventos da NFS-e |
 | [**listarLotesNfse()**](NfseApi.md#listarLotesNfse) | **GET** /nfse/lotes | Listar lotes de NFS-e |
 | [**listarNfse()**](NfseApi.md#listarNfse) | **GET** /nfse | Listar NFS-e |
 | [**sincronizarNfse()**](NfseApi.md#sincronizarNfse) | **POST** /nfse/{id}/sincronizar | Sincroniza dados na NFS-e a partir da Prefeitura |
+| [**solicitarAnaliseFiscalCancelamentoNfse()**](NfseApi.md#solicitarAnaliseFiscalCancelamentoNfse) | **POST** /nfse/{id}/cancelamento/analise-fiscal | Solicitar análise fiscal para cancelamento da NFS-e |
 
 
 ## `baixarPdfNfse()`
@@ -807,6 +809,66 @@ try {
 [[Voltar à lista de DTOs]](../../README.md#models)
 [[Voltar ao README]](../../README.md)
 
+## `listarEventosNfse()`
+
+```php
+listarEventosNfse($id): \ACBrAPI\Model\NfseEventoListagem
+```
+
+Listar eventos da NFS-e
+
+Consulta, no Sistema Nacional NFS-e, todos os eventos registrados para a  nota: os do emitente (como o cancelamento e a solicitação de análise  fiscal) e os de terceiros e do Fisco (substituição, deferimento ou  indeferimento da análise fiscal, manifestações, cancelamento ou bloqueio  por ofício).    Disponível apenas para a NFS-e Nacional (provedor `nacional`).    A consulta não altera a situação da nota na API; para isso, use a  [sincronização](#tag/Nfse/operation/SincronizarNfse).    **Informações adicionais**:  - Consumo: 1 unidade por requisição enviada ao Sistema Nacional NFS-e.
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\NfseApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | ID único da NFS-e gerado pela API.
+
+try {
+    $result = $apiInstance->listarEventosNfse($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NfseApi->listarEventosNfse: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| ID único da NFS-e gerado pela API. | |
+
+### Tipo do retorno
+
+[**\ACBrAPI\Model\NfseEventoListagem**](../Model/NfseEventoListagem.md)
+
+### Autorização
+
+[oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
 ## `listarLotesNfse()`
 
 ```php
@@ -999,6 +1061,68 @@ try {
 ### Tipo do retorno
 
 [**\ACBrAPI\Model\NfseSincronizacao**](../Model/NfseSincronizacao.md)
+
+### Autorização
+
+[oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
+## `solicitarAnaliseFiscalCancelamentoNfse()`
+
+```php
+solicitarAnaliseFiscalCancelamentoNfse($id, $body): \ACBrAPI\Model\NfseAnaliseFiscal
+```
+
+Solicitar análise fiscal para cancelamento da NFS-e
+
+Registra o evento `101103` (Solicitação de Análise Fiscal para Cancelamento  de NFS-e) no Sistema Nacional NFS-e. É o caminho para cancelar uma nota  autorizada quando o prazo de cancelamento pelo emitente já expirou: o  pedido é analisado pelo município.    Disponível apenas para a NFS-e Nacional (provedor `nacional`).    Com o evento registrado, a solicitação fica `em_analise` e a nota continua  `autorizada`. O resultado chega como um novo evento da nota, visível em  [listar eventos](#tag/Nfse/operation/ListarEventosNfse):  * `105104` - Cancelamento deferido por análise fiscal: a nota passa a    `cancelada` na próxima [sincronização](#tag/Nfse/operation/SincronizarNfse);  * `105105` - Cancelamento indeferido por análise fiscal: a nota continua    `autorizada`.    **Informações adicionais**:  - Consumo: 1 unidade por requisição enviada ao Sistema Nacional NFS-e.
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\NfseApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | ID único da NFS-e gerado pela API.
+$body = new \ACBrAPI\Model\NfsePedidoAnaliseFiscal(); // \ACBrAPI\Model\NfsePedidoAnaliseFiscal
+
+try {
+    $result = $apiInstance->solicitarAnaliseFiscalCancelamentoNfse($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NfseApi->solicitarAnaliseFiscalCancelamentoNfse: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| ID único da NFS-e gerado pela API. | |
+| **body** | [**\ACBrAPI\Model\NfsePedidoAnaliseFiscal**](../Model/NfsePedidoAnaliseFiscal.md)|  | [optional] |
+
+### Tipo do retorno
+
+[**\ACBrAPI\Model\NfseAnaliseFiscal**](../Model/NfseAnaliseFiscal.md)
 
 ### Autorização
 

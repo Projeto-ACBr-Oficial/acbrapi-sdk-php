@@ -59,7 +59,8 @@ class InfoAjusteBC implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'p_ajuste_bcissqn' => 'float',
         'v_ajuste_bcissqn' => 'float',
-        'documentos' => '\ACBrAPI\Model\ListaDocAjusteBC'
+        'documentos' => '\ACBrAPI\Model\ListaDocAjusteBC',
+        'v_ajuste_bcibscbs_com_ext' => 'float'
     ];
 
     /**
@@ -72,7 +73,8 @@ class InfoAjusteBC implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'p_ajuste_bcissqn' => null,
         'v_ajuste_bcissqn' => null,
-        'documentos' => null
+        'documentos' => null,
+        'v_ajuste_bcibscbs_com_ext' => null
     ];
 
     /**
@@ -83,7 +85,8 @@ class InfoAjusteBC implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'p_ajuste_bcissqn' => true,
 		'v_ajuste_bcissqn' => true,
-		'documentos' => false
+		'documentos' => false,
+		'v_ajuste_bcibscbs_com_ext' => true
     ];
 
     /**
@@ -174,7 +177,8 @@ class InfoAjusteBC implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'p_ajuste_bcissqn' => 'pAjusteBCISSQN',
         'v_ajuste_bcissqn' => 'vAjusteBCISSQN',
-        'documentos' => 'documentos'
+        'documentos' => 'documentos',
+        'v_ajuste_bcibscbs_com_ext' => 'vAjusteBCIBSCBSComExt'
     ];
 
     /**
@@ -185,7 +189,8 @@ class InfoAjusteBC implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'p_ajuste_bcissqn' => 'setPAjusteBcissqn',
         'v_ajuste_bcissqn' => 'setVAjusteBcissqn',
-        'documentos' => 'setDocumentos'
+        'documentos' => 'setDocumentos',
+        'v_ajuste_bcibscbs_com_ext' => 'setVAjusteBcibscbsComExt'
     ];
 
     /**
@@ -196,7 +201,8 @@ class InfoAjusteBC implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'p_ajuste_bcissqn' => 'getPAjusteBcissqn',
         'v_ajuste_bcissqn' => 'getVAjusteBcissqn',
-        'documentos' => 'getDocumentos'
+        'documentos' => 'getDocumentos',
+        'v_ajuste_bcibscbs_com_ext' => 'getVAjusteBcibscbsComExt'
     ];
 
     /**
@@ -259,6 +265,7 @@ class InfoAjusteBC implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('p_ajuste_bcissqn', $data ?? [], null);
         $this->setIfExists('v_ajuste_bcissqn', $data ?? [], null);
         $this->setIfExists('documentos', $data ?? [], null);
+        $this->setIfExists('v_ajuste_bcibscbs_com_ext', $data ?? [], null);
     }
 
     /**
@@ -412,6 +419,40 @@ class InfoAjusteBC implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable documentos cannot be null');
         }
         $this->container['documentos'] = $documentos;
+
+        return $this;
+    }
+
+    /**
+     * Gets v_ajuste_bcibscbs_com_ext
+     *
+     * @return float|null
+     */
+    public function getVAjusteBcibscbsComExt()
+    {
+        return $this->container['v_ajuste_bcibscbs_com_ext'];
+    }
+
+    /**
+     * Sets v_ajuste_bcibscbs_com_ext
+     *
+     * @param float|null $v_ajuste_bcibscbs_com_ext Valor monetário padrão para ajuste dos valores de base de cálculo do IBS/CBS nos casos de Comércio Exterior.
+     *
+     * @return self
+     */
+    public function setVAjusteBcibscbsComExt($v_ajuste_bcibscbs_com_ext)
+    {
+        if (is_null($v_ajuste_bcibscbs_com_ext)) {
+            array_push($this->openAPINullablesSetToNull, 'v_ajuste_bcibscbs_com_ext');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_ajuste_bcibscbs_com_ext', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['v_ajuste_bcibscbs_com_ext'] = $v_ajuste_bcibscbs_com_ext;
 
         return $this;
     }

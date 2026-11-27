@@ -93,7 +93,8 @@ class CteSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_just' => 'string',
         'g_compra_gov' => '\ACBrAPI\Model\CteSefazCompraGovReduzido',
         'tp_pag_ant' => 'int',
-        'g_pag_antecipado' => '\ACBrAPI\Model\CteSefazGPagAntecipado'
+        'g_pag_antecipado' => '\ACBrAPI\Model\CteSefazGPagAntecipado',
+        'g_multa_juros' => '\ACBrAPI\Model\CteSefazGMultaJuros'
     ];
 
     /**
@@ -140,7 +141,8 @@ class CteSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_just' => null,
         'g_compra_gov' => null,
         'tp_pag_ant' => null,
-        'g_pag_antecipado' => null
+        'g_pag_antecipado' => null,
+        'g_multa_juros' => null
     ];
 
     /**
@@ -185,7 +187,8 @@ class CteSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
 		'x_just' => true,
 		'g_compra_gov' => false,
 		'tp_pag_ant' => true,
-		'g_pag_antecipado' => false
+		'g_pag_antecipado' => false,
+		'g_multa_juros' => false
     ];
 
     /**
@@ -310,7 +313,8 @@ class CteSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_just' => 'xJust',
         'g_compra_gov' => 'gCompraGov',
         'tp_pag_ant' => 'tpPagAnt',
-        'g_pag_antecipado' => 'gPagAntecipado'
+        'g_pag_antecipado' => 'gPagAntecipado',
+        'g_multa_juros' => 'gMultaJuros'
     ];
 
     /**
@@ -355,7 +359,8 @@ class CteSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_just' => 'setXJust',
         'g_compra_gov' => 'setGCompraGov',
         'tp_pag_ant' => 'setTpPagAnt',
-        'g_pag_antecipado' => 'setGPagAntecipado'
+        'g_pag_antecipado' => 'setGPagAntecipado',
+        'g_multa_juros' => 'setGMultaJuros'
     ];
 
     /**
@@ -400,7 +405,8 @@ class CteSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_just' => 'getXJust',
         'g_compra_gov' => 'getGCompraGov',
         'tp_pag_ant' => 'getTpPagAnt',
-        'g_pag_antecipado' => 'getGPagAntecipado'
+        'g_pag_antecipado' => 'getGPagAntecipado',
+        'g_multa_juros' => 'getGMultaJuros'
     ];
 
     /**
@@ -497,6 +503,7 @@ class CteSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('g_compra_gov', $data ?? [], null);
         $this->setIfExists('tp_pag_ant', $data ?? [], null);
         $this->setIfExists('g_pag_antecipado', $data ?? [], null);
+        $this->setIfExists('g_multa_juros', $data ?? [], null);
     }
 
     /**
@@ -1035,7 +1042,7 @@ class CteSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tp_emis
      *
-     * @param int $tp_emis Forma de emissão do CT-e.  Preencher com:  * 1 - Normal  * 3 - Regime Especial NFF  * 4 - EPEC pela SVC  * 5 - Contingência FSDA  * 7 - Autorização pela SVC-RS  * 8 - Autorização pela SVC-SP
+     * @param int $tp_emis Forma de emissão do CT-e.  Preencher com:  * 1 - Normal  * 2 - Contingencia OffLine  * 4 - EPEC - Em desativação  * 3 - Regime Especial NFF  * 7 - Autorização pela SVC-RS  * 8 - Autorização pela SVC-SP
      *
      * @return self
      */
@@ -1992,6 +1999,33 @@ class CteSefazIde implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable g_pag_antecipado cannot be null');
         }
         $this->container['g_pag_antecipado'] = $g_pag_antecipado;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_multa_juros
+     *
+     * @return \ACBrAPI\Model\CteSefazGMultaJuros|null
+     */
+    public function getGMultaJuros()
+    {
+        return $this->container['g_multa_juros'];
+    }
+
+    /**
+     * Sets g_multa_juros
+     *
+     * @param \ACBrAPI\Model\CteSefazGMultaJuros|null $g_multa_juros g_multa_juros
+     *
+     * @return self
+     */
+    public function setGMultaJuros($g_multa_juros)
+    {
+        if (is_null($g_multa_juros)) {
+            throw new \InvalidArgumentException('non-nullable g_multa_juros cannot be null');
+        }
+        $this->container['g_multa_juros'] = $g_multa_juros;
 
         return $this;
     }

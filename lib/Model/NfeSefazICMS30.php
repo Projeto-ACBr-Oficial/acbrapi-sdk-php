@@ -481,7 +481,7 @@ class NfeSefazICMS30 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cst
      *
-     * @param string $cst Tributção pelo ICMS  * 30 - Isenta ou não tributada e com cobrança do ICMS por substituição tributária
+     * @param string $cst Tributação pelo ICMS  * 30 - Isenta ou não tributada e com cobrança do ICMS por substituição tributária
      *
      * @return self
      */

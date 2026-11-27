@@ -60,6 +60,7 @@ class NfcomSefazIBSCBSTot implements ModelInterface, ArrayAccess, \JsonSerializa
         'v_bcibscbs' => 'float',
         'g_ibs' => '\ACBrAPI\Model\NfcomSefazGIBS',
         'g_cbs' => '\ACBrAPI\Model\NfcomSefazIBSCBSTotGCBS',
+        'g_trib_sn' => '\ACBrAPI\Model\NfcomSefazGTribSN',
         'g_estorno_cred' => '\ACBrAPI\Model\NfcomSefazGEstornoCred'
     ];
 
@@ -74,6 +75,7 @@ class NfcomSefazIBSCBSTot implements ModelInterface, ArrayAccess, \JsonSerializa
         'v_bcibscbs' => null,
         'g_ibs' => null,
         'g_cbs' => null,
+        'g_trib_sn' => null,
         'g_estorno_cred' => null
     ];
 
@@ -86,6 +88,7 @@ class NfcomSefazIBSCBSTot implements ModelInterface, ArrayAccess, \JsonSerializa
         'v_bcibscbs' => true,
 		'g_ibs' => false,
 		'g_cbs' => false,
+		'g_trib_sn' => false,
 		'g_estorno_cred' => false
     ];
 
@@ -178,6 +181,7 @@ class NfcomSefazIBSCBSTot implements ModelInterface, ArrayAccess, \JsonSerializa
         'v_bcibscbs' => 'vBCIBSCBS',
         'g_ibs' => 'gIBS',
         'g_cbs' => 'gCBS',
+        'g_trib_sn' => 'gTribSN',
         'g_estorno_cred' => 'gEstornoCred'
     ];
 
@@ -190,6 +194,7 @@ class NfcomSefazIBSCBSTot implements ModelInterface, ArrayAccess, \JsonSerializa
         'v_bcibscbs' => 'setVBcibscbs',
         'g_ibs' => 'setGIbs',
         'g_cbs' => 'setGCbs',
+        'g_trib_sn' => 'setGTribSn',
         'g_estorno_cred' => 'setGEstornoCred'
     ];
 
@@ -202,6 +207,7 @@ class NfcomSefazIBSCBSTot implements ModelInterface, ArrayAccess, \JsonSerializa
         'v_bcibscbs' => 'getVBcibscbs',
         'g_ibs' => 'getGIbs',
         'g_cbs' => 'getGCbs',
+        'g_trib_sn' => 'getGTribSn',
         'g_estorno_cred' => 'getGEstornoCred'
     ];
 
@@ -265,6 +271,7 @@ class NfcomSefazIBSCBSTot implements ModelInterface, ArrayAccess, \JsonSerializa
         $this->setIfExists('v_bcibscbs', $data ?? [], null);
         $this->setIfExists('g_ibs', $data ?? [], null);
         $this->setIfExists('g_cbs', $data ?? [], null);
+        $this->setIfExists('g_trib_sn', $data ?? [], null);
         $this->setIfExists('g_estorno_cred', $data ?? [], null);
     }
 
@@ -412,6 +419,33 @@ class NfcomSefazIBSCBSTot implements ModelInterface, ArrayAccess, \JsonSerializa
             throw new \InvalidArgumentException('non-nullable g_cbs cannot be null');
         }
         $this->container['g_cbs'] = $g_cbs;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_trib_sn
+     *
+     * @return \ACBrAPI\Model\NfcomSefazGTribSN|null
+     */
+    public function getGTribSn()
+    {
+        return $this->container['g_trib_sn'];
+    }
+
+    /**
+     * Sets g_trib_sn
+     *
+     * @param \ACBrAPI\Model\NfcomSefazGTribSN|null $g_trib_sn g_trib_sn
+     *
+     * @return self
+     */
+    public function setGTribSn($g_trib_sn)
+    {
+        if (is_null($g_trib_sn)) {
+            throw new \InvalidArgumentException('non-nullable g_trib_sn cannot be null');
+        }
+        $this->container['g_trib_sn'] = $g_trib_sn;
 
         return $this;
     }

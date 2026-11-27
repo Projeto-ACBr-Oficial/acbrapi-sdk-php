@@ -21,6 +21,7 @@ Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação defin
 | [**consultarEventoCte()**](CteApi.md#consultarEventoCte) | **GET** /cte/eventos/{id} | Consultar evento |
 | [**consultarStatusSefazCte()**](CteApi.md#consultarStatusSefazCte) | **GET** /cte/sefaz/status | Consulta do Status do Serviço na SEFAZ Autorizadora |
 | [**criarCartaCorrecaoCte()**](CteApi.md#criarCartaCorrecaoCte) | **POST** /cte/{id}/carta-correcao | Solicitar correção do CT-e |
+| [**criarEventoCte()**](CteApi.md#criarEventoCte) | **POST** /cte/{id}/eventos | Registrar evento do CT-e |
 | [**emitirCte()**](CteApi.md#emitirCte) | **POST** /cte | Emitir CT-e |
 | [**emitirCteSimp()**](CteApi.md#emitirCteSimp) | **POST** /cte/simp | Emitir CT-e Simplificado |
 | [**listarCte()**](CteApi.md#listarCte) | **GET** /cte | Listar CT-e |
@@ -1027,6 +1028,68 @@ try {
 ### Tipo do retorno
 
 [**\ACBrAPI\Model\CteCartaCorrecao**](../Model/CteCartaCorrecao.md)
+
+### Autorização
+
+[oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
+## `criarEventoCte()`
+
+```php
+criarEventoCte($id, $body): \ACBrAPI\Model\DfeEvento
+```
+
+Registrar evento do CT-e
+
+Registra na SEFAZ um evento do emitente vinculado ao CT-e, a partir do código do evento (`tipo_evento`) e do grupo de dados correspondente a ele.    Os campos de controle do evento (`nSeqEvento`, `dhEvento`, órgão, versão, descrição e protocolos) são preenchidos pela API.    **Eventos disponíveis**:    | Código | Evento | Grupo |  |--------|--------|-------|  | `110160` | Registro Multimodal | `registro_multimodal` |  | `110180` | Comprovante de Entrega do CT-e | `comprovante_entrega` |  | `110181` | Cancelamento do Comprovante de Entrega do CT-e | `cancelamento_evento` |  | `110190` | Insucesso na Entrega do CT-e | `insucesso_entrega` |  | `110191` | Cancelamento do Insucesso de Entrega do CT-e | `cancelamento_evento` |    Os eventos de cancelamento (`110181` e `110191`) referenciam o evento original pelo ID gerado pela API (`cancelamento_evento.evento_id`).    Para cancelar o CT-e ou emitir a carta de correção, continue usando as rotas `POST /cte/{id}/cancelamento` e `POST /cte/{id}/carta-correcao`.    Após o registro, o XML e o PDF do evento podem ser baixados em `GET /cte/eventos/{id}/xml` e `GET /cte/eventos/{id}/pdf`.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\CteApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | ID único do CT-e gerado pela API.
+$body = new \ACBrAPI\Model\CtePedidoEvento(); // \ACBrAPI\Model\CtePedidoEvento | Contém o código e os dados do evento.
+
+try {
+    $result = $apiInstance->criarEventoCte($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CteApi->criarEventoCte: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| ID único do CT-e gerado pela API. | |
+| **body** | [**\ACBrAPI\Model\CtePedidoEvento**](../Model/CtePedidoEvento.md)| Contém o código e os dados do evento. | |
+
+### Tipo do retorno
+
+[**\ACBrAPI\Model\DfeEvento**](../Model/DfeEvento.md)
 
 ### Autorização
 

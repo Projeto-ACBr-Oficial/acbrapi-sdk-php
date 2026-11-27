@@ -64,7 +64,8 @@ class NfcomSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_nome' => 'string',
         'x_fant' => 'string',
         'ender_emit' => '\ACBrAPI\Model\NfcomSefazEndeEmi',
-        'isuf_emit' => 'string'
+        'isuf_emit' => 'string',
+        'tp_regime_ibscbs' => 'int'
     ];
 
     /**
@@ -82,7 +83,8 @@ class NfcomSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_nome' => null,
         'x_fant' => null,
         'ender_emit' => null,
-        'isuf_emit' => null
+        'isuf_emit' => null,
+        'tp_regime_ibscbs' => null
     ];
 
     /**
@@ -98,7 +100,8 @@ class NfcomSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
 		'x_nome' => true,
 		'x_fant' => true,
 		'ender_emit' => false,
-		'isuf_emit' => true
+		'isuf_emit' => true,
+		'tp_regime_ibscbs' => true
     ];
 
     /**
@@ -194,7 +197,8 @@ class NfcomSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_nome' => 'xNome',
         'x_fant' => 'xFant',
         'ender_emit' => 'enderEmit',
-        'isuf_emit' => 'ISUFEmit'
+        'isuf_emit' => 'ISUFEmit',
+        'tp_regime_ibscbs' => 'tpRegimeIBSCBS'
     ];
 
     /**
@@ -210,7 +214,8 @@ class NfcomSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_nome' => 'setXNome',
         'x_fant' => 'setXFant',
         'ender_emit' => 'setEnderEmit',
-        'isuf_emit' => 'setIsufEmit'
+        'isuf_emit' => 'setIsufEmit',
+        'tp_regime_ibscbs' => 'setTpRegimeIbscbs'
     ];
 
     /**
@@ -226,7 +231,8 @@ class NfcomSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         'x_nome' => 'getXNome',
         'x_fant' => 'getXFant',
         'ender_emit' => 'getEnderEmit',
-        'isuf_emit' => 'getIsufEmit'
+        'isuf_emit' => 'getIsufEmit',
+        'tp_regime_ibscbs' => 'getTpRegimeIbscbs'
     ];
 
     /**
@@ -294,6 +300,7 @@ class NfcomSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('x_fant', $data ?? [], null);
         $this->setIfExists('ender_emit', $data ?? [], null);
         $this->setIfExists('isuf_emit', $data ?? [], null);
+        $this->setIfExists('tp_regime_ibscbs', $data ?? [], null);
     }
 
     /**
@@ -647,6 +654,40 @@ class NfcomSefazEmit implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['isuf_emit'] = $isuf_emit;
+
+        return $this;
+    }
+
+    /**
+     * Gets tp_regime_ibscbs
+     *
+     * @return int|null
+     */
+    public function getTpRegimeIbscbs()
+    {
+        return $this->container['tp_regime_ibscbs'];
+    }
+
+    /**
+     * Sets tp_regime_ibscbs
+     *
+     * @param int|null $tp_regime_ibscbs Tipo de Regime de Apuração do IBS e da CBS.  * 1 - Contribuinte do Simples Nacional (CRT=1 ou 2) com opção pelo regime regular do IBS e da CBS  * 2 - Contribuinte do Regime Normal (CRT=3) com opção pendente pelo CRT=”1 - Simples Nacional” sem regime regular do IBS e da CBS  * 3 - Contribuinte do Regime Normal (CRT=3) com opção pendente pelo CRT=”2-Simples Nacional, excesso sublimite de receita bruta” sem regime regular do IBS e da CBS  * 4 - Contribuinte do Regime Normal (CRT=3) com opção pendente pelo Simples Nacional (CRT=1 ou 2), com regime regular do IBS e da CBS
+     *
+     * @return self
+     */
+    public function setTpRegimeIbscbs($tp_regime_ibscbs)
+    {
+        if (is_null($tp_regime_ibscbs)) {
+            array_push($this->openAPINullablesSetToNull, 'tp_regime_ibscbs');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('tp_regime_ibscbs', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['tp_regime_ibscbs'] = $tp_regime_ibscbs;
 
         return $this;
     }

@@ -388,7 +388,7 @@ class NfeSefazICMS61 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cst
      *
-     * @param string $cst Tributção pelo ICMS  * 61 - Tributação monofásica sobre combustíveis cobrada anteriormente
+     * @param string $cst Tributação pelo ICMS  * 61 - Tributação monofásica sobre combustíveis cobrada anteriormente
      *
      * @return self
      */

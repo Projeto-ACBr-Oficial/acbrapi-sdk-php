@@ -67,6 +67,7 @@ class RTCInfoIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
         'dest' => '\ACBrAPI\Model\RTCInfoDest',
         'imovel' => '\ACBrAPI\Model\RTCInfoImovel',
         'bens_moveis' => '\ACBrAPI\Model\RTCInfoBensMoveis[]',
+        'condominios' => '\ACBrAPI\Model\RTCInfoCondominios',
         'valores' => '\ACBrAPI\Model\RTCInfoValoresIBSCBS'
     ];
 
@@ -88,6 +89,7 @@ class RTCInfoIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
         'dest' => null,
         'imovel' => null,
         'bens_moveis' => null,
+        'condominios' => null,
         'valores' => null
     ];
 
@@ -107,6 +109,7 @@ class RTCInfoIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
 		'dest' => false,
 		'imovel' => false,
 		'bens_moveis' => false,
+		'condominios' => false,
 		'valores' => false
     ];
 
@@ -206,6 +209,7 @@ class RTCInfoIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
         'dest' => 'dest',
         'imovel' => 'imovel',
         'bens_moveis' => 'bensMoveis',
+        'condominios' => 'condominios',
         'valores' => 'valores'
     ];
 
@@ -225,6 +229,7 @@ class RTCInfoIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
         'dest' => 'setDest',
         'imovel' => 'setImovel',
         'bens_moveis' => 'setBensMoveis',
+        'condominios' => 'setCondominios',
         'valores' => 'setValores'
     ];
 
@@ -244,6 +249,7 @@ class RTCInfoIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
         'dest' => 'getDest',
         'imovel' => 'getImovel',
         'bens_moveis' => 'getBensMoveis',
+        'condominios' => 'getCondominios',
         'valores' => 'getValores'
     ];
 
@@ -314,6 +320,7 @@ class RTCInfoIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('dest', $data ?? [], null);
         $this->setIfExists('imovel', $data ?? [], null);
         $this->setIfExists('bens_moveis', $data ?? [], null);
+        $this->setIfExists('condominios', $data ?? [], null);
         $this->setIfExists('valores', $data ?? [], null);
     }
 
@@ -346,9 +353,6 @@ class RTCInfoIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if ($this->container['ind_final'] === null) {
             $invalidProperties[] = "'ind_final' can't be null";
-        }
-        if ($this->container['ind_dest'] === null) {
-            $invalidProperties[] = "'ind_dest' can't be null";
         }
         if (!is_null($this->container['bens_moveis']) && (count($this->container['bens_moveis']) > 1000)) {
             $invalidProperties[] = "invalid value for 'bens_moveis', number of items must be less than or equal to 1000.";
@@ -572,7 +576,7 @@ class RTCInfoIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets ind_dest
      *
-     * @return int
+     * @return int|null
      */
     public function getIndDest()
     {
@@ -582,7 +586,7 @@ class RTCInfoIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ind_dest
      *
-     * @param int $ind_dest A respeito do Destinatário dos serviços:  * 0 - O destinatário - o próprio tomador/adquirente identificado na NFS-e (tomador = adquirente = destinatário);  * 1 - O destinatário não - o próprio adquirente, podendo ser outra pessoa, física ou jurídica (ou equiparada), ou um estabelecimento diferente do indicado como tomador (tomador = adquirente != destinatário).
+     * @param int|null $ind_dest `Deprecated`    **Propriedade depreciada** a partir da NT 009 (leiaute 009.1.01).    *Utilize `infDPS.indDest`*.  A respeito do Destinatário dos serviços:  * 0 - O destinatário - o próprio tomador/adquirente identificado na NFS-e (tomador = adquirente = destinatário);  * 1 - O destinatário não - o próprio adquirente, podendo ser outra pessoa, física ou jurídica (ou equiparada), ou um estabelecimento diferente do indicado como tomador (tomador = adquirente != destinatário).
      *
      * @return self
      */
@@ -684,6 +688,33 @@ class RTCInfoIBSCBS implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('invalid value for $bens_moveis when calling RTCInfoIBSCBS., number of items must be less than or equal to 1000.');
         }
         $this->container['bens_moveis'] = $bens_moveis;
+
+        return $this;
+    }
+
+    /**
+     * Gets condominios
+     *
+     * @return \ACBrAPI\Model\RTCInfoCondominios|null
+     */
+    public function getCondominios()
+    {
+        return $this->container['condominios'];
+    }
+
+    /**
+     * Sets condominios
+     *
+     * @param \ACBrAPI\Model\RTCInfoCondominios|null $condominios condominios
+     *
+     * @return self
+     */
+    public function setCondominios($condominios)
+    {
+        if (is_null($condominios)) {
+            throw new \InvalidArgumentException('non-nullable condominios cannot be null');
+        }
+        $this->container['condominios'] = $condominios;
 
         return $this;
     }

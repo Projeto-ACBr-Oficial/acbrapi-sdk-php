@@ -63,6 +63,7 @@ class NfcomSefazImposto implements ModelInterface, ArrayAccess, \JsonSerializabl
         'icms51' => '\ACBrAPI\Model\NfcomSefazICMS51',
         'icms90' => '\ACBrAPI\Model\NfcomSefazICMS90',
         'icmssn' => '\ACBrAPI\Model\NfcomSefazICMSSN',
+        'g_icms_previsto_pagto_antecip' => '\ACBrAPI\Model\NfcomSefazGICMSPrevistoPagtoAntecip',
         'icmsuf_dest' => '\ACBrAPI\Model\NfcomSefazICMSUFDest[]',
         'ind_sem_cst' => 'int',
         'pis' => '\ACBrAPI\Model\NfcomSefazPIS',
@@ -87,6 +88,7 @@ class NfcomSefazImposto implements ModelInterface, ArrayAccess, \JsonSerializabl
         'icms51' => null,
         'icms90' => null,
         'icmssn' => null,
+        'g_icms_previsto_pagto_antecip' => null,
         'icmsuf_dest' => null,
         'ind_sem_cst' => null,
         'pis' => null,
@@ -109,6 +111,7 @@ class NfcomSefazImposto implements ModelInterface, ArrayAccess, \JsonSerializabl
 		'icms51' => false,
 		'icms90' => false,
 		'icmssn' => false,
+		'g_icms_previsto_pagto_antecip' => false,
 		'icmsuf_dest' => false,
 		'ind_sem_cst' => true,
 		'pis' => false,
@@ -211,6 +214,7 @@ class NfcomSefazImposto implements ModelInterface, ArrayAccess, \JsonSerializabl
         'icms51' => 'ICMS51',
         'icms90' => 'ICMS90',
         'icmssn' => 'ICMSSN',
+        'g_icms_previsto_pagto_antecip' => 'gICMSPrevistoPagtoAntecip',
         'icmsuf_dest' => 'ICMSUFDest',
         'ind_sem_cst' => 'indSemCST',
         'pis' => 'PIS',
@@ -233,6 +237,7 @@ class NfcomSefazImposto implements ModelInterface, ArrayAccess, \JsonSerializabl
         'icms51' => 'setIcms51',
         'icms90' => 'setIcms90',
         'icmssn' => 'setIcmssn',
+        'g_icms_previsto_pagto_antecip' => 'setGIcmsPrevistoPagtoAntecip',
         'icmsuf_dest' => 'setIcmsufDest',
         'ind_sem_cst' => 'setIndSemCst',
         'pis' => 'setPis',
@@ -255,6 +260,7 @@ class NfcomSefazImposto implements ModelInterface, ArrayAccess, \JsonSerializabl
         'icms51' => 'getIcms51',
         'icms90' => 'getIcms90',
         'icmssn' => 'getIcmssn',
+        'g_icms_previsto_pagto_antecip' => 'getGIcmsPrevistoPagtoAntecip',
         'icmsuf_dest' => 'getIcmsufDest',
         'ind_sem_cst' => 'getIndSemCst',
         'pis' => 'getPis',
@@ -328,6 +334,7 @@ class NfcomSefazImposto implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->setIfExists('icms51', $data ?? [], null);
         $this->setIfExists('icms90', $data ?? [], null);
         $this->setIfExists('icmssn', $data ?? [], null);
+        $this->setIfExists('g_icms_previsto_pagto_antecip', $data ?? [], null);
         $this->setIfExists('icmsuf_dest', $data ?? [], null);
         $this->setIfExists('ind_sem_cst', $data ?? [], null);
         $this->setIfExists('pis', $data ?? [], null);
@@ -538,6 +545,33 @@ class NfcomSefazImposto implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable icmssn cannot be null');
         }
         $this->container['icmssn'] = $icmssn;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_icms_previsto_pagto_antecip
+     *
+     * @return \ACBrAPI\Model\NfcomSefazGICMSPrevistoPagtoAntecip|null
+     */
+    public function getGIcmsPrevistoPagtoAntecip()
+    {
+        return $this->container['g_icms_previsto_pagto_antecip'];
+    }
+
+    /**
+     * Sets g_icms_previsto_pagto_antecip
+     *
+     * @param \ACBrAPI\Model\NfcomSefazGICMSPrevistoPagtoAntecip|null $g_icms_previsto_pagto_antecip g_icms_previsto_pagto_antecip
+     *
+     * @return self
+     */
+    public function setGIcmsPrevistoPagtoAntecip($g_icms_previsto_pagto_antecip)
+    {
+        if (is_null($g_icms_previsto_pagto_antecip)) {
+            throw new \InvalidArgumentException('non-nullable g_icms_previsto_pagto_antecip cannot be null');
+        }
+        $this->container['g_icms_previsto_pagto_antecip'] = $g_icms_previsto_pagto_antecip;
 
         return $this;
     }

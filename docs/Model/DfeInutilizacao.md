@@ -23,7 +23,7 @@ Nome | Tipo | Descrição | Comentários
 **motivo_status** | **string** | Descrição literal do status do registro do Evento. | [optional]
 **numero_protocolo** | **string** | Número do Protocolo de registro do Evento. | [optional]
 **codigo_mensagem** | **int** | Código da Mensagem. | [optional]
-**mensagem** | **string** | Mensagem da SEFAZ para o emissor. | [optional]
+**mensagem** | **string** | Mensagem da SEFAZ para o emissor ou, na inutilização, aviso da API (ex.: serviço  de inutilização desativado pela SEFAZ na UF do emitente). | [optional]
 **tipo_evento** | **string** |  | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

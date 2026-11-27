@@ -504,7 +504,7 @@ class NfeSefazICMSST implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cst
      *
-     * @param string $cst Tributção pelo ICMS  * 41 - Não Tributado  * 60 - Cobrado anteriormente por substituição tributária
+     * @param string $cst Tributação pelo ICMS  * 41 - Não Tributado  * 60 - Cobrado anteriormente por substituição tributária
      *
      * @return self
      */

@@ -359,7 +359,7 @@ class CteSimpSefazDevTribSimp implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets v_dev_trib
      *
-     * @param float $v_dev_trib Valor do tributo devolvido. (“cashback” de desconto na própria Nota Fiscal / Fatura).
+     * @param float $v_dev_trib Valor do tributo devolvido (\"cashback\" de desconto na própria Nota Fiscal / Fatura).
      *
      * @return self
      */

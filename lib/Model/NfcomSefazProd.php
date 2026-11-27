@@ -68,6 +68,8 @@ class NfcomSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'v_desc' => 'float',
         'v_outro' => 'float',
         'v_prod' => 'float',
+        'v_item_liq' => 'float',
+        'v_prod_liq' => 'float',
         'd_expiracao' => '\DateTime',
         'ind_devolucao' => 'int',
         'cnpj_cobr_terc' => 'string',
@@ -93,6 +95,8 @@ class NfcomSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'v_desc' => null,
         'v_outro' => null,
         'v_prod' => null,
+        'v_item_liq' => null,
+        'v_prod_liq' => null,
         'd_expiracao' => 'date',
         'ind_devolucao' => null,
         'cnpj_cobr_terc' => null,
@@ -116,6 +120,8 @@ class NfcomSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
 		'v_desc' => true,
 		'v_outro' => true,
 		'v_prod' => true,
+		'v_item_liq' => true,
+		'v_prod_liq' => true,
 		'd_expiracao' => true,
 		'ind_devolucao' => true,
 		'cnpj_cobr_terc' => true,
@@ -219,6 +225,8 @@ class NfcomSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'v_desc' => 'vDesc',
         'v_outro' => 'vOutro',
         'v_prod' => 'vProd',
+        'v_item_liq' => 'vItemLiq',
+        'v_prod_liq' => 'vProdLiq',
         'd_expiracao' => 'dExpiracao',
         'ind_devolucao' => 'indDevolucao',
         'cnpj_cobr_terc' => 'CNPJCobrTerc',
@@ -242,6 +250,8 @@ class NfcomSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'v_desc' => 'setVDesc',
         'v_outro' => 'setVOutro',
         'v_prod' => 'setVProd',
+        'v_item_liq' => 'setVItemLiq',
+        'v_prod_liq' => 'setVProdLiq',
         'd_expiracao' => 'setDExpiracao',
         'ind_devolucao' => 'setIndDevolucao',
         'cnpj_cobr_terc' => 'setCnpjCobrTerc',
@@ -265,6 +275,8 @@ class NfcomSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         'v_desc' => 'getVDesc',
         'v_outro' => 'getVOutro',
         'v_prod' => 'getVProd',
+        'v_item_liq' => 'getVItemLiq',
+        'v_prod_liq' => 'getVProdLiq',
         'd_expiracao' => 'getDExpiracao',
         'ind_devolucao' => 'getIndDevolucao',
         'cnpj_cobr_terc' => 'getCnpjCobrTerc',
@@ -339,6 +351,8 @@ class NfcomSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('v_desc', $data ?? [], null);
         $this->setIfExists('v_outro', $data ?? [], null);
         $this->setIfExists('v_prod', $data ?? [], null);
+        $this->setIfExists('v_item_liq', $data ?? [], null);
+        $this->setIfExists('v_prod_liq', $data ?? [], null);
         $this->setIfExists('d_expiracao', $data ?? [], null);
         $this->setIfExists('ind_devolucao', $data ?? [], null);
         $this->setIfExists('cnpj_cobr_terc', $data ?? [], null);
@@ -435,6 +449,14 @@ class NfcomSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if (($this->container['v_prod'] < 0)) {
             $invalidProperties[] = "invalid value for 'v_prod', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['v_item_liq']) && ($this->container['v_item_liq'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_item_liq', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['v_prod_liq']) && ($this->container['v_prod_liq'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_prod_liq', must be bigger than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -868,6 +890,84 @@ class NfcomSefazProd implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['v_prod'] = $v_prod;
+
+        return $this;
+    }
+
+    /**
+     * Gets v_item_liq
+     *
+     * @return float|null
+     */
+    public function getVItemLiq()
+    {
+        return $this->container['v_item_liq'];
+    }
+
+    /**
+     * Sets v_item_liq
+     *
+     * @param float|null $v_item_liq Valor unitário do item sem tributos.
+     *
+     * @return self
+     */
+    public function setVItemLiq($v_item_liq)
+    {
+        if (is_null($v_item_liq)) {
+            array_push($this->openAPINullablesSetToNull, 'v_item_liq');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_item_liq', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($v_item_liq) && ($v_item_liq < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_item_liq when calling NfcomSefazProd., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_item_liq'] = $v_item_liq;
+
+        return $this;
+    }
+
+    /**
+     * Gets v_prod_liq
+     *
+     * @return float|null
+     */
+    public function getVProdLiq()
+    {
+        return $this->container['v_prod_liq'];
+    }
+
+    /**
+     * Sets v_prod_liq
+     *
+     * @param float|null $v_prod_liq Valor líquido total do item sem tributos.
+     *
+     * @return self
+     */
+    public function setVProdLiq($v_prod_liq)
+    {
+        if (is_null($v_prod_liq)) {
+            array_push($this->openAPINullablesSetToNull, 'v_prod_liq');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_prod_liq', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($v_prod_liq) && ($v_prod_liq < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_prod_liq when calling NfcomSefazProd., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_prod_liq'] = $v_prod_liq;
 
         return $this;
     }

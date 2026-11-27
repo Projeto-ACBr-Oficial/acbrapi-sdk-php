@@ -4,7 +4,8 @@
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
-**v_t_prest** | **float** | Valor Total da Prestação do Serviço.  Pode conter zeros quando o CT-e for de complemento de ICMS. |
+**v_t_prest** | **float** | Valor Total da Prestação do Serviço. |
+**v_t_prest_liq** | **float** | Valor Líquido da Prestação SEM tributos. | [optional]
 **v_rec** | **float** | Valor a Receber. |
 **comp** | [**\ACBrAPI\Model\CteOsSefazCompOS[]**](CteOsSefazCompOS.md) |  | [optional]
 

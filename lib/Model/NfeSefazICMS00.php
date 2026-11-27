@@ -423,7 +423,7 @@ class NfeSefazICMS00 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cst
      *
-     * @param string $cst Tributção pelo ICMS  * 00 - Tributada integralmente
+     * @param string $cst Tributação pelo ICMS  * 00 - Tributada integralmente
      *
      * @return self
      */

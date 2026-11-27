@@ -28,6 +28,7 @@ Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação defin
 | [**consultarNfe()**](NfeApi.md#consultarNfe) | **GET** /nfe/{id} | Consultar NF-e |
 | [**consultarStatusSefazNfe()**](NfeApi.md#consultarStatusSefazNfe) | **GET** /nfe/sefaz/status | Consulta do Status do Serviço na SEFAZ Autorizadora |
 | [**criarCartaCorrecaoNfe()**](NfeApi.md#criarCartaCorrecaoNfe) | **POST** /nfe/{id}/carta-correcao | Solicitar correção da NF-e |
+| [**criarEventoNfe()**](NfeApi.md#criarEventoNfe) | **POST** /nfe/{id}/eventos | Registrar evento da NF-e |
 | [**emitirLoteNfe()**](NfeApi.md#emitirLoteNfe) | **POST** /nfe/lotes | Emitir lote de NF-e |
 | [**emitirNfe()**](NfeApi.md#emitirNfe) | **POST** /nfe | Emitir NF-e |
 | [**enviarEmailNfe()**](NfeApi.md#enviarEmailNfe) | **POST** /nfe/{id}/email | Enviar e-mail |
@@ -1504,6 +1505,68 @@ try {
 [[Voltar à lista de DTOs]](../../README.md#models)
 [[Voltar ao README]](../../README.md)
 
+## `criarEventoNfe()`
+
+```php
+criarEventoNfe($id, $body): \ACBrAPI\Model\DfeEvento
+```
+
+Registrar evento da NF-e
+
+Registra na SEFAZ um evento vinculado à NF-e, a partir do código do evento (`tipo_evento`) e do grupo de dados correspondente a ele.    Os campos de controle do evento (`nSeqEvento`, `dhEvento`, órgão e autor, versão, descrição e protocolos) são preenchidos pela API.    **Eventos disponíveis**:    | Código | Evento | Grupo |  |--------|--------|-------|  | `110001` | Cancelamento de Evento | `cancelamento_evento` |  | `110130` | Comprovante de Entrega da NF-e | `comprovante_entrega` |  | `110131` | Cancelamento do Comprovante de Entrega da NF-e | `cancelamento_evento` |  | `110150` | Ator Interessado na NF-e | `ator_interessado` |  | `110192` | Insucesso na Entrega da NF-e | `insucesso_entrega` |  | `110193` | Cancelamento do Insucesso na Entrega da NF-e | `cancelamento_evento` |  | `110300` | Vinculação de Pagamento | `vinculacao_pagamento` |  | `110750` | Conciliação Financeira (ECONF) | `conciliacao_financeira` |  | `110751` | Cancelamento da Conciliação Financeira | `cancelamento_evento` |  | `111500` | Pedido de Prorrogação do ICMS - 1º prazo | `prorrogacao_icms` |  | `111501` | Pedido de Prorrogação do ICMS - 2º prazo | `prorrogacao_icms` |  | `111502` | Cancelamento do Pedido de Prorrogação - 1º prazo | `cancelamento_evento` |  | `111503` | Cancelamento do Pedido de Prorrogação - 2º prazo | `cancelamento_evento` |  | `112110` | Informação de efetivo pagamento integral para liberar crédito presumido do adquirente | - |  | `112120` | Importação em ALC/ZFM não convertida em isenção | `importacao_zfm_nao_convertida` |  | `112130` | Perecimento, perda, roubo ou furto durante o transporte contratado pelo fornecedor | `perecimento_fornecedor` |  | `112140` | Fornecimento não realizado com pagamento antecipado | `fornecimento_nao_realizado` |  | `112150` | Atualização da Data de Previsão de Entrega | `atualizacao_previsao_entrega` |    Os eventos de cancelamento (`110001`, `110131`, `110193`, `110751`, `111502` e `111503`) referenciam o evento original pelo ID gerado pela API (`cancelamento_evento.evento_id`). A vinculação de pagamento (`110300`) é cancelada pelo `110001`.    Para cancelar a NF-e ou emitir a carta de correção, continue usando as rotas `POST /nfe/{id}/cancelamento` e `POST /nfe/{id}/carta-correcao`. A manifestação do destinatário (`210200`, `210210`, `210220` e `210240`) é feita em `POST /distribuicao/nfe/manifestacoes`.    Após o registro, o evento pode ser consultado em `GET /nfe/eventos/{id}`, e seu XML e PDF baixados em `GET /nfe/eventos/{id}/xml` e `GET /nfe/eventos/{id}/pdf`.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\NfeApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | ID único da NF-e gerado pela API.
+$body = new \ACBrAPI\Model\NfePedidoEvento(); // \ACBrAPI\Model\NfePedidoEvento | Contém o código e os dados do evento.
+
+try {
+    $result = $apiInstance->criarEventoNfe($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NfeApi->criarEventoNfe: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| ID único da NF-e gerado pela API. | |
+| **body** | [**\ACBrAPI\Model\NfePedidoEvento**](../Model/NfePedidoEvento.md)| Contém o código e os dados do evento. | |
+
+### Tipo do retorno
+
+[**\ACBrAPI\Model\DfeEvento**](../Model/DfeEvento.md)
+
+### Autorização
+
+[oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
 ## `emitirLoteNfe()`
 
 ```php
@@ -1710,7 +1773,7 @@ inutilizarNumeracaoNfe($body): \ACBrAPI\Model\DfeInutilizacao
 
 Inutilizar uma sequência de numeração de NF-e
 
-**Informações adicionais**:  - Consumo: 1 unidade por requisição.
+**Atenção**: conforme a NT 2023.002 v1.02 (Ajustes SINIEF 38/2026 e 40/2026),  o serviço de inutilização de NF-e e NFC-e foi desativado pela SEFAZ nos estados  do **Acre (AC)**, **Bahia (BA)** e **São Paulo (SP)** a partir de 11/11/2026.  Para emitentes dessas UFs o pedido continua sendo enviado (a SEFAZ deve rejeitar com  998 - Serviço Desativado) e a resposta traz um aviso no campo `mensagem`.  Nessas UFs, números não utilizados não precisam ser inutilizados.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 

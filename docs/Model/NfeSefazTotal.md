@@ -4,6 +4,7 @@
 
 Nome | Tipo | Descrição | Comentários
 ------------ | ------------- | ------------- | -------------
+**v_prod_liq_tot** | **float** | Valor Total Líquido dos Produtos ou Serviços (sem tributos). | [optional]
 **icms_tot** | [**\ACBrAPI\Model\NfeSefazICMSTot**](NfeSefazICMSTot.md) |  |
 **issq_ntot** | [**\ACBrAPI\Model\NfeSefazISSQNtot**](NfeSefazISSQNtot.md) |  | [optional]
 **ret_trib** | [**\ACBrAPI\Model\NfeSefazRetTrib**](NfeSefazRetTrib.md) |  | [optional]

@@ -69,6 +69,7 @@ class NfcomSefazGProcRef implements ModelInterface, ArrayAccess, \JsonSerializab
         'v_pis' => 'float',
         'v_cofins' => 'float',
         'v_fcp' => 'float',
+        'g_ibscbs' => '\ACBrAPI\Model\NfcomSefazGIBSCBS',
         'g_proc' => '\ACBrAPI\Model\NfcomSefazGProc[]'
     ];
 
@@ -92,6 +93,7 @@ class NfcomSefazGProcRef implements ModelInterface, ArrayAccess, \JsonSerializab
         'v_pis' => null,
         'v_cofins' => null,
         'v_fcp' => null,
+        'g_ibscbs' => null,
         'g_proc' => null
     ];
 
@@ -113,6 +115,7 @@ class NfcomSefazGProcRef implements ModelInterface, ArrayAccess, \JsonSerializab
 		'v_pis' => true,
 		'v_cofins' => true,
 		'v_fcp' => true,
+		'g_ibscbs' => false,
 		'g_proc' => false
     ];
 
@@ -214,6 +217,7 @@ class NfcomSefazGProcRef implements ModelInterface, ArrayAccess, \JsonSerializab
         'v_pis' => 'vPIS',
         'v_cofins' => 'vCOFINS',
         'v_fcp' => 'vFCP',
+        'g_ibscbs' => 'gIBSCBS',
         'g_proc' => 'gProc'
     ];
 
@@ -235,6 +239,7 @@ class NfcomSefazGProcRef implements ModelInterface, ArrayAccess, \JsonSerializab
         'v_pis' => 'setVPis',
         'v_cofins' => 'setVCofins',
         'v_fcp' => 'setVFcp',
+        'g_ibscbs' => 'setGIbscbs',
         'g_proc' => 'setGProc'
     ];
 
@@ -256,6 +261,7 @@ class NfcomSefazGProcRef implements ModelInterface, ArrayAccess, \JsonSerializab
         'v_pis' => 'getVPis',
         'v_cofins' => 'getVCofins',
         'v_fcp' => 'getVFcp',
+        'g_ibscbs' => 'getGIbscbs',
         'g_proc' => 'getGProc'
     ];
 
@@ -328,6 +334,7 @@ class NfcomSefazGProcRef implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('v_pis', $data ?? [], null);
         $this->setIfExists('v_cofins', $data ?? [], null);
         $this->setIfExists('v_fcp', $data ?? [], null);
+        $this->setIfExists('g_ibscbs', $data ?? [], null);
         $this->setIfExists('g_proc', $data ?? [], null);
     }
 
@@ -896,6 +903,33 @@ class NfcomSefazGProcRef implements ModelInterface, ArrayAccess, \JsonSerializab
         }
 
         $this->container['v_fcp'] = $v_fcp;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_ibscbs
+     *
+     * @return \ACBrAPI\Model\NfcomSefazGIBSCBS|null
+     */
+    public function getGIbscbs()
+    {
+        return $this->container['g_ibscbs'];
+    }
+
+    /**
+     * Sets g_ibscbs
+     *
+     * @param \ACBrAPI\Model\NfcomSefazGIBSCBS|null $g_ibscbs g_ibscbs
+     *
+     * @return self
+     */
+    public function setGIbscbs($g_ibscbs)
+    {
+        if (is_null($g_ibscbs)) {
+            throw new \InvalidArgumentException('non-nullable g_ibscbs cannot be null');
+        }
+        $this->container['g_ibscbs'] = $g_ibscbs;
 
         return $this;
     }

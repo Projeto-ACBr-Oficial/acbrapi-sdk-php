@@ -15,6 +15,8 @@ Nome | Tipo | Descrição | Comentários
 **v_desc** | **float** | Valor do Desconto. | [optional]
 **v_outro** | **float** | Outras despesas acessórias. | [optional]
 **v_prod** | **float** | Valor total do item. |
+**v_item_liq** | **float** | Valor unitário do item sem tributos. | [optional]
+**v_prod_liq** | **float** | Valor líquido total do item sem tributos. | [optional]
 **d_expiracao** | **\DateTime** | Data de expiração de crédito.  Formato AAAA-MM-DD. | [optional]
 **ind_devolucao** | **int** | Indicador de devolução do valor do item.  * 1 - Devolução do valor do item | [optional]
 **cnpj_cobr_terc** | **string** | CNPJ de cobrança de terceiro.  Informar quando cClass do grupo 110 - Cobrança de terceiros. | [optional]

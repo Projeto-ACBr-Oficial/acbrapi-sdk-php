@@ -11,5 +11,6 @@ Nome | Tipo | Descrição | Comentários
 **icms90** | [**\ACBrAPI\Model\CteSimpSefazICMS90Simp**](CteSimpSefazICMS90Simp.md) |  | [optional]
 **icms_outra_uf** | [**\ACBrAPI\Model\CteSimpSefazICMSOutraUFSimp**](CteSimpSefazICMSOutraUFSimp.md) |  | [optional]
 **icmssn** | [**\ACBrAPI\Model\CteSimpSefazICMSSNSimp**](CteSimpSefazICMSSNSimp.md) |  | [optional]
+**g_icms_previsto_pagto_antecip** | [**\ACBrAPI\Model\CteSimpSefazGICMSPrevistoPagtoAntecipSimp**](CteSimpSefazGICMSPrevistoPagtoAntecipSimp.md) |  | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

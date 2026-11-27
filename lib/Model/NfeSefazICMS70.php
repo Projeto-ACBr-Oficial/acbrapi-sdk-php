@@ -598,7 +598,7 @@ class NfeSefazICMS70 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cst
      *
-     * @param string $cst Tributção pelo ICMS  * 70 - Com redução de base de cálculo e cobrança do ICMS por substituição tributária
+     * @param string $cst Tributação pelo ICMS  * 70 - Com redução de base de cálculo e cobrança do ICMS por substituição tributária
      *
      * @return self
      */

@@ -8,6 +8,7 @@ Nome | Tipo | Descrição | Comentários
 **desc** | **string** | &#x60;Deprecated&#x60;    **Propriedade depreciada**.    *Utilize &#x60;xNome&#x60;*. | [optional]
 **dt_ini** | **\DateTime** | Data de início da atividade de evento. Ano, Mês e Dia (AAAA-MM-DD). |
 **dt_fim** | **\DateTime** | Data de fim da atividade de evento. Ano, Mês e Dia (AAAA-MM-DD). |
+**c_mun** | **string** | Código do município da localidade do evento. (Tabela do IBGE).  *Disponível a partir da NT 009 (leiaute 009.1.01).* | [optional]
 **id_atv_evt** | **string** | Identificação da Atividade de Evento (código identificador de evento determinado pela Administração Tributária Municipal). | [optional]
 **id** | **string** | &#x60;Deprecated&#x60;    **Propriedade depreciada**.    *Utilize &#x60;idAtvEvt&#x60;*. | [optional]
 **end** | [**\ACBrAPI\Model\EnderecoSimples**](EnderecoSimples.md) |  | [optional]

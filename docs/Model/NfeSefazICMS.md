@@ -25,5 +25,6 @@ Nome | Tipo | Descrição | Comentários
 **icmssn202** | [**\ACBrAPI\Model\NfeSefazICMSSN202**](NfeSefazICMSSN202.md) |  | [optional]
 **icmssn500** | [**\ACBrAPI\Model\NfeSefazICMSSN500**](NfeSefazICMSSN500.md) |  | [optional]
 **icmssn900** | [**\ACBrAPI\Model\NfeSefazICMSSN900**](NfeSefazICMSSN900.md) |  | [optional]
+**icms_previsto_pagto_antecip** | [**\ACBrAPI\Model\NfeSefazICMSPrevistoPagtoAntecip**](NfeSefazICMSPrevistoPagtoAntecip.md) |  | [optional]
 
 [[Voltar à lista de DTOs]](../../README.md#models) [[Voltar à lista de API]](../../README.md#endpoints) [[Voltar ao README]](../../README.md)

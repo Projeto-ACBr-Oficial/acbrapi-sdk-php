@@ -24,6 +24,7 @@ Todas as URIs relativas a https://prod.acbr.api.br, exceto se a operação defin
 | [**consultarLoteNfce()**](NfceApi.md#consultarLoteNfce) | **GET** /nfce/lotes/{id} | Consultar lote de NFC-e |
 | [**consultarNfce()**](NfceApi.md#consultarNfce) | **GET** /nfce/{id} | Consultar NFC-e |
 | [**consultarStatusSefazNfce()**](NfceApi.md#consultarStatusSefazNfce) | **GET** /nfce/sefaz/status | Consulta do Status do Serviço na SEFAZ Autorizadora |
+| [**criarEventoNfce()**](NfceApi.md#criarEventoNfce) | **POST** /nfce/{id}/eventos | Registrar evento da NFC-e |
 | [**emitirLoteNfce()**](NfceApi.md#emitirLoteNfce) | **POST** /nfce/lotes | Emitir lote de NFC-e |
 | [**emitirNfce()**](NfceApi.md#emitirNfce) | **POST** /nfce | Emitir NFC-e |
 | [**enviarEmailNfce()**](NfceApi.md#enviarEmailNfce) | **POST** /nfce/{id}/email | Enviar e-mail |
@@ -1258,6 +1259,68 @@ try {
 [[Voltar à lista de DTOs]](../../README.md#models)
 [[Voltar ao README]](../../README.md)
 
+## `criarEventoNfce()`
+
+```php
+criarEventoNfce($id, $body): \ACBrAPI\Model\DfeEvento
+```
+
+Registrar evento da NFC-e
+
+Registra na SEFAZ um evento vinculado à NFC-e, a partir do código do evento (`tipo_evento`) e do grupo de dados correspondente a ele. O corpo é o mesmo da rota `POST /nfe/{id}/eventos`.    Os campos de controle do evento (`nSeqEvento`, `dhEvento`, órgão e autor, versão, descrição e protocolos) são preenchidos pela API.    **Eventos disponíveis para a NFC-e**:    | Código | Evento | Grupo |  |--------|--------|-------|  | `110001` | Cancelamento de Evento (da vinculação de pagamento) | `cancelamento_evento` |  | `110300` | Vinculação de Pagamento | `vinculacao_pagamento` |  | `110750` | Conciliação Financeira (ECONF) | `conciliacao_financeira` |  | `110751` | Cancelamento da Conciliação Financeira | `cancelamento_evento` |    Os eventos de cancelamento referenciam o evento original pelo ID gerado pela API (`cancelamento_evento.evento_id`).    Para cancelar a NFC-e, continue usando a rota `POST /nfce/{id}/cancelamento`.    Após o registro, o evento pode ser consultado em `GET /nfce/eventos/{id}`, e seu XML e PDF baixados em `GET /nfce/eventos/{id}/xml` e `GET /nfce/eventos/{id}/pdf`.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
+
+### Exemplo
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configurar access token OAuth2 para autorização: oauth2
+$config = ACBrAPI\Configuration::getDefaultConfiguration()->setAccessToken('SEU_ACCESS_TOKEN');
+
+
+$apiInstance = new ACBrAPI\Api\NfceApi(
+    // Se quiser usar um client http customizado, passe um client que implemente `GuzzleHttp\ClientInterface`.
+    // Isso é opcional, `GuzzleHttp\Client` será usado por padrão.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 'id_example'; // string | ID único da NFC-e gerado pela API.
+$body = new \ACBrAPI\Model\NfePedidoEvento(); // \ACBrAPI\Model\NfePedidoEvento | Contém o código e os dados do evento.
+
+try {
+    $result = $apiInstance->criarEventoNfce($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NfceApi->criarEventoNfce: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parâmetros
+
+| Nome | Tipo | Descrição  | Notas |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| ID único da NFC-e gerado pela API. | |
+| **body** | [**\ACBrAPI\Model\NfePedidoEvento**](../Model/NfePedidoEvento.md)| Contém o código e os dados do evento. | |
+
+### Tipo do retorno
+
+[**\ACBrAPI\Model\DfeEvento**](../Model/DfeEvento.md)
+
+### Autorização
+
+[oauth2](../../README.md#oauth2)
+
+### Headers HTTP da requisição
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Voltar ao topo]](#) [[Back to API list]](../../README.md#endpoints)
+[[Voltar à lista de DTOs]](../../README.md#models)
+[[Voltar ao README]](../../README.md)
+
 ## `emitirLoteNfce()`
 
 ```php
@@ -1462,7 +1525,7 @@ inutilizarNumeracaoNfce($body): \ACBrAPI\Model\DfeInutilizacao
 
 Inutilizar uma sequência de numeração de NFC-e
 
-**Informações adicionais**:  - Consumo: 1 unidade por requisição.
+**Atenção**: conforme a NT 2023.002 v1.02 (Ajustes SINIEF 38/2026 e 40/2026),  o serviço de inutilização de NF-e e NFC-e foi desativado pela SEFAZ nos estados  do **Acre (AC)**, **Bahia (BA)** e **São Paulo (SP)** a partir de 11/11/2026.  Para emitentes dessas UFs o pedido continua sendo enviado (a SEFAZ deve rejeitar com  998 - Serviço Desativado) e a resposta traz um aviso no campo `mensagem`.  Nessas UFs, números não utilizados não precisam ser inutilizados.    **Informações adicionais**:  - Consumo: 1 unidade por requisição.
 
 ### Exemplo
 

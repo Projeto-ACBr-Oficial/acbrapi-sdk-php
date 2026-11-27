@@ -841,7 +841,7 @@ class CteOsCartaCorrecao implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets mensagem
      *
-     * @param string|null $mensagem Mensagem da SEFAZ para o emissor.
+     * @param string|null $mensagem Mensagem da SEFAZ para o emissor ou, na inutilização, aviso da API (ex.: serviço  de inutilização desativado pela SEFAZ na UF do emitente).
      *
      * @return self
      */

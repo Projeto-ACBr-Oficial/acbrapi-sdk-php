@@ -138,6 +138,7 @@ Classe | Método | Endpoint | Descrição
 *CteApi* | [**consultarEventoCte**](docs/Api/CteApi.md#consultareventocte) | **GET** /cte/eventos/{id} | Consultar evento
 *CteApi* | [**consultarStatusSefazCte**](docs/Api/CteApi.md#consultarstatussefazcte) | **GET** /cte/sefaz/status | Consulta do Status do Serviço na SEFAZ Autorizadora
 *CteApi* | [**criarCartaCorrecaoCte**](docs/Api/CteApi.md#criarcartacorrecaocte) | **POST** /cte/{id}/carta-correcao | Solicitar correção do CT-e
+*CteApi* | [**criarEventoCte**](docs/Api/CteApi.md#criareventocte) | **POST** /cte/{id}/eventos | Registrar evento do CT-e
 *CteApi* | [**emitirCte**](docs/Api/CteApi.md#emitircte) | **POST** /cte | Emitir CT-e
 *CteApi* | [**emitirCteSimp**](docs/Api/CteApi.md#emitirctesimp) | **POST** /cte/simp | Emitir CT-e Simplificado
 *CteApi* | [**listarCte**](docs/Api/CteApi.md#listarcte) | **GET** /cte | Listar CT-e
@@ -159,6 +160,7 @@ Classe | Método | Endpoint | Descrição
 *CteOsApi* | [**consultarEventoCteOs**](docs/Api/CteOsApi.md#consultareventocteos) | **GET** /cteos/eventos/{id} | Consultar evento
 *CteOsApi* | [**consultarStatusSefazCteOs**](docs/Api/CteOsApi.md#consultarstatussefazcteos) | **GET** /cteos/sefaz/status | Consulta do Status do Serviço na SEFAZ Autorizadora
 *CteOsApi* | [**criarCartaCorrecaoCteOs**](docs/Api/CteOsApi.md#criarcartacorrecaocteos) | **POST** /cteos/{id}/carta-correcao | Solicitar correção do CT-e OS
+*CteOsApi* | [**criarEventoCteOs**](docs/Api/CteOsApi.md#criareventocteos) | **POST** /cteos/{id}/eventos | Registrar evento do CT-e OS
 *CteOsApi* | [**emitirCteOs**](docs/Api/CteOsApi.md#emitircteos) | **POST** /cteos | Emitir CT-e OS
 *CteOsApi* | [**listarCteOs**](docs/Api/CteOsApi.md#listarcteos) | **GET** /cteos | Listar CT-e OS
 *CteOsApi* | [**sincronizarCteOs**](docs/Api/CteOsApi.md#sincronizarcteos) | **POST** /cteos/{id}/sincronizar | Sincroniza dados no CT-e OS a partir da SEFAZ
@@ -239,6 +241,7 @@ Classe | Método | Endpoint | Descrição
 *MdfeApi* | [**consultarMdfe**](docs/Api/MdfeApi.md#consultarmdfe) | **GET** /mdfe/{id} | Consultar manifesto
 *MdfeApi* | [**consultarMdfeNaoEncerrados**](docs/Api/MdfeApi.md#consultarmdfenaoencerrados) | **GET** /mdfe/nao-encerrados | Consulta MDF-e não encerrados
 *MdfeApi* | [**consultarStatusSefazMdfe**](docs/Api/MdfeApi.md#consultarstatussefazmdfe) | **GET** /mdfe/sefaz/status | Consulta do Status do Serviço na SEFAZ Autorizadora
+*MdfeApi* | [**criarEventoMdfe**](docs/Api/MdfeApi.md#criareventomdfe) | **POST** /mdfe/{id}/eventos | Registrar evento do MDF-e
 *MdfeApi* | [**emitirLoteMdfe**](docs/Api/MdfeApi.md#emitirlotemdfe) | **POST** /mdfe/lotes | Emitir lote de MDF-e
 *MdfeApi* | [**emitirMdfe**](docs/Api/MdfeApi.md#emitirmdfe) | **POST** /mdfe | Emitir MDF-e
 *MdfeApi* | [**encerrarMdfe**](docs/Api/MdfeApi.md#encerrarmdfe) | **POST** /mdfe/{id}/encerramento | Encerrar um MDF-e autorizado
@@ -267,6 +270,7 @@ Classe | Método | Endpoint | Descrição
 *NfceApi* | [**consultarLoteNfce**](docs/Api/NfceApi.md#consultarlotenfce) | **GET** /nfce/lotes/{id} | Consultar lote de NFC-e
 *NfceApi* | [**consultarNfce**](docs/Api/NfceApi.md#consultarnfce) | **GET** /nfce/{id} | Consultar NFC-e
 *NfceApi* | [**consultarStatusSefazNfce**](docs/Api/NfceApi.md#consultarstatussefaznfce) | **GET** /nfce/sefaz/status | Consulta do Status do Serviço na SEFAZ Autorizadora
+*NfceApi* | [**criarEventoNfce**](docs/Api/NfceApi.md#criareventonfce) | **POST** /nfce/{id}/eventos | Registrar evento da NFC-e
 *NfceApi* | [**emitirLoteNfce**](docs/Api/NfceApi.md#emitirlotenfce) | **POST** /nfce/lotes | Emitir lote de NFC-e
 *NfceApi* | [**emitirNfce**](docs/Api/NfceApi.md#emitirnfce) | **POST** /nfce | Emitir NFC-e
 *NfceApi* | [**enviarEmailNfce**](docs/Api/NfceApi.md#enviaremailnfce) | **POST** /nfce/{id}/email | Enviar e-mail
@@ -277,14 +281,18 @@ Classe | Método | Endpoint | Descrição
 *NfceApi* | [**sincronizarNfce**](docs/Api/NfceApi.md#sincronizarnfce) | **POST** /nfce/{id}/sincronizar | Sincroniza dados na NFC-e a partir da SEFAZ
 *NfcomApi* | [**baixarPdfNfcom**](docs/Api/NfcomApi.md#baixarpdfnfcom) | **GET** /nfcom/{id}/pdf | Baixar PDF do DANFE-COM
 *NfcomApi* | [**baixarXmlCancelamentoNfcom**](docs/Api/NfcomApi.md#baixarxmlcancelamentonfcom) | **GET** /nfcom/{id}/cancelamento/xml | Baixar XML do cancelamento
+*NfcomApi* | [**baixarXmlEventoNfcom**](docs/Api/NfcomApi.md#baixarxmleventonfcom) | **GET** /nfcom/eventos/{id}/xml | Baixar XML do evento
 *NfcomApi* | [**baixarXmlNfcom**](docs/Api/NfcomApi.md#baixarxmlnfcom) | **GET** /nfcom/{id}/xml | Baixar XML da NFCom processada
 *NfcomApi* | [**baixarXmlNfcomNota**](docs/Api/NfcomApi.md#baixarxmlnfcomnota) | **GET** /nfcom/{id}/xml/nota | Baixar XML da NFCom
 *NfcomApi* | [**baixarXmlNfcomProtocolo**](docs/Api/NfcomApi.md#baixarxmlnfcomprotocolo) | **GET** /nfcom/{id}/xml/protocolo | Baixar XML do Protocolo da SEFAZ
 *NfcomApi* | [**cancelarNfcom**](docs/Api/NfcomApi.md#cancelarnfcom) | **POST** /nfcom/{id}/cancelamento | Cancelar uma NFCom autorizada
 *NfcomApi* | [**consultarCancelamentoNfcom**](docs/Api/NfcomApi.md#consultarcancelamentonfcom) | **GET** /nfcom/{id}/cancelamento | Consultar o cancelamento da NFCom
+*NfcomApi* | [**consultarEventoNfcom**](docs/Api/NfcomApi.md#consultareventonfcom) | **GET** /nfcom/eventos/{id} | Consultar evento
 *NfcomApi* | [**consultarNfcom**](docs/Api/NfcomApi.md#consultarnfcom) | **GET** /nfcom/{id} | Consultar NFCom
 *NfcomApi* | [**consultarStatusSefazNfcom**](docs/Api/NfcomApi.md#consultarstatussefaznfcom) | **GET** /nfcom/sefaz/status | Consulta do Status do Serviço na SEFAZ Autorizadora
+*NfcomApi* | [**criarEventoNfcom**](docs/Api/NfcomApi.md#criareventonfcom) | **POST** /nfcom/{id}/eventos | Registrar evento da NFCom
 *NfcomApi* | [**emitirNfcom**](docs/Api/NfcomApi.md#emitirnfcom) | **POST** /nfcom | Emitir NFCom
+*NfcomApi* | [**listarEventosNfcom**](docs/Api/NfcomApi.md#listareventosnfcom) | **GET** /nfcom/eventos | Listar eventos
 *NfcomApi* | [**listarNfcom**](docs/Api/NfcomApi.md#listarnfcom) | **GET** /nfcom | Listar NFCom
 *NfeApi* | [**baixarPdfCancelamentoNfe**](docs/Api/NfeApi.md#baixarpdfcancelamentonfe) | **GET** /nfe/{id}/cancelamento/pdf | Baixar PDF do cancelamento
 *NfeApi* | [**baixarPdfCartaCorrecaoNfe**](docs/Api/NfeApi.md#baixarpdfcartacorrecaonfe) | **GET** /nfe/{id}/carta-correcao/pdf | Baixar PDF da carta de correção
@@ -310,6 +318,7 @@ Classe | Método | Endpoint | Descrição
 *NfeApi* | [**consultarNfe**](docs/Api/NfeApi.md#consultarnfe) | **GET** /nfe/{id} | Consultar NF-e
 *NfeApi* | [**consultarStatusSefazNfe**](docs/Api/NfeApi.md#consultarstatussefaznfe) | **GET** /nfe/sefaz/status | Consulta do Status do Serviço na SEFAZ Autorizadora
 *NfeApi* | [**criarCartaCorrecaoNfe**](docs/Api/NfeApi.md#criarcartacorrecaonfe) | **POST** /nfe/{id}/carta-correcao | Solicitar correção da NF-e
+*NfeApi* | [**criarEventoNfe**](docs/Api/NfeApi.md#criareventonfe) | **POST** /nfe/{id}/eventos | Registrar evento da NF-e
 *NfeApi* | [**emitirLoteNfe**](docs/Api/NfeApi.md#emitirlotenfe) | **POST** /nfe/lotes | Emitir lote de NF-e
 *NfeApi* | [**emitirNfe**](docs/Api/NfeApi.md#emitirnfe) | **POST** /nfe | Emitir NF-e
 *NfeApi* | [**enviarEmailNfe**](docs/Api/NfeApi.md#enviaremailnfe) | **POST** /nfe/{id}/email | Enviar e-mail
@@ -331,9 +340,11 @@ Classe | Método | Endpoint | Descrição
 *NfseApi* | [**emitirLoteNfseDps**](docs/Api/NfseApi.md#emitirlotenfsedps) | **POST** /nfse/dps/lotes | Emitir lote de NFS-e
 *NfseApi* | [**emitirNfseDps**](docs/Api/NfseApi.md#emitirnfsedps) | **POST** /nfse/dps | Emitir NFS-e
 *NfseApi* | [**enviarEmailNfse**](docs/Api/NfseApi.md#enviaremailnfse) | **POST** /nfse/{id}/email | Enviar e-mail
+*NfseApi* | [**listarEventosNfse**](docs/Api/NfseApi.md#listareventosnfse) | **GET** /nfse/{id}/eventos | Listar eventos da NFS-e
 *NfseApi* | [**listarLotesNfse**](docs/Api/NfseApi.md#listarlotesnfse) | **GET** /nfse/lotes | Listar lotes de NFS-e
 *NfseApi* | [**listarNfse**](docs/Api/NfseApi.md#listarnfse) | **GET** /nfse | Listar NFS-e
 *NfseApi* | [**sincronizarNfse**](docs/Api/NfseApi.md#sincronizarnfse) | **POST** /nfse/{id}/sincronizar | Sincroniza dados na NFS-e a partir da Prefeitura
+*NfseApi* | [**solicitarAnaliseFiscalCancelamentoNfse**](docs/Api/NfseApi.md#solicitaranalisefiscalcancelamentonfse) | **POST** /nfse/{id}/cancelamento/analise-fiscal | Solicitar análise fiscal para cancelamento da NFS-e
 
 ## Documentação dos DTOs
 
@@ -368,12 +379,21 @@ Classe | Método | Endpoint | Descrição
 - [ContaExtratoCredito](docs/Model/ContaExtratoCredito.md)
 - [ContaExtratoCreditoListagem](docs/Model/ContaExtratoCreditoListagem.md)
 - [CteCartaCorrecao](docs/Model/CteCartaCorrecao.md)
+- [CteEventoCancelamento](docs/Model/CteEventoCancelamento.md)
+- [CteEventoComprovanteEntrega](docs/Model/CteEventoComprovanteEntrega.md)
+- [CteEventoInsucessoEntrega](docs/Model/CteEventoInsucessoEntrega.md)
+- [CteEventoRegistroMultimodal](docs/Model/CteEventoRegistroMultimodal.md)
 - [CteInfCorrecao](docs/Model/CteInfCorrecao.md)
 - [CteOsCartaCorrecao](docs/Model/CteOsCartaCorrecao.md)
+- [CteOsEventoGtv](docs/Model/CteOsEventoGtv.md)
+- [CteOsEventoGtvDocumento](docs/Model/CteOsEventoGtvDocumento.md)
+- [CteOsEventoGtvEspecie](docs/Model/CteOsEventoGtvEspecie.md)
+- [CteOsEventoGtvParticipante](docs/Model/CteOsEventoGtvParticipante.md)
 - [CteOsInfCorrecao](docs/Model/CteOsInfCorrecao.md)
 - [CteOsPedidoCancelamento](docs/Model/CteOsPedidoCancelamento.md)
 - [CteOsPedidoCartaCorrecao](docs/Model/CteOsPedidoCartaCorrecao.md)
 - [CteOsPedidoEmissao](docs/Model/CteOsPedidoEmissao.md)
+- [CteOsPedidoEvento](docs/Model/CteOsPedidoEvento.md)
 - [CteOsSefazALCZFMCBSOS](docs/Model/CteOsSefazALCZFMCBSOS.md)
 - [CteOsSefazAutXMLOS](docs/Model/CteOsSefazAutXMLOS.md)
 - [CteOsSefazCIBSOS](docs/Model/CteOsSefazCIBSOS.md)
@@ -390,8 +410,12 @@ Classe | Método | Endpoint | Descrição
 - [CteOsSefazEstornoCredOS](docs/Model/CteOsSefazEstornoCredOS.md)
 - [CteOsSefazFatOS](docs/Model/CteOsSefazFatOS.md)
 - [CteOsSefazGCBSOS](docs/Model/CteOsSefazGCBSOS.md)
+- [CteOsSefazGCBSSNOS](docs/Model/CteOsSefazGCBSSNOS.md)
 - [CteOsSefazGIBSMunOS](docs/Model/CteOsSefazGIBSMunOS.md)
+- [CteOsSefazGIBSSNOS](docs/Model/CteOsSefazGIBSSNOS.md)
 - [CteOsSefazGIBSUFOS](docs/Model/CteOsSefazGIBSUFOS.md)
+- [CteOsSefazGICMSPrevistoPagtoAntecipOS](docs/Model/CteOsSefazGICMSPrevistoPagtoAntecipOS.md)
+- [CteOsSefazGMultaJurosOS](docs/Model/CteOsSefazGMultaJurosOS.md)
 - [CteOsSefazGPagAntecipadoOS](docs/Model/CteOsSefazGPagAntecipadoOS.md)
 - [CteOsSefazICMS00OS](docs/Model/CteOsSefazICMS00OS.md)
 - [CteOsSefazICMS20OS](docs/Model/CteOsSefazICMS20OS.md)
@@ -430,11 +454,13 @@ Classe | Método | Endpoint | Descrição
 - [CteOsSefazTribCTeOS](docs/Model/CteOsSefazTribCTeOS.md)
 - [CteOsSefazTribCompraGovOS](docs/Model/CteOsSefazTribCompraGovOS.md)
 - [CteOsSefazTribRegularOS](docs/Model/CteOsSefazTribRegularOS.md)
+- [CteOsSefazTribSNOS](docs/Model/CteOsSefazTribSNOS.md)
 - [CteOsSefazVPrestOS](docs/Model/CteOsSefazVPrestOS.md)
 - [CteOsSefazVeicOS](docs/Model/CteOsSefazVeicOS.md)
 - [CtePedidoCancelamento](docs/Model/CtePedidoCancelamento.md)
 - [CtePedidoCartaCorrecao](docs/Model/CtePedidoCartaCorrecao.md)
 - [CtePedidoEmissao](docs/Model/CtePedidoEmissao.md)
+- [CtePedidoEvento](docs/Model/CtePedidoEvento.md)
 - [CteSefazALCZFMCBS](docs/Model/CteSefazALCZFMCBS.md)
 - [CteSefazAereo](docs/Model/CteSefazAereo.md)
 - [CteSefazAquav](docs/Model/CteSefazAquav.md)
@@ -471,8 +497,12 @@ Classe | Método | Endpoint | Descrição
 - [CteSefazFerrov](docs/Model/CteSefazFerrov.md)
 - [CteSefazFluxo](docs/Model/CteSefazFluxo.md)
 - [CteSefazGCBS](docs/Model/CteSefazGCBS.md)
+- [CteSefazGCBSSN](docs/Model/CteSefazGCBSSN.md)
 - [CteSefazGIBSMun](docs/Model/CteSefazGIBSMun.md)
+- [CteSefazGIBSSN](docs/Model/CteSefazGIBSSN.md)
 - [CteSefazGIBSUF](docs/Model/CteSefazGIBSUF.md)
+- [CteSefazGICMSPrevistoPagtoAntecip](docs/Model/CteSefazGICMSPrevistoPagtoAntecip.md)
+- [CteSefazGMultaJuros](docs/Model/CteSefazGMultaJuros.md)
 - [CteSefazGPagAntecipado](docs/Model/CteSefazGPagAntecipado.md)
 - [CteSefazICMS00](docs/Model/CteSefazICMS00.md)
 - [CteSefazICMS20](docs/Model/CteSefazICMS20.md)
@@ -536,6 +566,7 @@ Classe | Método | Endpoint | Descrição
 - [CteSefazTribCTe](docs/Model/CteSefazTribCTe.md)
 - [CteSefazTribCompraGov](docs/Model/CteSefazTribCompraGov.md)
 - [CteSefazTribRegular](docs/Model/CteSefazTribRegular.md)
+- [CteSefazTribSN](docs/Model/CteSefazTribSN.md)
 - [CteSefazUnidCarga](docs/Model/CteSefazUnidCarga.md)
 - [CteSefazUnidadeTransp](docs/Model/CteSefazUnidadeTransp.md)
 - [CteSefazVPrest](docs/Model/CteSefazVPrest.md)
@@ -567,10 +598,21 @@ Classe | Método | Endpoint | Descrição
 - [CteSimpSefazFerroEnvSimp](docs/Model/CteSimpSefazFerroEnvSimp.md)
 - [CteSimpSefazFerrovSimp](docs/Model/CteSimpSefazFerrovSimp.md)
 - [CteSimpSefazFluxoSimp](docs/Model/CteSimpSefazFluxoSimp.md)
+- [CteSimpSefazGCBSSNSimp](docs/Model/CteSimpSefazGCBSSNSimp.md)
 - [CteSimpSefazGCBSSimp](docs/Model/CteSimpSefazGCBSSimp.md)
+- [CteSimpSefazGEstornoCredSimp](docs/Model/CteSimpSefazGEstornoCredSimp.md)
+- [CteSimpSefazGIBSGIBSMunSimp](docs/Model/CteSimpSefazGIBSGIBSMunSimp.md)
+- [CteSimpSefazGIBSGIBSUFSimp](docs/Model/CteSimpSefazGIBSGIBSUFSimp.md)
 - [CteSimpSefazGIBSMunSimp](docs/Model/CteSimpSefazGIBSMunSimp.md)
+- [CteSimpSefazGIBSSNSimp](docs/Model/CteSimpSefazGIBSSNSimp.md)
+- [CteSimpSefazGIBSSimp](docs/Model/CteSimpSefazGIBSSimp.md)
 - [CteSimpSefazGIBSUFSimp](docs/Model/CteSimpSefazGIBSUFSimp.md)
+- [CteSimpSefazGICMSPrevistoPagtoAntecipSimp](docs/Model/CteSimpSefazGICMSPrevistoPagtoAntecipSimp.md)
+- [CteSimpSefazGMultaJurosSimp](docs/Model/CteSimpSefazGMultaJurosSimp.md)
 - [CteSimpSefazGPagAntecipadoSimp](docs/Model/CteSimpSefazGPagAntecipadoSimp.md)
+- [CteSimpSefazGTribSNSimp](docs/Model/CteSimpSefazGTribSNSimp.md)
+- [CteSimpSefazIBSCBSTotGCBSSimp](docs/Model/CteSimpSefazIBSCBSTotGCBSSimp.md)
+- [CteSimpSefazIBSCBSTotSimp](docs/Model/CteSimpSefazIBSCBSTotSimp.md)
 - [CteSimpSefazICMS00Simp](docs/Model/CteSimpSefazICMS00Simp.md)
 - [CteSimpSefazICMS20Simp](docs/Model/CteSimpSefazICMS20Simp.md)
 - [CteSimpSefazICMS45Simp](docs/Model/CteSimpSefazICMS45Simp.md)
@@ -620,6 +662,7 @@ Classe | Método | Endpoint | Descrição
 - [CteSimpSefazTribCTeSimp](docs/Model/CteSimpSefazTribCTeSimp.md)
 - [CteSimpSefazTribCompraGovSimp](docs/Model/CteSimpSefazTribCompraGovSimp.md)
 - [CteSimpSefazTribRegularSimp](docs/Model/CteSimpSefazTribRegularSimp.md)
+- [CteSimpSefazTribSNSimp](docs/Model/CteSimpSefazTribSNSimp.md)
 - [CteSimpSefazUnidCargaSimp](docs/Model/CteSimpSefazUnidCargaSimp.md)
 - [CteSimpSefazUnidadeTranspSimp](docs/Model/CteSimpSefazUnidadeTranspSimp.md)
 - [DPS](docs/Model/DPS.md)
@@ -648,6 +691,7 @@ Classe | Método | Endpoint | Descrição
 - [DceSefazTransp](docs/Model/DceSefazTransp.md)
 - [DceSefazTransportadora](docs/Model/DceSefazTransportadora.md)
 - [Dfe](docs/Model/Dfe.md)
+- [DfeAlerta](docs/Model/DfeAlerta.md)
 - [DfeAutorEvento](docs/Model/DfeAutorEvento.md)
 - [DfeAutorizacao](docs/Model/DfeAutorizacao.md)
 - [DfeCancelamento](docs/Model/DfeCancelamento.md)
@@ -735,6 +779,8 @@ Classe | Método | Endpoint | Descrição
 - [ManifestacaoNfeListagem](docs/Model/ManifestacaoNfeListagem.md)
 - [MdfeDocumentoVinculado](docs/Model/MdfeDocumentoVinculado.md)
 - [MdfeEncerramento](docs/Model/MdfeEncerramento.md)
+- [MdfeEventoAlteracaoPagamento](docs/Model/MdfeEventoAlteracaoPagamento.md)
+- [MdfeEventoPagamentoOperacao](docs/Model/MdfeEventoPagamentoOperacao.md)
 - [MdfeInclusaoCondutor](docs/Model/MdfeInclusaoCondutor.md)
 - [MdfeInclusaoDfe](docs/Model/MdfeInclusaoDfe.md)
 - [MdfeNaoEncerrado](docs/Model/MdfeNaoEncerrado.md)
@@ -743,6 +789,7 @@ Classe | Método | Endpoint | Descrição
 - [MdfePedidoEmissao](docs/Model/MdfePedidoEmissao.md)
 - [MdfePedidoEmissaoLote](docs/Model/MdfePedidoEmissaoLote.md)
 - [MdfePedidoEncerramento](docs/Model/MdfePedidoEncerramento.md)
+- [MdfePedidoEvento](docs/Model/MdfePedidoEvento.md)
 - [MdfePedidoInclusaoCondutor](docs/Model/MdfePedidoInclusaoCondutor.md)
 - [MdfePedidoInclusaoDfe](docs/Model/MdfePedidoInclusaoDfe.md)
 - [MdfeSefazAereo](docs/Model/MdfeSefazAereo.md)
@@ -808,8 +855,11 @@ Classe | Método | Endpoint | Descrição
 - [MdfeSefazVeicReboqueProp](docs/Model/MdfeSefazVeicReboqueProp.md)
 - [MdfeSefazVeicTracao](docs/Model/MdfeSefazVeicTracao.md)
 - [NfcePedidoCancelamento](docs/Model/NfcePedidoCancelamento.md)
+- [NfcomEventoCancelamento](docs/Model/NfcomEventoCancelamento.md)
+- [NfcomEventoVinculacaoPagamento](docs/Model/NfcomEventoVinculacaoPagamento.md)
 - [NfcomPedidoCancelamento](docs/Model/NfcomPedidoCancelamento.md)
 - [NfcomPedidoEmissao](docs/Model/NfcomPedidoEmissao.md)
+- [NfcomPedidoEvento](docs/Model/NfcomPedidoEvento.md)
 - [NfcomSefazALCZFMCBS](docs/Model/NfcomSefazALCZFMCBS.md)
 - [NfcomSefazAssinante](docs/Model/NfcomSefazAssinante.md)
 - [NfcomSefazAutXML](docs/Model/NfcomSefazAutXML.md)
@@ -827,6 +877,7 @@ Classe | Método | Endpoint | Descrição
 - [NfcomSefazFUNTTEL](docs/Model/NfcomSefazFUNTTEL.md)
 - [NfcomSefazFUST](docs/Model/NfcomSefazFUST.md)
 - [NfcomSefazGCBS](docs/Model/NfcomSefazGCBS.md)
+- [NfcomSefazGCBSSN](docs/Model/NfcomSefazGCBSSN.md)
 - [NfcomSefazGCofat](docs/Model/NfcomSefazGCofat.md)
 - [NfcomSefazGCofatGNF](docs/Model/NfcomSefazGCofatGNF.md)
 - [NfcomSefazGEstornoCred](docs/Model/NfcomSefazGEstornoCred.md)
@@ -834,10 +885,13 @@ Classe | Método | Endpoint | Descrição
 - [NfcomSefazGFatCentral](docs/Model/NfcomSefazGFatCentral.md)
 - [NfcomSefazGFidelidade](docs/Model/NfcomSefazGFidelidade.md)
 - [NfcomSefazGIBS](docs/Model/NfcomSefazGIBS.md)
+- [NfcomSefazGIBSCBS](docs/Model/NfcomSefazGIBSCBS.md)
 - [NfcomSefazGIBSGIBSMun](docs/Model/NfcomSefazGIBSGIBSMun.md)
 - [NfcomSefazGIBSGIBSUF](docs/Model/NfcomSefazGIBSGIBSUF.md)
 - [NfcomSefazGIBSMun](docs/Model/NfcomSefazGIBSMun.md)
+- [NfcomSefazGIBSSN](docs/Model/NfcomSefazGIBSSN.md)
 - [NfcomSefazGIBSUF](docs/Model/NfcomSefazGIBSUF.md)
+- [NfcomSefazGICMSPrevistoPagtoAntecip](docs/Model/NfcomSefazGICMSPrevistoPagtoAntecip.md)
 - [NfcomSefazGNF](docs/Model/NfcomSefazGNF.md)
 - [NfcomSefazGPIX](docs/Model/NfcomSefazGPIX.md)
 - [NfcomSefazGPagAntecipado](docs/Model/NfcomSefazGPagAntecipado.md)
@@ -845,6 +899,7 @@ Classe | Método | Endpoint | Descrição
 - [NfcomSefazGProcRef](docs/Model/NfcomSefazGProcRef.md)
 - [NfcomSefazGRessarc](docs/Model/NfcomSefazGRessarc.md)
 - [NfcomSefazGSub](docs/Model/NfcomSefazGSub.md)
+- [NfcomSefazGTribSN](docs/Model/NfcomSefazGTribSN.md)
 - [NfcomSefazIBSCBSTot](docs/Model/NfcomSefazIBSCBSTot.md)
 - [NfcomSefazIBSCBSTotGCBS](docs/Model/NfcomSefazIBSCBSTotGCBS.md)
 - [NfcomSefazICMS00](docs/Model/NfcomSefazICMS00.md)
@@ -870,11 +925,25 @@ Classe | Método | Endpoint | Descrição
 - [NfcomSefazTribCompraGov](docs/Model/NfcomSefazTribCompraGov.md)
 - [NfcomSefazTribNFCom](docs/Model/NfcomSefazTribNFCom.md)
 - [NfcomSefazTribRegular](docs/Model/NfcomSefazTribRegular.md)
+- [NfcomSefazTribSN](docs/Model/NfcomSefazTribSN.md)
 - [NfcomSefazVRetTribTot](docs/Model/NfcomSefazVRetTribTot.md)
+- [NfeEventoAtorInteressado](docs/Model/NfeEventoAtorInteressado.md)
+- [NfeEventoCancelamento](docs/Model/NfeEventoCancelamento.md)
+- [NfeEventoComprovanteEntrega](docs/Model/NfeEventoComprovanteEntrega.md)
+- [NfeEventoConciliacao](docs/Model/NfeEventoConciliacao.md)
+- [NfeEventoConciliacaoPagamento](docs/Model/NfeEventoConciliacaoPagamento.md)
+- [NfeEventoInsucessoEntrega](docs/Model/NfeEventoInsucessoEntrega.md)
+- [NfeEventoItem](docs/Model/NfeEventoItem.md)
+- [NfeEventoItens](docs/Model/NfeEventoItens.md)
+- [NfeEventoPrevisaoEntrega](docs/Model/NfeEventoPrevisaoEntrega.md)
+- [NfeEventoProrrogacao](docs/Model/NfeEventoProrrogacao.md)
+- [NfeEventoProrrogacaoItem](docs/Model/NfeEventoProrrogacaoItem.md)
+- [NfeEventoVinculacaoPagamento](docs/Model/NfeEventoVinculacaoPagamento.md)
 - [NfePedidoCancelamento](docs/Model/NfePedidoCancelamento.md)
 - [NfePedidoCartaCorrecao](docs/Model/NfePedidoCartaCorrecao.md)
 - [NfePedidoEmissao](docs/Model/NfePedidoEmissao.md)
 - [NfePedidoEmissaoLote](docs/Model/NfePedidoEmissaoLote.md)
+- [NfePedidoEvento](docs/Model/NfePedidoEvento.md)
 - [NfeSefazALCZFMCBSNFe](docs/Model/NfeSefazALCZFMCBSNFe.md)
 - [NfeSefazAdi](docs/Model/NfeSefazAdi.md)
 - [NfeSefazAgropecuario](docs/Model/NfeSefazAgropecuario.md)
@@ -930,6 +999,7 @@ Classe | Método | Endpoint | Descrição
 - [NfeSefazGCBSMonoAdValoremGMonoRet](docs/Model/NfeSefazGCBSMonoAdValoremGMonoRet.md)
 - [NfeSefazGCBSMonoAdValoremGMonoReten](docs/Model/NfeSefazGCBSMonoAdValoremGMonoReten.md)
 - [NfeSefazGCBSMonoAdValoremGpBioDiferenca](docs/Model/NfeSefazGCBSMonoAdValoremGpBioDiferenca.md)
+- [NfeSefazGCBSSN](docs/Model/NfeSefazGCBSSN.md)
 - [NfeSefazGCred](docs/Model/NfeSefazGCred.md)
 - [NfeSefazGEstornoCred](docs/Model/NfeSefazGEstornoCred.md)
 - [NfeSefazGIBS](docs/Model/NfeSefazGIBS.md)
@@ -942,12 +1012,15 @@ Classe | Método | Endpoint | Descrição
 - [NfeSefazGIBSMonoAdValoremGMonoReten](docs/Model/NfeSefazGIBSMonoAdValoremGMonoReten.md)
 - [NfeSefazGIBSMonoAdValoremGpBioDiferenca](docs/Model/NfeSefazGIBSMonoAdValoremGpBioDiferenca.md)
 - [NfeSefazGIBSMun](docs/Model/NfeSefazGIBSMun.md)
+- [NfeSefazGIBSSN](docs/Model/NfeSefazGIBSSN.md)
 - [NfeSefazGIBSUF](docs/Model/NfeSefazGIBSUF.md)
 - [NfeSefazGMono](docs/Model/NfeSefazGMono.md)
 - [NfeSefazGMonoPadrao](docs/Model/NfeSefazGMonoPadrao.md)
 - [NfeSefazGMonoRet](docs/Model/NfeSefazGMonoRet.md)
 - [NfeSefazGMonoReten](docs/Model/NfeSefazGMonoReten.md)
 - [NfeSefazGPagAntecipado](docs/Model/NfeSefazGPagAntecipado.md)
+- [NfeSefazGPgto](docs/Model/NfeSefazGPgto.md)
+- [NfeSefazGTribSN](docs/Model/NfeSefazGTribSN.md)
 - [NfeSefazGpBioDiferenca](docs/Model/NfeSefazGpBioDiferenca.md)
 - [NfeSefazGuiaTransito](docs/Model/NfeSefazGuiaTransito.md)
 - [NfeSefazIBSCBSMonoTot](docs/Model/NfeSefazIBSCBSMonoTot.md)
@@ -967,6 +1040,7 @@ Classe | Método | Endpoint | Descrição
 - [NfeSefazICMS70](docs/Model/NfeSefazICMS70.md)
 - [NfeSefazICMS90](docs/Model/NfeSefazICMS90.md)
 - [NfeSefazICMSPart](docs/Model/NfeSefazICMSPart.md)
+- [NfeSefazICMSPrevistoPagtoAntecip](docs/Model/NfeSefazICMSPrevistoPagtoAntecip.md)
 - [NfeSefazICMSSN101](docs/Model/NfeSefazICMSSN101.md)
 - [NfeSefazICMSSN102](docs/Model/NfeSefazICMSSN102.md)
 - [NfeSefazICMSSN201](docs/Model/NfeSefazICMSSN201.md)
@@ -1016,6 +1090,7 @@ Classe | Método | Endpoint | Descrição
 - [NfeSefazPISQtde](docs/Model/NfeSefazPISQtde.md)
 - [NfeSefazPISST](docs/Model/NfeSefazPISST.md)
 - [NfeSefazPag](docs/Model/NfeSefazPag.md)
+- [NfeSefazPgtoVinc](docs/Model/NfeSefazPgtoVinc.md)
 - [NfeSefazProcRef](docs/Model/NfeSefazProcRef.md)
 - [NfeSefazProd](docs/Model/NfeSefazProd.md)
 - [NfeSefazRSAKeyValueType](docs/Model/NfeSefazRSAKeyValueType.md)
@@ -1033,21 +1108,30 @@ Classe | Método | Endpoint | Descrição
 - [NfeSefazTribCompraGov](docs/Model/NfeSefazTribCompraGov.md)
 - [NfeSefazTribNFe](docs/Model/NfeSefazTribNFe.md)
 - [NfeSefazTribRegular](docs/Model/NfeSefazTribRegular.md)
+- [NfeSefazTribSN](docs/Model/NfeSefazTribSN.md)
 - [NfeSefazVeicProd](docs/Model/NfeSefazVeicProd.md)
 - [NfeSefazVeiculo](docs/Model/NfeSefazVeiculo.md)
 - [NfeSefazVol](docs/Model/NfeSefazVol.md)
 - [Nfse](docs/Model/Nfse.md)
+- [NfseAnaliseFiscal](docs/Model/NfseAnaliseFiscal.md)
 - [NfseCancelamento](docs/Model/NfseCancelamento.md)
 - [NfseCidadeMetadados](docs/Model/NfseCidadeMetadados.md)
 - [NfseCidadesAtendidas](docs/Model/NfseCidadesAtendidas.md)
 - [NfseDpsPedidoEmissao](docs/Model/NfseDpsPedidoEmissao.md)
+- [NfseEvento](docs/Model/NfseEvento.md)
+- [NfseEventoListagem](docs/Model/NfseEventoListagem.md)
 - [NfseListagem](docs/Model/NfseListagem.md)
 - [NfseLoteDpsPedidoEmissao](docs/Model/NfseLoteDpsPedidoEmissao.md)
 - [NfseMensagemRetorno](docs/Model/NfseMensagemRetorno.md)
+- [NfsePedidoAnaliseFiscal](docs/Model/NfsePedidoAnaliseFiscal.md)
 - [NfsePedidoCancelamento](docs/Model/NfsePedidoCancelamento.md)
 - [NfsePedidoSincronizacao](docs/Model/NfsePedidoSincronizacao.md)
 - [NfseSincronizacao](docs/Model/NfseSincronizacao.md)
+- [RTCCobrancaCondominio](docs/Model/RTCCobrancaCondominio.md)
+- [RTCDescontoCondominio](docs/Model/RTCDescontoCondominio.md)
+- [RTCDetCobrancaCondominio](docs/Model/RTCDetCobrancaCondominio.md)
 - [RTCInfoBensMoveis](docs/Model/RTCInfoBensMoveis.md)
+- [RTCInfoCondominios](docs/Model/RTCInfoCondominios.md)
 - [RTCInfoDest](docs/Model/RTCInfoDest.md)
 - [RTCInfoIBSCBS](docs/Model/RTCInfoIBSCBS.md)
 - [RTCInfoImovel](docs/Model/RTCInfoImovel.md)
@@ -1113,6 +1197,6 @@ Classe | Método | Endpoint | Descrição
 
 ## Sobre este package
 
-- Versão da API: `3.1.19`
-    - Versão do package: `3.1.19`
+- Versão da API: `3.1.20`
+    - Versão do package: `3.1.20`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

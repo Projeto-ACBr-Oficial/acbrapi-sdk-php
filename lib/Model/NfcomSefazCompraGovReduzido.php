@@ -308,6 +308,10 @@ class NfcomSefazCompraGovReduzido implements ModelInterface, ArrayAccess, \JsonS
         if ($this->container['tp_oper_gov'] === null) {
             $invalidProperties[] = "'tp_oper_gov' can't be null";
         }
+        if (!is_null($this->container['ref_dfe_ant']) && (count($this->container['ref_dfe_ant']) > 99)) {
+            $invalidProperties[] = "invalid value for 'ref_dfe_ant', number of items must be less than or equal to 99.";
+        }
+
         return $invalidProperties;
     }
 
@@ -443,7 +447,7 @@ class NfcomSefazCompraGovReduzido implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets ref_dfe_ant
      *
-     * @param string[]|null $ref_dfe_ant Chave de acesso do documento fiscal anterior.  Deverá ser informado para tpOperGov 2 e 3 e vedado para os tipos 1 e 4.  No caso do toOperGov 2 aceitará apenas uma chave referenciada, no tipo 3 poderá aceitar múltiplas chaves  Obs: a chave de acesso deverá ser de um emitente com o mesmo CNPJ base.
+     * @param string[]|null $ref_dfe_ant Chave de acesso do documento fiscal anterior.  Deverá ser informado para tpOperGov 2 e 3 e vedado para os tipos 1 e 4.  No caso do tpOperGov 2 aceitará apenas uma chave referenciada, no tipo 3 poderá aceitar múltiplas chaves  Obs: a chave de acesso deverá ser de um emitente com o mesmo CNPJ base.
      *
      * @return self
      */
@@ -451,6 +455,10 @@ class NfcomSefazCompraGovReduzido implements ModelInterface, ArrayAccess, \JsonS
     {
         if (is_null($ref_dfe_ant)) {
             throw new \InvalidArgumentException('non-nullable ref_dfe_ant cannot be null');
+        }
+
+        if ((count($ref_dfe_ant) > 99)) {
+            throw new \InvalidArgumentException('invalid value for $ref_dfe_ant when calling NfcomSefazCompraGovReduzido., number of items must be less than or equal to 99.');
         }
         $this->container['ref_dfe_ant'] = $ref_dfe_ant;
 

@@ -441,7 +441,7 @@ class NfeSefazICMS53 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cst
      *
-     * @param string $cst Tributção pelo ICMS  * 53 - Tributação monofásica sobre combustíveis com recolhimento diferido
+     * @param string $cst Tributação pelo ICMS  * 53 - Tributação monofásica sobre combustíveis com recolhimento diferido
      *
      * @return self
      */

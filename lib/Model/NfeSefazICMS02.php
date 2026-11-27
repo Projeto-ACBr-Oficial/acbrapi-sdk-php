@@ -388,7 +388,7 @@ class NfeSefazICMS02 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cst
      *
-     * @param string $cst Tributção pelo ICMS  * 02 - Tributação monofásica própria sobre combustíveis
+     * @param string $cst Tributação pelo ICMS  * 02 - Tributação monofásica própria sobre combustíveis
      *
      * @return self
      */

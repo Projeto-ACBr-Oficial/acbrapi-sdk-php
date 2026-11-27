@@ -60,13 +60,18 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
         'md_prestacao' => 'int',
         'vinc_prest' => 'int',
         'tp_moeda' => 'string',
+        'n_fatura' => 'string',
+        'v_fatura' => 'float',
         'v_serv_moeda' => 'float',
         'mec_af_comex_p' => 'string',
         'mec_af_comex_t' => 'string',
         'mov_temp_bens' => 'int',
+        'n_duimp' => 'string',
+        'n_due' => 'string',
         'n_di' => 'string',
         'n_re' => 'string',
-        'mdic' => 'int'
+        'mdic' => 'int',
+        'n_cont_cambio' => 'string'
     ];
 
     /**
@@ -80,13 +85,18 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
         'md_prestacao' => null,
         'vinc_prest' => null,
         'tp_moeda' => null,
+        'n_fatura' => null,
+        'v_fatura' => null,
         'v_serv_moeda' => null,
         'mec_af_comex_p' => null,
         'mec_af_comex_t' => null,
         'mov_temp_bens' => null,
+        'n_duimp' => null,
+        'n_due' => null,
         'n_di' => null,
         'n_re' => null,
-        'mdic' => null
+        'mdic' => null,
+        'n_cont_cambio' => null
     ];
 
     /**
@@ -98,13 +108,18 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
         'md_prestacao' => true,
 		'vinc_prest' => true,
 		'tp_moeda' => true,
+		'n_fatura' => true,
+		'v_fatura' => true,
 		'v_serv_moeda' => true,
 		'mec_af_comex_p' => true,
 		'mec_af_comex_t' => true,
 		'mov_temp_bens' => true,
+		'n_duimp' => true,
+		'n_due' => true,
 		'n_di' => true,
 		'n_re' => true,
-		'mdic' => true
+		'mdic' => true,
+		'n_cont_cambio' => true
     ];
 
     /**
@@ -196,13 +211,18 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
         'md_prestacao' => 'mdPrestacao',
         'vinc_prest' => 'vincPrest',
         'tp_moeda' => 'tpMoeda',
+        'n_fatura' => 'nFatura',
+        'v_fatura' => 'vFatura',
         'v_serv_moeda' => 'vServMoeda',
         'mec_af_comex_p' => 'mecAFComexP',
         'mec_af_comex_t' => 'mecAFComexT',
         'mov_temp_bens' => 'movTempBens',
+        'n_duimp' => 'nDUIMP',
+        'n_due' => 'nDUE',
         'n_di' => 'nDI',
         'n_re' => 'nRE',
-        'mdic' => 'mdic'
+        'mdic' => 'mdic',
+        'n_cont_cambio' => 'nContCambio'
     ];
 
     /**
@@ -214,13 +234,18 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
         'md_prestacao' => 'setMdPrestacao',
         'vinc_prest' => 'setVincPrest',
         'tp_moeda' => 'setTpMoeda',
+        'n_fatura' => 'setNFatura',
+        'v_fatura' => 'setVFatura',
         'v_serv_moeda' => 'setVServMoeda',
         'mec_af_comex_p' => 'setMecAfComexP',
         'mec_af_comex_t' => 'setMecAfComexT',
         'mov_temp_bens' => 'setMovTempBens',
+        'n_duimp' => 'setNDuimp',
+        'n_due' => 'setNDue',
         'n_di' => 'setNDi',
         'n_re' => 'setNRe',
-        'mdic' => 'setMdic'
+        'mdic' => 'setMdic',
+        'n_cont_cambio' => 'setNContCambio'
     ];
 
     /**
@@ -232,13 +257,18 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
         'md_prestacao' => 'getMdPrestacao',
         'vinc_prest' => 'getVincPrest',
         'tp_moeda' => 'getTpMoeda',
+        'n_fatura' => 'getNFatura',
+        'v_fatura' => 'getVFatura',
         'v_serv_moeda' => 'getVServMoeda',
         'mec_af_comex_p' => 'getMecAfComexP',
         'mec_af_comex_t' => 'getMecAfComexT',
         'mov_temp_bens' => 'getMovTempBens',
+        'n_duimp' => 'getNDuimp',
+        'n_due' => 'getNDue',
         'n_di' => 'getNDi',
         'n_re' => 'getNRe',
-        'mdic' => 'getMdic'
+        'mdic' => 'getMdic',
+        'n_cont_cambio' => 'getNContCambio'
     ];
 
     /**
@@ -301,13 +331,18 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('md_prestacao', $data ?? [], null);
         $this->setIfExists('vinc_prest', $data ?? [], null);
         $this->setIfExists('tp_moeda', $data ?? [], null);
+        $this->setIfExists('n_fatura', $data ?? [], null);
+        $this->setIfExists('v_fatura', $data ?? [], null);
         $this->setIfExists('v_serv_moeda', $data ?? [], null);
         $this->setIfExists('mec_af_comex_p', $data ?? [], null);
         $this->setIfExists('mec_af_comex_t', $data ?? [], null);
         $this->setIfExists('mov_temp_bens', $data ?? [], null);
+        $this->setIfExists('n_duimp', $data ?? [], null);
+        $this->setIfExists('n_due', $data ?? [], null);
         $this->setIfExists('n_di', $data ?? [], null);
         $this->setIfExists('n_re', $data ?? [], null);
         $this->setIfExists('mdic', $data ?? [], null);
+        $this->setIfExists('n_cont_cambio', $data ?? [], null);
     }
 
     /**
@@ -350,10 +385,15 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'tp_moeda', the character length must be smaller than or equal to 3.";
         }
 
-        if ($this->container['v_serv_moeda'] === null) {
-            $invalidProperties[] = "'v_serv_moeda' can't be null";
+        if (!is_null($this->container['n_fatura']) && (mb_strlen($this->container['n_fatura']) > 20)) {
+            $invalidProperties[] = "invalid value for 'n_fatura', the character length must be smaller than or equal to 20.";
         }
-        if (($this->container['v_serv_moeda'] < 0)) {
+
+        if (!is_null($this->container['v_fatura']) && ($this->container['v_fatura'] < 0)) {
+            $invalidProperties[] = "invalid value for 'v_fatura', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['v_serv_moeda']) && ($this->container['v_serv_moeda'] < 0)) {
             $invalidProperties[] = "invalid value for 'v_serv_moeda', must be bigger than or equal to 0.";
         }
 
@@ -366,6 +406,22 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['mov_temp_bens'] === null) {
             $invalidProperties[] = "'mov_temp_bens' can't be null";
         }
+        if (!is_null($this->container['n_duimp']) && (mb_strlen($this->container['n_duimp']) > 15)) {
+            $invalidProperties[] = "invalid value for 'n_duimp', the character length must be smaller than or equal to 15.";
+        }
+
+        if (!is_null($this->container['n_duimp']) && (mb_strlen($this->container['n_duimp']) < 15)) {
+            $invalidProperties[] = "invalid value for 'n_duimp', the character length must be bigger than or equal to 15.";
+        }
+
+        if (!is_null($this->container['n_due']) && (mb_strlen($this->container['n_due']) > 14)) {
+            $invalidProperties[] = "invalid value for 'n_due', the character length must be smaller than or equal to 14.";
+        }
+
+        if (!is_null($this->container['n_due']) && (mb_strlen($this->container['n_due']) < 14)) {
+            $invalidProperties[] = "invalid value for 'n_due', the character length must be bigger than or equal to 14.";
+        }
+
         if (!is_null($this->container['n_di']) && (mb_strlen($this->container['n_di']) > 12)) {
             $invalidProperties[] = "invalid value for 'n_di', the character length must be smaller than or equal to 12.";
         }
@@ -385,6 +441,10 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['mdic'] === null) {
             $invalidProperties[] = "'mdic' can't be null";
         }
+        if (!is_null($this->container['n_cont_cambio']) && (mb_strlen($this->container['n_cont_cambio']) > 20)) {
+            $invalidProperties[] = "invalid value for 'n_cont_cambio', the character length must be smaller than or equal to 20.";
+        }
+
         return $invalidProperties;
     }
 
@@ -507,9 +567,86 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets n_fatura
+     *
+     * @return string|null
+     */
+    public function getNFatura()
+    {
+        return $this->container['n_fatura'];
+    }
+
+    /**
+     * Sets n_fatura
+     *
+     * @param string|null $n_fatura Número da identificação da fatura de serviços ou do documento que comprove a transação (DECRETO Nº 12.955, DE 29 DE ABRIL DE 2026, Art. 74 § 1º ).  *Disponível a partir da NT 009 (leiaute 009.1.01).*
+     *
+     * @return self
+     */
+    public function setNFatura($n_fatura)
+    {
+        if (is_null($n_fatura)) {
+            array_push($this->openAPINullablesSetToNull, 'n_fatura');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('n_fatura', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($n_fatura) && (mb_strlen($n_fatura) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $n_fatura when calling ComExterior., must be smaller than or equal to 20.');
+        }
+
+        $this->container['n_fatura'] = $n_fatura;
+
+        return $this;
+    }
+
+    /**
+     * Gets v_fatura
+     *
+     * @return float|null
+     */
+    public function getVFatura()
+    {
+        return $this->container['v_fatura'];
+    }
+
+    /**
+     * Sets v_fatura
+     *
+     * @param float|null $v_fatura Valor total da fatura de serviços ou do documento que comprove a transação, expresso na moeda identificada em tpMoeda (DECRETO Nº 12.955, DE 29 DE ABRIL DE 2026, Art. 74, §1º).  *Disponível a partir da NT 009 (leiaute 009.1.01).*
+     *
+     * @return self
+     */
+    public function setVFatura($v_fatura)
+    {
+        if (is_null($v_fatura)) {
+            array_push($this->openAPINullablesSetToNull, 'v_fatura');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('v_fatura', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+
+        if (!is_null($v_fatura) && ($v_fatura < 0)) {
+            throw new \InvalidArgumentException('invalid value for $v_fatura when calling ComExterior., must be bigger than or equal to 0.');
+        }
+
+        $this->container['v_fatura'] = $v_fatura;
+
+        return $this;
+    }
+
+    /**
      * Gets v_serv_moeda
      *
-     * @return float
+     * @return float|null
      */
     public function getVServMoeda()
     {
@@ -519,7 +656,7 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets v_serv_moeda
      *
-     * @param float $v_serv_moeda Valor do serviço prestado expresso em moeda estrangeira especificada em tpmoeda.
+     * @param float|null $v_serv_moeda `Deprecated`    **Propriedade depreciada** a partir da NT 009 (leiaute 009.1.01).    *Utilize `serv.comExt.vFatura`*.  Valor do serviço prestado expresso em moeda estrangeira especificada em tpmoeda.
      *
      * @return self
      */
@@ -648,6 +785,88 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets n_duimp
+     *
+     * @return string|null
+     */
+    public function getNDuimp()
+    {
+        return $this->container['n_duimp'];
+    }
+
+    /**
+     * Sets n_duimp
+     *
+     * @param string|null $n_duimp Número da Declaração Única de Importação (DUIMP).  *Disponível a partir da NT 009 (leiaute 009.1.01).*
+     *
+     * @return self
+     */
+    public function setNDuimp($n_duimp)
+    {
+        if (is_null($n_duimp)) {
+            array_push($this->openAPINullablesSetToNull, 'n_duimp');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('n_duimp', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($n_duimp) && (mb_strlen($n_duimp) > 15)) {
+            throw new \InvalidArgumentException('invalid length for $n_duimp when calling ComExterior., must be smaller than or equal to 15.');
+        }
+        if (!is_null($n_duimp) && (mb_strlen($n_duimp) < 15)) {
+            throw new \InvalidArgumentException('invalid length for $n_duimp when calling ComExterior., must be bigger than or equal to 15.');
+        }
+
+        $this->container['n_duimp'] = $n_duimp;
+
+        return $this;
+    }
+
+    /**
+     * Gets n_due
+     *
+     * @return string|null
+     */
+    public function getNDue()
+    {
+        return $this->container['n_due'];
+    }
+
+    /**
+     * Sets n_due
+     *
+     * @param string|null $n_due Número da Declaração Única de Exportação (DU-E).  *Disponível a partir da NT 009 (leiaute 009.1.01).*
+     *
+     * @return self
+     */
+    public function setNDue($n_due)
+    {
+        if (is_null($n_due)) {
+            array_push($this->openAPINullablesSetToNull, 'n_due');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('n_due', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($n_due) && (mb_strlen($n_due) > 14)) {
+            throw new \InvalidArgumentException('invalid length for $n_due when calling ComExterior., must be smaller than or equal to 14.');
+        }
+        if (!is_null($n_due) && (mb_strlen($n_due) < 14)) {
+            throw new \InvalidArgumentException('invalid length for $n_due when calling ComExterior., must be bigger than or equal to 14.');
+        }
+
+        $this->container['n_due'] = $n_due;
+
+        return $this;
+    }
+
+    /**
      * Gets n_di
      *
      * @return string|null
@@ -660,7 +879,7 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets n_di
      *
-     * @param string|null $n_di Número da Declaração de Importação (DI/DSI/DA/DRI-E) averbado.
+     * @param string|null $n_di `Deprecated`    **Propriedade depreciada** a partir da NT 009 (leiaute 009.1.01).    *Utilize `serv.comExt.nDUIMP` (Declaração Única de Importação)*.  Número da Declaração de Importação (DI/DSI/DA/DRI-E) averbado.
      *
      * @return self
      */
@@ -701,7 +920,7 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets n_re
      *
-     * @param string|null $n_re Número do Registro de Exportação (RE) averbado.
+     * @param string|null $n_re `Deprecated`    **Propriedade depreciada** a partir da NT 009 (leiaute 009.1.01).    *Utilize `serv.comExt.nDUE` (Declaração Única de Exportação)*.  Número do Registro de Exportação (RE) averbado.
      *
      * @return self
      */
@@ -759,6 +978,44 @@ class ComExterior implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['mdic'] = $mdic;
+
+        return $this;
+    }
+
+    /**
+     * Gets n_cont_cambio
+     *
+     * @return string|null
+     */
+    public function getNContCambio()
+    {
+        return $this->container['n_cont_cambio'];
+    }
+
+    /**
+     * Sets n_cont_cambio
+     *
+     * @param string|null $n_cont_cambio Número da identificação do contrato de câmbio ou do documento que comprove o pagamento (Art. 74, § 1º, do DECRETO Nº 12.955, DE 29 DE ABRIL DE 2026, que Regulamenta a Contribuição Social sobre Bens e Serviços - CBS e dá outras providências.).  *Disponível a partir da NT 009 (leiaute 009.1.01).*
+     *
+     * @return self
+     */
+    public function setNContCambio($n_cont_cambio)
+    {
+        if (is_null($n_cont_cambio)) {
+            array_push($this->openAPINullablesSetToNull, 'n_cont_cambio');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('n_cont_cambio', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($n_cont_cambio) && (mb_strlen($n_cont_cambio) > 20)) {
+            throw new \InvalidArgumentException('invalid length for $n_cont_cambio when calling ComExterior., must be smaller than or equal to 20.');
+        }
+
+        $this->container['n_cont_cambio'] = $n_cont_cambio;
 
         return $this;
     }

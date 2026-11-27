@@ -428,7 +428,7 @@ class CteSimpSefazPagamentoRTCSimp implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets tp_meio_pgto
      *
-     * @param string $tp_meio_pgto (Meio de pagamento utilizado (ver IT DFe 2026.001).
+     * @param string $tp_meio_pgto Código do meio de pagamento (ver IT DFe 2026.001).
      *
      * @return self
      */
@@ -496,7 +496,7 @@ class CteSimpSefazPagamentoRTCSimp implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets cnpj_base_psp
      *
-     * @param string $cnpj_base_psp CNPJ base da instituição financeira.  Informar zeros não significativos.
+     * @param string $cnpj_base_psp CNPJ base da instituição financeira ou de pagamento.  Informar zeros não significativos.
      *
      * @return self
      */

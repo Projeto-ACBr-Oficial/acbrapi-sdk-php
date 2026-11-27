@@ -64,6 +64,7 @@ class NfeSefazTribNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         'g_ibscbs_mono' => '\ACBrAPI\Model\NfeSefazMonofasia',
         'g_transf_cred' => '\ACBrAPI\Model\NfeSefazTransfCred',
         'g_ajuste_compet' => '\ACBrAPI\Model\NfeSefazAjusteCompet',
+        'g_trib_sn' => '\ACBrAPI\Model\NfeSefazTribSN',
         'g_estorno_cred' => '\ACBrAPI\Model\NfeSefazEstornoCred',
         'g_cred_pres_oper' => '\ACBrAPI\Model\NfeSefazCredPresOper',
         'g_cred_pres_ibszfm' => '\ACBrAPI\Model\NfeSefazCredPresIBSZFM'
@@ -84,6 +85,7 @@ class NfeSefazTribNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         'g_ibscbs_mono' => null,
         'g_transf_cred' => null,
         'g_ajuste_compet' => null,
+        'g_trib_sn' => null,
         'g_estorno_cred' => null,
         'g_cred_pres_oper' => null,
         'g_cred_pres_ibszfm' => null
@@ -102,6 +104,7 @@ class NfeSefazTribNFe implements ModelInterface, ArrayAccess, \JsonSerializable
 		'g_ibscbs_mono' => false,
 		'g_transf_cred' => false,
 		'g_ajuste_compet' => false,
+		'g_trib_sn' => false,
 		'g_estorno_cred' => false,
 		'g_cred_pres_oper' => false,
 		'g_cred_pres_ibszfm' => false
@@ -200,6 +203,7 @@ class NfeSefazTribNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         'g_ibscbs_mono' => 'gIBSCBSMono',
         'g_transf_cred' => 'gTransfCred',
         'g_ajuste_compet' => 'gAjusteCompet',
+        'g_trib_sn' => 'gTribSN',
         'g_estorno_cred' => 'gEstornoCred',
         'g_cred_pres_oper' => 'gCredPresOper',
         'g_cred_pres_ibszfm' => 'gCredPresIBSZFM'
@@ -218,6 +222,7 @@ class NfeSefazTribNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         'g_ibscbs_mono' => 'setGIbscbsMono',
         'g_transf_cred' => 'setGTransfCred',
         'g_ajuste_compet' => 'setGAjusteCompet',
+        'g_trib_sn' => 'setGTribSn',
         'g_estorno_cred' => 'setGEstornoCred',
         'g_cred_pres_oper' => 'setGCredPresOper',
         'g_cred_pres_ibszfm' => 'setGCredPresIbszfm'
@@ -236,6 +241,7 @@ class NfeSefazTribNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         'g_ibscbs_mono' => 'getGIbscbsMono',
         'g_transf_cred' => 'getGTransfCred',
         'g_ajuste_compet' => 'getGAjusteCompet',
+        'g_trib_sn' => 'getGTribSn',
         'g_estorno_cred' => 'getGEstornoCred',
         'g_cred_pres_oper' => 'getGCredPresOper',
         'g_cred_pres_ibszfm' => 'getGCredPresIbszfm'
@@ -305,6 +311,7 @@ class NfeSefazTribNFe implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('g_ibscbs_mono', $data ?? [], null);
         $this->setIfExists('g_transf_cred', $data ?? [], null);
         $this->setIfExists('g_ajuste_compet', $data ?? [], null);
+        $this->setIfExists('g_trib_sn', $data ?? [], null);
         $this->setIfExists('g_estorno_cred', $data ?? [], null);
         $this->setIfExists('g_cred_pres_oper', $data ?? [], null);
         $this->setIfExists('g_cred_pres_ibszfm', $data ?? [], null);
@@ -561,6 +568,33 @@ class NfeSefazTribNFe implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable g_ajuste_compet cannot be null');
         }
         $this->container['g_ajuste_compet'] = $g_ajuste_compet;
+
+        return $this;
+    }
+
+    /**
+     * Gets g_trib_sn
+     *
+     * @return \ACBrAPI\Model\NfeSefazTribSN|null
+     */
+    public function getGTribSn()
+    {
+        return $this->container['g_trib_sn'];
+    }
+
+    /**
+     * Sets g_trib_sn
+     *
+     * @param \ACBrAPI\Model\NfeSefazTribSN|null $g_trib_sn g_trib_sn
+     *
+     * @return self
+     */
+    public function setGTribSn($g_trib_sn)
+    {
+        if (is_null($g_trib_sn)) {
+            throw new \InvalidArgumentException('non-nullable g_trib_sn cannot be null');
+        }
+        $this->container['g_trib_sn'] = $g_trib_sn;
 
         return $this;
     }
